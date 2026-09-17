@@ -136,12 +136,8 @@ export function Hero() {
             >
               <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/blueprint.png')] bg-cover pointer-events-none rounded-2xl" />
               <div className="relative z-10 space-y-10">
-                <div className="flex items-center justify-between mb-8">
+                <div className="mb-8">
                   <h4 className="text-gold font-bold text-[10px] uppercase tracking-[0.3em]">Technical Metrics</h4>
-                  <div className="flex items-center gap-2">
-                     <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-                     <span className="text-[9px] font-bold text-silver/40 uppercase tracking-[0.2em]">Active</span>
-                  </div>
                 </div>
                 
                 <div className="grid gap-8">
