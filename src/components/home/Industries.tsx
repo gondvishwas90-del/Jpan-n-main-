@@ -78,31 +78,31 @@ const IndustryCard = ({
       <Link
         href="/products"
         className={cn(
-          "group relative h-[380px] w-full overflow-hidden transition-all duration-500 ease-out cursor-pointer border flex flex-col justify-between block backdrop-blur-2xl",
+          "group relative h-[380px] w-full overflow-hidden transition-all duration-500 ease-out cursor-pointer border flex flex-col justify-between block backdrop-blur-xl shadow-lg",
           isCardActive
-            ? "rounded-2xl rounded-r-[140px] md:rounded-r-[170px] bg-white/90 dark:bg-[#0c1b2f]/85 border-[#2E5E99]/50 dark:border-white/[0.28] text-[#0D2440] dark:text-[#F5F5F5] -translate-y-2"
-            : "rounded-2xl bg-white/70 dark:bg-[#0c1b2f]/65 border-white/70 dark:border-white/[0.13] text-[#0D2440] dark:text-[#F5F5F5] hover:border-[#2E5E99]/40 dark:hover:border-white/[0.22] hover:-translate-y-1"
+            ? "rounded-2xl rounded-r-[140px] md:rounded-r-[170px] bg-white/25 dark:bg-white/[0.22] border-white/60 dark:border-white/30 text-[#0D2440] dark:text-white -translate-y-2 shadow-2xl"
+            : "rounded-2xl bg-white/20 dark:bg-white/20 border-white/40 dark:border-white/20 text-[#0D2440] dark:text-white hover:bg-white/25 dark:hover:bg-white/[0.22] hover:border-white/60 dark:hover:border-white/30 hover:-translate-y-1"
         )}
       >
         {/* Glass Specular Top Highlight Sheen */}
-        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/70 dark:via-white/30 to-transparent pointer-events-none z-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.12] dark:from-white/[0.04] to-transparent pointer-events-none z-0" />
+        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/35 to-transparent pointer-events-none z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none z-0" />
 
         <div className="flex flex-col justify-between h-full p-7 md:p-8 relative z-10">
           <div className="space-y-4">
-            {/* Frosted Icon Box */}
+            {/* Frosted Glass Icon Box */}
             <div
               className={cn(
-                "w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 border backdrop-blur-xl",
+                "w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 border backdrop-blur-md",
                 isCardActive
-                  ? "bg-white/90 dark:bg-white/[0.16] border-white/80 dark:border-white/25 text-[#2E5E99] dark:text-[#7BA4D0] scale-105"
-                  : "bg-white/60 dark:bg-white/[0.07] border-white/60 dark:border-white/12 text-[#2E5E99] dark:text-[#7BA4D0]"
+                  ? "bg-white/30 dark:bg-white/25 border-white/50 dark:border-white/30 text-[#2E5E99] dark:text-[#7BA4D0] scale-105"
+                  : "bg-white/20 dark:bg-white/20 border-white/40 dark:border-white/20 text-[#2E5E99] dark:text-[#7BA4D0]"
               )}
             >
               <industry.icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
             </div>
 
-            <h3 className="text-xl font-heading font-black tracking-tight leading-snug transition-colors duration-300 text-[#0D2440] dark:text-[#F5F5F5]">
+            <h3 className="text-xl font-heading font-black tracking-tight leading-snug transition-colors duration-300 text-[#0D2440] dark:text-white">
               {industry.title}
             </h3>
 
@@ -112,7 +112,7 @@ const IndustryCard = ({
                 "h-[2.5px] rounded-full transition-all duration-300",
                 isCardActive
                   ? "bg-[#2E5E99] dark:bg-[#7BA4D0] w-14"
-                  : "bg-[#7BA4D0]/50 dark:bg-white/20 w-8 group-hover:w-12 group-hover:bg-[#2E5E99] dark:group-hover:bg-[#7BA4D0]"
+                  : "bg-[#7BA4D0]/50 dark:bg-white/25 w-8 group-hover:w-12 group-hover:bg-[#2E5E99] dark:group-hover:bg-[#7BA4D0]"
               )}
             />
           </div>
@@ -121,7 +121,7 @@ const IndustryCard = ({
             <p
               className={cn(
                 "text-xs leading-relaxed font-medium transition-colors duration-300 pr-3",
-                isCardActive ? "text-[#0D2440] dark:text-[#F5F5F5]/90" : "text-[#0D2440]/75 dark:text-[#C4C8CC]"
+                isCardActive ? "text-[#0D2440] dark:text-white" : "text-[#0D2440]/85 dark:text-white/80"
               )}
             >
               {industry.description}
@@ -134,7 +134,7 @@ const IndustryCard = ({
                   "inline-flex items-center gap-2.5 px-4 py-2 rounded-full border text-[10px] font-mono font-bold uppercase tracking-wider transition-all duration-300",
                   isCardActive
                     ? "bg-[#2E5E99] text-white border-[#2E5E99] dark:bg-[#7BA4D0] dark:text-[#0B0D0F] dark:border-[#7BA4D0]"
-                    : "bg-white/70 dark:bg-white/[0.08] backdrop-blur-md text-[#2E5E99] dark:text-[#F5F5F5] border-white/60 dark:border-white/15 hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] hover:text-white dark:hover:text-[#0B0D0F]"
+                    : "bg-white/20 dark:bg-white/20 backdrop-blur-md text-[#2E5E99] dark:text-white border-white/40 dark:border-white/20 hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] hover:text-white dark:hover:text-[#0B0D0F]"
                 )}
               >
                 <span>Explore Solutions</span>
@@ -178,13 +178,13 @@ export function Industries() {
       {/* Isolated Soft Fluid Water Shader Background - Strictly for this section */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden select-none">
         <GlowingWave
-          speed={0.12}
+          speed={0.80}
           color1="#7BA4D0"
           color2="#2E5E99"
-          frequency={0.45}
-          intensity={0.55}
-          complexity={0.18}
-          opacity={0.25}
+          frequency={0.7}
+          intensity={1.0}
+          complexity={0.5}
+          opacity={0.45}
           transparent={true}
         />
         {/* Subtle Blueprint Grid Pattern */}

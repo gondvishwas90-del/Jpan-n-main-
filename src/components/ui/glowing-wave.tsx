@@ -36,95 +36,85 @@ uniform float uIntensity;
 uniform float uComplexity;
 uniform float uOpacity;
 
-vec3 hash3D(vec3 value) {
-  vec3 scaled = value * 34.0 + 1.0;
-  return mod(scaled * value, 289.0);
-}
-
-float generateNoise(vec2 coord) {
-  const vec4 skewConstants = vec4(
-    0.211324865405187,
-    0.366025403784439,
-    -0.577350269189626,
-    0.024390243902439
-  );
-
-  vec2 skewedCoord = coord + dot(coord, skewConstants.yy);
-  vec2 cellOrigin = floor(skewedCoord);
-  vec2 offset0 = coord - cellOrigin + dot(cellOrigin, skewConstants.xx);
-
-  vec2 cornerOffset = (offset0.x > offset0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-
-  vec4 offsets = offset0.xyxy + skewConstants.xxzz;
-  offsets.xy -= cornerOffset;
-
-  cellOrigin = mod(cellOrigin, 289.0);
-
-  vec3 gradientIdx = hash3D(
-    hash3D(cellOrigin.y + vec3(0.0, cornerOffset.y, 1.0)) +
-    cellOrigin.x + vec3(0.0, cornerOffset.x, 1.0)
-  );
-
-  vec3 weights = max(
-    0.5 - vec3(
-      dot(offset0, offset0),
-      dot(offsets.xy, offsets.xy),
-      dot(offsets.zw, offsets.zw)
-    ),
-    0.0
-  );
-  weights = weights * weights;
-  weights = weights * weights;
-
-  vec3 gradX = 2.0 * fract(gradientIdx * skewConstants.www) - 1.0;
-  vec3 gradY = abs(gradX) - 0.5;
-  vec3 roundedX = floor(gradX + 0.5);
-  vec3 finalGradX = gradX - roundedX;
-
-  weights *= 1.79284291400159 - 0.85373472095314 * (finalGradX * finalGradX + gradY * gradY);
-
-  vec3 gradients;
-  gradients.x = finalGradX.x * offset0.x + gradY.x * offset0.y;
-  gradients.yz = finalGradX.yz * offsets.xz + gradY.yz * offsets.yw;
-
-  return 130.0 * dot(weights, gradients);
+// Subtle pseudo-random hash for anti-banding film dither
+float hash(vec2 p) {
+  p = fract(p * vec2(123.34, 456.21));
+  p += dot(p, p + 45.32);
+  return fract(p.x * p.y);
 }
 
 void main() {
   vec2 uv = gl_FragCoord.xy / iResolution.xy;
-
-  vec2 scaledUV = uv * uFrequency;
-  float t = iTime;
-
-  float innerNoise = generateNoise(scaledUV + t * 0.25);
-  float middleNoise = generateNoise(scaledUV + innerNoise * 0.1 * uComplexity);
-
-  float s1 = generateNoise(scaledUV + t * 0.5 + middleNoise);
-  float s2 = generateNoise(scaledUV + s1);
-
-  s1 *= uIntensity;
-  s2 *= uIntensity;
-
-  float sharpS1 = sign(s1) * pow(abs(s1), 0.8);
-  float sharpS2 = sign(s2) * pow(abs(s2), 0.8);
-
-  vec3 mixedColor = mix(uColor1, uColor2, (sharpS2 + 1.0) * 0.5);
-  mixedColor = mix(mixedColor, uColor1, (sharpS1 + 1.0) * 0.3);
-  mixedColor = pow(mixedColor, vec3(0.9));
-
-  float alpha = (abs(sharpS1) + abs(sharpS2)) * 0.5 * uOpacity;
-  alpha = pow(alpha, 0.85);
-  alpha = clamp(alpha, 0.0, 1.0);
-
+  
+  // Animation time
+  float t = iTime * 0.7;
+  
+  // Compound harmonic wave formula matching the exact smooth crest in the reference image
+  float x = uv.x * (uFrequency * 2.8);
+  
+  float w1 = sin(x * 1.85 + t * 0.65) * 0.17;
+  float w2 = cos(x * 3.4 - t * 0.45 + 1.2) * (0.06 * max(uComplexity, 0.2));
+  float w3 = sin(x * 0.95 + t * 0.3 + 2.8) * 0.08;
+  float w4 = sin(x * 5.5 + t * 0.8) * (0.02 * max(uComplexity, 0.1));
+  
+  // Base wave height centered around 48% of the section height
+  float waveHeight = 0.48 + w1 + w2 + w3 + w4;
+  
+  // Vertical signed distance to wave surface
+  float dist = uv.y - waveHeight;
+  
+  // 1. Sharp Glowing Core line (the luminous white/cyan crest edge)
+  float coreThickness = 0.009 / max(uIntensity, 0.4);
+  float core = exp(-abs(dist) / coreThickness);
+  
+  // 2. Soft luminous crest halo (diffusing immediately above and below the crest)
+  float halo = exp(-abs(dist) * (20.0 / max(uIntensity, 0.4)));
+  
+  // 3. Wide ethereal bloom hugging the wave ridge
+  float ridgeBloom = exp(-abs(dist) * 7.0) * 0.4;
+  
+  // 4. Smooth diffuse body fill underneath the wave (flowing downward into the section)
+  float underFill = 0.0;
+  if (dist <= 0.0) {
+    float depth = -dist;
+    // Exponential falloff extending downward into the body
+    underFill = exp(-depth * 2.6) * 0.72;
+    // Ambient soft fill lower down
+    underFill += smoothstep(0.65, 0.0, depth) * 0.28;
+  }
+  
+  // Total luminous intensity
+  float totalLight = core * 1.35 + halo * 0.9 + ridgeBloom * 0.5 + underFill * 0.95;
+  
+  // Colors:
+  // - Crest core: brilliant white light tinted with uColor1
+  // - Upper crest & halo: uColor1 (#7BA4D0)
+  // - Wave body below: smooth blend into uColor2 (#2E5E99)
+  vec3 crestColor = mix(uColor1, vec3(1.0, 1.0, 1.0), 0.82);
+  vec3 haloColor = mix(uColor2, uColor1, clamp(1.0 - abs(dist) * 6.0, 0.0, 1.0));
+  vec3 bodyColor = mix(uColor2 * 0.85, uColor1, clamp(1.0 - (-dist) * 3.2, 0.0, 1.0));
+  
+  // Composite color across layers
+  vec3 finalRgb = mix(bodyColor, haloColor, clamp(halo + ridgeBloom, 0.0, 1.0));
+  finalRgb = mix(finalRgb, crestColor, clamp(core, 0.0, 1.0));
+  
+  // Film grain dither to eliminate 8-bit banding on dark backgrounds
+  float dither = (hash(gl_FragCoord.xy + fract(iTime)) - 0.5) * (1.0 / 255.0) * 2.0;
+  finalRgb += dither;
+  
+  // Final alpha calculation
+  float alpha = clamp(totalLight * uOpacity, 0.0, 1.0);
+  
   if (uTransparent > 0.5) {
-    if (alpha < 0.02) {
-      gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+    if (alpha < 0.005) {
+      gl_FragColor = vec4(0.0);
       return;
     }
-    gl_FragColor = vec4(mixedColor * alpha, alpha);
+    // Premultiplied alpha output
+    gl_FragColor = vec4(finalRgb * alpha, alpha);
   } else {
-    vec3 finalColor = mix(uBackgroundColor, mixedColor, alpha);
-    gl_FragColor = vec4(finalColor, 1.0);
+    vec3 comp = mix(uBackgroundColor, finalRgb, alpha);
+    gl_FragColor = vec4(comp, 1.0);
   }
 }
 `;
