@@ -80,10 +80,6 @@ export function QualityCompliance() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4">
-              <span>Governance</span>
-            </div>
-            
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[#0D2440] dark:text-white mb-6 md:mb-8 leading-[1.1] overflow-visible">
               Compliance & <br/>
               <span className="font-serif italic font-normal text-[#2E5E99] inline-block pt-1 pb-2 pr-2">Industry Standards</span>
@@ -101,7 +97,7 @@ export function QualityCompliance() {
             <motion.div 
               ref={cardsRef}
               onScroll={handleMobileScroll}
-              className="flex flex-row sm:grid sm:grid-cols-2 overflow-x-auto snap-x snap-mandatory pt-2 pb-4 sm:py-2 px-1 sm:px-0 gap-5 lg:gap-6 sm:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
+              className="flex flex-row sm:grid sm:grid-cols-2 overflow-x-auto snap-x snap-mandatory pt-4 pb-4 sm:pt-4 sm:pb-4 px-1 sm:px-0 gap-5 lg:gap-6 sm:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}

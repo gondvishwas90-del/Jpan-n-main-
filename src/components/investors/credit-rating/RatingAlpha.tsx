@@ -36,9 +36,7 @@ export function RatingAlpha() {
               </div>
 
               <p className="text-[#0D2440]/75 dark:text-white/75 text-sm sm:text-base leading-relaxed mb-8 italic font-normal">
-                &ldquo;This rating reflects J Pan Tubular Components Limited&apos;s strong market position, 
-                healthy capital structure, and robust liquidity profile 
-                maintained across fiscal cycles.&rdquo;
+                &ldquo;This rating reflects J Pan Tubular Components Limited&apos;s strong market position, healthy capital structure, and robust liquidity profile maintained across fiscal cycles.&rdquo;
               </p>
 
               <div className="flex items-center gap-8 pt-8 border-t border-[#7BA4D0]/25">

@@ -28,27 +28,6 @@ export function ContactForm({
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  useEffect(() => {
-    const handleHashScroll = () => {
-      const hash = window.location.hash;
-      if (hash === "#enquiry-form" || hash === "#digital-inquiry") {
-        const timer = setTimeout(() => {
-          const element = document.getElementById("enquiry-form");
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }, 200);
-        return () => clearTimeout(timer);
-      }
-    };
-
-    handleHashScroll();
-    window.addEventListener("hashchange", handleHashScroll);
-    return () => {
-      window.removeEventListener("hashchange", handleHashScroll);
-    };
-  }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);

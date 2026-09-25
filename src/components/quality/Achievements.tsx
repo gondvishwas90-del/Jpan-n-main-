@@ -79,15 +79,6 @@ export function Achievements() {
     >
       <div className="container-custom relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <motion.div 
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4"
-            initial={{ opacity: 0, y: 15 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span>Achievements</span>
-          </motion.div>
-          
           <motion.h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[#0D2440] dark:text-white leading-[1.1] mb-6 overflow-visible"
             initial={{ opacity: 0, y: 20 }}
@@ -115,7 +106,7 @@ export function Achievements() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="flex flex-row md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory pt-2 pb-4 md:py-2 px-1 md:px-0 gap-5 lg:gap-8 md:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
+            className="flex flex-row md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory pt-4 pb-4 md:pt-4 md:pb-4 px-1 md:px-0 gap-5 lg:gap-8 md:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
           >
             {achievements.map((item, idx) => (
               <motion.div

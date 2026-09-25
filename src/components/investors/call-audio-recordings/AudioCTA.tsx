@@ -54,7 +54,7 @@ export function AudioCTA() {
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a 
-                  href="/contact#digital-inquiry"
+                  href="/contact"
                   className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 group whitespace-nowrap"
                 >
                   Contact Investor Desk

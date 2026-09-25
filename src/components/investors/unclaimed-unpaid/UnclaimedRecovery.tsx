@@ -214,7 +214,7 @@ export function UnclaimedRecovery() {
                       Need Help With Paperwork?
                     </p>
                     <Link 
-                      href="/contact#digital-inquiry" 
+                      href="/contact" 
                       className="w-full py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 group/btn"
                     >
                       Request Support <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />

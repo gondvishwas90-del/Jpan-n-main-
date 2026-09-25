@@ -40,7 +40,7 @@ export function ProductCTA() {
             {/* Compact Action Suite */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
               <Link
-                href="/contact#enquiry-form"
+                href="/contact"
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 active:scale-95 w-full sm:w-auto cursor-pointer"
               >
                 <FileCheck className="w-4 h-4 text-[#7BA4D0]" />

@@ -31,7 +31,7 @@ export function CTAStrip() {
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-stretch gap-4 justify-center">
               {/* Primary Action Button */}
               <Link
-                href="/contact#enquiry-form"
+                href="/contact"
                 className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 active:scale-95"
               >
                 <div className="flex items-center gap-2.5">

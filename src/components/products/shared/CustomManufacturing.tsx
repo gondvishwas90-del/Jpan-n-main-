@@ -81,7 +81,7 @@ export function CustomManufacturing() {
             {/* Action Button */}
             <div className="pt-2">
               <Link
-                href="/contact#enquiry-form"
+                href="/contact"
                 className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0D2440] dark:bg-[#2E5E99] text-white dark:text-white hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] dark:hover:text-[#0D2440] font-heading font-semibold text-sm transition-all duration-300 cursor-pointer group"
               >
                 <span>Request Custom Engineering Quote</span>

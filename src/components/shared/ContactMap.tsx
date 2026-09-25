@@ -164,13 +164,6 @@ export function ContactMap() {
 
   return (
     <section className="relative w-full min-h-[95vh] lg:min-h-[110vh] xl:min-h-[115vh] bg-white dark:bg-[#070b14] overflow-hidden font-heading selection:bg-[#2E5E99] selection:text-white z-20 text-[#0D2440] dark:text-white transition-colors duration-500 py-12 lg:py-0 flex flex-col justify-center select-none">
-      {/* Noise Texture Background */}
-      <div
-        className="absolute inset-0 opacity-[0.025] dark:opacity-[0.05] z-[5] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`
-        }}
-      />
 
       {/* Interactive 3D Dotted WebGL Globe (Restored Large Dimension with Slow Motion) */}
       <div className="relative lg:absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-12vw] xl:left-[-8vw] top-auto lg:top-[50%] lg:-translate-y-[50%] w-[92vw] h-[92vw] sm:w-[620px] sm:h-[620px] lg:w-[115vh] lg:h-[115vh] xl:w-[122vh] xl:h-[122vh] max-w-[1100px] max-h-[1100px] z-10 opacity-90 lg:opacity-85 pointer-events-auto my-6 lg:my-0">

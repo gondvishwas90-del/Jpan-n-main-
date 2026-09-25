@@ -70,7 +70,7 @@ export function StatementOfDeviationsNote() {
               <div 
                 ref={cardsRef}
                 onScroll={handleMobileScroll}
-                className="flex flex-row md:grid md:grid-cols-2 overflow-x-auto snap-x snap-mandatory pt-2 pb-3 md:py-0 px-1 md:px-0 gap-4 md:gap-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
+                className="flex flex-row md:grid md:grid-cols-2 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-6 md:pt-4 md:pb-6 px-1 md:px-0 gap-4 md:gap-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
               >
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}

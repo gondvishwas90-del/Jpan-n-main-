@@ -58,9 +58,6 @@ export function QualityTrust() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4">
-              <span>The Integrity Standard</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[#0D2440] dark:text-white leading-[1.1] overflow-visible">
               Why Our Standards <br />
               <span className="font-serif italic font-normal text-[#2E5E99] inline-block pt-1 pb-2 pr-2">Impact Your Scale</span>
@@ -85,7 +82,7 @@ export function QualityTrust() {
           <div 
             ref={cardsRef}
             onScroll={handleMobileScroll}
-            className="flex flex-row sm:grid sm:grid-cols-2 lg:grid-cols-4 overflow-x-auto snap-x snap-mandatory pt-2 pb-4 sm:py-2 px-1 sm:px-0 gap-5 lg:gap-6 sm:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
+            className="flex flex-row sm:grid sm:grid-cols-2 lg:grid-cols-4 overflow-x-auto snap-x snap-mandatory pt-4 pb-4 sm:pt-4 sm:pb-4 px-1 sm:px-0 gap-5 lg:gap-6 sm:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
           >
             {pillars.map((p, idx) => (
               <motion.div

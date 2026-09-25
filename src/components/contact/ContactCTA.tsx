@@ -94,7 +94,7 @@ export function ContactCTA({
                     if (formElement) {
                       formElement.scrollIntoView({ behavior: 'smooth' });
                     } else {
-                      window.location.href = "/contact#digital-inquiry";
+                      window.location.href = "/contact";
                     }
                   }}
                   className="px-8 py-4 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] font-bold text-xs uppercase tracking-[0.2em] rounded-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] group/btn cursor-pointer"

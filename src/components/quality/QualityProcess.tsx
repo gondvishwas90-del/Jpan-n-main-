@@ -90,15 +90,6 @@ export function QualityProcess() {
     >
       <div className="container-custom relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4"
-          >
-            <span>Operational Transparency</span>
-          </motion.div>
-          
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -122,12 +113,12 @@ export function QualityProcess() {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Desktop Timeline Connecting Track */}
-          <div className="absolute top-[3.25rem] left-[8%] w-[84%] h-1.5 bg-[#EBF3FC] dark:bg-white/10 rounded-full hidden lg:block" />
+          <div className="absolute top-[4.25rem] left-[8%] w-[84%] h-1.5 bg-[#EBF3FC] dark:bg-white/10 rounded-full hidden lg:block" />
           
           {/* Desktop Timeline Journey Active Progress Line */}
           <motion.div 
             style={{ scaleX: timelineScale }}
-            className="absolute top-[3.25rem] left-[8%] w-[84%] h-1.5 bg-gradient-to-r from-[#2E5E99] via-[#7BA4D0] to-[#2E5E99] rounded-full hidden lg:block origin-left"
+            className="absolute top-[4.25rem] left-[8%] w-[84%] h-1.5 bg-gradient-to-r from-[#2E5E99] via-[#7BA4D0] to-[#2E5E99] rounded-full hidden lg:block origin-left"
           />
 
           {/* Process Cards */}
@@ -138,7 +129,7 @@ export function QualityProcess() {
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="flex flex-row md:grid md:grid-cols-3 lg:grid-cols-5 overflow-x-auto snap-x snap-mandatory pt-2 pb-4 md:py-0 px-1 md:px-0 gap-4 md:gap-x-6 md:gap-y-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full relative z-10"
+              className="flex flex-row md:grid md:grid-cols-3 lg:grid-cols-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-6 md:pt-6 md:pb-6 px-2 md:px-0 gap-4 md:gap-x-6 md:gap-y-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full relative z-10"
             >
               {steps.map((step, idx) => (
                 <motion.div 

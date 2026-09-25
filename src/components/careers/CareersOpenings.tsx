@@ -266,7 +266,7 @@ export function CareersOpenings() {
                if (cta) {
                  cta.scrollIntoView({ behavior: 'smooth' });
                } else {
-                 window.location.href = "/contact#enquiry-form";
+                 window.location.href = "/contact";
                }
              }}
              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider hover:border-[#2E5E99] hover:text-[#2E5E99] transition-all duration-300 group/general cursor-pointer"

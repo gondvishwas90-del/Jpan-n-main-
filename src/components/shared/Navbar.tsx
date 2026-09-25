@@ -81,7 +81,7 @@ const navLinks: NavItem[] = [
     ],
   },
   { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact#digital-inquiry" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {

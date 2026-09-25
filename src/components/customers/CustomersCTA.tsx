@@ -29,7 +29,7 @@ export function CustomersCTA() {
           
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link
-              href="/contact#enquiry-form"
+              href="/contact"
               className="px-12 py-5 bg-gold text-charcoal font-bold rounded-sm flex items-center gap-3 transition-all hover:-translate-y-1 btn-slide-white group"
             >
               Start Your Collaboration

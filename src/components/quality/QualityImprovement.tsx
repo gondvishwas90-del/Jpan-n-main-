@@ -71,19 +71,11 @@ export function QualityImprovement() {
     >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4"
-          >
-            <span>Future Focus</span>
-          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-[#0D2440] dark:text-white mb-6 overflow-visible leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[#0D2440] dark:text-white mb-6 overflow-visible leading-tight"
           >
             The Path of <span className="font-serif italic font-normal text-[#2E5E99] inline-block pt-1 pb-2 pr-2">Continuous Growth</span>
           </motion.h2>
@@ -106,7 +98,7 @@ export function QualityImprovement() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto snap-x snap-mandatory pt-2 pb-4 md:py-2 px-1 md:px-0 gap-5 lg:gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
+            className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-4 md:pt-4 md:pb-4 px-1 md:px-0 gap-5 lg:gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
           >
             {initiatives.map((item, idx) => (
               <motion.div 

@@ -158,7 +158,7 @@ export default async function ProductDetailPage({
             {/* Action Buttons */}
             <div className="pt-4 flex flex-wrap gap-4 items-center">
               <Link
-                href="/contact#enquiry-form"
+                href="/contact"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 bg-charcoal dark:bg-white text-white dark:text-charcoal font-bold text-xs uppercase tracking-widest rounded-xl overflow-hidden transition-all active:scale-95 btn-slide-gold"
               >
                 <span className="relative z-10 group-hover:text-black transition-colors duration-500">Request Quote & Specs</span>
