@@ -5,9 +5,9 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { AudioIntro } from "@/components/AudioIntro";
-import { AudioCTA } from "@/components/AudioCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { AudioIntro } from "@/components/investors/call-audio-recordings/AudioIntro";
+import { AudioCTA } from "@/components/investors/call-audio-recordings/AudioCTA";
 
 const recordings = [
   {
@@ -62,26 +62,20 @@ const recordings = [
 
 export default function CallAudioRecordingsPage() {
   return (
-    <main className="overflow-hidden">
-      <GenericInvestorHero title="Call Audio Recordings" />
-      
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <AudioIntro />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <GenericInvestorHero 
+        title="Call Audio Recordings" 
+        variant="editorial"
+        image="/images/industry-auto.png"
+      />
+      <AudioIntro />
       <GenericInvestorFilter />
-
       <GenericInvestorListing 
         items={recordings} 
         sectionTitle="Acoustic Archive"
         category="Audio Recording"
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <AudioCTA />
-      </div>
+      <AudioCTA />
     </main>
   );
 }
-
-

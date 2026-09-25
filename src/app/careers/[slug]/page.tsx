@@ -1,17 +1,28 @@
 import React from "react";
 import { Metadata } from "next";
-import { JobHero } from "@/components/JobHero";
-import { JobSummary } from "@/components/JobSummary";
-import { JobSpecs } from "@/components/JobSpecs";
-import { JobResponsibilities } from "@/components/JobResponsibilities";
-import { JobCompetencies } from "@/components/JobCompetencies";
-import { JobPerks } from "@/components/JobPerks";
-import { JobApplicationForm } from "@/components/JobApplicationForm";
-import { JobRelated } from "@/components/JobRelated";
-import { JobDetailCTA } from "@/components/JobDetailCTA";
+import { JobHero } from "@/components/careers/JobHero";
+import { JobSummary } from "@/components/careers/JobSummary";
+import { JobSpecs } from "@/components/careers/JobSpecs";
+import { JobResponsibilities } from "@/components/careers/JobResponsibilities";
+import { JobCompetencies } from "@/components/careers/JobCompetencies";
+import { JobPerks } from "@/components/careers/JobPerks";
+import { JobApplicationForm } from "@/components/careers/JobApplicationForm";
+import { JobRelated } from "@/components/careers/JobRelated";
+import { JobDetailCTA } from "@/components/careers/JobDetailCTA";
 
 
 
+
+export async function generateStaticParams() {
+  return [
+    { slug: "senior-production-engineer" },
+    { slug: "quality-assurance-specialist" },
+    { slug: "operations-manager" },
+    { slug: "hr-generalist" },
+    { slug: "maintenance-technician" },
+    { slug: "structural-design-lead" },
+  ];
+}
 
 // Mock function to simulate fetching job data
 async function getJobData(slug: string) {

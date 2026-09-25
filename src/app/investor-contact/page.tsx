@@ -1,12 +1,12 @@
 import React from "react";
 import { Metadata } from "next";
-import { ContactHero } from "@/components/ContactHero";
-import { ContactIntro } from "@/components/ContactIntro";
-import { ContactSupportInfo } from "@/components/ContactSupportInfo";
-import { ContactBlocks } from "@/components/ContactBlocks";
-import { ContactForm } from "@/components/ContactForm";
-import { ContactMap } from "@/components/ContactMap";
-import { ContactCTA } from "@/components/ContactCTA";
+import { ContactHero } from "@/components/contact/ContactHero";
+import { ContactIntro } from "@/components/contact/ContactIntro";
+import { ContactSupportInfo } from "@/components/contact/ContactSupportInfo";
+import { ContactBlocks } from "@/components/contact/ContactBlocks";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { ContactMap } from "@/components/shared/ContactMap";
+import { ContactCTA } from "@/components/contact/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Investor Contact | Shareholder Support | J Pan Tubular Components Limited",

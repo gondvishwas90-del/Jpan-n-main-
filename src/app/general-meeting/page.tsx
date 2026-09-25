@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GenericInvestorHero, GenericInvestorTable, GenericInvestorFilter } from "@/components/GenericInvestorComponents";
+import { GenericInvestorHero, GenericInvestorTable, GenericInvestorFilter } from "@/components/investors/shared/GenericInvestorComponents";
 
 const data = [
   { id: 1, date: "2024-2025", particulars: "General Meeting Notices", link: "/sample-report.pdf" },
@@ -17,8 +17,9 @@ export default function GeneralMeetingPage() {
     <main className="overflow-hidden bg-white dark:bg-[#050505]">
       <GenericInvestorHero 
         title="General Meeting Notices"
-        subtitle="Access notices and agendas for Annual and Extraordinary General Meetings."
-        image="/images/annual_reports_hero.png"
+        subtitle="Access notices, agendas, and resolutions for Annual and Extraordinary General Meetings."
+        image="/images/about-snapshot.png"
+        variant="left"
       />
       
       <GenericInvestorFilter />

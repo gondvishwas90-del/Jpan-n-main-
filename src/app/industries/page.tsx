@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Industries } from "@/components/Industries";
+import { Industries } from "@/components/home/Industries";
 
 export default function IndustriesPage() {
   return (

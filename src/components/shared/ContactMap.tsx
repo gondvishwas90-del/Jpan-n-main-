@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight, MapPin, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import { useTheme } from "next-themes";
+
 // Client-only dynamic import for the WebGL Cobe globe
 const CobeInteractiveGlobe = dynamic(
   () => import("./CobeInteractiveGlobe").then((m) => m.CobeInteractiveGlobe),
@@ -145,13 +147,15 @@ export const hubLocations: HubLocation[] = [
 export function ContactMap() {
   const [activeIdx, setActiveIdx] = useState<number>(0);
   const [isCardOpen, setIsCardOpen] = useState<boolean>(true);
-  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState<boolean>(false);
   const activeHub = hubLocations[activeIdx] || hubLocations[0];
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setIsDarkTheme(isDark);
+    setMounted(true);
   }, []);
+
+  const isDarkTheme = mounted ? resolvedTheme === "dark" : false;
 
   const handleSelectHub = (index: number) => {
     setActiveIdx(index);
@@ -159,55 +163,21 @@ export function ContactMap() {
   };
 
   return (
-    <section className="relative w-full min-h-[90vh] lg:min-h-[100vh] bg-white dark:bg-[#070b14] overflow-hidden font-heading selection:bg-[#2E5E99] selection:text-white z-20 text-[#0D2440] dark:text-white transition-colors duration-500 py-12 lg:py-0 flex flex-col justify-center select-none">
+    <section className="relative w-full min-h-[95vh] lg:min-h-[110vh] xl:min-h-[115vh] bg-white dark:bg-[#070b14] overflow-hidden font-heading selection:bg-[#2E5E99] selection:text-white z-20 text-[#0D2440] dark:text-white transition-colors duration-500 py-12 lg:py-0 flex flex-col justify-center select-none">
       {/* Noise Texture Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.025] dark:opacity-[0.05] z-[5] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`
-        }} 
+        }}
       />
 
       {/* Ambient Radial Gradients */}
       <div className="absolute -left-[10%] top-1/4 w-[45vw] h-[45vw] rounded-full bg-[#E7F0FA] dark:bg-[#2E5E99]/[0.08] blur-[140px] pointer-events-none z-0" />
       <div className="absolute right-0 top-0 w-[40vw] h-[40vw] rounded-full bg-[#7BA4D0]/15 dark:bg-[#0D2440]/[0.2] blur-[140px] pointer-events-none z-0" />
 
-      {/* Left Sidebar: Interactive City / Plant Navigation */}
-      <aside className="relative lg:absolute lg:left-[5vw] top-auto lg:top-1/2 lg:-translate-y-1/2 z-[40] px-6 lg:px-0 mb-8 lg:mb-0">
-        <div className="mb-4 lg:hidden">
-          <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#2E5E99]">
-            Strategic Footprint
-          </span>
-          <h3 className="text-2xl font-black uppercase tracking-tight text-[#0D2440] dark:text-white">
-            Manufacturing Hubs
-          </h3>
-        </div>
-        <ul className="list-none p-0 flex flex-row lg:flex-col flex-wrap lg:flex-nowrap gap-3 sm:gap-4 lg:gap-7 font-black">
-          {hubLocations.map((hub, idx) => {
-            const isActive = activeIdx === idx;
-            return (
-              <li
-                key={hub.id}
-                onClick={() => handleSelectHub(idx)}
-                className={cn(
-                  "text-[12px] sm:text-[13px] lg:text-[14px] uppercase cursor-pointer transition-all duration-300 tracking-[0.2em] sm:tracking-[0.25em] select-none flex items-center gap-2.5",
-                  isActive
-                    ? "text-[#2E5E99] lg:translate-x-[16px] scale-105 font-black"
-                    : "text-[#0D2440]/50 dark:text-white/50 hover:text-[#0D2440] dark:hover:text-white font-bold"
-                )}
-              >
-                {isActive && (
-                  <span className="w-2 h-2 rounded-full bg-[#2E5E99] animate-pulse shadow-[0_0_8px_#2E5E99]" />
-                )}
-                <span>{hub.city}</span>
-              </li>
-            );
-          })}
-        </ul>
-      </aside>
-
-      {/* Interactive 3D Dotted WebGL Globe */}
-      <div className="relative lg:absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-16vw] xl:left-[-12vw] bottom-auto lg:bottom-[-20vh] w-[90vw] h-[90vw] sm:w-[600px] sm:h-[600px] lg:w-[125vh] lg:h-[125vh] z-10 opacity-90 lg:opacity-85 pointer-events-auto my-6 lg:my-0">
+      {/* Interactive 3D Dotted WebGL Globe (Restored Large Dimension with Slow Motion) */}
+      <div className="relative lg:absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-12vw] xl:left-[-8vw] top-auto lg:top-[50%] lg:-translate-y-[50%] w-[92vw] h-[92vw] sm:w-[620px] sm:h-[620px] lg:w-[115vh] lg:h-[115vh] xl:w-[122vh] xl:h-[122vh] max-w-[1100px] max-h-[1100px] z-10 opacity-90 lg:opacity-85 pointer-events-auto my-6 lg:my-0">
         <CobeInteractiveGlobe
           markers={hubLocations.map((h) => ({
             id: h.id,
@@ -226,7 +196,7 @@ export function ContactMap() {
       </div>
 
       {/* Floating Tactical Detail Card */}
-      <div className="relative lg:absolute left-1/2 -translate-x-1/2 lg:left-[49%] lg:-translate-x-1/2 bottom-auto top-auto lg:top-[57%] lg:-translate-y-1/2 w-full max-w-[490px] sm:max-w-[520px] px-4 sm:px-0 z-[50] pointer-events-none my-6 lg:my-0">
+      <div className="relative lg:absolute left-1/2 -translate-x-1/2 lg:left-[43%] xl:left-[45%] lg:-translate-x-1/2 top-auto lg:top-1/2 lg:-translate-y-1/2 w-full max-w-[480px] sm:max-w-[500px] px-4 sm:px-0 z-[50] pointer-events-none my-6 lg:my-0">
         <AnimatePresence mode="wait">
           {isCardOpen && (
             <motion.div
@@ -241,9 +211,6 @@ export function ContactMap() {
                 {/* Card Header */}
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#2E5E99] mb-1 block">
-                      Strategic Location Hub
-                    </span>
                     <h4 className="text-xl sm:text-2xl lg:text-3xl font-heading font-black tracking-tight uppercase leading-tight text-[#0D2440] dark:text-white">
                       {activeHub.title}
                     </h4>
@@ -276,10 +243,6 @@ export function ContactMap() {
 
                   <div className="flex-1 flex flex-col justify-between py-0.5 w-full space-y-3">
                     <div className="space-y-2">
-                      <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-wider bg-[#E7F0FA] dark:bg-white/10 px-2.5 py-0.5 rounded-full border border-[#7BA4D0]/30">
-                        <ShieldCheck className="w-3.5 h-3.5 text-[#2E5E99]" />
-                        <span>{activeHub.verifiedBadge}</span>
-                      </div>
                       <p className="text-[#0D2440] dark:text-white text-xs sm:text-sm font-bold leading-snug tracking-tight">
                         &quot;{activeHub.tagline}&quot;
                       </p>
@@ -291,7 +254,7 @@ export function ContactMap() {
                     <div className="flex items-center justify-between border-t border-[#7BA4D0]/20 pt-3 mt-1">
                       <div className="flex items-center gap-1.5">
                         <MapPin className="w-3.5 h-3.5 text-[#2E5E99]" />
-                        <span className="text-[10px] font-mono font-bold text-[#0D2440]/80 dark:text-white/80 uppercase tracking-wider">
+                        <span className="text-[10px] font-sans font-bold text-[#0D2440]/80 dark:text-white/80 uppercase tracking-wider">
                           ID: {activeHub.plantId}
                         </span>
                       </div>
@@ -314,43 +277,43 @@ export function ContactMap() {
         </AnimatePresence>
       </div>
 
-      {/* Right Side: Headline & Watermark */}
-      <section className="relative lg:absolute right-6 sm:right-10 lg:right-10 xl:right-14 top-auto lg:top-[5%] text-left lg:text-right z-[25] max-w-full sm:max-w-md lg:max-w-[440px] mt-8 lg:mt-0 pointer-events-none">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeHub.id}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="overflow-hidden w-full select-none">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black leading-none tracking-tight text-[#0D2440]/[0.07] dark:text-white/[0.07] uppercase italic truncate">
-                {activeHub.title}
-              </h1>
-            </div>
+      {/* Right Top Corner: Heading & Interactive City Names */}
+      <div className="relative lg:absolute right-6 sm:right-10 lg:right-12 xl:right-16 top-6 sm:top-8 lg:top-10 xl:top-12 z-[40] flex flex-col items-start lg:items-end text-left lg:text-right select-none">
+        {/* Right Top Corner Heading */}
+        <div className="mb-6 lg:mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-heading font-black uppercase tracking-tight text-[#0D2440] dark:text-white leading-tight">
+            Manufacturing <span className="text-[#2E5E99]">Hubs</span>
+          </h2>
+        </div>
 
-            <div className="flex flex-col items-start lg:items-end mt-2 lg:mt-2.5">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#2E5E99] mb-1.5 sm:mb-2 block">
-                Pan-India Manufacturing Footprint
-              </span>
-              <h2 className="text-[#0D2440] dark:text-white max-w-[420px] leading-[1.15] text-base sm:text-lg lg:text-xl font-heading font-black uppercase tracking-tight">
-                Strategic{" "}
-                <span className="bg-[#2E5E99] text-white px-2 py-0.5 inline-block mx-0.5 rounded-xs">
-                  Manufacturing Hubs
-                </span>{" "}
-                across primary industrial corridors.
-              </h2>
-              <p className="mt-2 text-xs sm:text-[13px] text-[#0D2440]/70 dark:text-white/70 font-normal max-w-[400px] leading-relaxed">
-                6 state-of-the-art precision plants engineered with high-volume robotic manufacturing, ISO 9001/IATF 16949 quality standards, and immediate localized supply for global automotive & HVAC OEMs.
-              </p>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </section>
+        {/* City Names List in Screenshot 2 Typography */}
+        <ul className="list-none p-0 m-0 flex flex-col items-start lg:items-end gap-2.5 sm:gap-3 lg:gap-3.5">
+          {hubLocations.map((hub, idx) => {
+            const isActive = activeIdx === idx;
+            return (
+              <li
+                key={hub.id}
+                onClick={() => handleSelectHub(idx)}
+                className={cn(
+                  "font-heading font-black italic uppercase tracking-tight cursor-pointer transition-all duration-300 select-none flex items-center gap-3",
+                  "text-xl sm:text-2xl lg:text-[28px] xl:text-[34px] leading-none",
+                  isActive
+                    ? "text-[#2E5E99] lg:-translate-x-2 scale-[1.03]"
+                    : "text-[#0D2440]/[0.18] dark:text-white/25 hover:text-[#2E5E99]/75"
+                )}
+              >
+                <span>{hub.city}</span>
+                {isActive && (
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#2E5E99] shrink-0 animate-pulse shadow-[0_0_10px_#2E5E99]" />
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
       {/* Bottom-Left Legend */}
-      <div className="relative lg:absolute bottom-auto lg:bottom-[35px] left-auto lg:left-[5vw] z-[40] text-[10px] sm:text-[11px] text-[#0D2440] dark:text-white flex flex-row lg:flex-col flex-wrap gap-4 lg:gap-3 font-bold uppercase tracking-[0.25em] px-6 lg:px-0 mt-8 lg:mt-0 select-none">
+      <div className="relative lg:absolute bottom-4 lg:bottom-7 left-6 lg:left-10 z-[40] text-[10px] sm:text-[11px] text-[#0D2440] dark:text-white flex flex-row lg:flex-col flex-wrap gap-4 lg:gap-2.5 font-bold uppercase tracking-[0.25em] px-6 lg:px-0 mt-8 lg:mt-0 select-none">
         <div className="flex items-center">
           <span className="w-2.5 h-2.5 rounded-full bg-[#2E5E99] mr-2.5 shadow-[0_0_8px_rgba(46,94,153,0.5)]" />
           <span>Strategic Hub</span>
@@ -363,3 +326,5 @@ export function ContactMap() {
     </section>
   );
 }
+
+export default ContactMap;

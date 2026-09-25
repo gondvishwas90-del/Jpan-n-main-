@@ -1,14 +1,14 @@
-import { AboutHero } from "@/components/AboutHero";
-import { OurStory } from "@/components/OurStory";
-import { CompanyOverview } from "@/components/CompanyOverview";
-import { VisionMission } from "@/components/VisionMission";
-import { JourneyTimeline } from "@/components/JourneyTimeline";
-import { Leadership } from "@/components/Leadership";
-import { AboutManufacturing } from "@/components/AboutManufacturing";
-import { AboutQuality } from "@/components/AboutQuality";
-import { AboutPresence } from "@/components/AboutPresence";
-import { AboutWhyChooseUs } from "@/components/AboutWhyChooseUs";
-import { AboutCTA } from "@/components/AboutCTA";
+import { AboutHero } from "@/components/about/AboutHero";
+import { OurStory } from "@/components/about/OurStory";
+import { CompanyOverview } from "@/components/about/CompanyOverview";
+import { VisionMission } from "@/components/about/VisionMission";
+import { JourneyTimeline } from "@/components/about/JourneyTimeline";
+import { Leadership } from "@/components/about/Leadership";
+import { AboutManufacturing } from "@/components/about/AboutManufacturing";
+import { AboutQuality } from "@/components/about/AboutQuality";
+import { AboutPresence } from "@/components/about/AboutPresence";
+import { AboutWhyChooseUs } from "@/components/about/AboutWhyChooseUs";
+import { AboutCTA } from "@/components/about/AboutCTA";
 
 export const metadata = {
   title: "About Us | J Pan Tubular Components Limited",
@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden">
+    <div className="overflow-x-clip">
       <div className="animate-in fade-in duration-1000">
         <AboutHero />
       </div>
@@ -51,6 +51,6 @@ export default function AboutPage() {
       <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-1000 fill-mode-both">
         <AboutCTA />
       </div>
-    </main>
+    </div>
   );
 }

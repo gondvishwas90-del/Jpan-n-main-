@@ -5,10 +5,10 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { StatementOfDeviationsIntro } from "@/components/StatementOfDeviationsIntro";
-import { StatementOfDeviationsNote } from "@/components/StatementOfDeviationsNote";
-import { StatementOfDeviationsCTA } from "@/components/StatementOfDeviationsCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { StatementOfDeviationsIntro } from "@/components/investors/statement-of-deviations/StatementOfDeviationsIntro";
+import { StatementOfDeviationsNote } from "@/components/investors/statement-of-deviations/StatementOfDeviationsNote";
+import { StatementOfDeviationsCTA } from "@/components/investors/statement-of-deviations/StatementOfDeviationsCTA";
 
 const statements = [
   {
@@ -39,29 +39,28 @@ const statements = [
 
 export default function StatementOfDeviationsPage() {
   return (
-    <main className="overflow-hidden">
-      <GenericInvestorHero title="Statement of Deviations" />
-      
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <StatementOfDeviationsIntro />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <GenericInvestorHero 
+        title="Statement of Deviations" 
+        subtitle="Periodic statutory disclosures submitted to Stock Exchanges under Regulation 32 of SEBI (LODR) Regulations, confirming NIL deviation or variation in the utilization of public issue proceeds."
+        variant="centered"
+        image="/images/industrial_cta_bg.png"
+        chips={[
+          { label: "Statutory Mandate", value: "SEBI LODR Reg. 32" },
+          { label: "Deviation / Variation", value: "NIL Reported" },
+          { label: "Proceeds Deployment", value: "100% Verified" },
+          { label: "Review Status", value: "Audit Committee Cleared" },
+        ]}
+      />
+      <StatementOfDeviationsIntro />
       <GenericInvestorFilter />
-
       <GenericInvestorListing 
         items={statements} 
         sectionTitle="Periodic Archive"
         category="Statement of Deviation"
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <StatementOfDeviationsNote />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
-        <StatementOfDeviationsCTA />
-      </div>
+      <StatementOfDeviationsNote />
+      <StatementOfDeviationsCTA />
     </main>
   );
 }
-

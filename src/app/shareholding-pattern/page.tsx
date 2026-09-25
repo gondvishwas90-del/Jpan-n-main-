@@ -5,11 +5,11 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { ShareholdingIntro } from "@/components/ShareholdingIntro";
-import { ShareholdingSummary } from "@/components/ShareholdingSummary";
-import { ShareholdingNote } from "@/components/ShareholdingNote";
-import { ShareholdingCTA } from "@/components/ShareholdingCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { ShareholdingIntro } from "@/components/investors/shareholding-pattern/ShareholdingIntro";
+import { ShareholdingSummary } from "@/components/investors/shareholding-pattern/ShareholdingSummary";
+import { ShareholdingNote } from "@/components/investors/shareholding-pattern/ShareholdingNote";
+import { ShareholdingCTA } from "@/components/investors/shareholding-pattern/ShareholdingCTA";
 
 const reports = [
   {
@@ -64,35 +64,23 @@ const reports = [
 
 export default function ShareholdingPatternPage() {
   return (
-    <main className="overflow-hidden">
-      <GenericInvestorHero title="Shareholding Pattern" />
-      
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <ShareholdingIntro />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
-        <ShareholdingSummary />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <GenericInvestorHero 
+        title="Shareholding Pattern" 
+        subtitle="Quarterly capital ownership disclosures and promoter holding distributions."
+        variant="left"
+        image="/images/hero-bg.png"
+      />
+      <ShareholdingIntro />
+      <ShareholdingSummary />
       <GenericInvestorFilter />
-
       <GenericInvestorListing 
         items={reports} 
         sectionTitle="Filing Archive"
         category="Shareholding Pattern"
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <ShareholdingNote />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
-        <ShareholdingCTA />
-      </div>
+      <ShareholdingNote />
+      <ShareholdingCTA />
     </main>
   );
 }
-
-
-

@@ -1,11 +1,11 @@
 import React from "react";
 import { Metadata } from "next";
-import { PoliciesHero } from "@/components/PoliciesHero";
-import { PoliciesIntro } from "@/components/PoliciesIntro";
-import { PoliciesFilter } from "@/components/PoliciesFilter";
-import { PoliciesListing } from "@/components/PoliciesListing";
-import { PoliciesHighlights } from "@/components/PoliciesHighlights";
-import { PoliciesCTA } from "@/components/PoliciesCTA";
+import { PoliciesHero } from "@/components/investors/policies/PoliciesHero";
+import { PoliciesIntro } from "@/components/investors/policies/PoliciesIntro";
+import { PoliciesFilter } from "@/components/investors/policies/PoliciesFilter";
+import { PoliciesListing } from "@/components/investors/policies/PoliciesListing";
+import { PoliciesHighlights } from "@/components/investors/policies/PoliciesHighlights";
+import { PoliciesCTA } from "@/components/investors/policies/PoliciesCTA";
 
 export const metadata: Metadata = {
   title: "Corporate Policies | Governance & Ethics | J Pan Tubular Components Limited",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PoliciesPage() {
   return (
-    <main>
+    <main className="overflow-hidden bg-white dark:bg-black">
       <PoliciesHero />
       <PoliciesIntro />
       <PoliciesFilter />

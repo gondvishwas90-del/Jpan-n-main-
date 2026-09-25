@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GenericInvestorHero } from "@/components/GenericInvestorComponents";
+import { GenericInvestorHero } from "@/components/investors/shared/GenericInvestorComponents";
 import { Shield, Lock, FileText, Database, Eye, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 

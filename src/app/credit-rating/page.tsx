@@ -1,13 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
-import { RatingHero } from "@/components/RatingHero";
-import { RatingIntro } from "@/components/RatingIntro";
-import { RatingStability } from "@/components/RatingStability";
-import { RatingAlpha } from "@/components/RatingAlpha";
-import { RatingArchive } from "@/components/RatingArchive";
-import { RatingAgencies } from "@/components/RatingAgencies";
-import { RatingCTA } from "@/components/RatingCTA";
-import { GenericInvestorFilter } from "@/components/GenericInvestorComponents";
+import { RatingHero } from "@/components/investors/credit-rating/RatingHero";
+import { RatingIntro } from "@/components/investors/credit-rating/RatingIntro";
+import { RatingStability } from "@/components/investors/credit-rating/RatingStability";
+import { RatingAlpha } from "@/components/investors/credit-rating/RatingAlpha";
+import { RatingArchive } from "@/components/investors/credit-rating/RatingArchive";
+import { RatingAgencies } from "@/components/investors/credit-rating/RatingAgencies";
+import { RatingCTA } from "@/components/investors/credit-rating/RatingCTA";
+import { GenericInvestorFilter } from "@/components/investors/shared/GenericInvestorComponents";
 
 export const metadata: Metadata = {
   title: "Credit Rating | Financial Strength | J Pan Tubular Components Limited",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function CreditRatingPage() {
   return (
-    <main>
+    <main className="overflow-hidden bg-white dark:bg-black">
       <RatingHero />
       <RatingIntro />
       <RatingStability />
@@ -28,4 +28,3 @@ export default function CreditRatingPage() {
     </main>
   );
 }
-

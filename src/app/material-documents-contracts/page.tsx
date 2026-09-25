@@ -1,11 +1,11 @@
 import React from "react";
 import { Metadata } from "next";
-import { MaterialHero } from "@/components/MaterialHero";
-import { MaterialIntro } from "@/components/MaterialIntro";
-import { MaterialCompliance } from "@/components/MaterialCompliance";
-import { MaterialHighlights } from "@/components/MaterialHighlights";
-import { MaterialListing } from "@/components/MaterialListing";
-import { MaterialCTA } from "@/components/MaterialCTA";
+import { MaterialHero } from "@/components/investors/material-documents-contracts/MaterialHero";
+import { MaterialIntro } from "@/components/investors/material-documents-contracts/MaterialIntro";
+import { MaterialCompliance } from "@/components/investors/material-documents-contracts/MaterialCompliance";
+import { MaterialHighlights } from "@/components/investors/material-documents-contracts/MaterialHighlights";
+import { MaterialListing } from "@/components/investors/material-documents-contracts/MaterialListing";
+import { MaterialCTA } from "@/components/investors/material-documents-contracts/MaterialCTA";
 
 export const metadata: Metadata = {
   title: "Material Documents & Contracts | Statutory Disclosures | J Pan Tubular Components Limited",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function MaterialDocumentsPage() {
   return (
-    <main>
+    <main className="overflow-hidden bg-white dark:bg-black">
       <MaterialHero />
       <MaterialIntro />
       <MaterialCompliance />
@@ -24,4 +24,3 @@ export default function MaterialDocumentsPage() {
     </main>
   );
 }
-

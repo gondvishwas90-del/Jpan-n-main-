@@ -1,14 +1,14 @@
-import { Hero } from "@/components/Hero";
-import { AboutSnapshot } from "@/components/AboutSnapshot";
-import { Industries } from "@/components/Industries";
-import { ProductShowcase } from "@/components/ProductShowcase";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { Infrastructure } from "@/components/Infrastructure";
-import { Certifications } from "@/components/Certifications";
-import { Testimonials } from "@/components/Testimonials";
-import { CTAStrip } from "@/components/CTAStrip";
-import { ContactPreview } from "@/components/ContactPreview";
-import { ContactMap } from "@/components/ContactMap";
+import { Hero } from "@/components/home/Hero";
+import { AboutSnapshot } from "@/components/home/AboutSnapshot";
+import { Industries } from "@/components/home/Industries";
+import { ProductShowcase } from "@/components/home/ProductShowcase";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
+import { Infrastructure } from "@/components/home/Infrastructure";
+import { Certifications } from "@/components/home/Certifications";
+import { Testimonials } from "@/components/home/Testimonials";
+import { CTAStrip } from "@/components/home/CTAStrip";
+import { ContactPreview } from "@/components/home/ContactPreview";
+import { ContactMap } from "@/components/shared/ContactMap";
 
 export default function Home() {
   return (

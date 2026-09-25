@@ -1,11 +1,10 @@
 import React from "react";
 import { Metadata } from "next";
-import { ContactHero } from "@/components/ContactHero";
-import { ContactIntro } from "@/components/ContactIntro";
-import { ContactSupportInfo } from "@/components/ContactSupportInfo";
-import { ContactForm } from "@/components/ContactForm";
-import { ContactMap } from "@/components/ContactMap";
-import { ContactCTA } from "@/components/ContactCTA";
+import { ContactIntro } from "@/components/contact/ContactIntro";
+import { ContactSupportInfo } from "@/components/contact/ContactSupportInfo";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { ContactMap } from "@/components/shared/ContactMap";
+import { ContactCTA } from "@/components/contact/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Contact Us | J Pan Tubular Components Limited",
@@ -15,11 +14,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="bg-white dark:bg-charcoal min-h-screen selection:bg-gold/30 selection:text-white">
-      <ContactHero 
-        title="Institutional Hub" 
-        subtitle="Global Connectivity"
-      />
-      
       <ContactIntro 
         title="Direct Engagement"
         subtitle="Corporate Communication"

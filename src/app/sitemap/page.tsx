@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { GenericInvestorHero } from "@/components/GenericInvestorComponents";
+import { GenericInvestorHero } from "@/components/investors/shared/GenericInvestorComponents";
 import { ChevronRight } from "lucide-react";
 
 export default function SitemapPage() {

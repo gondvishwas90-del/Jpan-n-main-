@@ -1,11 +1,11 @@
-import { CustomersHero } from "@/components/CustomersHero";
-import { ClientLogosGrid } from "@/components/ClientLogosGrid";
-import { CustomerIndustries } from "@/components/CustomerIndustries";
-import { CustomerKeyHighlights } from "@/components/CustomerKeyHighlights";
-import { CustomerPartnershipStats } from "@/components/CustomerPartnershipStats";
-import { CustomerTestimonials } from "@/components/CustomerTestimonials";
-import { CustomerCaseStudies } from "@/components/CustomerCaseStudies";
-import { CustomersCTA } from "@/components/CustomersCTA";
+import { CustomersHero } from "@/components/customers/CustomersHero";
+import { ClientLogosGrid } from "@/components/customers/ClientLogosGrid";
+import { CustomerIndustries } from "@/components/customers/CustomerIndustries";
+import { CustomerKeyHighlights } from "@/components/customers/CustomerKeyHighlights";
+import { CustomerPartnershipStats } from "@/components/customers/CustomerPartnershipStats";
+import { CustomerTestimonials } from "@/components/customers/CustomerTestimonials";
+import { CustomerCaseStudies } from "@/components/customers/CustomerCaseStudies";
+import { CustomersCTA } from "@/components/customers/CustomersCTA";
 
 export const metadata = {
   title: "Our Customers | J Pan Tubular Components Limited",

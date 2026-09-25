@@ -6,7 +6,7 @@ import { ArrowLeft, CheckCircle2, ShieldCheck, Zap, ArrowRight, ChevronRight, La
 import { getProductById, getAllProducts, getRelatedProducts } from "@/data/products";
 import type { Metadata } from "next";
 
-import { ProductDetailGallery } from "@/components/ProductDetailGallery";
+import { ProductDetailGallery } from "@/components/products/shared/ProductDetailGallery";
 
 export async function generateStaticParams() {
   const products = getAllProducts();

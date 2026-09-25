@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { NewsletterHero } from "@/components/NewsletterHero";
-import { NewsletterIntro } from "@/components/NewsletterIntro";
-import { NewsletterGrid } from "@/components/NewsletterGrid";
-import { NewsletterFilter } from "@/components/NewsletterFilter";
-import { NewsletterSubscribe } from "@/components/NewsletterSubscribe";
+import { NewsletterHero } from "@/components/newsletter/NewsletterHero";
+import { NewsletterIntro } from "@/components/newsletter/NewsletterIntro";
+import { NewsletterGrid } from "@/components/newsletter/NewsletterGrid";
+import { NewsletterFilter } from "@/components/newsletter/NewsletterFilter";
+import { NewsletterSubscribe } from "@/components/newsletter/NewsletterSubscribe";
 
-import { NewsletterCTA } from "@/components/NewsletterCTA";
+import { NewsletterCTA } from "@/components/newsletter/NewsletterCTA";
 
 export default function NewsletterPage() {
   return (

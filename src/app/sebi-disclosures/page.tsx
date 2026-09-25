@@ -1,38 +1,22 @@
 "use client";
 
 import React from "react";
-import { SEBIDisclosureHero } from "@/components/SEBIDisclosureHero";
-import { SEBIDisclosureIntro } from "@/components/SEBIDisclosureIntro";
-import { SEBIDisclosureListing } from "@/components/SEBIDisclosureListing";
-import { SEBIDisclosureFilter } from "@/components/SEBIDisclosureFilter";
-import { SEBIDisclosureComplianceStatement } from "@/components/SEBIDisclosureComplianceStatement";
-
-import { SEBIDisclosureCTA } from "@/components/SEBIDisclosureCTA";
+import { SEBIDisclosureHero } from "@/components/investors/sebi-disclosures/SEBIDisclosureHero";
+import { SEBIDisclosureIntro } from "@/components/investors/sebi-disclosures/SEBIDisclosureIntro";
+import { SEBIDisclosureListing } from "@/components/investors/sebi-disclosures/SEBIDisclosureListing";
+import { SEBIDisclosureFilter } from "@/components/investors/sebi-disclosures/SEBIDisclosureFilter";
+import { SEBIDisclosureComplianceStatement } from "@/components/investors/sebi-disclosures/SEBIDisclosureComplianceStatement";
+import { SEBIDisclosureCTA } from "@/components/investors/sebi-disclosures/SEBIDisclosureCTA";
 
 export default function SEBIDisclosuresPage() {
   return (
-    <main className="overflow-hidden">
-      <div className="animate-in fade-in duration-1000">
-        <SEBIDisclosureHero />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <SEBIDisclosureIntro />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <SEBIDisclosureHero />
+      <SEBIDisclosureIntro />
       <SEBIDisclosureFilter />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
-        <SEBIDisclosureListing />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <SEBIDisclosureComplianceStatement />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
-        <SEBIDisclosureCTA />
-      </div>
+      <SEBIDisclosureListing />
+      <SEBIDisclosureComplianceStatement />
+      <SEBIDisclosureCTA />
     </main>
   );
 }

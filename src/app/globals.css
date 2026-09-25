@@ -39,7 +39,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  
+
   /* Jpan Custom Industrial Colors */
   --color-charcoal: var(--industrial-charcoal);
   --color-silver: var(--metallic-silver);
@@ -55,26 +55,88 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
+
   @keyframes reverse-spin {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
+    from {
+      transform: rotate(360deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
   }
+
   @keyframes pulse-gold {
-    0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px var(--color-gold)); }
-    50% { opacity: 0.6; filter: drop-shadow(0 0 15px var(--color-gold)); }
+
+    0%,
+    100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 5px var(--color-gold));
+    }
+
+    50% {
+      opacity: 0.6;
+      filter: drop-shadow(0 0 15px var(--color-gold));
+    }
+  }
+
+  @keyframes marquee-vertical-up {
+    0% {
+      transform: translate3d(0, 0%, 0);
+    }
+
+    100% {
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  @keyframes marquee-vertical-down {
+    0% {
+      transform: translate3d(0, -50%, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 0%, 0);
+    }
+  }
+
+  @keyframes marquee-horizontal {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
   }
 
   --animate-spin-slow: spin-slow 8s linear infinite;
   --animate-reverse-spin: reverse-spin 12s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-gold: pulse-gold 3s ease-in-out infinite;
+  --animate-marquee-vertical-up: marquee-vertical-up 32s linear infinite;
+  --animate-marquee-vertical-down: marquee-vertical-down 32s linear infinite;
+  --animate-marquee-horizontal: marquee-horizontal 35s linear infinite;
 }
 
 :root {
@@ -116,7 +178,7 @@
   --metallic-silver: #E7F0FA;
   --industrial-deep-blue: #2E5E99;
   --accent-gold: #7BA4D0;
-  
+
   --font-heading: 'Outfit', 'Inter', sans-serif;
   --font-sans: 'Inter', system-ui, sans-serif;
 }
@@ -159,13 +221,21 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading tracking-tight;
   }
 }
@@ -174,47 +244,54 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .glass-navbar {
     @apply sticky top-0 z-50 w-full border-b border-white/10 bg-white/70 backdrop-blur-md dark:bg-black/70;
   }
 
-  .btn-slide-gold, .btn-slide-white {
+  .btn-slide-gold,
+  .btn-slide-white {
     @apply relative overflow-hidden;
     isolation: isolate;
   }
-  
-  .btn-slide-gold::before, .btn-slide-white::before {
+
+  .btn-slide-gold::before,
+  .btn-slide-white::before {
     content: '';
-    @apply absolute -inset-[2px] translate-y-[101%] transition-transform duration-500 ease-[0.16,1,0.3,1] -z-10;
+    @apply absolute -inset-[2px] translate-y-[101%] transition-transform duration-500 -z-10;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
+
   .btn-slide-gold::before {
     @apply bg-gold;
   }
-  
+
   .btn-slide-white::before {
     @apply bg-white;
   }
-  
-  .btn-slide-gold:hover::before, .btn-slide-white:hover::before {
+
+  .btn-slide-gold:hover::before,
+  .btn-slide-white:hover::before {
     @apply translate-y-0;
   }
-  
-  .btn-slide-gold > *, .btn-slide-white > * {
+
+  .btn-slide-gold>*,
+  .btn-slide-white>* {
     @apply relative transition-colors duration-500 z-10;
   }
 
-  .btn-slide-gold:hover, .btn-slide-gold:hover > *,
-  .btn-slide-white:hover, .btn-slide-white:hover > * {
+  .btn-slide-gold:hover,
+  .btn-slide-gold:hover>*,
+  .btn-slide-white:hover,
+  .btn-slide-white:hover>* {
     color: #000 !important;
   }
 }
 
 /* Leaflet Map Styles */
 .leaflet-container {
-   font-family: inherit;
-   z-index: 1;
+  font-family: inherit;
+  z-index: 1;
 }
 
 /* The magic: invert the light map to create a breathtakingly crisp dark map */
@@ -223,22 +300,27 @@
 }
 
 .premium-popup-dark .leaflet-popup-content-wrapper {
-  background: rgba(13, 36, 64, 0.95) !important; /* Deepblue */
+  background: rgba(13, 36, 64, 0.95) !important;
+  /* Deepblue */
   backdrop-filter: blur(12px);
   border-radius: 16px;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);
-  border: 1px solid rgba(212, 175, 55, 0.2); /* Gold border */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  /* Gold border */
   padding: 4px;
 }
+
 .premium-popup-dark .leaflet-popup-content {
   margin: 12px;
   color: white;
 }
+
 .premium-popup-dark .leaflet-popup-tip {
   background: rgba(13, 36, 64, 0.95);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   border-right: 1px solid rgba(212, 175, 55, 0.2);
 }
+
 .custom-leaflet-icon {
   background: transparent;
   border: none;
@@ -262,6 +344,7 @@
     transform: scale(0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.5);
     opacity: 0;
@@ -271,8 +354,9 @@
 .leaflet-popup-content::-webkit-scrollbar {
   width: 4px;
 }
+
 .leaflet-popup-content::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 
@@ -280,23 +364,30 @@
 .custom-scrollbar::-webkit-scrollbar {
   height: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: rgba(123, 164, 208, 0.1);
   border-radius: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(123, 164, 208, 0.4);
   border-radius: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(123, 164, 208, 0.8);
 }
+
 .dark .custom-scrollbar::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
 }
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3); /* Gold in dark mode */
+  background: rgba(212, 175, 55, 0.3);
+  /* Gold in dark mode */
 }
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(212, 175, 55, 0.6);
 }
@@ -305,7 +396,10 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

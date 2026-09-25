@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { AnnualReportsHero } from "@/components/AnnualReportsHero";
-import { AnnualReportsGrid } from "@/components/AnnualReportsGrid";
-import { AnnualReportsFilter } from "@/components/AnnualReportsFilter";
+import { AnnualReportsHero } from "@/components/investors/annual-reports/AnnualReportsHero";
+import { AnnualReportsGrid } from "@/components/investors/annual-reports/AnnualReportsGrid";
+import { AnnualReportsFilter } from "@/components/investors/annual-reports/AnnualReportsFilter";
 
 export default function AnnualReportsPage() {
   return (
@@ -15,9 +15,7 @@ export default function AnnualReportsPage() {
         <AnnualReportsFilter />
       </React.Suspense>
 
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
-        <AnnualReportsGrid />
-      </div>
+      <AnnualReportsGrid />
     </main>
   );
 }

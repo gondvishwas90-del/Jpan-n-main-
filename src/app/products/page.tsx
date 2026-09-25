@@ -2,13 +2,13 @@
 
 import React, { Suspense } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { ProductsHero } from "@/components/ProductsHero";
-import { FilterBar } from "@/components/FilterBar";
-import { ProductsGrid } from "@/components/ProductsGrid";
-import { CategoryHighlights } from "@/components/CategoryHighlights";
-import { CustomManufacturing } from "@/components/CustomManufacturing";
-import { ProductIndustries } from "@/components/ProductIndustries";
-import { ProductCTA } from "@/components/ProductCTA";
+import { ProductsHero } from "@/components/products/shared/ProductsHero";
+import { FilterBar } from "@/components/products/shared/FilterBar";
+import { ProductsGrid } from "@/components/products/shared/ProductsGrid";
+import { CategoryHighlights } from "@/components/products/shared/CategoryHighlights";
+import { CustomManufacturing } from "@/components/products/shared/CustomManufacturing";
+import { ProductIndustries } from "@/components/products/shared/ProductIndustries";
+import { ProductCTA } from "@/components/products/shared/ProductCTA";
 
 export default function ProductsPage() {
   return (
@@ -66,19 +66,19 @@ function ProductsPageInner() {
           onSearchChange={handleSearchChange}
         />
       </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
+      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both overflow-visible">
         <ProductsGrid selectedCategory={activeCategory} searchQuery={searchQuery} />
       </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
+      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both overflow-visible">
         <CategoryHighlights />
       </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
+      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both overflow-visible">
         <CustomManufacturing />
       </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
+      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both overflow-visible">
         <ProductIndustries />
       </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both">
+      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both overflow-visible">
         <ProductCTA />
       </div>
     </main>

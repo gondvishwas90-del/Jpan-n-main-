@@ -5,10 +5,10 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { PublicationIntro } from "@/components/PublicationIntro";
-import { PublicationCompliance } from "@/components/PublicationCompliance";
-import { PublicationCTA } from "@/components/PublicationCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { PublicationIntro } from "@/components/investors/newspaper-publication/PublicationIntro";
+import { PublicationCompliance } from "@/components/investors/newspaper-publication/PublicationCompliance";
+import { PublicationCTA } from "@/components/investors/newspaper-publication/PublicationCTA";
 
 const publications = [
   {
@@ -63,30 +63,22 @@ const publications = [
 
 export default function NewspaperPublicationPage() {
   return (
-    <main className="overflow-hidden">
-      <GenericInvestorHero title="Newspaper Publication" />
-      
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <PublicationIntro />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <GenericInvestorHero 
+        title="Newspaper Publication" 
+        subtitle="Statutory print media publications and financial notices in leading national dailies."
+        variant="editorial"
+        image="/images/industry-industrial.png"
+      />
+      <PublicationIntro />
       <GenericInvestorFilter />
-
       <GenericInvestorListing 
         items={publications} 
         sectionTitle="Public Notices"
         category="Publication"
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
-        <PublicationCompliance />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <PublicationCTA />
-      </div>
+      <PublicationCompliance />
+      <PublicationCTA />
     </main>
   );
 }
-
-

@@ -2,13 +2,13 @@
 
 import React, { useState, Suspense } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { BlogHero } from "@/components/BlogHero";
-import { BlogFeatured } from "@/components/BlogFeatured";
-import { BlogGrid } from "@/components/BlogGrid";
-import { BlogFilter } from "@/components/BlogFilter";
-import { RelatedArticles } from "@/components/RelatedArticles";
-import { BlogDetailModal } from "@/components/BlogDetailModal";
-import { BlogCTA } from "@/components/BlogCTA";
+import { BlogHero } from "@/components/media/blog/BlogHero";
+import { BlogFeatured } from "@/components/media/blog/BlogFeatured";
+import { BlogGrid } from "@/components/media/blog/BlogGrid";
+import { BlogFilter } from "@/components/media/blog/BlogFilter";
+import { RelatedArticles } from "@/components/media/blog/RelatedArticles";
+import { BlogDetailModal } from "@/components/media/blog/BlogDetailModal";
+import { BlogCTA } from "@/components/media/blog/BlogCTA";
 
 export default function BlogPage() {
   const [selectedArticle, setSelectedArticle] = useState<any>(null);
@@ -56,37 +56,22 @@ function BlogPageInner({ selectedArticle, setSelectedArticle }: { selectedArticl
   };
 
   return (
-    <main className="overflow-hidden">
-      <div className="animate-in fade-in duration-1000">
-        <BlogHero />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <BlogFeatured onReadMore={setSelectedArticle} />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <BlogHero />
+      <BlogFeatured onReadMore={setSelectedArticle} />
       <BlogFilter 
         activeCategory={activeCategory}
         onCategoryChange={handleCategoryChange}
         searchQuery={searchQuery}
         onSearchChange={handleSearchChange}
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
-        <BlogGrid 
-          selectedCategory={activeCategory}
-          searchQuery={searchQuery}
-          onReadMore={setSelectedArticle} 
-        />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
-        <RelatedArticles onReadMore={setSelectedArticle} />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <BlogCTA />
-      </div>
+      <BlogGrid 
+        selectedCategory={activeCategory}
+        searchQuery={searchQuery}
+        onReadMore={setSelectedArticle} 
+      />
+      <RelatedArticles onReadMore={setSelectedArticle} />
+      <BlogCTA />
       
       <BlogDetailModal 
         article={selectedArticle} 

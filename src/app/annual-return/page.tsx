@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GenericInvestorHero, GenericInvestorTable, GenericInvestorFilter } from "@/components/GenericInvestorComponents";
+import { GenericInvestorHero, GenericInvestorTable, GenericInvestorFilter } from "@/components/investors/shared/GenericInvestorComponents";
 
 const data = [
   { id: 1, date: "2025-2026", particulars: "J Pan Tubular Components Limited - Annual Return", link: "/sample-report.pdf" },
@@ -17,8 +17,9 @@ export default function AnnualReturnPage() {
     <main className="overflow-hidden bg-white dark:bg-background">
       <GenericInvestorHero 
         title="Annual Return"
-        subtitle="Detailed statutory returns and compliance filings for fiscal periods."
-        image="/images/annual_reports_hero.png"
+        subtitle="Detailed statutory returns and corporate governance filings for fiscal periods."
+        image="/images/home_hero_3d.jpg"
+        variant="left"
       />
       
       <GenericInvestorFilter />

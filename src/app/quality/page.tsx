@@ -1,12 +1,12 @@
-import { QualityHero } from "@/components/QualityHero";
-import { QualityCommitment } from "@/components/QualityCommitment";
-import { QualityCertifications } from "@/components/QualityCertifications";
-import { QualityProcess } from "@/components/QualityProcess";
-import { TestingFacilities } from "@/components/TestingFacilities";
-import { QualityCompliance } from "@/components/QualityCompliance";
-import { QualityImprovement } from "@/components/QualityImprovement";
-import { QualityTrust } from "@/components/QualityTrust";
-import { Achievements } from "@/components/Achievements";
+import { QualityHero } from "@/components/quality/QualityHero";
+import { QualityCommitment } from "@/components/quality/QualityCommitment";
+import { QualityCertifications } from "@/components/quality/QualityCertifications";
+import { QualityProcess } from "@/components/quality/QualityProcess";
+import { TestingFacilities } from "@/components/quality/TestingFacilities";
+import { QualityCompliance } from "@/components/quality/QualityCompliance";
+import { QualityImprovement } from "@/components/quality/QualityImprovement";
+import { QualityTrust } from "@/components/quality/QualityTrust";
+import { Achievements } from "@/components/quality/Achievements";
 
 export const metadata = {
   title: "Certifications & Quality | J Pan Tubular Components Limited",
@@ -15,34 +15,16 @@ export const metadata = {
 
 export default function QualityPage() {
   return (
-    <main className="overflow-hidden">
-      <div className="animate-in fade-in duration-1000">
-        <QualityHero />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <QualityCommitment />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
-        <QualityCertifications />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
-        <QualityProcess />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <TestingFacilities />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <Achievements />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
-        <QualityCompliance />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both">
-        <QualityImprovement />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-800 fill-mode-both">
-        <QualityTrust />
-      </div>
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <QualityHero />
+      <QualityCommitment />
+      <QualityCertifications />
+      <QualityProcess />
+      <TestingFacilities />
+      <Achievements />
+      <QualityCompliance />
+      <QualityImprovement />
+      <QualityTrust />
     </main>
   );
 }

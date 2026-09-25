@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { AboutPresence } from "@/components/AboutPresence";
+import { AboutPresence } from "@/components/about/AboutPresence";
 
 export default function PresencePage() {
   return (

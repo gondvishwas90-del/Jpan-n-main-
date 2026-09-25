@@ -5,11 +5,11 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { FinancialIntro } from "@/components/FinancialIntro";
-import { FinancialHighlights } from "@/components/FinancialHighlights";
-import { FinancialInvestorInfo } from "@/components/FinancialInvestorInfo";
-import { FinancialCTA } from "@/components/FinancialCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { FinancialIntro } from "@/components/investors/financial-results/FinancialIntro";
+import { FinancialHighlights } from "@/components/investors/financial-results/FinancialHighlights";
+import { FinancialInvestorInfo } from "@/components/investors/financial-results/FinancialInvestorInfo";
+import { FinancialCTA } from "@/components/investors/financial-results/FinancialCTA";
 
 const results = [
   {
@@ -57,7 +57,12 @@ const results = [
 export default function FinancialResultsPage() {
   return (
     <main className="overflow-hidden">
-      <GenericInvestorHero title="Financial Results" />
+      <GenericInvestorHero 
+        title="Financial Results" 
+        subtitle="Comprehensive quarterly and annual audited financial statements and performance metrics."
+        variant="bottom"
+        image="/images/industrial_category_bg.png"
+      />
       
       <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
         <FinancialIntro />

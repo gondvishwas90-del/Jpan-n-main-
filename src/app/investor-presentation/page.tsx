@@ -5,10 +5,10 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { InvestorPresentationIntro } from "@/components/InvestorPresentationIntro";
-import { InvestorPresentationHighlights } from "@/components/InvestorPresentationHighlights";
-import { InvestorPresentationCTA } from "@/components/InvestorPresentationCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { InvestorPresentationIntro } from "@/components/investors/investor-presentation/InvestorPresentationIntro";
+import { InvestorPresentationHighlights } from "@/components/investors/investor-presentation/InvestorPresentationHighlights";
+import { InvestorPresentationCTA } from "@/components/investors/investor-presentation/InvestorPresentationCTA";
 
 const presentations = [
   {
@@ -47,28 +47,22 @@ const presentations = [
 
 export default function InvestorPresentationPage() {
   return (
-    <main className="overflow-hidden">
-      <GenericInvestorHero title="Investor Presentation" />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <InvestorPresentationIntro />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <GenericInvestorHero 
+        title="Investor Presentation" 
+        subtitle="Strategic roadmaps, market growth drivers, and corporate capacity disclosures."
+        variant="bottom"
+        image="/images/hvac_industry_bg.png"
+      />
+      <InvestorPresentationIntro />
       <GenericInvestorFilter />
-
       <GenericInvestorListing 
         items={presentations}
         sectionTitle="Strategic Narrative"
         category="Presentation"
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <InvestorPresentationHighlights />
-      </div>
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
-        <InvestorPresentationCTA />
-      </div>
+      <InvestorPresentationHighlights />
+      <InvestorPresentationCTA />
     </main>
   );
 }

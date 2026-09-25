@@ -5,10 +5,10 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { InvestorMeetIntro } from "@/components/InvestorMeetIntro";
-import { InvestorMeetCommunicationNotes } from "@/components/InvestorMeetCommunicationNotes";
-import { InvestorMeetCTA } from "@/components/InvestorMeetCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { InvestorMeetIntro } from "@/components/investors/investor-meet-intimation/InvestorMeetIntro";
+import { InvestorMeetCommunicationNotes } from "@/components/investors/investor-meet-intimation/InvestorMeetCommunicationNotes";
+import { InvestorMeetCTA } from "@/components/investors/investor-meet-intimation/InvestorMeetCTA";
 
 const interactions = [
   {
@@ -48,7 +48,12 @@ const interactions = [
 export default function InvestorMeetIntimationPage() {
   return (
     <main className="overflow-hidden">
-      <GenericInvestorHero title="Investor Meet Intimation" />
+      <GenericInvestorHero 
+        title="Investor Meet Intimation" 
+        subtitle="Schedules and disclosures for institutional investor meetings and analyst conferences."
+        variant="editorial"
+        image="/images/appliances_industry_bg.png"
+      />
 
       <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
         <InvestorMeetIntro />

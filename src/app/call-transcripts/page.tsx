@@ -5,9 +5,9 @@ import {
   GenericInvestorHero, 
   GenericInvestorFilter, 
   GenericInvestorListing 
-} from "@/components/GenericInvestorComponents";
-import { TranscriptIntro } from "@/components/TranscriptIntro";
-import { TranscriptCTA } from "@/components/TranscriptCTA";
+} from "@/components/investors/shared/GenericInvestorComponents";
+import { TranscriptIntro } from "@/components/investors/call-transcripts/TranscriptIntro";
+import { TranscriptCTA } from "@/components/investors/call-transcripts/TranscriptCTA";
 
 const transcripts = [
   {
@@ -62,26 +62,21 @@ const transcripts = [
 
 export default function CallTranscriptsPage() {
   return (
-    <main className="overflow-hidden">
-      <GenericInvestorHero title="Call Transcripts" />
-      
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <TranscriptIntro />
-      </div>
-
+    <main className="overflow-hidden bg-white dark:bg-black">
+      <GenericInvestorHero 
+        title="Call Transcripts" 
+        subtitle="Verbatim transcripts of quarterly earnings conference calls with senior management."
+        variant="editorial"
+        image="/images/products_hero_bg.png"
+      />
+      <TranscriptIntro />
       <GenericInvestorFilter />
-
       <GenericInvestorListing 
         items={transcripts} 
         sectionTitle="Verbatim Archive"
         category="Transcript"
       />
-
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <TranscriptCTA />
-      </div>
+      <TranscriptCTA />
     </main>
   );
 }
-
-

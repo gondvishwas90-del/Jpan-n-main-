@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GenericInvestorHero, GenericInvestorTable, GenericInvestorFilter } from "@/components/GenericInvestorComponents";
+import { GenericInvestorHero, GenericInvestorTable, GenericInvestorFilter } from "@/components/investors/shared/GenericInvestorComponents";
 
 const data = [
   { id: 1, date: "2024-2025", particulars: "Notice of Board Meeting", link: "/sample-report.pdf" },
@@ -18,7 +18,8 @@ export default function BoardMeetingNoticesPage() {
       <GenericInvestorHero 
         title="Notice of Board Meeting"
         subtitle="Official notifications regarding strategic board deliberations and corporate governance."
-        image="/images/annual_reports_hero.png"
+        image="/images/auto_industry_bg.png"
+        variant="left"
       />
       
       <GenericInvestorFilter />

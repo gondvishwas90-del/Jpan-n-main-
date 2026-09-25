@@ -74,7 +74,7 @@ export function CobeInteractiveGlobe({
       theta: thetaRef.current,
       dark: isDark ? 1 : 0,
       diffuse: 1.6,
-      mapSamples: 24000,
+      mapSamples: 14000,
       mapBrightness: isDark ? 2.4 : 1.4,
       baseColor: isDark ? [0.12, 0.16, 0.24] : [0.94, 0.95, 0.97],
       markerColor: accentColor,
@@ -86,20 +86,18 @@ export function CobeInteractiveGlobe({
     });
 
     let animationFrameId: number;
-    let idleTick = 0;
+    let isVisible = true;
 
     const animate = () => {
-      idleTick += 0.012;
-      let targetPhi = targetPhiRef.current;
-      let targetTheta = targetThetaRef.current;
+      if (!isVisible) return;
       if (!isDragging.current) {
-        targetPhi += Math.sin(idleTick) * 0.006;
-        targetTheta += Math.cos(idleTick * 0.8) * 0.004;
+        // Continuous rotation at balanced speed
+        targetPhiRef.current += 0.0035;
       }
-      let diffPhi = targetPhi - phiRef.current;
+      let diffPhi = targetPhiRef.current - phiRef.current;
       diffPhi = ((diffPhi + Math.PI) % (2 * Math.PI)) - Math.PI;
-      phiRef.current += diffPhi * 0.08;
-      thetaRef.current += (targetTheta - thetaRef.current) * 0.08;
+      phiRef.current += diffPhi * 0.05;
+      thetaRef.current += (targetThetaRef.current - thetaRef.current) * 0.05;
       globe.update({
         phi: phiRef.current,
         theta: thetaRef.current,
@@ -108,9 +106,26 @@ export function CobeInteractiveGlobe({
       });
       animationFrameId = requestAnimationFrame(animate);
     };
+
+    // Pause WebGL rendering entirely when offscreen to preserve 60-120fps scrolling
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry?.isIntersecting ?? true;
+        if (isVisible) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = requestAnimationFrame(animate);
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    if (canvas) observer.observe(canvas);
     animationFrameId = requestAnimationFrame(animate);
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
       globe.destroy();
       window.removeEventListener("resize", onResize);
