@@ -24,7 +24,7 @@ export function NewsletterFilter() {
                   onClick={() => setActiveYear(year)}
                   className={`shrink-0 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                     activeYear === year
-                      ? "bg-deepblue text-white shadow-lg"
+                      ? "bg-deepblue text-white "
                       : "bg-silver/10 text-muted-foreground hover:bg-silver/20"
                   } ${index === years.length - 1 ? 'mr-4' : ''}`}
                 >

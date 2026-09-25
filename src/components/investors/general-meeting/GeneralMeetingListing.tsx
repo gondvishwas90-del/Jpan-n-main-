@@ -118,7 +118,7 @@ export function GeneralMeetingListing() {
                     <Eye className="w-4 h-4" />
                     View Notice
                   </button>
-                  <button className="flex-grow lg:flex-grow-0 flex items-center justify-center gap-3 bg-deepblue text-white px-8 py-4 text-[10px] font-bold uppercase tracking-widest transition-all shadow-xl btn-slide-gold group">
+                  <button className="flex-grow lg:flex-grow-0 flex items-center justify-center gap-3 bg-deepblue text-white px-8 py-4 text-[10px] font-bold uppercase tracking-widest transition-all btn-slide-gold group">
                     <Download className="w-4 h-4" />
                     PDF
                   </button>

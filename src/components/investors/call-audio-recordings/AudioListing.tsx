@@ -99,13 +99,13 @@ export function AudioListing() {
               <div 
                 key={item.id}
                 style={{ animationDelay: `${idx * 100}ms` }}
-                className="group relative bg-white dark:bg-charcoal border border-border p-8 rounded-sm hover:border-gold transition-all duration-500 hover:shadow-2xl flex flex-col md:flex-row items-center gap-10 animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+                className="group relative bg-white dark:bg-charcoal border border-border p-8 rounded-sm hover:border-gold transition-all duration-500 flex flex-col md:flex-row items-center gap-10 animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
               >
                 {/* Play Trigger UI */}
                 <div className="relative shrink-0">
                    <button 
                     onClick={() => handlePlay(item)}
-                    className="w-20 h-20 bg-charcoal dark:bg-white text-white dark:text-charcoal rounded-sm flex items-center justify-center hover:bg-gold hover:text-charcoal transition-all shadow-xl group/play"
+                    className="w-20 h-20 bg-charcoal dark:bg-white text-white dark:text-charcoal rounded-sm flex items-center justify-center hover:bg-gold hover:text-charcoal transition-all group/play"
                    >
                       <Play className="w-8 h-8 group-hover/play:scale-110 transition-transform fill-current" />
                    </button>

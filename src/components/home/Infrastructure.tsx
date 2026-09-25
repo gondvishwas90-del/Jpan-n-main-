@@ -186,7 +186,7 @@ export function Infrastructure() {
                       className={cn(
                         "relative text-left p-4 sm:p-5 rounded-2xl transition-all duration-300 cursor-pointer group select-none overflow-hidden",
                         isActive
-                          ? "bg-[#E7F0FA] dark:bg-white/10 text-[#0D2440] dark:text-white shadow-md border border-[#2E5E99]/30 dark:border-white/20"
+                          ? "bg-[#E7F0FA] dark:bg-white/10 text-[#0D2440] dark:text-white border border-[#2E5E99]/30 dark:border-white/20"
                           : "opacity-55 hover:opacity-90 text-[#0D2440]/70 dark:text-white/70 hover:bg-[#E7F0FA]/30 dark:hover:bg-white/5 border border-transparent"
                       )}
                       aria-label={`View ${pillar.title}`}
@@ -233,7 +233,7 @@ export function Infrastructure() {
 
               {/* Right Column: Cinematic Viewport with Smooth Image Transitions */}
               <div className="lg:col-span-7 relative">
-                <div className="relative aspect-[16/10.5] rounded-3xl overflow-hidden shadow-2xl bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 group">
+                <div className="relative aspect-[16/10.5] rounded-3xl overflow-hidden bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 group">
                   {pillars.map((pillar, idx) => {
                     const isSelected = activeIdx === idx;
                     return (
@@ -299,7 +299,7 @@ export function Infrastructure() {
                     className={cn(
                       "py-2 px-1 text-center rounded-xl text-xs font-heading font-bold transition-all border",
                       activeIdx === idx
-                        ? "bg-[#2E5E99] dark:bg-[#7BA4D0] text-white dark:text-[#071321] border-transparent shadow-sm"
+                        ? "bg-[#2E5E99] dark:bg-[#7BA4D0] text-white dark:text-[#071321] border-transparent"
                         : "bg-black/5 dark:bg-white/5 text-[#0D2440]/60 dark:text-white/60 border-black/5 dark:border-white/10"
                     )}
                   >
@@ -309,7 +309,7 @@ export function Infrastructure() {
               </div>
 
               {/* Viewport Image */}
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15">
                 {pillars.map((pillar, idx) => {
                   const isSelected = activeIdx === idx;
                   return (

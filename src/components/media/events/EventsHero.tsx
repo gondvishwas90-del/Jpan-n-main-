@@ -55,7 +55,7 @@ export function EventsHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed max-w-2xl drop-shadow-sm"
+            className="text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed max-w-2xl"
           >
             Connecting with global industry leaders and demonstrating our zero-defect metallurgical engineering excellence at the world's premier industrial trade fairs.
           </motion.p>

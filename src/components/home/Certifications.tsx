@@ -244,7 +244,7 @@ function MarqueeColumn({
 function CardRenderer({ item }: { item: StreamItem }) {
   if (item.type === "photo") {
     return (
-      <div className="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/10] shadow-lg shadow-[#0D2440]/10 border border-[#7BA4D0]/30 group shrink-0 bg-[#0D2440] transition-transform duration-300 hover:scale-[1.02]">
+      <div className="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/10] border border-[#7BA4D0]/30 group shrink-0 bg-[#0D2440] transition-transform duration-300 hover:scale-[1.02]">
         <Image
           src={item.image}
           alt={item.title}
@@ -254,7 +254,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440]/90 via-[#0D2440]/30 to-transparent" />
 
         <div className="absolute bottom-4 left-4 right-4 z-10">
-          <p className="text-xs sm:text-sm font-heading font-bold text-white leading-snug drop-shadow-sm">
+          <p className="text-xs sm:text-sm font-heading font-bold text-white leading-snug">
             {item.title}
           </p>
         </div>
@@ -263,7 +263,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
   }
 
   return (
-    <div className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#102744] p-6 sm:p-7 shadow-lg shadow-[#0D2440]/8 dark:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.4)] border border-[#7BA4D0]/30 dark:border-white/10 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] hover:shadow-xl hover:scale-[1.01]">
+    <div className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#102744] p-6 sm:p-7 border border-[#7BA4D0]/30 dark:border-white/10 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] hover:scale-[1.01]">
       <div className="flex items-center gap-1 mb-4">
         {[...Array(item.rating)].map((_, i) => (
           <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />
@@ -276,7 +276,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
 
       <div className="pt-4 border-t border-[#7BA4D0]/20 dark:border-white/10 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-sm">
+          <div className="w-7 h-7 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0">
             {item.company.charAt(0)}
           </div>
           <div>

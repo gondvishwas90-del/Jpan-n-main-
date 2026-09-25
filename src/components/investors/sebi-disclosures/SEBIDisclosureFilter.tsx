@@ -62,7 +62,7 @@ function SEBIDisclosureFilterInner() {
                   onClick={() => setActiveYear(year)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
                     activeYear === year
-                      ? "bg-[#0D2440] text-white border-[#0D2440] shadow-xs"
+                      ? "bg-[#0D2440] text-white border-[#0D2440] "
                       : "bg-[#F8FAFC] dark:bg-charcoal/40 text-muted-foreground border-[#7BA4D0]/25 hover:border-[#2E5E99]/50"
                   }`}
                 >
@@ -82,7 +82,7 @@ function SEBIDisclosureFilterInner() {
                   onClick={() => setActiveReg(reg)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
                     activeReg === reg
-                      ? "bg-[#0D2440] text-white border-[#0D2440] shadow-xs"
+                      ? "bg-[#0D2440] text-white border-[#0D2440] "
                       : "bg-[#F8FAFC] dark:bg-charcoal/40 text-muted-foreground border-[#7BA4D0]/25 hover:border-[#2E5E99]/50"
                   }`}
                 >
@@ -107,7 +107,7 @@ function SEBIDisclosureFilterInner() {
 
             <button 
               onClick={toggleSort}
-              className="flex items-center justify-between min-w-[140px] gap-2 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/30 rounded-2xl py-2 px-4 text-xs font-bold text-[#0D2440] dark:text-white hover:border-[#2E5E99] transition-all shrink-0 uppercase tracking-wider shadow-xs"
+              className="flex items-center justify-between min-w-[140px] gap-2 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/30 rounded-2xl py-2 px-4 text-xs font-bold text-[#0D2440] dark:text-white hover:border-[#2E5E99] transition-all shrink-0 uppercase tracking-wider"
             >
               <div className="flex items-center gap-2">
                 <Filter className="w-3.5 h-3.5 text-[#2E5E99] shrink-0" />

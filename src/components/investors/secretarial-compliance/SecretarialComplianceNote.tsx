@@ -26,11 +26,11 @@ export function SecretarialComplianceNote() {
             </p>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-5 bg-silver/5 border border-border rounded-sm shadow-sm group hover:border-gold transition-colors">
+              <div className="flex items-center gap-4 p-5 bg-silver/5 border border-border rounded-sm group hover:border-gold transition-colors">
                 <CheckCircle2 className="w-5 h-5 text-gold" />
                 <span className="text-[10px] font-bold text-charcoal dark:text-white uppercase tracking-widest">Certified Governance Cycle</span>
               </div>
-              <div className="flex items-center gap-4 p-5 bg-silver/5 border border-border rounded-sm shadow-sm group hover:border-gold transition-colors">
+              <div className="flex items-center gap-4 p-5 bg-silver/5 border border-border rounded-sm group hover:border-gold transition-colors">
                 <History className="w-5 h-5 text-gold" />
                 <span className="text-[10px] font-bold text-charcoal dark:text-white uppercase tracking-widest">Comprehensive Statutory Audit Loop</span>
               </div>
@@ -39,7 +39,6 @@ export function SecretarialComplianceNote() {
 
           <div className="lg:col-span-7 relative">
             {/* Technical Grid Accent */}
-            <div className="absolute inset-0 bg-gold/5 blur-[120px] -z-10" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-10 bg-white dark:bg-charcoal border border-border rounded-sm hover:border-gold transition-all group">

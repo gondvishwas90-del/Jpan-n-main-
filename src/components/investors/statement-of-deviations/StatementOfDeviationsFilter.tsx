@@ -62,7 +62,7 @@ function StatementOfDeviationsFilterInner() {
                   onClick={() => setActiveYear(year)}
                   className={`px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                     activeYear === year
-                      ? "bg-deepblue text-white shadow-lg"
+                      ? "bg-deepblue text-white "
                       : "bg-silver/5 text-muted-foreground hover:bg-silver/10 border border-transparent hover:border-border"
                   } ${index === years.length - 1 ? 'mr-8' : ''}`}
                 >
@@ -82,7 +82,7 @@ function StatementOfDeviationsFilterInner() {
                   onClick={() => setActiveQuarter(quarter)}
                   className={`px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                     activeQuarter === quarter
-                      ? "bg-deepblue text-white shadow-lg"
+                      ? "bg-deepblue text-white "
                       : "bg-silver/5 text-muted-foreground hover:bg-silver/10 border border-transparent hover:border-border"
                   } ${index === quarters.length - 1 ? 'mr-8' : ''}`}
                 >

@@ -46,7 +46,7 @@ export function AudioFilter() {
                     onClick={() => setSelectedQuarter(q)}
                     className={`px-4 py-2.5 text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all border ${
                       selectedQuarter === q
-                        ? "bg-charcoal dark:bg-white text-white dark:text-charcoal border-transparent shadow-lg scale-105"
+                        ? "bg-charcoal dark:bg-white text-white dark:text-charcoal border-transparent  scale-105"
                         : "bg-silver/5 text-muted-foreground border-transparent hover:border-border"
                     } ${index === quarters.length - 1 ? 'mr-8' : ''}`}
                   >

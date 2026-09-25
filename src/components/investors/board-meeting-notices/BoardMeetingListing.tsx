@@ -105,7 +105,7 @@ export function BoardMeetingListing() {
                       <Eye className="w-4 h-4 text-muted-foreground group-hover/btn:text-gold" />
                       <span className="text-[10px] font-bold uppercase tracking-widest">View notice</span>
                     </button>
-                    <button className="flex-grow lg:flex-grow-0 p-4 bg-deepblue hover:bg-gold text-white hover:text-charcoal rounded-sm transition-all shadow-lg flex items-center justify-center gap-3">
+                    <button className="flex-grow lg:flex-grow-0 p-4 bg-deepblue hover:bg-gold text-white hover:text-charcoal rounded-sm transition-all flex items-center justify-center gap-3">
                       <Download className="w-4 h-4" />
                       <span className="text-[10px] font-bold uppercase tracking-widest">Download PDF</span>
                     </button>

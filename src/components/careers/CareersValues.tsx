@@ -63,12 +63,11 @@ export function CareersValues() {
       ref={containerRef}
       className="py-20 md:py-32 bg-white dark:bg-[#070b14] relative overflow-hidden transition-colors duration-500 border-b border-slate-200/70 dark:border-white/5"
     >
-      {/* Ambient Lighting & Grid Texture */}
+      {/* Grid Texture */}
       <div 
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03] pointer-events-none" 
         style={{ backgroundImage: `radial-gradient(#2E5E99 1px, transparent 1px)`, backgroundSize: '32px 32px' }} 
       />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#7BA4D0]/10 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="container-custom relative z-10">
         
@@ -104,7 +103,7 @@ export function CareersValues() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className="group relative bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 rounded-3xl p-8 md:p-9 transition-all duration-300 hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_rgba(46,94,153,0.12)] flex flex-col justify-between overflow-hidden w-full shrink-0 snap-center md:w-auto md:shrink"
+              className="group relative bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 rounded-3xl p-8 md:p-9 transition-all duration-300 hover:border-[#2E5E99]/50 flex flex-col justify-between overflow-hidden w-full shrink-0 snap-center md:w-auto md:shrink"
             >
               {/* Top hairline gradient on hover */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2E5E99] to-[#7BA4D0] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -113,7 +112,7 @@ export function CareersValues() {
               <div className="space-y-6 relative z-10">
                 {/* Top Header Row */}
                 <div className="flex items-center justify-between">
-                  <div className="w-13 h-13 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center shadow-xs group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
+                  <div className="w-13 h-13 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                     <value.icon className="w-6 h-6" strokeWidth={1.75} />
                   </div>
                   <span className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider font-heading font-black bg-slate-100 dark:bg-white/5 px-2.5 py-1 rounded-full">

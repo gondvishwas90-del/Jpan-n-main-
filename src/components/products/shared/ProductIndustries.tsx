@@ -112,7 +112,7 @@ export function ProductIndustries() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6 }}
-                className="group relative h-[225px] sm:h-[235px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 hover:border-[#2E5E99]/40 dark:hover:border-[#7BA4D0]/50 transition-all duration-500 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-[0_4px_16px_rgba(13,36,64,0.06)] hover:shadow-[0_16px_35px_rgba(13,36,64,0.14)] dark:hover:shadow-[0_16px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between cursor-pointer p-4 sm:p-5"
+                className="group relative h-[225px] sm:h-[235px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 hover:border-[#2E5E99]/40 dark:hover:border-[#7BA4D0]/50 transition-all duration-500 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center flex flex-col justify-between cursor-pointer p-4 sm:p-5"
               >
                 {/* 100% Crisp Background Image with Zero Wash/Blur */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -129,17 +129,17 @@ export function ProductIndustries() {
                 <Link href={sector.link} className="block w-full h-full relative z-10 flex flex-col justify-between">
                   {/* Top Header: Clean Icon Capsule & Top Arrow Action */}
                   <div className="flex items-center justify-between">
-                    <div className="w-8 h-8 rounded-lg bg-white/95 dark:bg-[#0B1728]/95 border border-slate-200/80 dark:border-white/15 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] shadow-sm group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
+                    <div className="w-8 h-8 rounded-lg bg-white/95 dark:bg-[#0B1728]/95 border border-slate-200/80 dark:border-white/15 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                       <sector.icon className="w-4 h-4" />
                     </div>
 
-                    <div className="w-7 h-7 rounded-full bg-white/95 dark:bg-[#0B1728]/95 group-hover:bg-[#2E5E99] text-[#0D2440] dark:text-white group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-105 border border-slate-200/80 dark:border-white/15 shadow-sm">
+                    <div className="w-7 h-7 rounded-full bg-white/95 dark:bg-[#0B1728]/95 group-hover:bg-[#2E5E99] text-[#0D2440] dark:text-white group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-105 border border-slate-200/80 dark:border-white/15">
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </div>
                   </div>
 
                   {/* Bottom Content: Crisp Solid Text Card */}
-                  <div className="mt-auto p-2.5 sm:p-3 rounded-xl bg-white/95 dark:bg-[#0B1728]/95 border border-slate-200/80 dark:border-white/10 shadow-sm transition-colors duration-300 group-hover:border-[#2E5E99]/40">
+                  <div className="mt-auto p-2.5 sm:p-3 rounded-xl bg-white/95 dark:bg-[#0B1728]/95 border border-slate-200/80 dark:border-white/10 transition-colors duration-300 group-hover:border-[#2E5E99]/40">
                     <h3 className="text-sm sm:text-base font-heading font-bold text-[#0D2440] dark:text-white group-hover:text-[#2E5E99] dark:group-hover:text-[#7BA4D0] transition-colors duration-300 line-clamp-1">
                       {sector.name}
                     </h3>

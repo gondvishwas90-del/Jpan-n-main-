@@ -105,7 +105,7 @@ export function PoliciesListing() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex items-center gap-4"
             >
-              <div className="px-5 py-2.5 bg-[#F8FAFC] dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-3 shadow-xs">
+              <div className="px-5 py-2.5 bg-[#F8FAFC] dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-3">
                 <div className="w-2 h-2 bg-[#2E5E99] rounded-full animate-pulse" />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">
                   {policies.length} Documents Active
@@ -155,12 +155,12 @@ export function PoliciesListing() {
                     <div className="grid grid-cols-2 gap-3">
                       <button 
                         onClick={() => handleView(policy)}
-                        className="flex items-center justify-center gap-2 py-3 bg-white dark:bg-charcoal hover:bg-[#0D2440] hover:text-white border border-[#7BA4D0]/30 rounded-xl transition-all text-[#0D2440] dark:text-white shadow-xs group/btn"
+                        className="flex items-center justify-center gap-2 py-3 bg-white dark:bg-charcoal hover:bg-[#0D2440] hover:text-white border border-[#7BA4D0]/30 rounded-xl transition-all text-[#0D2440] dark:text-white group/btn"
                       >
                         <Eye className="w-4 h-4 text-[#2E5E99] group-hover/btn:text-white" />
                         <span className="text-[10px] font-bold uppercase tracking-wider">View</span>
                       </button>
-                      <button className="flex items-center justify-center gap-2 py-3 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-xl transition-all shadow-md">
+                      <button className="flex items-center justify-center gap-2 py-3 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-xl transition-all">
                         <Download className="w-4 h-4" />
                         <span className="text-[10px] font-bold uppercase tracking-wider">Download</span>
                       </button>

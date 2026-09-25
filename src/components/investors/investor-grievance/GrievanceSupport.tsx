@@ -60,7 +60,7 @@ export function GrievanceSupport() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center"
           >
-             <div className="px-6 py-3.5 bg-[#F8FAFC] dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-3.5 shadow-sm">
+             <div className="px-6 py-3.5 bg-[#F8FAFC] dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-3.5">
                 <div className="w-8 h-8 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center border border-[#7BA4D0]/30 shrink-0 text-[#2E5E99]">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
@@ -81,9 +81,9 @@ export function GrievanceSupport() {
             className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-4 overflow-x-auto snap-x snap-mandatory pt-2 pb-3 md:py-0 px-1 md:px-0 gap-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
           >
             {/* Nodal Officer - Hero Card */}
-            <motion.div variants={cardVariants} className="bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 relative overflow-hidden shadow-lg flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
+            <motion.div variants={cardVariants} className="bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 relative overflow-hidden flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
               <div>
-                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] shadow-sm text-[#2E5E99] group-hover:text-white">
+                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] text-[#2E5E99] group-hover:text-white">
                    <User className="w-6 h-6" />
                 </div>
                 <h4 className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest mb-1.5">Nodal Officer</h4>
@@ -101,9 +101,9 @@ export function GrievanceSupport() {
             </motion.div>
 
             {/* Email Support */}
-            <motion.div variants={cardVariants} className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 shadow-sm hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1 flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
+            <motion.div variants={cardVariants} className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
               <div>
-                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] shadow-sm text-[#2E5E99] group-hover:text-white">
+                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] text-[#2E5E99] group-hover:text-white">
                    <Mail className="w-6 h-6" />
                 </div>
                 <h4 className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest mb-1.5">Email Channel</h4>
@@ -117,9 +117,9 @@ export function GrievanceSupport() {
             </motion.div>
 
             {/* Phone Support */}
-            <motion.div variants={cardVariants} className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 shadow-sm hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1 flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
+            <motion.div variants={cardVariants} className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
               <div>
-                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] shadow-sm text-[#2E5E99] group-hover:text-white">
+                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] text-[#2E5E99] group-hover:text-white">
                    <Phone className="w-6 h-6" />
                 </div>
                 <h4 className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest mb-1.5">Voice Channel</h4>
@@ -133,9 +133,9 @@ export function GrievanceSupport() {
             </motion.div>
 
             {/* Office Address */}
-            <motion.div variants={cardVariants} className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 shadow-sm hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1 flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
+            <motion.div variants={cardVariants} className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl group hover:border-[#2E5E99]/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center">
               <div>
-                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] shadow-sm text-[#2E5E99] group-hover:text-white">
+                <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] text-[#2E5E99] group-hover:text-white">
                    <MapPin className="w-6 h-6" />
                 </div>
                 <h4 className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest mb-1.5">Physical Desk</h4>

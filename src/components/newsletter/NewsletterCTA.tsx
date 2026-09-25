@@ -9,7 +9,6 @@ export function NewsletterCTA() {
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 bg-silver/5 dark:bg-white/5 p-12 md:p-20 rounded-sm border border-border overflow-hidden relative">
           {/* Decorative Gradient */}
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold/10 blur-[100px] rounded-full" />
           
           <div className="relative z-10 max-w-2xl">
             <div className="flex items-center gap-2 mb-6">
@@ -25,7 +24,7 @@ export function NewsletterCTA() {
               J Pan Tubular Components Limited can optimize your supply chain and engineering projects.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-deepblue text-white px-8 py-4 font-bold text-sm uppercase tracking-widest rounded-sm flex items-center gap-3 transition-all shadow-xl btn-slide-gold group">
+              <button className="bg-deepblue text-white px-8 py-4 font-bold text-sm uppercase tracking-widest rounded-sm flex items-center gap-3 transition-all btn-slide-gold group">
                 Contact Technical Sales
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -37,7 +36,7 @@ export function NewsletterCTA() {
           </div>
 
           <div className="relative z-10 hidden lg:block">
-            <div className="bg-white dark:bg-charcoal p-8 rounded-sm shadow-2xl border border-border transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="bg-white dark:bg-charcoal p-8 rounded-sm border border-border transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full">
                   <Users className="w-6 h-6 text-gold" />

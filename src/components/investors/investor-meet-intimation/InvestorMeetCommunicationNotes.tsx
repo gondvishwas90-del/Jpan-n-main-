@@ -72,10 +72,10 @@ export function InvestorMeetCommunicationNotes() {
               {communicationPolicies.map((policy) => (
                 <div 
                   key={policy.id}
-                  className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-6 sm:p-7 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-xs flex flex-col justify-between"
+                  className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-6 sm:p-7 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-2xl mb-5 text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500 shadow-xs">
+                    <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-2xl mb-5 text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500">
                       <policy.icon className="w-6 h-6 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                     </div>
                     <h4 className="text-sm font-heading font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mb-2 group-hover:text-[#2E5E99] transition-colors">
@@ -89,9 +89,9 @@ export function InvestorMeetCommunicationNotes() {
               ))}
               
               {/* Quick Share Card - 4th card */}
-              <div className="w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center md:col-span-3 bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:bg-charcoal/50 p-6 sm:p-8 rounded-3xl text-[#0D2440] dark:text-white flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 border border-[#7BA4D0]/35 shadow-xs">
+              <div className="w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center md:col-span-3 bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:bg-charcoal/50 p-6 sm:p-8 rounded-3xl text-[#0D2440] dark:text-white flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 border border-[#7BA4D0]/35">
                 <div className="flex items-center gap-4 sm:gap-6">
-                  <div className="w-14 h-14 bg-white dark:bg-white/10 flex items-center justify-center rounded-2xl shadow-xs text-[#2E5E99] shrink-0">
+                  <div className="w-14 h-14 bg-white dark:bg-white/10 flex items-center justify-center rounded-2xl text-[#2E5E99] shrink-0">
                     <Share2 className="w-7 h-7" strokeWidth={1.75} />
                   </div>
                   <div>
@@ -99,7 +99,7 @@ export function InvestorMeetCommunicationNotes() {
                     <p className="text-lg sm:text-xl font-heading font-bold">Synchronized Market Disclosure</p>
                   </div>
                 </div>
-                <button className="px-6 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg whitespace-nowrap rounded-xl">
+                <button className="px-6 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-wider transition-all whitespace-nowrap rounded-xl">
                   Download Disclosure Policy
                 </button>
               </div>

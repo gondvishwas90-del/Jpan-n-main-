@@ -58,7 +58,7 @@ export function QualityTrust() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4">
               <span>The Integrity Standard</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[#0D2440] dark:text-white leading-[1.1] overflow-visible">
@@ -93,9 +93,9 @@ export function QualityTrust() {
                 initial={{ opacity: 0, y: 35 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }}
                 transition={{ duration: 0.7, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center shadow-xs"
+                className="group relative w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center"
               >
-                <div className="relative h-full bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl p-7 sm:p-8 transition-all duration-500 hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-2 overflow-hidden flex flex-col justify-between">
+                <div className="relative h-full bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl p-7 sm:p-8 transition-all duration-500 hover:border-[#2E5E99]/50 hover:-translate-y-2 overflow-hidden flex flex-col justify-between">
                   
                   {/* Index Number */}
                   <div className="absolute top-6 right-6 text-4xl font-black text-[#7BA4D0]/20 dark:text-white/5 group-hover:text-[#2E5E99]/30 transition-colors duration-500 italic font-heading">
@@ -103,7 +103,7 @@ export function QualityTrust() {
                   </div>
 
                   {/* Icon Box */}
-                  <div className="w-14 h-14 mb-6 sm:mb-8 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99] shadow-xs relative z-10 shrink-0">
+                  <div className="w-14 h-14 mb-6 sm:mb-8 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99] relative z-10 shrink-0">
                     <p.icon className="w-6 h-6 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                   </div>
 
@@ -151,9 +151,9 @@ export function QualityTrust() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-16 md:mt-20"
         >
-          <div className="bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:bg-charcoal/50 border border-[#7BA4D0]/35 rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+          <div className="bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:bg-charcoal/50 border border-[#7BA4D0]/35 rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4 sm:gap-6">
-              <div className="w-14 h-14 shrink-0 bg-white dark:bg-white/10 rounded-2xl flex items-center justify-center border border-[#7BA4D0]/30 text-[#2E5E99] shadow-xs">
+              <div className="w-14 h-14 shrink-0 bg-white dark:bg-white/10 rounded-2xl flex items-center justify-center border border-[#7BA4D0]/30 text-[#2E5E99]">
                 <ShieldCheck className="w-7 h-7" strokeWidth={1.75} />
               </div>
               <p className="text-xs sm:text-sm md:text-base font-normal text-[#0D2440] dark:text-white max-w-xl leading-relaxed">
@@ -165,7 +165,7 @@ export function QualityTrust() {
                 const el = document.getElementById('certifications');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="shrink-0 px-8 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-[0.18em] rounded-full transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
+              className="shrink-0 px-8 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-[0.18em] rounded-full transition-all duration-300 whitespace-nowrap"
             >
               View Certifications
             </button>

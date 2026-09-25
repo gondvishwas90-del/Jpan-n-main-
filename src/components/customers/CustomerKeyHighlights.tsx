@@ -47,7 +47,7 @@ export function CustomerKeyHighlights() {
           {highlights.map((h, idx) => (
             <div 
               key={idx}
-              className={`flex flex-col lg:flex-row items-stretch border border-border rounded-sm overflow-hidden hover:shadow-2xl transition-all duration-500 group ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              className={`flex flex-col lg:flex-row items-stretch border border-border rounded-sm overflow-hidden transition-all duration-500 group ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
               {/* Image Side */}
               <div className="lg:w-1/2 relative min-h-[300px]">

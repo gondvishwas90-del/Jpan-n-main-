@@ -53,7 +53,7 @@ export function AnnualReturnComplianceNotes() {
             {notes.map((note) => (
               <div 
                 key={note.id}
-                className="bg-white dark:bg-charcoal border border-border p-8 rounded-sm hover:border-gold transition-all duration-300 shadow-sm"
+                className="bg-white dark:bg-charcoal border border-border p-8 rounded-sm hover:border-gold transition-all duration-300"
               >
                 <div className="w-10 h-10 bg-silver/10 flex items-center justify-center rounded-sm mb-6">
                   <note.icon className="w-5 h-5 text-gold" />

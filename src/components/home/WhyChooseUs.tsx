@@ -125,9 +125,6 @@ export function WhyChooseUs() {
       id="why-choose-us"
       className="relative py-24 md:py-36 bg-[#E7F0FA] dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden"
     >
-      {/* Subtle Architectural Ambient Light */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,rgba(46,94,153,0.08),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_right,rgba(123,164,208,0.06),transparent_60%)]" />
-
       <div className="container-custom relative z-10 w-full">
         {/* ========================================================
             TOP: Editorial Corporate Headline & Statement
@@ -173,7 +170,7 @@ export function WhyChooseUs() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/quality"
-                className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E5E99] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-md hover:bg-[#0D2440] dark:hover:bg-[#1E3E66] transition-all active:scale-95 shrink-0"
+                className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E5E99] text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#0D2440] dark:hover:bg-[#1E3E66] transition-all active:scale-95 shrink-0"
               >
                 <span>Audit Specifications</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -203,11 +200,8 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanTopLeft}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-7 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between shadow-xl shadow-[#0D2440]/5 dark:shadow-black/40 group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu overflow-hidden origin-bottom-right"
+            className="lg:col-span-7 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu overflow-hidden origin-bottom-right"
           >
-            {/* Background Ambient Glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#2E5E99]/5 dark:bg-[#7BA4D0]/10 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-500" />
-
             {/* Top Row: Eyebrow Tag */}
             <div className="flex items-center justify-between gap-4 mb-8 z-10">
               <div className="flex items-center gap-2.5">
@@ -270,7 +264,7 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanTopRight}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-5 relative rounded-3xl overflow-hidden bg-[#0D2440] p-8 sm:p-10 flex flex-col justify-between shadow-xl min-h-[380px] sm:min-h-[460px] group border border-white/15 transform-gpu origin-bottom-left"
+            className="lg:col-span-5 relative rounded-3xl overflow-hidden bg-[#0D2440] p-8 sm:p-10 flex flex-col justify-between min-h-[380px] sm:min-h-[460px] group border border-white/15 transform-gpu origin-bottom-left"
           >
             {/* Photographic Background with Subtle Zoom */}
             <Image
@@ -318,7 +312,7 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanBottomLeft}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between shadow-xl shadow-[#0D2440]/5 dark:shadow-black/40 group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu origin-top-right"
+            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu origin-top-right"
           >
             {/* Top Row: Eyebrow + Spec Tag with Simple Countup */}
             <div className="flex items-start justify-between gap-4 mb-6">
@@ -372,7 +366,7 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanBottomRight}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between shadow-xl shadow-[#0D2440]/5 dark:shadow-black/40 group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu origin-top-left"
+            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu origin-top-left"
           >
             {/* Top Row: Eyebrow + Leak Value */}
             <div className="flex items-start justify-between gap-4 mb-6">

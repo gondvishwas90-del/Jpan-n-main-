@@ -80,7 +80,7 @@ export function Achievements() {
       <div className="container-custom relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <motion.div 
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4"
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
             transition={{ duration: 0.6 }}
@@ -121,10 +121,10 @@ export function Achievements() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="group relative bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl p-7 sm:p-9 shadow-xs hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:border-[#2E5E99]/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col sm:flex-row gap-6 md:gap-7 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center justify-between"
+                className="group relative bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl p-7 sm:p-9 hover:border-[#2E5E99]/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col sm:flex-row gap-6 md:gap-7 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center justify-between"
               >
                 <div className="shrink-0">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500 shadow-xs">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500">
                     <item.icon className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export function Achievements() {
                     <h3 className="text-xl sm:text-2xl font-heading font-bold text-[#0D2440] dark:text-white group-hover:text-[#2E5E99] transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <span className="text-xs sm:text-sm font-bold text-[#2E5E99] bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 px-3 py-1 rounded-full w-max whitespace-nowrap shadow-xs">
+                    <span className="text-xs sm:text-sm font-bold text-[#2E5E99] bg-[#EBF3FC] dark:bg-white/5 border border-[#7BA4D0]/30 px-3 py-1 rounded-full w-max whitespace-nowrap">
                       {item.year}
                     </span>
                   </div>

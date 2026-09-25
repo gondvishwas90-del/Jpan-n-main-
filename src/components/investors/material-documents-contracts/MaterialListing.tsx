@@ -96,7 +96,6 @@ export function MaterialListing() {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black relative overflow-hidden">
       {/* Background Soft Glow */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#7BA4D0]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Filter & Search Bar */}
@@ -107,7 +106,7 @@ export function MaterialListing() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-20 mb-12 md:mb-16"
         >
-          <div className="bg-[#F8FAFC] dark:bg-charcoal/50 border border-[#7BA4D0]/25 p-4 rounded-3xl shadow-sm flex flex-col lg:flex-row items-center gap-6">
+          <div className="bg-[#F8FAFC] dark:bg-charcoal/50 border border-[#7BA4D0]/25 p-4 rounded-3xl flex flex-col lg:flex-row items-center gap-6">
             <div className="flex overflow-x-auto no-scrollbar items-center gap-2 flex-grow w-full min-w-0 pb-2 lg:pb-0">
               {["All", "Contracts", "Agreements", "Others"].map((filter) => (
                 <button
@@ -116,7 +115,7 @@ export function MaterialListing() {
                   className={cn(
                     "px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-2xl transition-all duration-300 shrink-0 whitespace-nowrap",
                     activeFilter === filter 
-                      ? "bg-[#0D2440] text-white shadow-md shadow-[#0D2440]/20" 
+                      ? "bg-[#0D2440] text-white  " 
                       : "bg-white dark:bg-charcoal/60 text-[#0D2440]/70 dark:text-white/70 border border-[#7BA4D0]/20 hover:border-[#2E5E99]/40 hover:text-[#2E5E99]"
                   )}
                 >
@@ -133,7 +132,7 @@ export function MaterialListing() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search material archive..."
-                className="w-full bg-white dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl py-3 px-10 text-xs text-[#0D2440] dark:text-white placeholder-[#0D2440]/40 dark:placeholder-white/40 focus:outline-none focus:border-[#2E5E99] transition-all shadow-sm"
+                className="w-full bg-white dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl py-3 px-10 text-xs text-[#0D2440] dark:text-white placeholder-[#0D2440]/40 dark:placeholder-white/40 focus:outline-none focus:border-[#2E5E99] transition-all"
               />
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0] group-focus-within:text-[#0D2440] dark:group-focus-within:text-white" />
             </div>
@@ -159,7 +158,7 @@ export function MaterialListing() {
                   {/* Card Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center rounded-xl text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300 shadow-sm shrink-0">
+                      <div className="w-9 h-9 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center rounded-xl text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300 shrink-0">
                         <FileText className="w-4 h-4" />
                       </div>
                       <span className="text-[10px] font-bold text-[#0D2440]/60 dark:text-white/60 uppercase tracking-widest">
@@ -192,7 +191,7 @@ export function MaterialListing() {
                         setSelectedDoc(doc);
                         setIsModalOpen(true);
                       }}
-                      className="w-full flex items-center justify-between py-3.5 px-6 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-2xl transition-all duration-300 group/read shadow-md shadow-[#0D2440]/15"
+                      className="w-full flex items-center justify-between py-3.5 px-6 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-2xl transition-all duration-300 group/read"
                     >
                       <div className="flex items-center gap-3">
                         <Eye className="w-4 h-4" />
@@ -204,7 +203,7 @@ export function MaterialListing() {
                     <a 
                       href="/sample-report.pdf"
                       download
-                      className="w-full flex items-center justify-center gap-2.5 py-3 bg-white dark:bg-charcoal/60 border border-[#7BA4D0]/30 hover:border-[#2E5E99]/50 rounded-2xl text-xs font-bold uppercase tracking-wider text-[#0D2440] dark:text-white hover:text-[#2E5E99] transition-all duration-300 shadow-sm"
+                      className="w-full flex items-center justify-center gap-2.5 py-3 bg-white dark:bg-charcoal/60 border border-[#7BA4D0]/30 hover:border-[#2E5E99]/50 rounded-2xl text-xs font-bold uppercase tracking-wider text-[#0D2440] dark:text-white hover:text-[#2E5E99] transition-all duration-300"
                     >
                       <Download className="w-3.5 h-3.5 text-[#2E5E99] dark:text-[#7BA4D0]" />
                       Download PDF Disclosure
@@ -241,7 +240,7 @@ export function MaterialListing() {
             <p className="text-sm text-[#0D2440]/70 dark:text-white/70">No documents found matching your criteria.</p>
             <button 
               onClick={() => { setActiveFilter("All"); setSearchQuery(""); }} 
-              className="mt-6 px-6 py-2.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-wider rounded-2xl transition-colors shadow-md"
+              className="mt-6 px-6 py-2.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-wider rounded-2xl transition-colors"
             >
               Clear Filters
             </button>

@@ -69,7 +69,6 @@ export function SecretarialComplianceIntro() {
               </div>
             </div>
             {/* Design accents */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gold/5 blur-3xl" />
           </div>
         </div>
       </div>

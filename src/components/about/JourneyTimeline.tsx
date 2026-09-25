@@ -215,7 +215,7 @@ export function JourneyTimeline() {
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className={cn(
-                      "p-7 sm:p-9 rounded-[2.5rem] border shadow-2xl transition-all duration-500 hover:-translate-y-2 group w-full max-w-[500px]",
+                      "p-7 sm:p-9 rounded-[2.5rem] border transition-all duration-500 hover:-translate-y-2 group w-full max-w-[500px]",
                       unit.bgColor,
                       unit.borderColor,
                       unit.hoverBorder
@@ -225,7 +225,7 @@ export function JourneyTimeline() {
                       {/* Icon container */}
                       <div
                         className={cn(
-                          "w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 border border-current/15 shadow-lg group-hover:-translate-y-1 transition-all duration-500 group-hover:shadow-xl bg-white dark:bg-white/10",
+                          "w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 border border-current/15 group-hover:-translate-y-1 transition-all duration-500 bg-white dark:bg-white/10",
                           unit.color,
                           unit.hoverBg
                         )}
@@ -280,7 +280,7 @@ export function JourneyTimeline() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
-                    className="w-8 h-8 sm:w-9 sm:h-9 bg-white dark:bg-[#071321] border-4 border-[#2E5E99] dark:border-[#7BA4D0] rounded-full shadow-[0_0_20px_rgba(46,94,153,0.4)] flex items-center justify-center"
+                    className="w-8 h-8 sm:w-9 sm:h-9 bg-white dark:bg-[#071321] border-4 border-[#2E5E99] dark:border-[#7BA4D0] rounded-full flex items-center justify-center"
                   >
                     <div className="w-2.5 h-2.5 bg-[#0D2440] dark:bg-[#7BA4D0] rounded-full" />
                   </motion.div>

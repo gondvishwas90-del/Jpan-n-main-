@@ -51,7 +51,7 @@ export function JobRelated() {
               <Link 
                 key={idx}
                 href={`/careers/${job.slug}`}
-                className="group relative bg-white dark:bg-charcoal border border-border p-10 rounded-sm hover:border-gold transition-all duration-500 hover:shadow-2xl flex flex-col animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+                className="group relative bg-white dark:bg-charcoal border border-border p-10 rounded-sm hover:border-gold transition-all duration-500 flex flex-col animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
                 style={{ animationDelay: `${idx * 150}ms` }}
               >
                 <div className="flex items-center justify-between mb-8">

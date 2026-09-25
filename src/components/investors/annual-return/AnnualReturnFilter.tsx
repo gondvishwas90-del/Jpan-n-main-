@@ -23,7 +23,7 @@ export function AnnualReturnFilter() {
                 onClick={() => setActiveYear(year)}
                 className={`px-6 py-2.5 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                   activeYear === year
-                    ? "bg-deepblue text-white shadow-lg"
+                    ? "bg-deepblue text-white "
                     : "bg-silver/5 text-muted-foreground hover:bg-silver/10 border border-transparent hover:border-border"
                 } ${index === years.length - 1 ? 'mr-8' : ''}`}
               >

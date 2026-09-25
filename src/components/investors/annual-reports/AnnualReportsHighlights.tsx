@@ -60,7 +60,7 @@ export function AnnualReportsHighlights() {
               A summary of our technical and operational resilience during the 
               most recent reporting cycle. Detailed data is available in the full publication.
             </p>
-            <button className="px-10 py-4 bg-white text-charcoal font-bold text-[10px] uppercase tracking-[0.3em] rounded-sm transition-all shadow-2xl btn-slide-gold group">
+            <button className="px-10 py-4 bg-white text-charcoal font-bold text-[10px] uppercase tracking-[0.3em] rounded-sm transition-all btn-slide-gold group">
               Download Latest Summary
             </button>
           </div>

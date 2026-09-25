@@ -32,10 +32,6 @@ const features = [
 export function CustomManufacturing() {
   return (
     <section className="py-20 md:py-32 bg-white dark:bg-[#070b14] relative overflow-visible transition-colors duration-500">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#2E5E99]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#7BA4D0]/5 rounded-full blur-3xl pointer-events-none" />
-
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Content Side (7 Cols) */}
@@ -67,7 +63,7 @@ export function CustomManufacturing() {
               {features.map((f, idx) => (
                 <div
                   key={idx}
-                  className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 hover:border-[#2E5E99]/50 hover:bg-slate-100/60 dark:hover:bg-white/[0.06] hover:-translate-y-1 hover:shadow-md transition-all duration-300 group"
+                  className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 hover:border-[#2E5E99]/50 hover:bg-slate-100/60 dark:hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-300 group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#2E5E99]/10 dark:bg-[#7BA4D0]/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] mb-3 group-hover:scale-110 transition-transform duration-300">
                     <f.icon className="w-5 h-5" />
@@ -86,7 +82,7 @@ export function CustomManufacturing() {
             <div className="pt-2">
               <Link
                 href="/contact#enquiry-form"
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0D2440] dark:bg-[#2E5E99] text-white dark:text-white hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] dark:hover:text-[#0D2440] font-heading font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0D2440] dark:bg-[#2E5E99] text-white dark:text-white hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] dark:hover:text-[#0D2440] font-heading font-semibold text-sm transition-all duration-300 cursor-pointer group"
               >
                 <span>Request Custom Engineering Quote</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -103,7 +99,7 @@ export function CustomManufacturing() {
             className="lg:col-span-5 relative py-6 px-2 sm:px-4 lg:p-2"
           >
             {/* Main Showcase Card */}
-            <div className="relative aspect-[4/3] sm:aspect-square rounded-3xl overflow-hidden border border-slate-200/80 dark:border-white/10 shadow-[0_20px_50px_rgba(13,36,64,0.12)] dark:shadow-none group bg-slate-100 dark:bg-[#0A1626]">
+            <div className="relative aspect-[4/3] sm:aspect-square rounded-3xl overflow-hidden border border-slate-200/80 dark:border-white/10 group bg-slate-100 dark:bg-[#0A1626]">
               <Image
                 src="/images/custom-engineering.png"
                 alt="Custom Engineering and Blueprints"
@@ -119,7 +115,7 @@ export function CustomManufacturing() {
             <motion.div
               animate={{ y: [-4, 4, -4] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-2 right-2 sm:-top-4 sm:-right-2 p-3.5 sm:p-4 rounded-2xl bg-white/95 dark:bg-[#0D2440]/95 backdrop-blur-xl border border-slate-200/80 dark:border-white/15 shadow-[0_12px_30px_rgba(13,36,64,0.15)] flex items-center gap-3 z-20"
+              className="absolute -top-2 right-2 sm:-top-4 sm:-right-2 p-3.5 sm:p-4 rounded-2xl bg-white/95 dark:bg-[#0D2440]/95 backdrop-blur-xl border border-slate-200/80 dark:border-white/15 flex items-center gap-3 z-20"
             >
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#2E5E99] text-white flex items-center justify-center font-heading font-black text-xs">
                 ±0.02
@@ -138,7 +134,7 @@ export function CustomManufacturing() {
             <motion.div
               animate={{ y: [4, -4, 4] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-2 left-2 sm:-bottom-4 sm:-left-2 p-3 sm:p-3.5 rounded-2xl bg-white/95 dark:bg-[#0D2440]/95 backdrop-blur-xl border border-slate-200/80 dark:border-white/15 shadow-[0_12px_30px_rgba(13,36,64,0.15)] flex items-center gap-2.5 z-20"
+              className="absolute -bottom-2 left-2 sm:-bottom-4 sm:-left-2 p-3 sm:p-3.5 rounded-2xl bg-white/95 dark:bg-[#0D2440]/95 backdrop-blur-xl border border-slate-200/80 dark:border-white/15 flex items-center gap-2.5 z-20"
             >
               <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#2E5E99] dark:text-[#7BA4D0]" />
               <div>

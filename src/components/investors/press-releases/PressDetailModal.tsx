@@ -28,7 +28,7 @@ export function PressDetailModal({ article, onClose }: PressDetailModalProps) {
         onClick={onClose}
       />
       
-      <div className="relative w-full max-w-5xl max-h-[90vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden shadow-2xl flex flex-col animate-in zoom-in-95 duration-500">
+      <div className="relative w-full max-w-5xl max-h-[90vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden flex flex-col animate-in zoom-in-95 duration-500">
         {/* Header Actions */}
         <div className="sticky top-0 z-20 bg-white/80 dark:bg-charcoal/80 backdrop-blur-md border-b border-border p-6 flex items-center justify-between">
           <button 

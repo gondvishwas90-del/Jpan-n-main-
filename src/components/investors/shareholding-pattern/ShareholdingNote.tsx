@@ -14,7 +14,7 @@ export function ShareholdingNote() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-8 sm:p-12 md:p-16 rounded-3xl relative overflow-hidden shadow-lg"
+            className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-8 sm:p-12 md:p-16 rounded-3xl relative overflow-hidden"
           >
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <div className="lg:col-span-7">
@@ -34,7 +34,7 @@ export function ShareholdingNote() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+                  <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                     <CheckCircle2 className="w-5 h-5 text-[#2E5E99] shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mb-1">
@@ -46,7 +46,7 @@ export function ShareholdingNote() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+                  <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                     <CheckCircle2 className="w-5 h-5 text-[#2E5E99] shrink-0 mt-0.5" />
                     <div>
                       <h4 className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mb-1">
@@ -61,9 +61,9 @@ export function ShareholdingNote() {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="p-8 rounded-2xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/40 dark:to-charcoal/50 border border-[#7BA4D0]/35 shadow-sm">
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/40 dark:to-charcoal/50 border border-[#7BA4D0]/35">
                   <div className="flex items-center gap-3.5 mb-6">
-                    <div className="w-11 h-11 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center border border-[#7BA4D0]/30 shadow-xs">
+                    <div className="w-11 h-11 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center border border-[#7BA4D0]/30">
                       <Scale className="w-6 h-6 text-[#2E5E99]" />
                     </div>
                     <h4 className="text-xs font-heading font-bold text-[#0D2440] dark:text-white uppercase tracking-widest">

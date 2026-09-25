@@ -57,7 +57,6 @@ export function RatingArchive() {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black border-b border-[#7BA4D0]/20 overflow-hidden relative">
       {/* Background Soft Glow */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#7BA4D0]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-8">
@@ -93,7 +92,7 @@ export function RatingArchive() {
                 className="group bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 hover:border-[#2E5E99]/60 hover:bg-[#F1F6FB] dark:hover:bg-charcoal/60 transition-all duration-300 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 {/* Icon Box */}
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#2E5E99] group-hover:scale-105 shadow-sm text-[#2E5E99] group-hover:text-white">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#2E5E99] group-hover:scale-105 text-[#2E5E99] group-hover:text-white">
                   <BarChart3 className="w-7 h-7 md:w-8 md:h-8" />
                 </div>
 
@@ -134,14 +133,14 @@ export function RatingArchive() {
                       href="/sample-report.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-3 border border-[#7BA4D0]/30 rounded-2xl text-xs font-bold uppercase tracking-wider hover:bg-[#EBF3FC] hover:border-[#2E5E99]/50 transition-all text-[#0D2440] dark:text-white shadow-sm"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-3 border border-[#7BA4D0]/30 rounded-2xl text-xs font-bold uppercase tracking-wider hover:bg-[#EBF3FC] hover:border-[#2E5E99]/50 transition-all text-[#0D2440] dark:text-white"
                     >
                       <ExternalLink className="w-4 h-4 opacity-70 text-[#2E5E99]" /> View
                     </a>
                     <a 
                       href="/sample-report.pdf"
                       download
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-2xl text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#0D2440]/15 hover:shadow-[#2E5E99]/20 group/btn"
+                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-2xl text-xs font-bold uppercase tracking-wider transition-all group/btn"
                     >
                       <Download className="w-4 h-4 group-hover/btn:translate-y-0.5 transition-transform" />
                       PDF

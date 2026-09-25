@@ -8,8 +8,6 @@ export function MaterialIntro() {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black border-b border-[#7BA4D0]/20 overflow-hidden relative">
       {/* Background Soft Glows */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#7BA4D0]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2E5E99]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -37,8 +35,8 @@ export function MaterialIntro() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-sm hover:border-[#2E5E99]/50 hover:shadow-md transition-all duration-300 group">
-                <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center rounded-xl mb-4 text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300 shadow-sm">
+              <div className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 transition-all duration-300 group">
+                <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center rounded-xl mb-4 text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                   <BookmarkCheck className="w-6 h-6" />
                 </div>
                 <h4 className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mb-2">
@@ -49,8 +47,8 @@ export function MaterialIntro() {
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-sm hover:border-[#2E5E99]/50 hover:shadow-md transition-all duration-300 group">
-                <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center rounded-xl mb-4 text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300 shadow-sm">
+              <div className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 transition-all duration-300 group">
+                <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center rounded-xl mb-4 text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                   <FileText className="w-6 h-6" />
                 </div>
                 <h4 className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mb-2">
@@ -71,8 +69,8 @@ export function MaterialIntro() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="p-8 sm:p-10 md:p-12 rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/30 dark:via-[#0D2440]/20 dark:to-[#0D2440]/40 border border-[#7BA4D0]/35 relative overflow-hidden shadow-[0_20px_60px_-15px_rgba(46,94,153,0.12)]">
-              <div className="w-14 h-14 rounded-2xl bg-white/80 dark:bg-[#0D2440]/60 border border-[#7BA4D0]/30 flex items-center justify-center mb-6 text-[#2E5E99] dark:text-[#7BA4D0] shadow-sm">
+            <div className="p-8 sm:p-10 md:p-12 rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/30 dark:via-[#0D2440]/20 dark:to-[#0D2440]/40 border border-[#7BA4D0]/35 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-white/80 dark:bg-[#0D2440]/60 border border-[#7BA4D0]/30 flex items-center justify-center mb-6 text-[#2E5E99] dark:text-[#7BA4D0]">
                 <Scale className="w-7 h-7" />
               </div>
 
@@ -81,7 +79,7 @@ export function MaterialIntro() {
               </h3>
 
               <div className="space-y-6">
-                <div className="flex gap-4 p-4 rounded-2xl bg-white/70 dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-sm">
+                <div className="flex gap-4 p-4 rounded-2xl bg-white/70 dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                   <span className="text-[#2E5E99] dark:text-[#7BA4D0] font-bold text-lg font-mono">/01</span>
                   <p className="text-xs sm:text-sm text-[#0D2440]/80 dark:text-white/80 leading-relaxed italic">
                     &ldquo;Absolute transparency in material disclosures is the 
@@ -89,7 +87,7 @@ export function MaterialIntro() {
                   </p>
                 </div>
 
-                <div className="flex gap-4 p-4 rounded-2xl bg-white/70 dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-sm">
+                <div className="flex gap-4 p-4 rounded-2xl bg-white/70 dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                   <span className="text-[#2E5E99] dark:text-[#7BA4D0] font-bold text-lg font-mono">/02</span>
                   <p className="text-xs sm:text-sm text-[#0D2440]/80 dark:text-white/80 leading-relaxed italic">
                     &ldquo;We adhere to the highest standards of regulatory compliance 

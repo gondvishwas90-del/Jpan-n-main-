@@ -107,7 +107,7 @@ export function InvestorMeetListing() {
                     <Eye className="w-4 h-4 text-gold" />
                     View
                   </button>
-                  <button className="flex-grow flex items-center justify-center gap-2 bg-deepblue text-white px-4 py-3 text-[10px] font-bold uppercase tracking-widest transition-all shadow-xl btn-slide-gold group">
+                  <button className="flex-grow flex items-center justify-center gap-2 bg-deepblue text-white px-4 py-3 text-[10px] font-bold uppercase tracking-widest transition-all btn-slide-gold group">
                     <Download className="w-4 h-4" />
                     PDF
                   </button>

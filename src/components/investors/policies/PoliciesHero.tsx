@@ -53,7 +53,7 @@ export function PoliciesHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="text-base sm:text-lg text-white/85 font-normal leading-relaxed drop-shadow-sm"
+              className="text-base sm:text-lg text-white/85 font-normal leading-relaxed"
             >
               Defining our standards of integrity, ethics, and operational excellence. Explore our comprehensive repository of statutory rules and internal corporate guidelines aligned with SEBI and the Companies Act.
             </motion.p>

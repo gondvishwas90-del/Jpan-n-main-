@@ -73,7 +73,7 @@ export function ExhibitionHighlights() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-4 left-4 z-10 w-11 h-11 bg-white/95 dark:bg-charcoal/90 backdrop-blur-md rounded-xl border border-white/60 dark:border-white/10 shadow-sm flex items-center justify-center text-[#2E5E99]">
+                  <div className="absolute top-4 left-4 z-10 w-11 h-11 bg-white/95 dark:bg-charcoal/90 backdrop-blur-md rounded-xl border border-white/60 dark:border-white/10 flex items-center justify-center text-[#2E5E99]">
                     <ex.icon className="w-5 h-5" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

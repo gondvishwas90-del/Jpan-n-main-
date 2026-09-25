@@ -144,12 +144,12 @@ export function OurStory() {
                 rotateY: idx === 0 ? -4 : idx === 2 ? 4 : 0,
                 transition: { duration: 0.2 },
               }}
-              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_15px_40px_rgba(13,36,64,0.08)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.5)] transition-colors duration-300 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] flex flex-col justify-between group transform-gpu [transform-style:preserve-3d]"
+              className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 transition-colors duration-300 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] flex flex-col justify-between group transform-gpu [transform-style:preserve-3d]"
             >
               <div>
                 {/* Top Row: Icon + Number */}
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#7BA4D0]/30 dark:border-white/15 shadow-sm group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#7BA4D0]/30 dark:border-white/15 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                     <card.icon className="w-7 h-7" />
                   </div>
                   <span className="text-3xl font-heading font-black text-[#0D2440]/25 dark:text-white/20 group-hover:text-[#2E5E99] dark:group-hover:text-[#7BA4D0] transition-colors">

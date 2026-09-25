@@ -142,7 +142,7 @@ export function CompanyOverview() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/35 dark:border-white/15 shadow-2xl w-full group">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/35 dark:border-white/15 w-full group">
               <Image
                 src="/industrial_precision_tubing_1778827579055.png"
                 alt="Precision Tubular Engineering"
@@ -157,7 +157,7 @@ export function CompanyOverview() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 dark:bg-[#0D2440]/90 backdrop-blur-md border border-[#7BA4D0]/40 dark:border-white/20 shadow-xl flex items-center gap-3.5"
+                className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 dark:bg-[#0D2440]/90 backdrop-blur-md border border-[#7BA4D0]/40 dark:border-white/20 flex items-center gap-3.5"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#2E5E99] text-white flex items-center justify-center shrink-0">
                   <Activity className="w-5 h-5 animate-pulse" />
@@ -209,7 +209,7 @@ export function CompanyOverview() {
                   key={idx}
                   variants={cardVariants[idx]}
                   whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
-                  className="p-6 rounded-2xl bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_10px_30px_rgba(13,36,64,0.06)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-colors duration-300 group flex flex-col justify-between transform-gpu"
+                  className="p-6 rounded-2xl bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-colors duration-300 group flex flex-col justify-between transform-gpu"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">

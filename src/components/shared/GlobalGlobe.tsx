@@ -389,7 +389,7 @@ export function GlobalGlobe({ activeIndex }: GlobalGlobeProps) {
           {/* Dynamic Floating HUD overlays */}
           <div className="absolute top-24 left-6 z-20 pointer-events-none flex flex-col gap-1.5 transition-all duration-300">
             <span className="text-[9px] font-extrabold text-gold/60 uppercase tracking-[0.2em]">Focused Territory</span>
-            <div className="px-3.5 py-2 bg-charcoal/85 backdrop-blur-md rounded-xl border border-white/10 text-xs font-bold text-white shadow-xl min-w-[130px] text-center uppercase tracking-wider">
+            <div className="px-3.5 py-2 bg-charcoal/85 backdrop-blur-md rounded-xl border border-white/10 text-xs font-bold text-white min-w-[130px] text-center uppercase tracking-wider">
               {hoveredCountry || "Scanning..."}
             </div>
           </div>

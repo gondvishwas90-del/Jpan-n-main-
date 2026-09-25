@@ -35,7 +35,7 @@ export function PoliciesFilter() {
                     onClick={() => setActiveCategory(cat.id)}
                     className={`shrink-0 flex items-center gap-2.5 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
                       activeCategory === cat.id
-                        ? "bg-[#0D2440] text-white border-[#0D2440] shadow-sm"
+                        ? "bg-[#0D2440] text-white border-[#0D2440] "
                         : "bg-[#F8FAFC] dark:bg-charcoal/40 text-muted-foreground border-[#7BA4D0]/25 hover:border-[#2E5E99]/50"
                     }`}
                   >

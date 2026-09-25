@@ -31,14 +31,14 @@ export function StatementOfDeviationsIntro() {
             </p>
             
             <div className="flex flex-wrap gap-4 mt-8">
-              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
-                <div className="w-9 h-9 bg-white dark:bg-charcoal flex items-center justify-center rounded-xl text-[#2E5E99] border border-[#7BA4D0]/25 shadow-xs">
+              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
+                <div className="w-9 h-9 bg-white dark:bg-charcoal flex items-center justify-center rounded-xl text-[#2E5E99] border border-[#7BA4D0]/25">
                   <Scale className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">Fiscal Parity</span>
               </div>
-              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
-                <div className="w-9 h-9 bg-white dark:bg-charcoal flex items-center justify-center rounded-xl text-[#2E5E99] border border-[#7BA4D0]/25 shadow-xs">
+              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
+                <div className="w-9 h-9 bg-white dark:bg-charcoal flex items-center justify-center rounded-xl text-[#2E5E99] border border-[#7BA4D0]/25">
                   <Activity className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">Fund Utilization</span>
@@ -53,8 +53,8 @@ export function StatementOfDeviationsIntro() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="p-8 md:p-10 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl relative overflow-hidden shadow-lg space-y-6">
-              <div className="flex gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+            <div className="p-8 md:p-10 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl relative overflow-hidden space-y-6">
+              <div className="flex gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                 <div className="w-10 h-10 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center text-[#2E5E99] shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -68,7 +68,7 @@ export function StatementOfDeviationsIntro() {
                 </div>
               </div>
               
-              <div className="flex gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+              <div className="flex gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                 <div className="w-10 h-10 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center text-[#2E5E99] shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -82,7 +82,7 @@ export function StatementOfDeviationsIntro() {
                 </div>
               </div>
               
-              <div className="flex gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+              <div className="flex gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                 <div className="w-10 h-10 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center text-[#2E5E99] shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>

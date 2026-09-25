@@ -97,7 +97,7 @@ export function JobApplicationForm() {
           </div>
 
           <div className="lg:col-span-8 animate-in fade-in slide-in-from-right duration-700 delay-200">
-            <form onSubmit={handleSubmit} className="bg-silver/5 border border-border p-10 md:p-16 rounded-sm shadow-2xl relative overflow-hidden">
+            <form onSubmit={handleSubmit} className="bg-silver/5 border border-border p-10 md:p-16 rounded-sm relative overflow-hidden">
               <div className="absolute inset-0 opacity-[0.02] bg-[url('/images/blueprint.png')] bg-repeat pointer-events-none" />
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                 
@@ -171,7 +171,7 @@ export function JobApplicationForm() {
                   <button 
                     type="submit"
                     disabled={isSubmitting || isUploading}
-                    className="w-full py-6 bg-charcoal dark:bg-white text-white dark:text-charcoal font-bold text-[10px] uppercase tracking-[0.4em] rounded-sm hover:bg-gold hover:text-charcoal transition-all shadow-2xl flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-6 bg-charcoal dark:bg-white text-white dark:text-charcoal font-bold text-[10px] uppercase tracking-[0.4em] rounded-sm hover:bg-gold hover:text-charcoal transition-all flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Processing Institutional Application..." : "Submit Application"}
                     {!isSubmitting && <Send className="w-4 h-4" />}

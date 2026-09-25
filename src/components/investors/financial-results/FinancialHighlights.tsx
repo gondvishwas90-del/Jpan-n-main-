@@ -67,11 +67,11 @@ export function FinancialHighlights() {
             {highlights.map((item) => (
               <div 
                 key={item.id}
-                className="group bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 sm:p-8 rounded-3xl hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:border-[#2E5E99]/50 hover:-translate-y-1.5 transition-all duration-500 relative overflow-hidden w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-xs"
+                className="group bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 sm:p-8 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-1.5 transition-all duration-500 relative overflow-hidden w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-8">
-                    <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl text-[#2E5E99] shadow-xs group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500">
+                    <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500">
                       <item.icon className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                     </div>
                     <div className="flex items-center gap-1 text-xs font-bold text-[#2E5E99] bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 px-3 py-1 rounded-full uppercase tracking-wider">
@@ -116,7 +116,7 @@ export function FinancialHighlights() {
           </div>
         </div>
 
-        <div className="mt-8 md:mt-12 p-6 bg-[#EBF3FC]/60 dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl text-center shadow-xs">
+        <div className="mt-8 md:mt-12 p-6 bg-[#EBF3FC]/60 dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl text-center">
           <p className="text-xs font-semibold text-[#0D2440]/75 dark:text-silver/80 tracking-wide">
             *Data reflective of FY 2024-25 audit report. 
             <span className="text-[#2E5E99] font-bold ml-2 cursor-pointer hover:underline">Download full reconciliation report.</span>

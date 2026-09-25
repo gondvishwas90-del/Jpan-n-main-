@@ -19,8 +19,6 @@ export function InvestorPresentationHero() {
       </div>
 
       {/* High-Tech Glow Accents */}
-      <div className="absolute top-0 right-0 w-[40%] h-full bg-gold/10 blur-[100px] -skew-x-12 translate-x-1/4" />
-      <div className="absolute bottom-0 left-0 w-[30%] h-full bg-deepblue/10 blur-[100px] skew-x-12 -translate-x-1/4" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl">

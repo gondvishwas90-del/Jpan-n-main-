@@ -21,7 +21,7 @@ export function ProductCTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4 }}
-          className="rounded-3xl bg-slate-50/80 dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_15px_40px_rgba(13,36,64,0.06)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.4)] p-8 sm:p-12 md:py-14 md:px-16 text-center max-w-5xl mx-auto transition-all duration-300 hover:shadow-[0_20px_50px_rgba(46,94,153,0.12)]"
+          className="rounded-3xl bg-slate-50/80 dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 p-8 sm:p-12 md:py-14 md:px-16 text-center max-w-5xl mx-auto transition-all duration-300"
         >
           <div className="max-w-3xl mx-auto space-y-4">
             {/* Crisp & Punchy Headline */}
@@ -41,7 +41,7 @@ export function ProductCTA() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
               <Link
                 href="/contact#enquiry-form"
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 active:scale-95 w-full sm:w-auto cursor-pointer"
               >
                 <FileCheck className="w-4 h-4 text-[#7BA4D0]" />
                 <span>Submit Engineering RFQ</span>
@@ -50,7 +50,7 @@ export function ProductCTA() {
 
               <Link
                 href="tel:+911202560586"
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 border border-[#7BA4D0]/30 dark:border-white/20 text-[#0D2440] dark:text-white font-medium text-sm rounded-full transition-all duration-300 shadow-sm w-full sm:w-auto cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 border border-[#7BA4D0]/30 dark:border-white/20 text-[#0D2440] dark:text-white font-medium text-sm rounded-full transition-all duration-300 w-full sm:w-auto cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0]" />
                 <span>+91 120 2560586</span>

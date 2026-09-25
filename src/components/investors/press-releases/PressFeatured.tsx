@@ -65,14 +65,13 @@ export function PressFeatured({ onReadMore }: PressFeaturedProps) {
         {/* Featured Card - Architectural Layout */}
         <div className="relative group">
           {/* Ambient Background Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gold/5 blur-[100px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
           
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col lg:flex-row bg-charcoal dark:bg-charcoal/90 rounded-sm overflow-hidden border border-white/5 group-hover:border-gold/20 transition-colors duration-700 shadow-2xl relative z-10"
+            className="flex flex-col lg:flex-row bg-charcoal dark:bg-charcoal/90 rounded-sm overflow-hidden border border-white/5 group-hover:border-gold/20 transition-colors duration-700 relative z-10"
           >
             {/* Visual Canvas */}
             <div className="w-full lg:w-[50%] relative min-h-[300px] lg:min-h-[450px] overflow-hidden bg-black">
@@ -141,7 +140,7 @@ export function PressFeatured({ onReadMore }: PressFeaturedProps) {
                 <div className="pt-4">
                   <button 
                     onClick={() => onReadMore(featuredArticle)}
-                    className="group/btn relative flex items-center gap-4 px-8 py-4 bg-gold text-charcoal font-bold text-[9px] uppercase tracking-[0.3em] rounded-sm transition-all duration-500 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+                    className="group/btn relative flex items-center gap-4 px-8 py-4 bg-gold text-charcoal font-bold text-[9px] uppercase tracking-[0.3em] rounded-sm transition-all duration-500 overflow-hidden"
                   >
                     <span className="relative z-10 group-hover/btn:text-black transition-colors duration-500">Read Full Release</span>
                     <ArrowUpRight className="w-4 h-4 relative z-10 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-all duration-500 group-hover/btn:text-black" strokeWidth={2} />

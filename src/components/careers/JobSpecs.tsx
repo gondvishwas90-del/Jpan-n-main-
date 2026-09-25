@@ -23,7 +23,7 @@ export function JobSpecs({ job }: JobSpecsProps) {
   return (
     <section className="py-24 bg-silver/5 dark:bg-black/10 border-b border-border">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-1000">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden animate-in fade-in zoom-in-95 duration-1000">
            {specs.map((spec, idx) => (
               <div 
                 key={idx}

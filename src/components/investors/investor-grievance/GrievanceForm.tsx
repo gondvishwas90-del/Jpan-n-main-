@@ -39,9 +39,9 @@ export function GrievanceForm() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="container-custom text-center relative z-10 max-w-2xl p-10 md:p-14 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl shadow-xl"
+          className="container-custom text-center relative z-10 max-w-2xl p-10 md:p-14 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl"
         >
-          <div className="w-20 h-20 bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center rounded-2xl mx-auto mb-6 border border-[#7BA4D0]/30 shadow-sm text-[#2E5E99]">
+          <div className="w-20 h-20 bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center rounded-2xl mx-auto mb-6 border border-[#7BA4D0]/30 text-[#2E5E99]">
             <CheckCircle2 className="w-10 h-10" />
           </div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#0D2440] dark:text-white mb-4 tracking-tight">
@@ -56,13 +56,13 @@ export function GrievanceForm() {
             team will review and respond within 7–15 working days.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-             <div className="px-6 py-3.5 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 rounded-xl flex items-center gap-3 shadow-xs">
+             <div className="px-6 py-3.5 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 rounded-xl flex items-center gap-3">
                 <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Ref ID:</span>
                 <span className="text-xs font-mono font-bold text-[#0D2440] dark:text-white tracking-widest">JP_GRV_2025_4821</span>
              </div>
              <button 
               onClick={() => setIsSubmitted(false)}
-              className="px-8 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-md"
+              className="px-8 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all"
              >
                Submit Another Concern
              </button>
@@ -99,8 +99,8 @@ export function GrievanceForm() {
                </p>
                
                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
-                     <div className="w-12 h-12 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center text-[#2E5E99] border border-[#7BA4D0]/30 shrink-0 shadow-xs">
+                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
+                     <div className="w-12 h-12 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center text-[#2E5E99] border border-[#7BA4D0]/30 shrink-0">
                         <ShieldCheck className="w-6 h-6" />
                      </div>
                      <div>
@@ -112,8 +112,8 @@ export function GrievanceForm() {
                         </p>
                      </div>
                   </div>
-                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
-                     <div className="w-12 h-12 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center text-[#2E5E99] border border-[#7BA4D0]/30 shrink-0 shadow-xs">
+                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
+                     <div className="w-12 h-12 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center text-[#2E5E99] border border-[#7BA4D0]/30 shrink-0">
                         <AlertCircle className="w-6 h-6" />
                      </div>
                      <div>
@@ -135,7 +135,7 @@ export function GrievanceForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-8 md:p-12 rounded-3xl shadow-xl"
+            className="lg:col-span-7 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-8 md:p-12 rounded-3xl"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
                <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -148,7 +148,7 @@ export function GrievanceForm() {
                      <input 
                       type="text" 
                       placeholder="Enter shareholder name"
-                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs"
+                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all"
                      />
                   </motion.div>
                   {/* Email */}
@@ -160,7 +160,7 @@ export function GrievanceForm() {
                      <input 
                       type="email" 
                       placeholder="name@example.com"
-                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs"
+                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all"
                      />
                   </motion.div>
                   {/* Phone */}
@@ -172,7 +172,7 @@ export function GrievanceForm() {
                      <input 
                       type="tel" 
                       placeholder="+91 00000 00000"
-                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs"
+                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all"
                      />
                   </motion.div>
                   {/* Folio / Client ID */}
@@ -184,7 +184,7 @@ export function GrievanceForm() {
                      <input 
                       type="text" 
                       placeholder="Enter reference number"
-                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs"
+                      className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all"
                      />
                   </motion.div>
                </motion.div>
@@ -196,7 +196,7 @@ export function GrievanceForm() {
                      Grievance Category
                   </label>
                   <div className="relative">
-                     <select className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white appearance-none focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs cursor-pointer">
+                     <select className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white appearance-none focus:outline-none focus:border-[#2E5E99] transition-all cursor-pointer">
                         <option value="" className="text-muted-foreground dark:bg-[#0D2440]">Select a category</option>
                         {grievanceCategories.map(cat => (
                            <option key={cat} value={cat} className="text-[#0D2440] dark:text-white dark:bg-[#0D2440]">{cat}</option>
@@ -212,7 +212,7 @@ export function GrievanceForm() {
                   <input 
                     type="text" 
                     placeholder="Brief summary of your concern"
-                    className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs"
+                    className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all"
                   />
                </div>
 
@@ -222,7 +222,7 @@ export function GrievanceForm() {
                   <textarea 
                     rows={5}
                     placeholder="Describe your concern in detail for faster processing..."
-                    className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all shadow-xs resize-none"
+                    className="w-full bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl py-3 px-4 text-xs text-[#0D2440] dark:text-white placeholder:text-muted-foreground focus:outline-none focus:border-[#2E5E99] transition-all resize-none"
                   />
                </div>
 
@@ -249,7 +249,7 @@ export function GrievanceForm() {
 
                <button 
                 type="submit"
-                className="w-full py-4.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-3 group/submit"
+                className="w-full py-4.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 group/submit"
                >
                  Submit Official Grievance
                  <Send className="w-4 h-4 group-hover/submit:translate-x-1 group-hover/submit:-translate-y-0.5 transition-transform" />

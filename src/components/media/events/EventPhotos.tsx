@@ -291,7 +291,7 @@ export function EventPhotos() {
             {eventsData.map((item) => (
               <div 
                 key={item.id} 
-                className="group relative cursor-pointer overflow-hidden rounded-2xl sm:rounded-3xl bg-[#F8FAFC] dark:bg-charcoal/40 shadow-xs hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] transition-all duration-500 border border-[#7BA4D0]/25 hover:border-[#7BA4D0]/60 w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center flex flex-col justify-between"
+                className="group relative cursor-pointer overflow-hidden rounded-2xl sm:rounded-3xl bg-[#F8FAFC] dark:bg-charcoal/40 transition-all duration-500 border border-[#7BA4D0]/25 hover:border-[#7BA4D0]/60 w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center flex flex-col justify-between"
                 onClick={() => openLightbox(item)}
               >
                 <div className="aspect-square relative overflow-hidden shrink-0 bg-slate-100 dark:bg-[#0D2440]">
@@ -304,7 +304,7 @@ export function EventPhotos() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 rounded-full bg-white/90 dark:bg-charcoal/90 text-[#0D2440] dark:text-white shadow-lg flex items-center justify-center backdrop-blur-md">
+                    <div className="w-12 h-12 rounded-full bg-white/90 dark:bg-charcoal/90 text-[#0D2440] dark:text-white flex items-center justify-center backdrop-blur-md">
                       <Maximize2 className="w-5 h-5" />
                     </div>
                   </div>
@@ -348,7 +348,7 @@ export function EventPhotos() {
             <div className="flex items-center gap-6">
               <button 
                 onClick={closeLightbox}
-                className="group flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-gold text-white hover:text-charcoal rounded-full border border-white/10 hover:border-gold transition-all duration-300 shadow-md"
+                className="group flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-gold text-white hover:text-charcoal rounded-full border border-white/10 hover:border-gold transition-all duration-300"
               >
                 <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
                 <span className="text-xs font-bold uppercase tracking-widest">Back to Events</span>
@@ -364,7 +364,7 @@ export function EventPhotos() {
             
             <button 
               onClick={closeLightbox}
-              className="p-2.5 bg-white/5 hover:bg-gold text-white hover:text-charcoal rounded-full border border-white/10 hover:border-gold transition-all duration-300 shadow-md"
+              className="p-2.5 bg-white/5 hover:bg-gold text-white hover:text-charcoal rounded-full border border-white/10 hover:border-gold transition-all duration-300"
               aria-label="Close gallery"
             >
               <X className="w-5 h-5" />
@@ -395,7 +395,7 @@ export function EventPhotos() {
                 alt={`${selectedEvent.title} - ${currentImageIndex + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 1200px"
-                className="object-contain drop-shadow-2xl select-none"
+                className="object-contain select-none"
                 priority
               />
             </div>
@@ -410,7 +410,7 @@ export function EventPhotos() {
                   onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
                   className={cn(
                     "relative w-28 h-20 shrink-0 rounded-sm overflow-hidden border-2 transition-all duration-300",
-                    currentImageIndex === idx ? "border-gold opacity-100 scale-105 shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "border-transparent opacity-40 hover:opacity-100"
+                    currentImageIndex === idx ? "border-gold opacity-100 scale-105" : "border-transparent opacity-40 hover:opacity-100"
                   )}
                 >
                   <Image

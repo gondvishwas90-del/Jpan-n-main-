@@ -48,7 +48,7 @@ export function QualityHero() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="#certifications"
-                className="group inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#2E5E99] hover:bg-[#1E4370] text-white font-semibold text-sm sm:text-base rounded-full transition-all duration-300 shadow-lg shadow-[#2E5E99]/30 hover:scale-[1.02]"
+                className="group inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#2E5E99] hover:bg-[#1E4370] text-white font-semibold text-sm sm:text-base rounded-full transition-all duration-300 hover:scale-[1.02]"
               >
                 <span>View Certifications</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -76,7 +76,7 @@ export function QualityHero() {
                     Certified Company
                   </h3>
                 </div>
-                <div className="w-10 h-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#7BA4D0] shadow-sm">
+                <div className="w-10 h-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#7BA4D0]">
                   <ShieldCheck className="w-5 h-5 text-[#7BA4D0]" />
                 </div>
               </div>
@@ -88,7 +88,7 @@ export function QualityHero() {
                   onClick={() => setSelectedCert("IATF 16949")}
                   className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                     selectedCert === "IATF 16949"
-                      ? "bg-[#2E5E99] border-[#7BA4D0] text-white shadow-sm"
+                      ? "bg-[#2E5E99] border-[#7BA4D0] text-white"
                       : "bg-white/5 border-white/15 text-white/80 hover:bg-white/10"
                   }`}
                 >
@@ -101,7 +101,7 @@ export function QualityHero() {
                   onClick={() => setSelectedCert("ISO 9001:2015")}
                   className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                     selectedCert === "ISO 9001:2015"
-                      ? "bg-[#2E5E99] border-[#7BA4D0] text-white shadow-sm"
+                      ? "bg-[#2E5E99] border-[#7BA4D0] text-white"
                       : "bg-white/5 border-white/15 text-white/80 hover:bg-white/10"
                   }`}
                 >
@@ -114,7 +114,7 @@ export function QualityHero() {
                   onClick={() => setSelectedCert("ISO 14001")}
                   className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                     selectedCert === "ISO 14001"
-                      ? "bg-[#2E5E99] border-[#7BA4D0] text-white shadow-sm"
+                      ? "bg-[#2E5E99] border-[#7BA4D0] text-white"
                       : "bg-white/5 border-white/15 text-white/80 hover:bg-white/10"
                   }`}
                 >
@@ -151,7 +151,7 @@ export function QualityHero() {
                   <Link
                     href="#certifications"
                     aria-label="View certification details"
-                    className="w-10 h-10 rounded-full bg-[#2E5E99] hover:bg-[#7BA4D0] hover:text-[#0D2440] text-white dark:text-white dark:hover:text-[#0D2440] flex items-center justify-center transition-all duration-300 shadow-md group/btn cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-[#2E5E99] hover:bg-[#7BA4D0] hover:text-[#0D2440] text-white dark:text-white dark:hover:text-[#0D2440] flex items-center justify-center transition-all duration-300 group/btn cursor-pointer"
                   >
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                   </Link>

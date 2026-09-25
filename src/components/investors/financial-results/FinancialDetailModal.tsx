@@ -29,7 +29,7 @@ export function FinancialDetailModal({ report, isOpen, onClose }: FinancialDetai
       />
       
       {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-5xl bg-white dark:bg-charcoal border border-border rounded-sm shadow-2xl flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300">
+      <div className="relative z-10 w-full max-w-5xl bg-white dark:bg-charcoal border border-border rounded-sm flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300">
         {/* Left Side: Info & Metadata */}
         <div className="w-full md:w-1/3 p-8 md:p-12 bg-silver/5 border-b md:border-b-0 md:border-r border-border">
           <button 
@@ -73,7 +73,7 @@ export function FinancialDetailModal({ report, isOpen, onClose }: FinancialDetai
           </div>
 
           <div className="space-y-4">
-            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-3 shadow-xl btn-slide-gold group">
+            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-xs uppercase tracking-widest rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-gold group">
               <Download className="w-4 h-4" />
               Download Official PDF
             </button>

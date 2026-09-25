@@ -72,10 +72,7 @@ export default function PressReleasesPage() {
             </span>
           </div>
 
-          <div className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] border border-[#7BA4D0]/35 p-8 md:p-12 lg:p-14 shadow-[0_20px_50px_-15px_rgba(46,94,153,0.1)] overflow-hidden group">
-            {/* Subtle Ambient Radial Glow */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-radial from-[#7BA4D0]/20 to-transparent blur-3xl pointer-events-none" />
-            
+          <div className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] border border-[#7BA4D0]/35 p-8 md:p-12 lg:p-14 overflow-hidden group">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-8 space-y-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-[#0D2440] dark:text-white leading-[1.22] overflow-visible">
@@ -94,7 +91,7 @@ export default function PressReleasesPage() {
               <div className="lg:col-span-4 flex justify-start lg:justify-end">
                 <Link
                   href="/contact"
-                  className="px-7 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-sm rounded-xl inline-flex items-center gap-2.5 transition-all duration-300 shadow-md shadow-[#0D2440]/15 hover:shadow-lg hover:-translate-y-0.5 group/btn"
+                  className="px-7 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-sm rounded-xl inline-flex items-center gap-2.5 transition-all duration-300 hover:-translate-y-0.5 group/btn"
                 >
                   <span>Media Inquiry</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

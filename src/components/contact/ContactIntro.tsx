@@ -39,8 +39,6 @@ export function ContactIntro({
   return (
     <section ref={containerRef} className="pt-32 pb-16 md:pt-44 md:pb-28 bg-slate-50/60 dark:bg-[#070b14] relative overflow-hidden transition-colors duration-500 border-b border-slate-200/80 dark:border-white/5">
       {/* Background Ambient Lighting */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#2E5E99]/5 dark:bg-[#2E5E99]/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#7BA4D0]/5 dark:bg-[#7BA4D0]/10 rounded-full blur-3xl pointer-events-none" />
       
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -64,7 +62,7 @@ export function ContactIntro({
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-               <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 shadow-xs hover:shadow-md hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4">
+               <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4">
                   <div className="w-11 h-11 rounded-xl bg-[#2E5E99]/10 dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] shrink-0 group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                     <Users className="w-5 h-5" strokeWidth={1.75} />
                   </div>
@@ -74,7 +72,7 @@ export function ContactIntro({
                   </div>
                </div>
 
-               <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 shadow-xs hover:shadow-md hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4">
+               <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4">
                   <div className="w-11 h-11 rounded-xl bg-[#2E5E99]/10 dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] shrink-0 group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                     <ShieldCheck className="w-5 h-5" strokeWidth={1.75} />
                   </div>
@@ -93,10 +91,8 @@ export function ContactIntro({
             animate={isInView ? "visible" : "hidden"}
             className="lg:col-span-5 relative"
           >
-            <div className="p-8 sm:p-10 md:p-12 bg-gradient-to-br from-[#0D2440] via-[#0F2A4C] to-[#081729] border border-white/15 rounded-3xl relative overflow-hidden group shadow-[0_20px_50px_rgba(13,36,64,0.2)] text-white">
+            <div className="p-8 sm:p-10 md:p-12 bg-gradient-to-br from-[#0D2440] via-[#0F2A4C] to-[#081729] border border-white/15 rounded-3xl relative overflow-hidden group text-white">
                {/* Ambient Glow */}
-               <div className="absolute top-0 right-0 w-72 h-72 bg-[#2E5E99]/25 rounded-full blur-3xl pointer-events-none" />
-               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#7BA4D0]/15 rounded-full blur-3xl pointer-events-none" />
                <div className="absolute inset-0 bg-[radial-gradient(#7BA4D0_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
                
                <div className="relative z-10">

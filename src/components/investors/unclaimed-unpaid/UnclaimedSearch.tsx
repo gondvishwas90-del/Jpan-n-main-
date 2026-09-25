@@ -30,7 +30,7 @@ export function UnclaimedSearch() {
                     onClick={() => setSelectedYear(year)}
                     className={`shrink-0 px-5 py-2 text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all border whitespace-nowrap ${
                       selectedYear === year
-                        ? "bg-charcoal dark:bg-white text-white dark:text-charcoal border-transparent shadow-lg"
+                        ? "bg-charcoal dark:bg-white text-white dark:text-charcoal border-transparent "
                         : "bg-silver/5 text-charcoal/80 dark:text-silver border-transparent hover:border-border hover:bg-silver/10"
                     } ${index === fiscalYears.length - 1 ? 'mr-4' : ''}`}
                   >
@@ -49,7 +49,7 @@ export function UnclaimedSearch() {
               className="w-full bg-silver/5 border border-border rounded-sm py-3.5 px-12 text-xs text-charcoal dark:text-white placeholder:text-charcoal/60 dark:placeholder:text-silver/60 focus:outline-none focus:border-gold transition-all group-hover:border-gold/50"
             />
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal/60 dark:text-silver/60 group-focus-within:text-gold transition-colors" />
-            <button className="absolute right-3 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-gold text-charcoal text-[9px] font-bold uppercase tracking-widest rounded-sm shadow-sm transition-all btn-slide-white group">
+            <button className="absolute right-3 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-gold text-charcoal text-[9px] font-bold uppercase tracking-widest rounded-sm transition-all btn-slide-white group">
                Query
             </button>
           </div>

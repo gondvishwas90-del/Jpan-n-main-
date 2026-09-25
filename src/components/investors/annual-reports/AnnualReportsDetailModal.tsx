@@ -27,7 +27,7 @@ export function AnnualReportsDetailModal({ report, isOpen, onClose }: AnnualRepo
       />
       
       {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-6xl bg-white dark:bg-charcoal border border-border rounded-sm shadow-2xl flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300 h-[90vh] max-h-[800px]">
+      <div className="relative z-10 w-full max-w-6xl bg-white dark:bg-charcoal border border-border rounded-sm flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300 h-[90vh] max-h-[800px]">
         {/* Sidebar: Metadata */}
         <div className="w-full md:w-80 p-8 md:p-10 bg-silver/5 border-b md:border-b-0 md:border-r border-border flex flex-col">
           <button 
@@ -63,7 +63,7 @@ export function AnnualReportsDetailModal({ report, isOpen, onClose }: AnnualRepo
           </div>
 
           <div className="pt-10 space-y-4">
-            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 shadow-xl btn-slide-gold group">
+            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-gold group">
               <Download className="w-4 h-4" />
               Official PDF
             </button>

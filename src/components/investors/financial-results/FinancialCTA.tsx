@@ -22,7 +22,7 @@ export function FinancialCTA() {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black relative overflow-hidden transition-colors">
       <div className="container-custom relative z-10">
-        <div className="bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:bg-charcoal/50 border border-[#7BA4D0]/35 p-8 sm:p-12 md:p-16 rounded-3xl sm:rounded-[36px] max-w-6xl mx-auto shadow-xs">
+        <div className="bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:bg-charcoal/50 border border-[#7BA4D0]/35 p-8 sm:p-12 md:p-16 rounded-3xl sm:rounded-[36px] max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             <div className="lg:col-span-7">
@@ -35,11 +35,11 @@ export function FinancialCTA() {
                 is available for professional consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-3 transition-all whitespace-nowrap shadow-md hover:shadow-lg group">
+                <button className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-3 transition-all whitespace-nowrap group">
                   <span>Contact IR Desk</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <div className="flex items-center gap-3 px-6 py-4 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl shadow-xs">
+                <div className="flex items-center gap-3 px-6 py-4 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-xl">
                   <UserCheck className="w-5 h-5 text-[#2E5E99] shrink-0" />
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0D2440] dark:text-white">Compliance Verified</span>
                 </div>
@@ -53,7 +53,7 @@ export function FinancialCTA() {
                 onScroll={handleMobileScroll}
                 className="flex flex-row lg:flex-col overflow-x-auto snap-x snap-mandatory pt-2 pb-3 lg:py-0 px-1 lg:px-0 gap-4 lg:space-y-4 lg:gap-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
               >
-                <div className="p-6 sm:p-7 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl group hover:border-[#2E5E99]/50 hover:shadow-md transition-all w-full min-w-full lg:min-w-0 lg:w-full shrink-0 snap-center shadow-xs">
+                <div className="p-6 sm:p-7 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl group hover:border-[#2E5E99]/50 transition-all w-full min-w-full lg:min-w-0 lg:w-full shrink-0 snap-center">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-2xl shrink-0 text-[#2E5E99]">
                       <Mail className="w-5 h-5" />
@@ -63,7 +63,7 @@ export function FinancialCTA() {
                   <p className="text-[#0D2440]/75 dark:text-silver/80 text-xs font-medium pl-1">enquiry@jpantubular.com</p>
                 </div>
 
-                <div className="p-6 sm:p-7 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl group hover:border-[#2E5E99]/50 hover:shadow-md transition-all w-full min-w-full lg:min-w-0 lg:w-full shrink-0 snap-center shadow-xs">
+                <div className="p-6 sm:p-7 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl group hover:border-[#2E5E99]/50 transition-all w-full min-w-full lg:min-w-0 lg:w-full shrink-0 snap-center">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-2xl shrink-0 text-[#2E5E99]">
                       <Phone className="w-5 h-5" />

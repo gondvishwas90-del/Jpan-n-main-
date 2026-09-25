@@ -84,7 +84,7 @@ export function GeneralMeetingInstructions() {
               e-voting authentication and virtual meeting access issues.
             </p>
           </div>
-          <button className="relative z-10 px-8 py-4 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-widest transition-all shadow-xl whitespace-nowrap btn-slide-white group">
+          <button className="relative z-10 px-8 py-4 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-widest transition-all whitespace-nowrap btn-slide-white group">
             Support Desk
           </button>
         </div>

@@ -30,7 +30,7 @@ export function PoliciesIntro() {
             </p>
             
             <div className="flex flex-wrap gap-4 mt-8">
-              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
+              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                 <div className="w-10 h-10 bg-[#EBF3FC] dark:bg-[#0D2440]/40 rounded-xl flex items-center justify-center text-[#2E5E99]">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -39,7 +39,7 @@ export function PoliciesIntro() {
                   <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Core Principle</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
+              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                 <div className="w-10 h-10 bg-[#EBF3FC] dark:bg-[#0D2440]/40 rounded-xl flex items-center justify-center text-[#2E5E99]">
                   <Scale className="w-5 h-5" />
                 </div>
@@ -58,7 +58,7 @@ export function PoliciesIntro() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="p-8 md:p-10 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl relative overflow-hidden shadow-lg">
+            <div className="p-8 md:p-10 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl relative overflow-hidden">
               <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center text-[#2E5E99] mb-6">
                 <ScrollText className="w-6 h-6" />
               </div>
@@ -66,19 +66,19 @@ export function PoliciesIntro() {
                 Why Policies Matter
               </h3>
               <ul className="space-y-4">
-                <li className="flex gap-3.5 items-start p-3.5 bg-white dark:bg-charcoal rounded-xl border border-[#7BA4D0]/20 shadow-xs">
+                <li className="flex gap-3.5 items-start p-3.5 bg-white dark:bg-charcoal rounded-xl border border-[#7BA4D0]/20">
                   <div className="w-2 h-2 bg-[#2E5E99] rounded-full mt-1.5 shrink-0" />
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     Ensuring consistency in decision-making across all global operations.
                   </p>
                 </li>
-                <li className="flex gap-3.5 items-start p-3.5 bg-white dark:bg-charcoal rounded-xl border border-[#7BA4D0]/20 shadow-xs">
+                <li className="flex gap-3.5 items-start p-3.5 bg-white dark:bg-charcoal rounded-xl border border-[#7BA4D0]/20">
                   <div className="w-2 h-2 bg-[#2E5E99] rounded-full mt-1.5 shrink-0" />
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     Protecting the rights and interests of our shareholders, employees, and partners.
                   </p>
                 </li>
-                <li className="flex gap-3.5 items-start p-3.5 bg-white dark:bg-charcoal rounded-xl border border-[#7BA4D0]/20 shadow-xs">
+                <li className="flex gap-3.5 items-start p-3.5 bg-white dark:bg-charcoal rounded-xl border border-[#7BA4D0]/20">
                   <div className="w-2 h-2 bg-[#2E5E99] rounded-full mt-1.5 shrink-0" />
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     Maintaining compliance with international statutory and regulatory requirements.

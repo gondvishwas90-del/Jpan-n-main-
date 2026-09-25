@@ -53,7 +53,7 @@ export function RatingHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="text-base sm:text-lg text-white/85 font-normal leading-relaxed drop-shadow-sm"
+              className="text-base sm:text-lg text-white/85 font-normal leading-relaxed"
             >
               An objective evaluation of J Pan Tubular Components Limited's creditworthiness, capital discipline, and long-term solvency conducted by accredited independent rating agencies.
             </motion.p>

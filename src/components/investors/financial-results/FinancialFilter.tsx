@@ -53,7 +53,7 @@ function FinancialFilterInner() {
                 onClick={() => setActiveYear(year)}
                 className={`shrink-0 px-6 py-2 rounded-sm text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                   activeYear === year
-                    ? "bg-deepblue text-white shadow-lg"
+                    ? "bg-deepblue text-white "
                     : "bg-silver/5 text-muted-foreground hover:bg-silver/10 border border-transparent hover:border-border"
                 } ${index === fiscalYears.length - 1 ? 'mr-8' : ''}`}
               >

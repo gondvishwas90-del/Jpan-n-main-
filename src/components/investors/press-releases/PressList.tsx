@@ -99,7 +99,6 @@ export function PressList({ onReadMore }: PressListProps) {
               className="group relative flex flex-col bg-silver/5 dark:bg-charcoal border border-border/50 dark:border-white/5 rounded-sm p-10 hover:border-gold/30 dark:hover:border-gold/30 transition-colors duration-700 overflow-hidden"
             >
               {/* Subtle hover glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
 
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className="flex items-center gap-3 text-[9px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
@@ -157,7 +156,7 @@ export function PressList({ onReadMore }: PressListProps) {
           viewport={{ once: true }}
           className="mt-20 flex items-center justify-center gap-3"
         >
-          <button className="w-10 h-10 bg-gold text-charcoal font-bold text-xs flex items-center justify-center rounded-sm shadow-[0_0_15px_rgba(212,175,55,0.2)]">1</button>
+          <button className="w-10 h-10 bg-gold text-charcoal font-bold text-xs flex items-center justify-center rounded-sm">1</button>
           <button className="w-10 h-10 bg-transparent border border-border dark:border-white/10 hover:border-gold/50 text-muted-foreground hover:text-gold font-bold text-xs flex items-center justify-center rounded-sm transition-all duration-300">2</button>
           <button className="w-10 h-10 bg-transparent border border-border dark:border-white/10 hover:border-gold/50 text-muted-foreground hover:text-gold font-bold text-xs flex items-center justify-center rounded-sm transition-all duration-300">3</button>
           <div className="px-4 text-muted-foreground tracking-widest text-xs">...</div>

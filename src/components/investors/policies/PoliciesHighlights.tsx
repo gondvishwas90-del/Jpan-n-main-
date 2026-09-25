@@ -87,10 +87,10 @@ export function PoliciesHighlights() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    className="group p-8 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 transition-all duration-300 hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1.5 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center flex flex-col justify-between"
+                    className="group p-8 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 transition-all duration-300 hover:-translate-y-1.5 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 shadow-xs text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] transition-colors shrink-0">
+                      <div className="w-13 h-13 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-6 text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] transition-colors shrink-0">
                         <Icon className="w-6 h-6" />
                       </div>
                       <span className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-wider bg-[#EBF3FC] dark:bg-[#0D2440]/30 px-3 py-1 rounded-full border border-[#7BA4D0]/25 mb-4 inline-block">

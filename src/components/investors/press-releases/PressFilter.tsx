@@ -22,7 +22,7 @@ export function PressFilter() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
                   activeCategory === cat
-                    ? "bg-deepblue text-white shadow-lg"
+                    ? "bg-deepblue text-white "
                     : "bg-silver/10 text-muted-foreground hover:bg-silver/20"
                 } ${index === categories.length - 1 ? 'mr-8' : ''}`}
               >

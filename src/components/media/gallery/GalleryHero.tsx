@@ -28,7 +28,7 @@ export function GalleryHero() {
               <span className="font-light tracking-normal lowercase">we</span>
               
               {/* Floating Landscape Image Card with Asterisk Badge */}
-              <div className="relative inline-block w-36 sm:w-52 md:w-64 lg:w-72 h-20 sm:h-28 md:h-36 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white dark:border-white/10 group -translate-y-1 sm:-translate-y-2">
+              <div className="relative inline-block w-36 sm:w-52 md:w-64 lg:w-72 h-20 sm:h-28 md:h-36 rounded-xl sm:rounded-2xl overflow-hidden border-2 sm:border-4 border-white dark:border-white/10 group -translate-y-1 sm:-translate-y-2">
                 <Image
                   src="/images/about-manufacturing.png"
                   alt="J Pan Advanced Manufacturing Facility"
@@ -39,7 +39,7 @@ export function GalleryHero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 
                 {/* Asterisk Badge */}
-                <div className="absolute top-2 left-2.5 sm:top-3 sm:left-3 z-10 text-white font-serif text-2xl sm:text-3xl font-black leading-none drop-shadow-md">
+                <div className="absolute top-2 left-2.5 sm:top-3 sm:left-3 z-10 text-white font-serif text-2xl sm:text-3xl font-black leading-none">
                   <span className="text-[#7BA4D0]">*</span>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export function GalleryHero() {
               {/* Fanned Stack of Physical Photographs */}
               <div className="relative inline-flex items-center justify-center w-28 sm:w-40 md:w-48 h-20 sm:h-28 md:h-36 mx-1 sm:mx-3">
                 {/* Photo 1: Left Tilted */}
-                <div className="absolute w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 -rotate-12 -translate-x-3 sm:-translate-x-5 rounded-lg sm:rounded-xl overflow-hidden shadow-lg border-2 sm:border-3 border-white dark:border-white/20 bg-slate-200 dark:bg-[#0D2440]">
+                <div className="absolute w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 -rotate-12 -translate-x-3 sm:-translate-x-5 rounded-lg sm:rounded-xl overflow-hidden border-2 sm:border-3 border-white dark:border-white/20 bg-slate-200 dark:bg-[#0D2440]">
                   <Image
                     src="/images/product-1.png"
                     alt="Precision Engineered Component"
@@ -83,7 +83,7 @@ export function GalleryHero() {
                   />
                 </div>
                 {/* Photo 2: Right Tilted */}
-                <div className="absolute w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 rotate-12 translate-x-3 sm:translate-x-5 rounded-lg sm:rounded-xl overflow-hidden shadow-lg border-2 sm:border-3 border-white dark:border-white/20 bg-slate-200 dark:bg-[#0D2440]">
+                <div className="absolute w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 rotate-12 translate-x-3 sm:translate-x-5 rounded-lg sm:rounded-xl overflow-hidden border-2 sm:border-3 border-white dark:border-white/20 bg-slate-200 dark:bg-[#0D2440]">
                   <Image
                     src="/images/about-snapshot.png"
                     alt="Advanced Robotics Manufacturing"
@@ -92,7 +92,7 @@ export function GalleryHero() {
                   />
                 </div>
                 {/* Photo 3: Center Front */}
-                <div className="relative w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 -rotate-2 rounded-lg sm:rounded-xl overflow-hidden shadow-2xl border-2 sm:border-3 border-white dark:border-white/30 z-10 bg-slate-200 dark:bg-[#0D2440]">
+                <div className="relative w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 -rotate-2 rounded-lg sm:rounded-xl overflow-hidden border-2 sm:border-3 border-white dark:border-white/30 z-10 bg-slate-200 dark:bg-[#0D2440]">
                   <Image
                     src="/images/quality-hero-cinematic.jpg"
                     alt="Sub-micron Metrology & Inspection"
@@ -115,7 +115,7 @@ export function GalleryHero() {
             <div className="flex-1 flex justify-center md:justify-start">
               <Link
                 href="#gallery-feed"
-                className="group inline-flex items-center gap-3.5 px-9 sm:px-11 py-4 sm:py-5 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-bold text-xs sm:text-sm uppercase tracking-[0.22em] rounded-full shadow-xl shadow-[#2E5E99]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center gap-3.5 px-9 sm:px-11 py-4 sm:py-5 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-bold text-xs sm:text-sm uppercase tracking-[0.22em] rounded-full transition-all duration-300 hover:scale-105"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-[#7BA4D0] group-hover:scale-125 transition-transform" />
                 <span>Explore Gallery</span>

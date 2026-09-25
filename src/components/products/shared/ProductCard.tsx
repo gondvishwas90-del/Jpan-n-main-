@@ -59,7 +59,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
         className="block h-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2E5E99] rounded-2xl sm:rounded-3xl"
       >
         {/* Apple & Stripe Grade Card Container */}
-        <div className="relative h-full bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 ease-out hover:shadow-[0_24px_50px_-12px_rgba(13,36,64,0.18)] dark:hover:shadow-[0_24px_50px_-12px_rgba(0,0,0,0.65)] hover:border-slate-300 dark:hover:border-[#7BA4D0]/40 flex flex-col group/card">
+        <div className="relative h-full bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 ease-out hover:border-slate-300 dark:hover:border-[#7BA4D0]/40 flex flex-col group/card">
 
           {/* ========================================================
               TOP IMAGE VIEWPORT: 100% Pure Pristine White Canvas
@@ -75,7 +75,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
                 src={currentImage}
                 alt={product.name}
                 fill
-                className="object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.12)] select-none pointer-events-none transition-transform duration-700"
+                className="object-contain select-none pointer-events-none transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
@@ -83,7 +83,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
             {/* Floating Top Header Badges */}
             <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none z-30">
               {/* Category Pill */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100/90 dark:bg-[#0D2440]/90 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-2xs">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100/90 dark:bg-[#0D2440]/90 backdrop-blur-md border border-slate-200/80 dark:border-white/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2E5E99] dark:bg-[#7BA4D0]" />
                 <span className="text-[10px] font-heading font-semibold uppercase tracking-wider text-[#0D2440] dark:text-white">
                   {Array.isArray(product.category) ? product.category[0] : product.category}
@@ -117,7 +117,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
                 <button
                   type="button"
                   onClick={handlePrevImage}
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 text-[#0D2440] hover:bg-[#0D2440] hover:text-white border border-slate-200/80 shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 text-[#0D2440] hover:bg-[#0D2440] hover:text-white border border-slate-200/80 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -125,7 +125,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
                 <button
                   type="button"
                   onClick={handleNextImage}
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 text-[#0D2440] hover:bg-[#0D2440] hover:text-white border border-slate-200/80 shadow-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/95 text-[#0D2440] hover:bg-[#0D2440] hover:text-white border border-slate-200/80 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
                   aria-label="Next image"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -136,7 +136,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
             {/* Bottom Specs Micro Badge */}
             {product.specs && (
               <div className="absolute bottom-3 left-3.5 z-30 pointer-events-none">
-                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/95 text-slate-700 border border-slate-200/90 shadow-2xs backdrop-blur-xs text-[9px] font-heading font-medium tracking-wide">
+                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/95 text-slate-700 border border-slate-200/90 backdrop-blur-xs text-[9px] font-heading font-medium tracking-wide">
                   <ShieldCheck className="w-3 h-3 text-[#2E5E99]" />
                   <span>{product.specs}</span>
                 </div>
@@ -178,7 +178,7 @@ export function ProductCard({ product, idx = 0, className }: ProductCardProps) {
               </span>
 
               {/* Circular Interactive Arrow Button */}
-              <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/[0.08] text-[#0D2440] dark:text-white group-hover/card:bg-[#0D2440] group-hover/card:text-white dark:group-hover/card:bg-[#2E5E99] dark:group-hover/card:text-white transition-all duration-300 flex items-center justify-center shadow-2xs group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5">
+              <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/[0.08] text-[#0D2440] dark:text-white group-hover/card:bg-[#0D2440] group-hover/card:text-white dark:group-hover/card:bg-[#2E5E99] dark:group-hover/card:text-white transition-all duration-300 flex items-center justify-center group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5">
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/card:scale-110" />
               </div>
             </div>

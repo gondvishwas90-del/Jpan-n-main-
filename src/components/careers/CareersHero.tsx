@@ -54,7 +54,7 @@ export function CareersHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed border-l-2 border-[#7BA4D0]/50 pl-5 drop-shadow-sm"
+            className="text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed border-l-2 border-[#7BA4D0]/50 pl-5"
           >
             Shape the future of thermal and HVAC tubing with a team dedicated to engineering excellence, continuous innovation, and sustainable industrial growth.
           </motion.p>
@@ -68,7 +68,7 @@ export function CareersHero() {
           >
             <a 
               href="#openings" 
-              className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#2E5E99] hover:bg-[#7BA4D0] text-white font-bold text-xs uppercase tracking-widest rounded-xl shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-[#2E5E99] hover:bg-[#7BA4D0] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all duration-300"
             >
               <span>Explore Current Openings</span>
               <ArrowRight className="w-4 h-4" />

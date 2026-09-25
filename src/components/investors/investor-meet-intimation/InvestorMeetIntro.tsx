@@ -22,15 +22,15 @@ export function InvestorMeetIntro() {
             </p>
             
             <div className="grid grid-cols-3 gap-6 mt-8">
-              <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
+              <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                 <span className="block text-2xl font-heading font-bold text-[#0D2440] dark:text-white">Active</span>
                 <span className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest">Dialogue</span>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
+              <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                 <span className="block text-2xl font-heading font-bold text-[#0D2440] dark:text-white">Global</span>
                 <span className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest">Reach</span>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-xs">
+              <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25">
                 <span className="block text-2xl font-heading font-bold text-[#0D2440] dark:text-white">24h</span>
                 <span className="text-[10px] font-bold text-[#2E5E99] uppercase tracking-widest">Response</span>
               </div>
@@ -38,9 +38,9 @@ export function InvestorMeetIntro() {
           </div>
 
           <div className="relative">
-            <div className="p-8 sm:p-10 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl relative overflow-hidden shadow-xs">
+            <div className="p-8 sm:p-10 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl relative overflow-hidden">
               <div className="relative z-10 space-y-6">
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs hover:border-[#2E5E99]/50 transition-all">
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 hover:border-[#2E5E99]/50 transition-all">
                   <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-xl shrink-0 text-[#2E5E99]">
                     <BarChart3 className="w-6 h-6" />
                   </div>
@@ -50,7 +50,7 @@ export function InvestorMeetIntro() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs hover:border-[#2E5E99]/50 transition-all">
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 hover:border-[#2E5E99]/50 transition-all">
                   <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-xl shrink-0 text-[#2E5E99]">
                     <MessageCircle className="w-6 h-6" />
                   </div>
@@ -60,7 +60,7 @@ export function InvestorMeetIntro() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs hover:border-[#2E5E99]/50 transition-all">
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 hover:border-[#2E5E99]/50 transition-all">
                   <div className="w-12 h-12 bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center rounded-xl shrink-0 text-[#2E5E99]">
                     <TrendingUp className="w-6 h-6" />
                   </div>

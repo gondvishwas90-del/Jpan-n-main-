@@ -214,22 +214,6 @@ export function AboutSnapshot() {
       onMouseLeave={handleMouseLeave}
       className="relative py-24 md:py-36 bg-white dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden border-b border-[#7BA4D0]/20 dark:border-white/10"
     >
-      {/* Clean Ambient Diffuse Background Glows */}
-      <div className="absolute inset-0 pointer-events-none select-none z-0">
-        <div
-          className="absolute top-[10%] left-[8%] w-[45vw] h-[45vw] max-w-[650px] max-h-[650px] rounded-full bg-[#2E5E99]/[0.06] dark:bg-[#2E5E99]/[0.15] blur-[160px] transition-transform duration-700 ease-out"
-          style={{
-            transform: `translate3d(${ambientPos.x}px, ${ambientPos.y}px, 0)`,
-          }}
-        />
-        <div
-          className="absolute bottom-[10%] right-[8%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] rounded-full bg-[#7BA4D0]/[0.07] dark:bg-[#7BA4D0]/[0.10] blur-[150px] transition-transform duration-700 ease-out"
-          style={{
-            transform: `translate3d(${-ambientPos.x}px, ${-ambientPos.y}px, 0)`,
-          }}
-        />
-      </div>
-
       <div className="container-custom relative z-10">
         {/* ========================================================
             TOP SECTION: Editorial Narrative & Interactive 3D Showcase
@@ -274,7 +258,7 @@ export function AboutSnapshot() {
                     key={mod.id}
                     onClick={() => setActiveModuleIndex(idx)}
                     className={`group text-left p-3 rounded-2xl border transition-all duration-300 relative overflow-hidden flex items-center gap-3 ${isActive
-                        ? "bg-[#E7F0FA] dark:bg-[#0D2440] border-[#2E5E99]/60 dark:border-[#7BA4D0]/60 shadow-md scale-[1.02]"
+                        ? "bg-[#E7F0FA] dark:bg-[#0D2440] border-[#2E5E99]/60 dark:border-[#7BA4D0]/60 scale-[1.02]"
                         : "bg-white/60 dark:bg-white/[0.03] border-[#7BA4D0]/20 dark:border-white/10 hover:border-[#2E5E99]/30 hover:bg-[#E7F0FA]/40 dark:hover:bg-white/[0.06]"
                       }`}
                   >
@@ -300,7 +284,7 @@ export function AboutSnapshot() {
                     {/* Icon Bubble */}
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isActive
-                          ? "bg-[#2E5E99] text-white dark:bg-[#7BA4D0] dark:text-[#0D2440] shadow-xs"
+                          ? "bg-[#2E5E99] text-white dark:bg-[#7BA4D0] dark:text-[#0D2440]"
                           : "bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0]"
                         }`}
                     >
@@ -344,7 +328,7 @@ export function AboutSnapshot() {
               >
                 <Link
                   href="/about#our-story"
-                  className="group relative inline-flex items-center gap-3.5 px-8 sm:px-9 py-4 sm:py-4.5 bg-[#0D2440] hover:bg-[#2E5E99] dark:bg-[#7BA4D0] dark:hover:bg-[#2E5E99] text-white dark:text-[#0D2440] dark:hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest rounded-full overflow-hidden shadow-xl hover:shadow-2xl dark:shadow-[0_8px_25px_rgba(123,164,208,0.25)] transition-all duration-300 active:scale-95"
+                  className="group relative inline-flex items-center gap-3.5 px-8 sm:px-9 py-4 sm:py-4.5 bg-[#0D2440] hover:bg-[#2E5E99] dark:bg-[#7BA4D0] dark:hover:bg-[#2E5E99] text-white dark:text-[#0D2440] dark:hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 active:scale-95"
                 >
                   <div className="absolute inset-0 bg-[#2E5E99] dark:bg-[#2E5E99] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
 
@@ -369,7 +353,7 @@ export function AboutSnapshot() {
                 stiffness: 150,
                 damping: 20,
               }}
-              className="relative aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#7BA4D0]/30 dark:border-white/15 group bg-[#E7F0FA] dark:bg-[#0D2440] dark:shadow-[0_25px_70px_rgba(0,0,0,0.85)] transform-gpu"
+              className="relative aspect-[16/11] rounded-[2.5rem] overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 group bg-[#E7F0FA] dark:bg-[#0D2440] transform-gpu"
               style={{
                 transformStyle: "preserve-3d",
               }}
@@ -396,7 +380,7 @@ export function AboutSnapshot() {
               </AnimatePresence>
 
               {/* Dynamic Bottom Information Bar */}
-              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0D2440]/90 dark:bg-[#071321]/95 border border-[#7BA4D0]/30 dark:border-white/15 backdrop-blur-md text-white flex items-center justify-between shadow-2xl z-10">
+              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0D2440]/90 dark:bg-[#071321]/95 border border-[#7BA4D0]/30 dark:border-white/15 backdrop-blur-md text-white flex items-center justify-between z-10">
                 <div>
                   <div className="text-[11px] font-heading font-semibold tracking-wider text-[#7BA4D0] uppercase mb-1">
                     {activeModule.sublabel}

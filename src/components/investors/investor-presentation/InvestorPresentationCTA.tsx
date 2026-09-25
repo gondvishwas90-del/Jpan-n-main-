@@ -13,11 +13,9 @@ export function InvestorPresentationCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 p-8 sm:p-12 md:p-16 lg:p-20 shadow-xl overflow-hidden"
+          className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 p-8 sm:p-12 md:p-16 lg:p-20 overflow-hidden"
         >
           {/* Subtle Ambient Accents */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#7BA4D0]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#2E5E99]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -37,7 +35,7 @@ export function InvestorPresentationCTA() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a 
                   href="/contact"
-                  className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-3 group"
+                  className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 group"
                 >
                   Connect with Investor Relations
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -50,7 +48,7 @@ export function InvestorPresentationCTA() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div className="p-7 bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm border border-[#7BA4D0]/25 rounded-2xl hover:border-[#2E5E99]/40 hover:shadow-md transition-all">
+              <div className="p-7 bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm border border-[#7BA4D0]/25 rounded-2xl hover:border-[#2E5E99]/40 transition-all">
                 <div className="w-12 h-12 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center mb-5 text-[#2E5E99]">
                   <Mail className="w-6 h-6" />
                 </div>
@@ -60,7 +58,7 @@ export function InvestorPresentationCTA() {
                 <p className="text-muted-foreground text-xs font-medium">enquiry@jpantubular.com</p>
               </div>
 
-              <div className="p-7 bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm border border-[#7BA4D0]/25 rounded-2xl hover:border-[#2E5E99]/40 hover:shadow-md transition-all">
+              <div className="p-7 bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm border border-[#7BA4D0]/25 rounded-2xl hover:border-[#2E5E99]/40 transition-all">
                 <div className="w-12 h-12 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center mb-5 text-[#2E5E99]">
                   <Phone className="w-6 h-6" />
                 </div>

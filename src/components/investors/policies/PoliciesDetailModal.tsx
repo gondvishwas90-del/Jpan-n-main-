@@ -29,7 +29,7 @@ export function PoliciesDetailModal({ policy, isOpen, onClose }: PoliciesDetailM
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white dark:bg-charcoal rounded-sm shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden flex flex-col animate-in zoom-in-95 duration-300">
         
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border bg-silver/5">
@@ -73,7 +73,7 @@ export function PoliciesDetailModal({ policy, isOpen, onClose }: PoliciesDetailM
           {/* PDF Viewer Placeholder */}
           <div className="flex-grow bg-silver/10 relative group overflow-hidden border-r border-border">
             <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
-              <div className="w-20 h-20 bg-white dark:bg-charcoal border border-border rounded-sm flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 transition-transform">
+              <div className="w-20 h-20 bg-white dark:bg-charcoal border border-border rounded-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <FileText className="w-10 h-10 text-gold/20" />
               </div>
               <h4 className="text-xl font-heading font-bold text-charcoal dark:text-white mb-4">
@@ -84,7 +84,7 @@ export function PoliciesDetailModal({ policy, isOpen, onClose }: PoliciesDetailM
                 You can view the interactive PDF or download the official copy for your records.
               </p>
               <div className="flex items-center gap-4">
-                 <button className="px-8 py-3 bg-gold text-charcoal font-bold text-[9px] uppercase tracking-widest rounded-sm flex items-center gap-3 shadow-lg transition-all btn-slide-white group">
+                 <button className="px-8 py-3 bg-gold text-charcoal font-bold text-[9px] uppercase tracking-widest rounded-sm flex items-center gap-3 transition-all btn-slide-white group">
                    <ExternalLink className="w-4 h-4" />
                    Open in New Tab
                  </button>
@@ -128,7 +128,7 @@ export function PoliciesDetailModal({ policy, isOpen, onClose }: PoliciesDetailM
             </div>
 
             <div className="pt-8 border-t border-border">
-              <button className="w-full flex items-center justify-center gap-3 py-5 bg-charcoal hover:bg-deepblue text-white rounded-sm transition-all shadow-xl">
+              <button className="w-full flex items-center justify-center gap-3 py-5 bg-charcoal hover:bg-deepblue text-white rounded-sm transition-all">
                 <Download className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase tracking-widest">Download Official PDF</span>
               </button>

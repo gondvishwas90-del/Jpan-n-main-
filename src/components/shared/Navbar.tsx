@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Menu, X, ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
@@ -192,25 +193,31 @@ export function Navbar() {
             : "max-w-[94%] xl:max-w-[1420px] 2xl:max-w-[1520px] h-16 sm:h-[72px] px-5 sm:px-8 rounded-2xl sm:rounded-3xl"
         )}
       >
-        {/* Left: Brand Icon + Title */}
-        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" onClick={closeDropdowns}>
-          <div
-            className={cn(
-              "rounded-lg bg-[#0D2440] dark:bg-[#1E3E66] border border-[#0D2440] dark:border-white/20 flex items-center justify-center font-heading font-black text-white tracking-tight shadow-sm group-hover:bg-[#2E5E99] transition-all duration-300",
-              isScrolled ? "w-8 h-8 text-xs" : "w-8 sm:w-9 h-8 sm:h-9 text-xs sm:text-sm"
-            )}
-          >
-            <span>JP</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#7BA4D0] ml-0.5" />
+        {/* Left: Official Brand Logo Mark */}
+        <Link href="/" className="flex items-center group shrink-0" onClick={closeDropdowns}>
+          <div className={cn(
+            "relative w-auto aspect-[963/384] shrink-0 transition-transform duration-300 group-hover:scale-[1.02]",
+            isScrolled ? "h-8 sm:h-9" : "h-9 sm:h-10 md:h-11"
+          )}>
+            {/* Light Mode: Navy Logo */}
+            <Image
+              src="/images/jpan-logo.png"
+              alt="J Pan Tubular Components Ltd"
+              fill
+              priority
+              sizes="(max-width: 768px) 120px, 150px"
+              className="object-contain object-left dark:hidden"
+            />
+            {/* Dark Mode: Pure White Logo */}
+            <Image
+              src="/images/jpan-logo-white.png"
+              alt="J Pan Tubular Components Ltd"
+              fill
+              priority
+              sizes="(max-width: 768px) 120px, 150px"
+              className="object-contain object-left hidden dark:block"
+            />
           </div>
-          <span
-            className={cn(
-              "text-[#0D2440] dark:text-white font-heading font-black tracking-tight group-hover:text-[#2E5E99] dark:group-hover:text-[#7BA4D0] transition-all duration-300",
-              isScrolled ? "text-base sm:text-lg" : "text-base sm:text-xl"
-            )}
-          >
-            J Pan Tubular
-          </span>
         </Link>
 
         {/* Center/Desktop Navigation Links */}
@@ -352,7 +359,7 @@ export function Navbar() {
           {/* High-Contrast Action Button */}
           <Link
             href="/contact"
-            className="group hidden sm:flex items-center gap-2.5 bg-[#2E5E99] hover:bg-[#0D2440] dark:hover:bg-[#1E3E66] text-white font-heading font-bold text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-lg shadow-md transition-all active:scale-95 shrink-0"
+            className="group hidden sm:flex items-center gap-2.5 bg-[#2E5E99] hover:bg-[#0D2440] dark:hover:bg-[#1E3E66] text-white font-heading font-bold text-xs sm:text-sm pl-4 pr-1.5 py-1.5 rounded-lg transition-all active:scale-95 shrink-0"
           >
             <span>Get in touch</span>
             <div className="w-6 h-6 rounded-md bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
@@ -456,7 +463,7 @@ export function Navbar() {
           {/* Mobile CTA */}
           <Link
             href="/contact"
-            className="mt-3 flex items-center justify-center gap-2 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-heading font-bold text-sm py-3 rounded-xl shadow-md transition-colors"
+            className="mt-3 flex items-center justify-center gap-2 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-heading font-bold text-sm py-3 rounded-xl transition-colors"
             onClick={() => setIsOpen(false)}
           >
             <span>Get in touch</span>

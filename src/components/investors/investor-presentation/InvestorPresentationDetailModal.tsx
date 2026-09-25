@@ -29,7 +29,7 @@ export function InvestorPresentationDetailModal({ presentation, isOpen, onClose 
       />
       
       {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-6xl bg-white dark:bg-charcoal border border-border rounded-sm shadow-2xl flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300 h-[90vh] max-h-[850px]">
+      <div className="relative z-10 w-full max-w-6xl bg-white dark:bg-charcoal border border-border rounded-sm flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300 h-[90vh] max-h-[850px]">
         {/* Sidebar: Strategic Metadata */}
         <div className="w-full md:w-80 p-8 md:p-10 bg-silver/5 border-b md:border-b-0 md:border-r border-border flex flex-col">
           <button 
@@ -78,7 +78,7 @@ export function InvestorPresentationDetailModal({ presentation, isOpen, onClose 
           </div>
 
           <div className="pt-10 space-y-4">
-            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 shadow-xl btn-slide-gold group">
+            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-gold group">
               <Download className="w-4 h-4" />
               Download Full Slides
             </button>
@@ -101,7 +101,7 @@ export function InvestorPresentationDetailModal({ presentation, isOpen, onClose 
           <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/blueprint.png')] bg-repeat" />
           
           <div className="relative z-10 w-full max-w-2xl">
-            <div className="aspect-video bg-charcoal dark:bg-black rounded-sm border border-white/5 shadow-2xl flex items-center justify-center relative group">
+            <div className="aspect-video bg-charcoal dark:bg-black rounded-sm border border-white/5 flex items-center justify-center relative group">
               <div className="absolute inset-0 opacity-10 bg-[url('/images/blueprint.png')] bg-cover" />
               <div className="relative z-10 flex flex-col items-center">
                 <div className="w-20 h-20 bg-gold/10 flex items-center justify-center rounded-full mb-6 group-hover:scale-110 transition-transform">
@@ -124,7 +124,7 @@ export function InvestorPresentationDetailModal({ presentation, isOpen, onClose 
                 milestones are displayed within this secure, high-fidelity 
                 institutional presentation viewer.
               </p>
-              <div className="inline-flex items-center gap-4 px-6 py-3 bg-white dark:bg-charcoal border border-border rounded-full shadow-sm">
+              <div className="inline-flex items-center gap-4 px-6 py-3 bg-white dark:bg-charcoal border border-border rounded-full">
                 <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Certified Financial Narrative</span>
               </div>

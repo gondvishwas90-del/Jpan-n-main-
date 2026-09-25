@@ -78,7 +78,7 @@ export function ContactPreview() {
             <div>
               <Link
                 href="/contact"
-                className="group/btn inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#2E5E99] hover:bg-[#0D2440] dark:hover:bg-[#1B3B60] text-[#E7F0FA] text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md active:scale-95"
+                className="group/btn inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#2E5E99] hover:bg-[#0D2440] dark:hover:bg-[#1B3B60] text-[#E7F0FA] text-xs font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95"
               >
                 <span>Full Contact Directory</span>
                 <div className="w-6 h-6 rounded-md bg-white/20 flex items-center justify-center group-hover/btn:translate-x-0.5 transition-transform duration-300">
@@ -96,7 +96,7 @@ export function ContactPreview() {
                 href={card.href}
                 target={card.isExternal ? "_blank" : undefined}
                 rel={card.isExternal ? "noopener noreferrer" : undefined}
-                className="relative rounded-2xl bg-white dark:bg-[#102744] border border-[#7BA4D0]/35 dark:border-white/10 p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-300 group flex flex-col justify-between min-h-[160px] sm:min-h-[180px] overflow-hidden"
+                className="relative rounded-2xl bg-white dark:bg-[#102744] border border-[#7BA4D0]/35 dark:border-white/10 p-5 sm:p-6 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-300 group flex flex-col justify-between min-h-[160px] sm:min-h-[180px] overflow-hidden"
               >
                 {/* Card Top Row: Eyebrow + Action Arrow */}
                 <div className="flex items-center justify-between mb-3">

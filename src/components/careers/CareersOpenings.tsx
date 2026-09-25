@@ -115,7 +115,6 @@ export function CareersOpenings() {
     >
       {/* Background Decor */}
       <div className="absolute inset-0 bg-[radial-gradient(#2E5E99_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.025] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-[#7BA4D0]/10 blur-[130px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-16 gap-8">
@@ -139,7 +138,7 @@ export function CareersOpenings() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10 shadow-xs"
+            className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10"
           >
              {departments.map((dept) => (
                 <button
@@ -147,7 +146,7 @@ export function CareersOpenings() {
                   onClick={() => setActiveDept(dept)}
                   className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-xl sm:rounded-full transition-all duration-300 cursor-pointer ${
                     activeDept === dept 
-                    ? "bg-[#0D2440] text-white shadow-md" 
+                    ? "bg-[#0D2440] text-white" 
                     : "text-slate-600 dark:text-slate-300 hover:text-[#0D2440] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
                   }`}
                 >
@@ -174,7 +173,7 @@ export function CareersOpenings() {
                   animate="visible"
                   exit="exit"
                   whileHover={{ y: -6 }}
-                  className="group relative bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 p-7 lg:p-8 rounded-3xl hover:border-[#2E5E99]/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(46,94,153,0.12)] flex flex-col justify-between overflow-hidden w-full shrink-0 snap-center md:w-auto md:shrink"
+                  className="group relative bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 p-7 lg:p-8 rounded-3xl hover:border-[#2E5E99]/50 transition-all duration-300 flex flex-col justify-between overflow-hidden w-full shrink-0 snap-center md:w-auto md:shrink"
                 >
                   {/* Top hairline accent */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2E5E99] to-[#7BA4D0] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -216,7 +215,7 @@ export function CareersOpenings() {
                   <div className="relative z-10 mt-auto pt-6 border-t border-slate-100 dark:border-white/10">
                      <Link 
                        href={`/careers/${job.slug}`}
-                       className="w-full flex items-center justify-between py-3 px-5 bg-slate-50 hover:bg-[#0D2440] dark:bg-white/5 dark:hover:bg-white text-[#0D2440] hover:text-white dark:text-white dark:hover:text-[#0D2440] rounded-xl border border-slate-200/80 dark:border-white/10 hover:border-transparent transition-all duration-300 group/apply shadow-xs font-semibold text-xs uppercase tracking-wider"
+                       className="w-full flex items-center justify-between py-3 px-5 bg-slate-50 hover:bg-[#0D2440] dark:bg-white/5 dark:hover:bg-white text-[#0D2440] hover:text-white dark:text-white dark:hover:text-[#0D2440] rounded-xl border border-slate-200/80 dark:border-white/10 hover:border-transparent transition-all duration-300 group/apply font-semibold text-xs uppercase tracking-wider"
                      >
                         <span>Apply Now</span>
                         <ArrowRight className="w-4 h-4 group-hover/apply:translate-x-1 transition-transform duration-300" strokeWidth={2} />
@@ -270,7 +269,7 @@ export function CareersOpenings() {
                  window.location.href = "/contact#enquiry-form";
                }
              }}
-             className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider hover:border-[#2E5E99] hover:text-[#2E5E99] transition-all duration-300 group/general shadow-xs cursor-pointer"
+             className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider hover:border-[#2E5E99] hover:text-[#2E5E99] transition-all duration-300 group/general cursor-pointer"
            >
              <span>Submit General Application</span>
              <ChevronRight className="w-4 h-4 group-hover/general:translate-x-1 transition-transform duration-300 text-[#2E5E99]" strokeWidth={2} />

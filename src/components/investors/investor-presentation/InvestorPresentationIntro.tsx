@@ -69,10 +69,10 @@ export function InvestorPresentationIntro() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="p-7 md:p-8 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 rounded-3xl hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.12)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+                className="p-7 md:p-8 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 rounded-3xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-13 h-13 p-3.5 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl shrink-0 border border-[#7BA4D0]/30 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] shadow-sm">
+                  <div className="w-13 h-13 p-3.5 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl shrink-0 border border-[#7BA4D0]/30 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440]">
                     <item.icon className="w-6 h-6 text-[#2E5E99] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <div className="flex-1">

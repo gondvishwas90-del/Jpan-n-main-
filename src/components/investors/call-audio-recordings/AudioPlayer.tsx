@@ -32,14 +32,14 @@ export function AudioPlayer({ recording, isOpen, onClose }: AudioPlayerProps) {
         onClick={onClose}
       />
 
-      <div className="relative bg-charcoal dark:bg-black border-t border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+      <div className="relative bg-charcoal dark:bg-black border-t border-white/10">
         {/* Progress Bar (Global) */}
         <div className="absolute top-0 left-0 w-full h-1 bg-white/5 cursor-pointer group">
            <div 
             className="h-full bg-gold relative" 
             style={{ width: `${progress}%` }}
            >
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg" />
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
            </div>
         </div>
 
@@ -78,7 +78,7 @@ export function AudioPlayer({ recording, isOpen, onClose }: AudioPlayerProps) {
                   </button>
                   <button 
                     onClick={() => setIsPlaying(!isPlaying)}
-                    className="w-16 h-16 bg-white text-charcoal rounded-full flex items-center justify-center hover:bg-gold transition-all shadow-2xl scale-110"
+                    className="w-16 h-16 bg-white text-charcoal rounded-full flex items-center justify-center hover:bg-gold transition-all scale-110"
                   >
                     {isPlaying ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 fill-current translate-x-0.5" />}
                   </button>

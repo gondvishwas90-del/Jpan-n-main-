@@ -8,11 +8,7 @@ export function GalleryCTA() {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black relative overflow-visible">
       <div className="container-custom relative z-10">
-        <div className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] border border-[#7BA4D0]/35 p-8 md:p-12 lg:p-14 shadow-[0_20px_60px_-15px_rgba(46,94,153,0.08)] overflow-hidden">
-          {/* Subtle Ambient Radial Glows */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-radial from-[#7BA4D0]/20 to-transparent blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-radial from-[#2E5E99]/10 to-transparent blur-3xl pointer-events-none" />
-
+        <div className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] border border-[#7BA4D0]/35 p-8 md:p-12 lg:p-14 overflow-hidden">
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* Left Side: Content */}
             <div className="flex-1 text-center lg:text-left space-y-4">
@@ -34,7 +30,7 @@ export function GalleryCTA() {
             <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-7 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 shadow-md shadow-[#0D2440]/15 hover:shadow-lg hover:-translate-y-0.5 group"
+                className="w-full sm:w-auto px-7 py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-sm rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:-translate-y-0.5 group"
               >
                 <span>Engineering Team</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -42,7 +38,7 @@ export function GalleryCTA() {
               
               <Link
                 href="/about"
-                className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-white/90 dark:bg-charcoal text-[#0D2440] dark:text-white border border-[#7BA4D0]/35 text-sm font-semibold rounded-xl flex items-center justify-center transition-all duration-300 shadow-xs hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-white/90 dark:bg-charcoal text-[#0D2440] dark:text-white border border-[#7BA4D0]/35 text-sm font-semibold rounded-xl flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
               >
                 Company Story
               </Link>

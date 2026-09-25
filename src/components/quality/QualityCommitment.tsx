@@ -93,7 +93,7 @@ export function QualityCommitment() {
               </p>
             </div>
 
-            <div className="flex items-start sm:items-center gap-4 p-5 sm:p-6 border-l-4 border-[#2E5E99] bg-[#EBF3FC]/80 dark:bg-charcoal/60 rounded-r-2xl border border-[#7BA4D0]/20 shadow-xs">
+            <div className="flex items-start sm:items-center gap-4 p-5 sm:p-6 border-l-4 border-[#2E5E99] bg-[#EBF3FC]/80 dark:bg-charcoal/60 rounded-r-2xl border border-[#7BA4D0]/20">
               <CheckCircle2 className="w-6 h-6 text-[#2E5E99] shrink-0" />
               <p className="text-xs sm:text-sm font-semibold text-[#0D2440] dark:text-white leading-relaxed">
                 Continuously upgrading testing protocols to ensure every part delivered contributes to long-term reliability.
@@ -116,9 +116,9 @@ export function QualityCommitment() {
                   key={idx}
                   variants={itemVariants}
                   whileHover={{ x: 8, transition: { duration: 0.3 } }}
-                  className="group relative flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 sm:p-7 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#7BA4D0]/60 rounded-2xl sm:rounded-3xl transition-all duration-500 overflow-hidden w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-xs hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.12)]"
+                  className="group relative flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 sm:p-7 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#7BA4D0]/60 rounded-2xl sm:rounded-3xl transition-all duration-500 overflow-hidden w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
                 >
-                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-sm text-[#2E5E99]">
+                  <div className="w-14 h-14 shrink-0 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 text-[#2E5E99]">
                     <feature.icon className="w-6 h-6" strokeWidth={1.75} />
                   </div>
                   

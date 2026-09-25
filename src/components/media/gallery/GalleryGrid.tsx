@@ -57,7 +57,7 @@ export function GalleryGrid({ selectedCategory }: GalleryGridProps) {
           {filteredItems.map((item) => (
             <div 
               key={item.id}
-              className="group relative aspect-[4/3] sm:aspect-square w-full md:w-auto shrink-0 md:shrink snap-center bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer shadow-[0_10px_30px_-10px_rgba(46,94,153,0.06)] hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.16)] transition-all duration-500"
+              className="group relative aspect-[4/3] sm:aspect-square w-full md:w-auto shrink-0 md:shrink snap-center bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-500"
               onClick={() => setSelectedImage(item.image)}
             >
               <Image
@@ -129,7 +129,7 @@ export function GalleryGrid({ selectedCategory }: GalleryGridProps) {
           </button>
           
           <div 
-            className="relative w-full h-full max-w-6xl max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full h-full max-w-6xl max-h-[85vh] rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <Image

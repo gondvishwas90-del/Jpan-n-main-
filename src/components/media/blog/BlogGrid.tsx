@@ -165,7 +165,7 @@ export function BlogGrid({ selectedCategory = "All Insights", searchQuery = "", 
                     image: article.image,
                     content: article.content
                   })}
-                  className="group flex flex-col bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 rounded-3xl overflow-hidden hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_rgba(46,94,153,0.12)] transition-all duration-300 cursor-pointer w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center justify-between hover:-translate-y-1"
+                  className="group flex flex-col bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 rounded-3xl overflow-hidden hover:border-[#2E5E99]/50 transition-all duration-300 cursor-pointer w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center justify-between hover:-translate-y-1"
                 >
                   <div>
                     {/* Image with 100% Clarity */}

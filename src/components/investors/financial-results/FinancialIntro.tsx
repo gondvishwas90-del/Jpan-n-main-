@@ -31,15 +31,15 @@ export function FinancialIntro() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mt-8">
-              <div className="group cursor-pointer p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.12)] hover:-translate-y-1 transition-all duration-500 shadow-xs">
-                <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-4 transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99] shadow-xs">
+              <div className="group cursor-pointer p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-1 transition-all duration-500">
+                <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-4 transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99]">
                   <ShieldCheck className="w-7 h-7" strokeWidth={1.75} />
                 </div>
                 <h4 className="font-bold text-xs text-[#0D2440] dark:text-white uppercase tracking-widest mb-2 group-hover:text-[#2E5E99] transition-colors">Governance</h4>
                 <p className="text-xs sm:text-sm text-[#0D2440]/75 dark:text-silver/80 leading-relaxed font-normal">Adhering to the highest standards of regulatory compliance.</p>
               </div>
-              <div className="group cursor-pointer p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.12)] hover:-translate-y-1 transition-all duration-500 shadow-xs">
-                <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-4 transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99] shadow-xs">
+              <div className="group cursor-pointer p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-1 transition-all duration-500">
+                <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-4 transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99]">
                   <BarChart3 className="w-7 h-7" strokeWidth={1.75} />
                 </div>
                 <h4 className="font-bold text-xs text-[#0D2440] dark:text-white uppercase tracking-widest mb-2 group-hover:text-[#2E5E99] transition-colors">Insight</h4>
@@ -54,7 +54,7 @@ export function FinancialIntro() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="relative w-full aspect-[4/5] md:aspect-[4/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 group shadow-2xl bg-white dark:bg-[#0D2440]"
+            className="relative w-full aspect-[4/5] md:aspect-[4/4] lg:aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 group bg-white dark:bg-[#0D2440]"
           >
             <Image 
               src="/images/annual_reports_hero.png"
@@ -68,7 +68,7 @@ export function FinancialIntro() {
 
             {/* Glassmorphic Overlay Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 z-20">
-              <div className="bg-white/95 dark:bg-[#0D2440]/90 backdrop-blur-md border border-[#7BA4D0]/35 p-6 sm:p-8 rounded-3xl shadow-xl transform group-hover:-translate-y-1.5 transition-transform duration-500">
+              <div className="bg-white/95 dark:bg-[#0D2440]/90 backdrop-blur-md border border-[#7BA4D0]/35 p-6 sm:p-8 rounded-3xl transform group-hover:-translate-y-1.5 transition-transform duration-500">
                 <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center text-[#2E5E99] mb-4">
                   <Globe className="w-6 h-6" />
                 </div>

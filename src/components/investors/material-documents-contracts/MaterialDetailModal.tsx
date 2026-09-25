@@ -42,7 +42,7 @@ export function MaterialDetailModal({ isOpen, onClose, documentData }: MaterialD
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-7xl h-full bg-white dark:bg-charcoal rounded-sm shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-8 duration-700">
+      <div className="relative w-full max-w-7xl h-full bg-white dark:bg-charcoal rounded-sm flex flex-col overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-8 duration-700">
         
         {/* Header */}
         <div className="px-8 py-6 border-b border-border flex items-center justify-between bg-white dark:bg-charcoal sticky top-0 z-10">
@@ -75,7 +75,7 @@ export function MaterialDetailModal({ isOpen, onClose, documentData }: MaterialD
              <button className="p-3 bg-silver/5 hover:bg-silver/10 border border-border rounded-sm transition-all group" title="Print">
                 <Printer className="w-4 h-4 text-muted-foreground group-hover:text-gold" />
              </button>
-             <button className="p-3 bg-gold text-charcoal rounded-sm hover:bg-white transition-all shadow-xl font-bold text-[9px] uppercase tracking-widest flex items-center gap-2">
+             <button className="p-3 bg-gold text-charcoal rounded-sm hover:bg-white transition-all font-bold text-[9px] uppercase tracking-widest flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Download PDF
              </button>
@@ -96,7 +96,7 @@ export function MaterialDetailModal({ isOpen, onClose, documentData }: MaterialD
           <div className="flex-grow bg-silver/10 dark:bg-black/40 overflow-y-auto p-8 md:p-12 scrollbar-thin">
              <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
                 {/* PDF Aesthetic Mockup */}
-                <div className="bg-white dark:bg-charcoal shadow-2xl rounded-sm p-12 md:p-20 min-h-[1200px] border border-border relative overflow-hidden">
+                <div className="bg-white dark:bg-charcoal rounded-sm p-12 md:p-20 min-h-[1200px] border border-border relative overflow-hidden">
                    <div className="absolute top-0 left-0 w-full h-1 bg-gold" />
                    <div className="flex items-center justify-between mb-20 opacity-40">
                       <div className="w-24 h-12 border border-border" />

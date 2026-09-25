@@ -53,7 +53,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-6xl font-heading font-black text-white tracking-tight leading-[1.06] drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]"
+              className="text-4xl sm:text-6xl font-heading font-black text-white tracking-tight leading-[1.06]"
             >
               {title}
             </motion.h1>
@@ -61,7 +61,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-xl drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]"
+              className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-xl"
             >
               {subtitle}
             </motion.p>
@@ -92,7 +92,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-4xl sm:text-6xl lg:text-[4.5rem] font-heading font-black text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]"
+              className="text-4xl sm:text-6xl lg:text-[4.5rem] font-heading font-black text-white leading-[1.05] tracking-tight"
             >
               {title}
             </motion.h1>
@@ -100,7 +100,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-base sm:text-xl text-white/90 max-w-2xl font-normal leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]"
+              className="text-base sm:text-xl text-white/90 max-w-2xl font-normal leading-relaxed"
             >
               {subtitle}
             </motion.p>
@@ -114,7 +114,7 @@ export function GenericInvestorHero({
                 {chips.map((chip, cIdx) => (
                   <div
                     key={cIdx}
-                    className="px-4 py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center gap-2 text-xs shadow-lg"
+                    className="px-4 py-2 rounded-xl bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center gap-2 text-xs"
                   >
                     <span className="text-[#7BA4D0] font-sans font-medium">{chip.label}:</span>
                     <span className="font-heading font-bold text-white">{chip.value}</span>
@@ -152,7 +152,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-6xl font-heading font-black text-white leading-[1.08] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]"
+              className="text-4xl sm:text-6xl font-heading font-black text-white leading-[1.08] tracking-tight"
             >
               {title}
             </motion.h1>
@@ -162,7 +162,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-2xl drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]"
+              className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-2xl"
             >
               {subtitle}
             </motion.p>
@@ -197,7 +197,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-6xl font-heading font-black text-white leading-[1.08] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]"
+              className="text-4xl sm:text-6xl font-heading font-black text-white leading-[1.08] tracking-tight"
             >
               {title}
             </motion.h1>
@@ -205,7 +205,7 @@ export function GenericInvestorHero({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-xl text-white/90 font-light leading-relaxed max-w-2xl italic font-serif drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]"
+              className="text-base sm:text-xl text-white/90 font-light leading-relaxed max-w-2xl italic font-serif"
             >
               &ldquo;{subtitle}&rdquo;
             </motion.p>
@@ -262,7 +262,7 @@ export function GenericInvestorHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="text-base sm:text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl font-normal border-l-2 border-[#7BA4D0]/50 pl-5 drop-shadow-sm"
+            className="text-base sm:text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl font-normal border-l-2 border-[#7BA4D0]/50 pl-5"
           >
             {subtitle}
           </motion.p>
@@ -358,7 +358,7 @@ function GenericInvestorTableInner({ data }: TableProps) {
                 className="group bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 hover:border-[#2E5E99]/60 hover:bg-[#F1F6FB] dark:hover:bg-charcoal/60 transition-all duration-300 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 {/* Icon Box */}
-                <div className="w-14 h-14 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 shadow-sm text-[#2E5E99]">
+                <div className="w-14 h-14 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 text-[#2E5E99]">
                   <FileText className="w-6 h-6" />
                 </div>
 
@@ -397,14 +397,14 @@ function GenericInvestorTableInner({ data }: TableProps) {
                       href={report.link && report.link !== "#" ? report.link : "/sample-report.pdf"}
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="px-5 py-2.5 rounded-xl border border-[#7BA4D0]/35 bg-white hover:bg-white/80 dark:bg-charcoal text-xs font-semibold text-[#0D2440] dark:text-white transition-all shadow-xs flex items-center gap-1.5"
+                      className="px-5 py-2.5 rounded-xl border border-[#7BA4D0]/35 bg-white hover:bg-white/80 dark:bg-charcoal text-xs font-semibold text-[#0D2440] dark:text-white transition-all flex items-center gap-1.5"
                     >
                       <ExternalLink className="w-3.5 h-3.5 text-[#2E5E99]" /> View
                     </a>
                     <a 
                       href={report.link && report.link !== "#" ? report.link : "/sample-report.pdf"}
                       download
-                      className="px-5 py-2.5 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-semibold shadow-md shadow-[#0D2440]/15 flex items-center gap-2 transition-all group/btn"
+                      className="px-5 py-2.5 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-semibold flex items-center gap-2 transition-all group/btn"
                     >
                       <Download className="w-3.5 h-3.5 group-hover/btn:translate-y-0.5 transition-transform" />
                       PDF
@@ -490,7 +490,7 @@ function GenericInvestorFilterInner() {
               placeholder="Search archive..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#EBF3FC]/60 dark:bg-[#0D2440]/80 border border-[#7BA4D0]/35 dark:border-white/15 rounded-xl py-2.5 pl-10 pr-10 text-sm text-[#0D2440] dark:text-white placeholder:text-[#0D2440]/50 dark:placeholder:text-white/40 focus:outline-none focus:border-[#2E5E99] dark:focus:border-[#7BA4D0] transition-all shadow-xs"
+              className="w-full bg-[#EBF3FC]/60 dark:bg-[#0D2440]/80 border border-[#7BA4D0]/35 dark:border-white/15 rounded-xl py-2.5 pl-10 pr-10 text-sm text-[#0D2440] dark:text-white placeholder:text-[#0D2440]/50 dark:placeholder:text-white/40 focus:outline-none focus:border-[#2E5E99] dark:focus:border-[#7BA4D0] transition-all"
             />
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0] pointer-events-none" />
             {searchQuery && (
@@ -505,7 +505,7 @@ function GenericInvestorFilterInner() {
 
           <button 
             onClick={toggleSort}
-            className="flex items-center gap-2.5 bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/35 dark:border-white/15 rounded-xl py-2.5 px-5 text-xs font-semibold text-[#0D2440] dark:text-white hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all shrink-0 whitespace-nowrap shadow-xs justify-between"
+            className="flex items-center gap-2.5 bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/35 dark:border-white/15 rounded-xl py-2.5 px-5 text-xs font-semibold text-[#0D2440] dark:text-white hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all shrink-0 whitespace-nowrap justify-between"
           >
             <Filter className="w-3.5 h-3.5 text-[#2E5E99] dark:text-[#7BA4D0] shrink-0" />
             <span>{sort === "desc" ? "Latest First" : "Oldest First"}</span>
@@ -623,7 +623,7 @@ function GenericInvestorListingInner({
                 className="group bg-[#F8FAFC] dark:bg-[#0D2440]/60 border border-[#7BA4D0]/25 dark:border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 hover:border-[#2E5E99]/60 dark:hover:border-[#7BA4D0]/40 hover:bg-[#F1F6FB] dark:hover:bg-[#0D2440] transition-all duration-300 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 {/* Icon Box */}
-                <div className="w-14 h-14 bg-white dark:bg-[#071321] border border-[#7BA4D0]/30 dark:border-white/10 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                <div className="w-14 h-14 bg-white dark:bg-[#071321] border border-[#7BA4D0]/30 dark:border-white/10 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105">
                   <FileText className="w-6 h-6 text-[#2E5E99] dark:text-[#7BA4D0]" />
                 </div>
 
@@ -668,14 +668,14 @@ function GenericInvestorListingInner({
                       href={item.viewUrl || item.downloadUrl || "/sample-report.pdf"}
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="px-5 py-2.5 rounded-xl border border-[#7BA4D0]/35 dark:border-white/15 bg-white hover:bg-white/80 dark:bg-[#0D2440] dark:hover:bg-white/10 text-xs font-semibold text-[#0D2440] dark:text-white transition-all shadow-xs flex items-center gap-1.5"
+                      className="px-5 py-2.5 rounded-xl border border-[#7BA4D0]/35 dark:border-white/15 bg-white hover:bg-white/80 dark:bg-[#0D2440] dark:hover:bg-white/10 text-xs font-semibold text-[#0D2440] dark:text-white transition-all flex items-center gap-1.5"
                     >
                       <ExternalLink className="w-3.5 h-3.5 text-[#2E5E99] dark:text-[#7BA4D0]" /> View
                     </a>
                     <a 
                       href={item.downloadUrl || item.viewUrl || "/sample-report.pdf"}
                       download
-                      className="px-5 py-2.5 rounded-xl bg-[#0D2440] dark:bg-[#2E5E99] hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] text-white text-xs font-semibold shadow-md shadow-[#0D2440]/15 flex items-center gap-2 transition-all group/btn"
+                      className="px-5 py-2.5 rounded-xl bg-[#0D2440] dark:bg-[#2E5E99] hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] text-white text-xs font-semibold flex items-center gap-2 transition-all group/btn"
                     >
                       <Download className="w-3.5 h-3.5 group-hover/btn:translate-y-0.5 transition-transform" />
                       PDF

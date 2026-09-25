@@ -27,7 +27,7 @@ export function BlogFeatured({ onReadMore }: BlogFeaturedProps) {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-[#070b14] border-b border-slate-200/70 dark:border-white/5 transition-colors">
       <div className="container-custom">
-        <div className="group relative flex flex-col lg:flex-row bg-white dark:bg-[#0c1527] rounded-3xl overflow-hidden border border-slate-200/80 dark:border-white/10 hover:border-[#2E5E99]/50 transition-all duration-300 shadow-[0_20px_50px_rgba(13,36,64,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+        <div className="group relative flex flex-col lg:flex-row bg-white dark:bg-[#0c1527] rounded-3xl overflow-hidden border border-slate-200/80 dark:border-white/10 hover:border-[#2E5E99]/50 transition-all duration-300">
           {/* Image Side: 100% Clear, No Dark Dimmer */}
           <div className="w-full lg:w-3/5 aspect-video lg:aspect-auto relative overflow-hidden bg-slate-100 dark:bg-slate-900 min-h-[320px] lg:min-h-[440px]">
             <Image
@@ -69,7 +69,7 @@ export function BlogFeatured({ onReadMore }: BlogFeaturedProps) {
             <div>
               <button 
                 onClick={() => onReadMore(featuredArticle)}
-                className="inline-flex items-center gap-3 px-6 py-3 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] group/btn cursor-pointer"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] group/btn cursor-pointer"
               >
                 <span>Continue Reading</span>
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

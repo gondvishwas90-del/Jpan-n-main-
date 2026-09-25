@@ -113,7 +113,7 @@ export function UnclaimedRecovery() {
                       )}
 
                       <div className="flex flex-col items-center shrink-0 z-10">
-                        <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl border border-[#7BA4D0]/30 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] group-hover:text-white shadow-sm">
+                        <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl border border-[#7BA4D0]/30 transition-all duration-300 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] group-hover:text-white">
                           <Icon className="w-5 h-5 text-[#2E5E99] group-hover:text-white transition-colors duration-300" />
                         </div>
                       </div>
@@ -171,11 +171,11 @@ export function UnclaimedRecovery() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 shadow-xl relative overflow-hidden"
+                className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 relative overflow-hidden"
               >
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 bg-white dark:bg-charcoal rounded-2xl border border-[#7BA4D0]/30 flex items-center justify-center text-[#2E5E99] shadow-sm">
+                    <div className="w-12 h-12 bg-white dark:bg-charcoal rounded-2xl border border-[#7BA4D0]/30 flex items-center justify-center text-[#2E5E99]">
                       <HelpCircle className="w-6 h-6 animate-pulse" />
                     </div>
                     <div>
@@ -199,7 +199,7 @@ export function UnclaimedRecovery() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + index * 0.08, duration: 0.5 }}
-                        className="flex items-center justify-between p-3.5 bg-white/80 dark:bg-charcoal/80 rounded-2xl border border-[#7BA4D0]/25 group/item hover:border-[#2E5E99]/40 transition-all shadow-xs"
+                        className="flex items-center justify-between p-3.5 bg-white/80 dark:bg-charcoal/80 rounded-2xl border border-[#7BA4D0]/25 group/item hover:border-[#2E5E99]/40 transition-all"
                       >
                         <span className="text-xs font-medium text-[#0D2440] dark:text-white uppercase tracking-wider">{doc}</span>
                         <div className="w-8 h-8 bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center rounded-xl border border-[#7BA4D0]/30 text-[#2E5E99] group-hover/item:bg-[#0D2440] group-hover/item:text-white transition-colors">
@@ -209,13 +209,13 @@ export function UnclaimedRecovery() {
                     ))}
                   </ul>
 
-                  <div className="p-6 bg-white/80 dark:bg-charcoal/80 rounded-2xl border border-[#7BA4D0]/25 shadow-xs">
+                  <div className="p-6 bg-white/80 dark:bg-charcoal/80 rounded-2xl border border-[#7BA4D0]/25">
                     <p className="text-[10px] text-muted-foreground leading-relaxed uppercase tracking-wider mb-4 font-bold">
                       Need Help With Paperwork?
                     </p>
                     <Link 
                       href="/contact#digital-inquiry" 
-                      className="w-full py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2 group/btn"
+                      className="w-full py-3.5 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 group/btn"
                     >
                       Request Support <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                     </Link>

@@ -33,12 +33,12 @@ export function ProductsHero() {
           </div>
 
           {/* Display Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-normal text-white tracking-tight leading-[1.06] drop-shadow-md">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-normal text-white tracking-tight leading-[1.06]">
             World-Class Tubular Solutions.
           </h1>
 
           {/* Subtitle Paragraph */}
-          <p className="text-sm sm:text-base md:text-lg text-white/85 font-normal leading-relaxed max-w-xl drop-shadow-sm">
+          <p className="text-sm sm:text-base md:text-lg text-white/85 font-normal leading-relaxed max-w-xl">
             Zero-defect brass, copper, and steel components engineered with sub-micron precision for automotive, HVAC, and industrial leaders worldwide.
           </p>
 

@@ -48,7 +48,7 @@ export function GalleryProcessStory() {
         >
           {steps.map((s, idx) => (
             <div key={idx} className="group relative w-full sm:w-auto shrink-0 sm:shrink snap-center">
-              <div className="aspect-[4/5] relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#7BA4D0]/25 bg-[#F8FAFC] dark:bg-charcoal/40 shadow-[0_10px_30px_-10px_rgba(46,94,153,0.08)] hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.18)] transition-all duration-500 mb-4">
+              <div className="aspect-[4/5] relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#7BA4D0]/25 bg-[#F8FAFC] dark:bg-charcoal/40 transition-all duration-500 mb-4">
                 <Image
                   src={s.image}
                   alt={s.title}
@@ -59,7 +59,7 @@ export function GalleryProcessStory() {
                 
                 {/* Floating Step Number Capsule */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3.5 py-1.5 rounded-full bg-white/95 dark:bg-charcoal/90 backdrop-blur-md border border-white/60 dark:border-white/10 shadow-sm text-xs font-bold text-[#0D2440] dark:text-white">
+                  <span className="px-3.5 py-1.5 rounded-full bg-white/95 dark:bg-charcoal/90 backdrop-blur-md border border-white/60 dark:border-white/10 text-xs font-bold text-[#0D2440] dark:text-white">
                     Step {s.step}
                   </span>
                 </div>

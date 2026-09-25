@@ -68,7 +68,7 @@ export function NewsletterGrid() {
           {editions.map((edition) => (
             <div 
               key={edition.id}
-              className={`group flex flex-col bg-white dark:bg-charcoal border border-border rounded-sm overflow-hidden hover:shadow-2xl transition-all duration-500 ${
+              className={`group flex flex-col bg-white dark:bg-charcoal border border-border rounded-sm overflow-hidden  transition-all duration-500 ${
                 edition.featured ? "ring-2 ring-gold/20" : ""
               }`}
             >
@@ -117,7 +117,7 @@ export function NewsletterGrid() {
 
         {/* Pagination Placeholder */}
         <div className="mt-16 flex items-center justify-center gap-4">
-          <div className="w-10 h-10 bg-gold text-charcoal font-bold flex items-center justify-center rounded-sm shadow-lg">1</div>
+          <div className="w-10 h-10 bg-gold text-charcoal font-bold flex items-center justify-center rounded-sm">1</div>
           <div className="w-10 h-10 bg-silver/10 hover:bg-gold/20 text-muted-foreground hover:text-charcoal font-bold flex items-center justify-center rounded-sm cursor-pointer transition-colors">2</div>
           <div className="w-10 h-10 bg-silver/10 hover:bg-gold/20 text-muted-foreground hover:text-charcoal font-bold flex items-center justify-center rounded-sm cursor-pointer transition-colors text-xl leading-none">...</div>
         </div>

@@ -53,7 +53,7 @@ export function JobSummary({ job }: JobSummaryProps) {
           </div>
 
           <div className="lg:col-span-4 lg:sticky lg:top-32 animate-in fade-in slide-in-from-right duration-700 delay-200">
-             <div className="p-10 bg-charcoal dark:bg-black/20 border border-white/5 rounded-sm relative overflow-hidden shadow-2xl">
+             <div className="p-10 bg-charcoal dark:bg-black/20 border border-white/5 rounded-sm relative overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/blueprint.png')] bg-repeat" />
                 <div className="relative z-10">
                    <Info className="w-12 h-12 text-gold/30 mb-8" />

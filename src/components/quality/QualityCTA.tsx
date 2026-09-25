@@ -29,7 +29,7 @@ export function QualityCTA() {
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link
               href="/contact#enquiry-form"
-              className="px-12 py-5 bg-gold text-charcoal font-bold rounded-sm flex items-center gap-3 transition-all shadow-2xl hover:-translate-y-1 btn-slide-white group"
+              className="px-12 py-5 bg-gold text-charcoal font-bold rounded-sm flex items-center gap-3 transition-all hover:-translate-y-1 btn-slide-white group"
             >
               Get a Quality Quote
               <ArrowRight className="w-5 h-5" />

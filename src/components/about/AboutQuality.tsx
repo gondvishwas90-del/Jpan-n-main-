@@ -107,7 +107,7 @@ export function AboutQuality() {
           </div>
 
           {/* Segmented Switcher Controls */}
-          <div className="inline-flex items-center p-1 rounded-full bg-white/80 dark:bg-white/[0.06] border border-[#7BA4D0]/25 dark:border-white/10 shadow-sm mb-6 backdrop-blur-md">
+          <div className="inline-flex items-center p-1 rounded-full bg-white/80 dark:bg-white/[0.06] border border-[#7BA4D0]/25 dark:border-white/10 mb-6 backdrop-blur-md">
             {certifications.map((cert, idx) => {
               const isActive = activeIdx === idx;
               return (
@@ -124,7 +124,7 @@ export function AboutQuality() {
                   {isActive && (
                     <motion.div
                       layoutId="activeQualitySegment"
-                      className="absolute inset-0 rounded-full bg-[#2E5E99] shadow-md shadow-[#2E5E99]/30"
+                      className="absolute inset-0 rounded-full bg-[#2E5E99]"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -135,7 +135,7 @@ export function AboutQuality() {
           </div>
 
           {/* Premium Focused Showcase Card */}
-          <div className="relative w-full rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 bg-white/90 dark:bg-[#0b1b2d]/90 backdrop-blur-xl border border-[#7BA4D0]/30 dark:border-white/10 shadow-[0_20px_50px_rgba(13,36,64,0.08)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.5)] overflow-hidden">
+          <div className="relative w-full rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 bg-white/90 dark:bg-[#0b1b2d]/90 backdrop-blur-xl border border-[#7BA4D0]/30 dark:border-white/10 overflow-hidden">
             {/* Top Glowing Scroll Progress Bar */}
             <motion.div
               className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2E5E99] via-[#4A85C6] to-[#7BA4D0] origin-left"

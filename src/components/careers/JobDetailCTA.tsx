@@ -9,8 +9,6 @@ export function JobDetailCTA() {
       <div className="container-custom">
         <div className="bg-charcoal dark:bg-black/40 border border-white/5 p-12 md:p-24 rounded-sm relative group overflow-hidden animate-in fade-in zoom-in-95 duration-1000">
           {/* Institutional Design Elements */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 blur-[120px] group-hover:bg-gold/10 transition-colors" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-deepblue/5 blur-[100px]" />
           <div className="absolute inset-0 opacity-[0.02] bg-[url('/images/blueprint.png')] bg-repeat" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -31,7 +29,7 @@ export function JobDetailCTA() {
               <div className="flex flex-col sm:row gap-6">
                 <button 
                   onClick={() => document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-12 py-6 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-[0.3em] rounded-sm transition-all flex items-center justify-center gap-4 shadow-2xl hover:bg-white/95 dark:hover:bg-[#0D2440] dark:hover:text-white"
+                  className="px-12 py-6 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-[0.3em] rounded-sm transition-all flex items-center justify-center gap-4 hover:bg-white/95 dark:hover:bg-[#0D2440] dark:hover:text-white"
                 >
                   Apply For This Role
                   <ArrowRight className="w-5 h-5" />

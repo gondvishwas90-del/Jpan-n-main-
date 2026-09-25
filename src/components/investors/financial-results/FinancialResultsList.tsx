@@ -150,7 +150,7 @@ function FinancialResultsListInner() {
                     <a 
                       href="/sample-report.pdf"
                       download
-                      className="flex-grow md:flex-grow-0 flex items-center justify-center gap-3 bg-deepblue hover:bg-gold text-white hover:text-charcoal px-6 py-3 text-[10px] font-bold uppercase tracking-widest transition-all shadow-lg"
+                      className="flex-grow md:flex-grow-0 flex items-center justify-center gap-3 bg-deepblue hover:bg-gold text-white hover:text-charcoal px-6 py-3 text-[10px] font-bold uppercase tracking-widest transition-all"
                     >
                       <Download className="w-4 h-4" />
                       PDF

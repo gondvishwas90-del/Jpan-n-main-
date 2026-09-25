@@ -60,8 +60,6 @@ export function GeneralMeetingIntro() {
               </div>
             </div>
             {/* Design Accents */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gold/5 blur-[60px]" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-deepblue/5 blur-[60px]" />
           </div>
         </div>
       </div>

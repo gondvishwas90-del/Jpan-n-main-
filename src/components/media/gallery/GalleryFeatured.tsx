@@ -50,7 +50,7 @@ export function GalleryFeatured() {
               }`}
             >
               {/* Image Side */}
-              <div className="w-full lg:w-3/5 aspect-[16/10] relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#7BA4D0]/30 shadow-[0_20px_50px_-15px_rgba(46,94,153,0.12)] group bg-[#F8FAFC]">
+              <div className="w-full lg:w-3/5 aspect-[16/10] relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#7BA4D0]/30 group bg-[#F8FAFC]">
                 <Image
                   src={f.image}
                   alt={f.title}
@@ -77,7 +77,7 @@ export function GalleryFeatured() {
                   {f.specs.map((spec, sidx) => (
                     <div 
                       key={sidx} 
-                      className="px-4 py-2 rounded-xl bg-[#EBF3FC]/90 dark:bg-charcoal/80 border border-[#7BA4D0]/30 text-xs font-semibold text-[#0D2440] dark:text-white flex items-center gap-2 shadow-xs"
+                      className="px-4 py-2 rounded-xl bg-[#EBF3FC]/90 dark:bg-charcoal/80 border border-[#7BA4D0]/30 text-xs font-semibold text-[#0D2440] dark:text-white flex items-center gap-2"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#2E5E99] shrink-0" />
                       <span>{spec}</span>
@@ -87,7 +87,7 @@ export function GalleryFeatured() {
 
                 <a 
                   href="/infrastructure"
-                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-sm shadow-md shadow-[#0D2440]/15 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group/btn"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-sm hover:-translate-y-0.5 transition-all duration-300 group/btn"
                 >
                   <span>View Facility Details</span>
                   <MoveRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />

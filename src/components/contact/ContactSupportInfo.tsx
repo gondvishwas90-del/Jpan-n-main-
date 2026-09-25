@@ -81,14 +81,13 @@ export function ContactSupportInfo() {
               key={idx}
               variants={itemVariants}
               whileHover={{ y: -6 }}
-              className="group bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 p-7 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden transition-all duration-400 hover:border-[#2E5E99]/40 hover:shadow-[0_20px_45px_rgba(13,36,64,0.12)] dark:hover:shadow-[0_20px_45px_rgba(0,0,0,0.5)] w-full shrink-0 snap-center md:w-auto md:shrink flex flex-col justify-between cursor-default"
+              className="group bg-white dark:bg-[#0B1728] border border-slate-200/90 dark:border-white/10 p-7 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden transition-all duration-400 hover:border-[#2E5E99]/40 w-full shrink-0 snap-center md:w-auto md:shrink flex flex-col justify-between cursor-default"
             >
                {/* Inner Ambient Glow on Hover */}
-               <div className="absolute top-0 right-0 w-32 h-32 bg-[#2E5E99]/5 dark:bg-[#7BA4D0]/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                
                <div className="relative z-10">
                  <div className="flex items-center justify-between mb-8">
-                    <div className="w-12 h-12 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300 shadow-xs">
+                    <div className="w-12 h-12 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                        <metric.icon className="w-5 h-5" strokeWidth={1.75} />
                     </div>
                     <div className="h-0.5 w-6 bg-slate-200 dark:bg-white/10 group-hover:bg-[#2E5E99] group-hover:w-10 transition-all duration-300" />

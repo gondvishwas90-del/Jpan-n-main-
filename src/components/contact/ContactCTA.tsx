@@ -60,11 +60,9 @@ export function ContactCTA({
           initial={{ opacity: 0, scale: 0.98 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-3xl sm:rounded-[36px] overflow-hidden bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0a182a] dark:via-[#0d223c] dark:to-[#091524] border border-[#7BA4D0]/35 dark:border-white/10 p-8 sm:p-12 lg:p-16 shadow-[0_25px_70px_-15px_rgba(46,94,153,0.15)] dark:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.5)] group"
+          className="relative rounded-3xl sm:rounded-[36px] overflow-hidden bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0a182a] dark:via-[#0d223c] dark:to-[#091524] border border-[#7BA4D0]/35 dark:border-white/10 p-8 sm:p-12 lg:p-16 group"
         >
           {/* Subtle Ambient Light Blue Glows */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7BA4D0]/25 dark:bg-[#2E5E99]/25 rounded-full blur-[110px] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-[#2E5E99]/10 dark:bg-[#7BA4D0]/15 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#2E5E99_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
           {/* Top subtle hairline */}
@@ -99,13 +97,13 @@ export function ContactCTA({
                       window.location.href = "/contact#digital-inquiry";
                     }
                   }}
-                  className="px-8 py-4 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] font-bold text-xs uppercase tracking-[0.2em] rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-[#0D2440]/15 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] group/btn cursor-pointer"
+                  className="px-8 py-4 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] font-bold text-xs uppercase tracking-[0.2em] rounded-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] group/btn cursor-pointer"
                 >
                   <span>Contact Now</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
 
-                <div className="flex items-center gap-3 px-6 py-4 bg-white/80 dark:bg-white/[0.06] border border-[#7BA4D0]/30 dark:border-white/10 rounded-xl text-[#0D2440] dark:text-white backdrop-blur-md shadow-sm">
+                <div className="flex items-center gap-3 px-6 py-4 bg-white/80 dark:bg-white/[0.06] border border-[#7BA4D0]/30 dark:border-white/10 rounded-xl text-[#0D2440] dark:text-white backdrop-blur-md">
                   <div className="w-7 h-7 rounded-lg bg-[#2E5E99]/10 dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0]">
                     <ShieldCheck className="w-4 h-4" strokeWidth={2} />
                   </div>
@@ -125,7 +123,7 @@ export function ContactCTA({
                 <motion.a 
                   href="mailto:enquiry@jpantubular.com"
                   variants={itemVariants} 
-                  className="p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/90 dark:bg-white/[0.06] hover:bg-white dark:hover:bg-white/[0.1] border border-[#7BA4D0]/25 dark:border-white/10 hover:border-[#2E5E99]/40 dark:hover:border-[#7BA4D0]/40 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 group/card relative overflow-hidden w-full shrink-0 snap-center sm:w-auto sm:shrink block shadow-sm hover:shadow-md"
+                  className="p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/90 dark:bg-white/[0.06] hover:bg-white dark:hover:bg-white/[0.1] border border-[#7BA4D0]/25 dark:border-white/10 hover:border-[#2E5E99]/40 dark:hover:border-[#7BA4D0]/40 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 group/card relative overflow-hidden w-full shrink-0 snap-center sm:w-auto sm:shrink block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#7BA4D0]/10 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
@@ -140,7 +138,7 @@ export function ContactCTA({
                 <motion.a 
                   href="tel:+911202560586"
                   variants={itemVariants} 
-                  className="p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/90 dark:bg-white/[0.06] hover:bg-white dark:hover:bg-white/[0.1] border border-[#7BA4D0]/25 dark:border-white/10 hover:border-[#2E5E99]/40 dark:hover:border-[#7BA4D0]/40 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 group/card relative overflow-hidden w-full shrink-0 snap-center sm:w-auto sm:shrink block shadow-sm hover:shadow-md"
+                  className="p-6 md:p-7 rounded-2xl sm:rounded-3xl bg-white/90 dark:bg-white/[0.06] hover:bg-white dark:hover:bg-white/[0.1] border border-[#7BA4D0]/25 dark:border-white/10 hover:border-[#2E5E99]/40 dark:hover:border-[#7BA4D0]/40 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 group/card relative overflow-hidden w-full shrink-0 snap-center sm:w-auto sm:shrink block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#7BA4D0]/10 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   

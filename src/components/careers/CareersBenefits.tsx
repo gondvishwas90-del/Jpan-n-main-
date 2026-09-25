@@ -66,7 +66,6 @@ export function CareersBenefits() {
     >
       {/* Background Decor */}
       <div className="absolute inset-0 bg-[radial-gradient(#2E5E99_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.025] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-[#7BA4D0]/10 blur-[130px] rounded-full translate-x-1/4 translate-y-1/3 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-8">
@@ -105,14 +104,14 @@ export function CareersBenefits() {
               key={idx}
               variants={itemVariants}
               whileHover={{ y: -6 }}
-              className="group relative bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 p-7 lg:p-8 rounded-3xl transition-all duration-300 hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_rgba(46,94,153,0.12)] overflow-hidden w-full shrink-0 snap-center sm:w-auto sm:shrink flex flex-col justify-between"
+              className="group relative bg-white dark:bg-[#0c1527] border border-slate-200/80 dark:border-white/10 p-7 lg:p-8 rounded-3xl transition-all duration-300 hover:border-[#2E5E99]/50 overflow-hidden w-full shrink-0 snap-center sm:w-auto sm:shrink flex flex-col justify-between"
             >
               {/* Top hairline accent */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2E5E99] to-[#7BA4D0] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute inset-0 bg-gradient-to-br from-[#7BA4D0]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-13 h-13 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] mb-6 transition-all duration-300 group-hover:bg-[#2E5E99] group-hover:text-white shadow-xs">
+                <div className="w-13 h-13 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] mb-6 transition-all duration-300 group-hover:bg-[#2E5E99] group-hover:text-white">
                   <benefit.icon className="w-6 h-6" strokeWidth={1.75} />
                 </div>
                 

@@ -53,7 +53,7 @@ export function MaterialHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed border-l-2 border-[#7BA4D0]/50 pl-5 drop-shadow-sm"
+            className="text-base sm:text-lg md:text-xl text-white/85 font-normal leading-relaxed border-l-2 border-[#7BA4D0]/50 pl-5"
           >
             Authoritative disclosures of key corporate agreements, constitutional documents, and material contracts, maintained in strict accordance with SEBI (LODR) Regulations.
           </motion.p>

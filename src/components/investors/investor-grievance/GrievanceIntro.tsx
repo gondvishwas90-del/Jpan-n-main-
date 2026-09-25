@@ -31,8 +31,8 @@ export function GrievanceIntro() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div className="p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-md hover:-translate-y-0.5 transition-all group cursor-pointer">
-                <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl shrink-0 border border-[#7BA4D0]/30 mb-4 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] transition-colors shadow-sm">
+              <div className="p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-0.5 transition-all group cursor-pointer">
+                <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl shrink-0 border border-[#7BA4D0]/30 mb-4 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] transition-colors">
                   <Scale className="w-6 h-6 text-[#2E5E99] group-hover:text-white transition-colors" />
                 </div>
                 <div>
@@ -45,8 +45,8 @@ export function GrievanceIntro() {
                 </div>
               </div>
 
-              <div className="p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-md hover:-translate-y-0.5 transition-all group cursor-pointer">
-                <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl shrink-0 border border-[#7BA4D0]/30 mb-4 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] transition-colors shadow-sm">
+              <div className="p-6 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-0.5 transition-all group cursor-pointer">
+                <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl shrink-0 border border-[#7BA4D0]/30 mb-4 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] transition-colors">
                   <Clock className="w-6 h-6 text-[#2E5E99] group-hover:text-white transition-colors" />
                 </div>
                 <div>
@@ -68,8 +68,8 @@ export function GrievanceIntro() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F8FAFC] to-[#EDF4FD] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 relative overflow-hidden shadow-lg">
-              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-charcoal/80 flex items-center justify-center text-[#2E5E99] shadow-sm mb-8 border border-[#7BA4D0]/30">
+            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F8FAFC] to-[#EDF4FD] dark:from-[#0D2440]/50 dark:via-[#0D2440]/30 dark:to-charcoal/60 border border-[#7BA4D0]/35 relative overflow-hidden">
+              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-charcoal/80 flex items-center justify-center text-[#2E5E99] mb-8 border border-[#7BA4D0]/30">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               
@@ -78,14 +78,14 @@ export function GrievanceIntro() {
               </h3>
               
               <div className="space-y-6">
-                <div className="p-5 rounded-2xl bg-white/80 dark:bg-charcoal/80 border border-[#7BA4D0]/20 flex gap-4 items-start shadow-xs">
+                <div className="p-5 rounded-2xl bg-white/80 dark:bg-charcoal/80 border border-[#7BA4D0]/20 flex gap-4 items-start">
                   <span className="text-[#2E5E99] font-bold text-lg shrink-0">/01</span>
                   <p className="text-xs text-muted-foreground leading-relaxed italic">
                     "Every grievance is an opportunity for us to improve our 
                     governance and strengthen our relationship with investors."
                   </p>
                 </div>
-                <div className="p-5 rounded-2xl bg-white/80 dark:bg-charcoal/80 border border-[#7BA4D0]/20 flex gap-4 items-start shadow-xs">
+                <div className="p-5 rounded-2xl bg-white/80 dark:bg-charcoal/80 border border-[#7BA4D0]/20 flex gap-4 items-start">
                   <span className="text-[#2E5E99] font-bold text-lg shrink-0">/02</span>
                   <p className="text-xs text-muted-foreground leading-relaxed italic">
                     "We maintain a verbatim record of all grievances to ensure 

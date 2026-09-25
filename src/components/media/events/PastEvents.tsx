@@ -103,7 +103,7 @@ export function PastEvents({ onViewDetails }: PastEventsProps) {
               <motion.div 
                 variants={itemVariants}
                 key={idx} 
-                className="group flex flex-col bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#7BA4D0]/60 rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.12)] transition-all duration-500 h-full relative w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-xs"
+                className="group flex flex-col bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#7BA4D0]/60 rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 h-full relative w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 {/* Image Container - 100% clear and vibrant */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-[#0D2440]">

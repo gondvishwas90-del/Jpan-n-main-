@@ -121,7 +121,7 @@ export function AnnualReturnTable() {
                         >
                           <Eye className="w-4 h-4 text-muted-foreground group-hover/btn:text-gold" />
                         </button>
-                        <button className="p-3 bg-deepblue hover:bg-gold rounded-sm transition-all shadow-lg" title="Download PDF">
+                        <button className="p-3 bg-deepblue hover:bg-gold rounded-sm transition-all" title="Download PDF">
                           <Download className="w-4 h-4 text-white hover:text-charcoal" />
                         </button>
                       </div>

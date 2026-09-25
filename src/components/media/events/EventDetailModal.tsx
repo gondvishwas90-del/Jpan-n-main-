@@ -28,7 +28,7 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
         onClick={onClose}
       />
       
-      <div className="relative w-full max-w-6xl max-h-[90vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in zoom-in-95 duration-500">
+      <div className="relative w-full max-w-6xl max-h-[90vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden flex flex-col md:flex-row animate-in zoom-in-95 duration-500">
         <button 
           className="absolute top-6 right-6 text-charcoal dark:text-white hover:text-gold transition-colors z-10"
           onClick={onClose}

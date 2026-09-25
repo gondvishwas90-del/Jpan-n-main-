@@ -12,7 +12,6 @@ export function ContactBlocks() {
           {/* Investor Relations Officer Block */}
           <div className="group bg-charcoal dark:bg-black/40 border border-white/5 p-12 md:p-16 rounded-sm relative overflow-hidden animate-in fade-in slide-in-from-left duration-700">
              {/* Decorative Background */}
-             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 blur-[80px] group-hover:bg-gold/10 transition-colors" />
              <div className="absolute inset-0 opacity-[0.02] bg-[url('/images/blueprint.png')] bg-repeat pointer-events-none" />
 
              <div className="relative z-10">
@@ -20,7 +19,7 @@ export function ContactBlocks() {
                    <div className="w-16 h-16 bg-gold/10 flex items-center justify-center rounded-sm border border-gold/20">
                       <User className="w-8 h-8 text-gold" />
                    </div>
-                   <div className="px-4 py-1.5 bg-gold text-charcoal text-[9px] font-bold uppercase tracking-widest rounded-sm shadow-xl">
+                   <div className="px-4 py-1.5 bg-gold text-charcoal text-[9px] font-bold uppercase tracking-widest rounded-sm">
                       Nodal Officer
                    </div>
                 </div>
@@ -81,7 +80,7 @@ export function ContactBlocks() {
                    <div className="w-16 h-16 bg-silver/5 dark:bg-white/5 flex items-center justify-center rounded-sm border border-border group-hover:border-gold transition-all">
                       <Building2 className="w-8 h-8 text-gold" />
                    </div>
-                   <div className="px-4 py-1.5 bg-charcoal text-white text-[9px] font-bold uppercase tracking-widest rounded-sm shadow-md dark:bg-white dark:text-charcoal">
+                   <div className="px-4 py-1.5 bg-charcoal text-white text-[9px] font-bold uppercase tracking-widest rounded-sm dark:bg-white dark:text-charcoal">
                       RTA Desk
                    </div>
                 </div>
@@ -92,7 +91,7 @@ export function ContactBlocks() {
 
                 <div className="space-y-8 mb-16">
                    <div className="flex items-center gap-6 group/item">
-                      <div className="w-10 h-10 bg-white dark:bg-charcoal flex items-center justify-center rounded-sm border border-border group-hover/item:border-gold transition-colors shadow-sm">
+                      <div className="w-10 h-10 bg-white dark:bg-charcoal flex items-center justify-center rounded-sm border border-border group-hover/item:border-gold transition-colors">
                          <Mail className="w-4 h-4 text-gold" />
                       </div>
                       <div>
@@ -101,7 +100,7 @@ export function ContactBlocks() {
                       </div>
                    </div>
                    <div className="flex items-center gap-6 group/item">
-                      <div className="w-10 h-10 bg-white dark:bg-charcoal flex items-center justify-center rounded-sm border border-border group-hover/item:border-gold transition-colors shadow-sm">
+                      <div className="w-10 h-10 bg-white dark:bg-charcoal flex items-center justify-center rounded-sm border border-border group-hover/item:border-gold transition-colors">
                          <Phone className="w-4 h-4 text-gold" />
                       </div>
                       <div>
@@ -110,7 +109,7 @@ export function ContactBlocks() {
                       </div>
                    </div>
                    <div className="flex items-start gap-6 group/item">
-                      <div className="w-10 h-10 bg-white dark:bg-charcoal flex items-center justify-center rounded-sm border border-border group-hover/item:border-gold transition-colors shadow-sm shrink-0">
+                      <div className="w-10 h-10 bg-white dark:bg-charcoal flex items-center justify-center rounded-sm border border-border group-hover/item:border-gold transition-colors shrink-0">
                          <MapPin className="w-4 h-4 text-gold" />
                       </div>
                       <div>

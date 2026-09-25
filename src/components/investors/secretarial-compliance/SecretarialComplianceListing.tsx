@@ -54,7 +54,6 @@ export function SecretarialComplianceListing() {
                 className="group bg-white dark:bg-charcoal border border-border p-8 md:p-12 rounded-sm hover:border-gold transition-all duration-500 relative overflow-hidden"
               >
                 {/* Background Accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl -z-10 group-hover:bg-gold/10 transition-colors" />
 
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
                   <div className="flex-grow">
@@ -91,7 +90,7 @@ export function SecretarialComplianceListing() {
                       <Eye className="w-4 h-4 text-muted-foreground group-hover/btn:text-gold" />
                       <span className="text-[10px] font-bold uppercase tracking-widest">View Report</span>
                     </button>
-                    <button className="flex-grow lg:flex-grow-0 px-8 py-5 bg-charcoal text-white rounded-sm transition-all shadow-xl flex items-center justify-center gap-3 btn-slide-gold group">
+                    <button className="flex-grow lg:flex-grow-0 px-8 py-5 bg-charcoal text-white rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-gold group">
                       <Download className="w-4 h-4" />
                       <span className="text-[10px] font-bold uppercase tracking-widest">Download PDF</span>
                     </button>

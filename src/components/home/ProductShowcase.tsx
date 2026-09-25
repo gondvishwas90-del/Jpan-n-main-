@@ -167,7 +167,7 @@ export function ProductShowcase() {
                 ref={(el) => {
                   cardRefs.current[idx] = el;
                 }}
-                className="relative min-h-[460px] sm:min-h-[500px] md:min-h-[540px] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 bg-[#0D2440] flex flex-col justify-between p-7 sm:p-9 md:p-10 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                className="relative min-h-[460px] sm:min-h-[500px] md:min-h-[540px] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 bg-[#0D2440] flex flex-col justify-between p-7 sm:p-9 md:p-10"
               >
                 {/* Background Image with Cinematic Dark Gradient Scrim */}
                 <div className="absolute inset-0 z-0">

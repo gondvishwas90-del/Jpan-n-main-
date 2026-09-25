@@ -159,7 +159,7 @@ function StackingFacilityCard({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
-        className="card-inner relative w-full h-full rounded-[36px] sm:rounded-[48px] overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 border border-[#0F172A]/10 dark:border-white/10 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.12)] transition-all duration-700 ease-out [background:var(--card-grad-light)] dark:[background:var(--card-grad-dark)]"
+        className="card-inner relative w-full h-full rounded-[36px] sm:rounded-[48px] overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 border border-[#0F172A]/10 dark:border-white/10 transition-all duration-700 ease-out [background:var(--card-grad-light)] dark:[background:var(--card-grad-dark)]"
         style={{
           transformStyle: "preserve-3d",
           ["--card-grad-light" as string]: facility.lightGradient,
@@ -230,7 +230,7 @@ function StackingFacilityCard({
               <button
                 key={pIdx}
                 type="button"
-                className="px-4 sm:px-6 py-2 sm:py-2.5 border border-[#0F172A]/15 dark:border-white/15 rounded-xl sm:rounded-2xl text-[10px] sm:text-[11px] uppercase tracking-[1.5px] font-black text-[#0F172A] dark:text-white bg-white/50 dark:bg-white/10 hover:bg-[#0F172A] hover:text-white dark:hover:bg-white dark:hover:text-[#0D2440] hover:-translate-y-0.5 transition-all duration-300 shadow-sm cursor-default"
+                className="px-4 sm:px-6 py-2 sm:py-2.5 border border-[#0F172A]/15 dark:border-white/15 rounded-xl sm:rounded-2xl text-[10px] sm:text-[11px] uppercase tracking-[1.5px] font-black text-[#0F172A] dark:text-white bg-white/50 dark:bg-white/10 hover:bg-[#0F172A] hover:text-white dark:hover:bg-white dark:hover:text-[#0D2440] hover:-translate-y-0.5 transition-all duration-300 cursor-default"
               >
                 <span>{pill}</span>
               </button>
@@ -244,7 +244,7 @@ function StackingFacilityCard({
             </span>
             <Link
               href="/presence"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0F172A] dark:bg-white text-white dark:text-[#0D2440] text-xs font-heading font-bold shadow-md hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0F172A] dark:bg-white text-white dark:text-[#0D2440] text-xs font-heading font-bold hover:scale-105 transition-all duration-300"
             >
               <span>Explore Hub</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

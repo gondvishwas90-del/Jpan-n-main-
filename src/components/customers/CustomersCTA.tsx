@@ -14,7 +14,7 @@ export function CustomersCTA() {
       
       <div className="container-custom relative z-10">
         <div className="bg-white/5 border border-white/10 p-12 md:p-20 rounded-sm text-center max-w-5xl mx-auto">
-          <div className="w-20 h-20 bg-gold flex items-center justify-center rounded-full mx-auto mb-10 shadow-2xl">
+          <div className="w-20 h-20 bg-gold flex items-center justify-center rounded-full mx-auto mb-10">
             <UserPlus className="w-10 h-10 text-charcoal" />
           </div>
           
@@ -30,7 +30,7 @@ export function CustomersCTA() {
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link
               href="/contact#enquiry-form"
-              className="px-12 py-5 bg-gold text-charcoal font-bold rounded-sm flex items-center gap-3 transition-all shadow-2xl hover:-translate-y-1 btn-slide-white group"
+              className="px-12 py-5 bg-gold text-charcoal font-bold rounded-sm flex items-center gap-3 transition-all hover:-translate-y-1 btn-slide-white group"
             >
               Start Your Collaboration
               <ArrowRight className="w-5 h-5" />

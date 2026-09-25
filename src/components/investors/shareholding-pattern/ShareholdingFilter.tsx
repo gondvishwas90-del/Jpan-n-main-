@@ -32,7 +32,7 @@ export function ShareholdingFilter() {
                     onClick={() => setSelectedYear(year)}
                     className={`px-4 py-2 text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all border ${
                       selectedYear === year
-                        ? "bg-charcoal dark:bg-white text-white dark:text-charcoal border-transparent shadow-lg"
+                        ? "bg-charcoal dark:bg-white text-white dark:text-charcoal border-transparent "
                         : "bg-silver/5 text-muted-foreground border-transparent hover:border-border"
                     } ${index === years.length - 1 ? 'mr-8' : ''}`}
                   >
@@ -52,7 +52,7 @@ export function ShareholdingFilter() {
                     onClick={() => setSelectedQuarter(q)}
                     className={`w-10 h-10 flex items-center justify-center text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all border ${
                       selectedQuarter === q
-                        ? "bg-gold text-charcoal border-transparent shadow-lg"
+                        ? "bg-gold text-charcoal border-transparent "
                         : "bg-silver/5 text-muted-foreground border-transparent hover:border-border"
                     } ${index === quarters.length - 1 ? 'mr-8' : ''}`}
                   >

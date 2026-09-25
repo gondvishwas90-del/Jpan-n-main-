@@ -115,7 +115,7 @@ function ParallaxLeaderCard({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ transformStyle: "preserve-3d" }}
-        className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_15px_35px_rgba(13,36,64,0.06)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.4)] hover:shadow-[0_25px_60px_-15px_rgba(46,94,153,0.35)] dark:hover:shadow-[0_25px_60px_-15px_rgba(123,164,208,0.3)] hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-500 group transform-gpu cursor-pointer bg-slate-900"
+        className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-500 group transform-gpu cursor-pointer bg-slate-900"
       >
         {/* Parallax Background Portrait */}
         <motion.div
@@ -173,14 +173,14 @@ function ParallaxLeaderCard({
             <div className="flex items-center gap-2 pt-3 border-t border-white/10">
               <a
                 href={leader.email}
-                className="w-8 h-8 rounded-xl bg-white/10 hover:bg-[#2E5E99] text-white flex items-center justify-center transition-all duration-200 shadow-sm hover:scale-110"
+                className="w-8 h-8 rounded-xl bg-white/10 hover:bg-[#2E5E99] text-white flex items-center justify-center transition-all duration-200 hover:scale-110"
                 aria-label={`Email ${leader.name}`}
               >
                 <Mail className="w-3.5 h-3.5" />
               </a>
               <a
                 href={leader.linkedin}
-                className="w-8 h-8 rounded-xl bg-white/10 hover:bg-[#2E5E99] text-white flex items-center justify-center transition-all duration-200 shadow-sm hover:scale-110"
+                className="w-8 h-8 rounded-xl bg-white/10 hover:bg-[#2E5E99] text-white flex items-center justify-center transition-all duration-200 hover:scale-110"
                 aria-label={`LinkedIn profile of ${leader.name}`}
               >
                 <Linkedin className="w-3.5 h-3.5" />

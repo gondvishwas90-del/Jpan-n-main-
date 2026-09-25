@@ -33,29 +33,26 @@ export function ProductDetailGallery({
   };
 
   return (
-    <div className="relative bg-white dark:bg-[#0a0f18] border border-border/60 rounded-[2.5rem] p-6 sm:p-10 shadow-xl overflow-hidden group hover:border-gold/40 transition-all duration-500 flex flex-col">
-      {/* Radial Interior Lighting */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-deepblue/10 pointer-events-none" />
-
+    <div className="relative bg-white dark:bg-[#0a0f18] border border-border/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-gold/40 transition-all duration-300 flex flex-col">
       {/* Top Left Logo Pin Badge */}
-      <div className="absolute top-6 left-6 z-10 w-11 h-11 rounded-2xl bg-charcoal dark:bg-white text-gold dark:text-charcoal border border-gold/40 flex items-center justify-center font-black text-sm shadow-xl">
+      <div className="absolute top-6 left-6 z-10 w-11 h-11 rounded-2xl bg-charcoal dark:bg-white text-gold dark:text-charcoal border border-gold/40 flex items-center justify-center font-black text-sm">
         J
       </div>
 
       {/* Specs Badge Top Right */}
-      <div className="absolute top-6 right-6 z-10 px-4 py-1.5 bg-gold/10 backdrop-blur-md rounded-full border border-gold/30 text-[10px] font-extrabold uppercase tracking-wider text-gold flex items-center gap-1.5 shadow-sm">
+      <div className="absolute top-6 right-6 z-10 px-4 py-1.5 bg-gold/10 backdrop-blur-md rounded-full border border-gold/30 text-[10px] font-extrabold uppercase tracking-wider text-gold flex items-center gap-1.5">
         <ShieldCheck className="w-3.5 h-3.5" />
         {specs}
       </div>
 
-      {/* Main Product Image Container */}
-      <div className="relative aspect-square w-full max-w-md mx-auto flex items-center justify-center p-6 my-4">
+      {/* Main Product Image Container with safe bounds ensuring no clipping */}
+      <div className="relative w-full h-[320px] sm:h-[400px] md:h-[440px] flex items-center justify-center p-4 my-2">
         <Image
           key={currentImage}
           src={currentImage}
           alt={name}
           fill
-          className="object-contain p-2 transition-all duration-500 group-hover:scale-105 filter drop-shadow-xl"
+          className="object-contain p-2 select-none"
           priority
         />
 
@@ -65,7 +62,7 @@ export function ProductDetailGallery({
             <button
               type="button"
               onClick={handlePrev}
-              className="w-10 h-10 rounded-full bg-white/90 dark:bg-charcoal/90 text-charcoal dark:text-white hover:bg-gold hover:text-black border border-border/50 backdrop-blur-sm flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white/90 dark:bg-charcoal/90 text-charcoal dark:text-white hover:bg-gold hover:text-black border border-border/50 backdrop-blur-sm flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -73,7 +70,7 @@ export function ProductDetailGallery({
             <button
               type="button"
               onClick={handleNext}
-              className="w-10 h-10 rounded-full bg-white/90 dark:bg-charcoal/90 text-charcoal dark:text-white hover:bg-gold hover:text-black border border-border/50 backdrop-blur-sm flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white/90 dark:bg-charcoal/90 text-charcoal dark:text-white hover:bg-gold hover:text-black border border-border/50 backdrop-blur-sm flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer"
               aria-label="Next image"
             >
               <ChevronRight className="w-5 h-5" />
@@ -93,7 +90,7 @@ export function ProductDetailGallery({
               className={cn(
                 "relative w-14 h-14 rounded-xl overflow-hidden border-2 p-1 transition-all duration-300 bg-silver/10 dark:bg-white/5 cursor-pointer",
                 activeIndex === idx
-                  ? "border-gold shadow-md shadow-gold/20 scale-105"
+                  ? "border-gold scale-105"
                   : "border-border/60 hover:border-gold/50 opacity-70 hover:opacity-100"
               )}
               aria-label={`View image ${idx + 1}`}

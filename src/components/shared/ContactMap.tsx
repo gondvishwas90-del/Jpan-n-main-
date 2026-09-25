@@ -172,10 +172,6 @@ export function ContactMap() {
         }}
       />
 
-      {/* Ambient Radial Gradients */}
-      <div className="absolute -left-[10%] top-1/4 w-[45vw] h-[45vw] rounded-full bg-[#E7F0FA] dark:bg-[#2E5E99]/[0.08] blur-[140px] pointer-events-none z-0" />
-      <div className="absolute right-0 top-0 w-[40vw] h-[40vw] rounded-full bg-[#7BA4D0]/15 dark:bg-[#0D2440]/[0.2] blur-[140px] pointer-events-none z-0" />
-
       {/* Interactive 3D Dotted WebGL Globe (Restored Large Dimension with Slow Motion) */}
       <div className="relative lg:absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-12vw] xl:left-[-8vw] top-auto lg:top-[50%] lg:-translate-y-[50%] w-[92vw] h-[92vw] sm:w-[620px] sm:h-[620px] lg:w-[115vh] lg:h-[115vh] xl:w-[122vh] xl:h-[122vh] max-w-[1100px] max-h-[1100px] z-10 opacity-90 lg:opacity-85 pointer-events-auto my-6 lg:my-0">
         <CobeInteractiveGlobe
@@ -207,7 +203,7 @@ export function ContactMap() {
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="pointer-events-auto w-full min-h-[225px] sm:min-h-[210px]"
             >
-              <div className="bg-white/95 dark:bg-[#0D2440]/95 rounded-3xl shadow-[0_25px_60px_rgba(13,36,64,0.18)] overflow-hidden border border-[#7BA4D0]/35 backdrop-blur-xl p-5 sm:p-6 text-[#0D2440] dark:text-white transition-all">
+              <div className="bg-white/95 dark:bg-[#0D2440]/95 rounded-3xl border border-[#7BA4D0]/35 backdrop-blur-xl p-5 sm:p-6 text-[#0D2440] dark:text-white transition-all">
                 {/* Card Header */}
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -230,7 +226,7 @@ export function ContactMap() {
 
                 {/* Card Body */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-stretch">
-                  <div className="w-full sm:w-[170px] lg:w-[185px] h-[135px] sm:h-[150px] rounded-2xl overflow-hidden shadow-md shrink-0 border border-[#7BA4D0]/30 group relative bg-[#0D2440]">
+                  <div className="w-full sm:w-[170px] lg:w-[185px] h-[135px] sm:h-[150px] rounded-2xl overflow-hidden shrink-0 border border-[#7BA4D0]/30 group relative bg-[#0D2440]">
                     <Image
                       src={activeHub.image}
                       alt={activeHub.city}
@@ -263,7 +259,7 @@ export function ContactMap() {
                         href={`https://maps.google.com/?q=${encodeURIComponent(activeHub.title + " " + activeHub.address)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0D2440] hover:bg-[#2E5E99] text-white flex items-center justify-center shadow-md hover:scale-105 transition-all cursor-pointer group/btn"
+                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0D2440] hover:bg-[#2E5E99] text-white flex items-center justify-center hover:scale-105 transition-all cursor-pointer group/btn"
                         title="Open in Google Maps"
                       >
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
@@ -304,7 +300,7 @@ export function ContactMap() {
               >
                 <span>{hub.city}</span>
                 {isActive && (
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#2E5E99] shrink-0 animate-pulse shadow-[0_0_10px_#2E5E99]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#2E5E99] shrink-0 animate-pulse" />
                 )}
               </li>
             );
@@ -315,11 +311,11 @@ export function ContactMap() {
       {/* Bottom-Left Legend */}
       <div className="relative lg:absolute bottom-4 lg:bottom-7 left-6 lg:left-10 z-[40] text-[10px] sm:text-[11px] text-[#0D2440] dark:text-white flex flex-row lg:flex-col flex-wrap gap-4 lg:gap-2.5 font-bold uppercase tracking-[0.25em] px-6 lg:px-0 mt-8 lg:mt-0 select-none">
         <div className="flex items-center">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#2E5E99] mr-2.5 shadow-[0_0_8px_rgba(46,94,153,0.5)]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#2E5E99] mr-2.5" />
           <span>Strategic Hub</span>
         </div>
         <div className="flex items-center">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#7BA4D0] mr-2.5 shadow-xs border border-[#2E5E99]/20" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#7BA4D0] mr-2.5 border border-[#2E5E99]/20" />
           <span>Precision Unit</span>
         </div>
       </div>

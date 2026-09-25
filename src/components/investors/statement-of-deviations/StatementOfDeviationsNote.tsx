@@ -49,13 +49,13 @@ export function StatementOfDeviationsNote() {
             </p>
             
             <div className="space-y-3.5">
-              <div className="flex items-center gap-3.5 p-4 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl shadow-xs group hover:border-[#2E5E99]/50 transition-colors">
+              <div className="flex items-center gap-3.5 p-4 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl group hover:border-[#2E5E99]/50 transition-colors">
                 <CheckCircle2 className="w-5 h-5 text-[#2E5E99] shrink-0" />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">
                   Certified Fund Utilization
                 </span>
               </div>
-              <div className="flex items-center gap-3.5 p-4 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl shadow-xs group hover:border-[#2E5E99]/50 transition-colors">
+              <div className="flex items-center gap-3.5 p-4 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl group hover:border-[#2E5E99]/50 transition-colors">
                 <AlertCircle className="w-5 h-5 text-[#2E5E99] shrink-0" />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">
                   Materiality Disclosure Protocol

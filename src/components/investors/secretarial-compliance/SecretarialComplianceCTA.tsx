@@ -9,8 +9,6 @@ export function SecretarialComplianceCTA() {
       <div className="container-custom">
         <div className="bg-charcoal dark:bg-black/40 border border-white/5 p-12 md:p-24 rounded-sm relative group overflow-hidden">
           {/* Governance Gradients */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] group-hover:bg-gold/10 transition-colors" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 blur-[120px] group-hover:bg-white/10 transition-colors" />
           <div className="absolute inset-0 opacity-[0.02] bg-[url('/images/blueprint.png')] bg-repeat" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -30,7 +28,7 @@ export function SecretarialComplianceCTA() {
                 secretarial team.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="px-12 py-6 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-[0.3em] rounded-sm transition-all flex items-center justify-center gap-4 shadow-2xl btn-slide-white group">
+                <button className="px-12 py-6 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-[0.3em] rounded-sm transition-all flex items-center justify-center gap-4 btn-slide-white group">
                   Submit Governance Query
                   <ArrowRight className="w-5 h-5" />
                 </button>

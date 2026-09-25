@@ -52,7 +52,7 @@ export function GrievanceHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="text-base sm:text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed drop-shadow-sm font-normal"
+            className="text-base sm:text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed font-normal"
           >
             A transparent, responsive, and definitive mechanism for redressing shareholder and investor concerns with absolute priority, accountability, and fairness.
           </motion.p>

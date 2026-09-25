@@ -26,10 +26,7 @@ export function PrecisionNutNewsletter() {
   return (
     <div className="w-full flex justify-center px-2 sm:px-0">
       {/* Centered card with reduced horizontal width matching the reference image */}
-      <div className="relative w-full max-w-3xl xl:max-w-[840px] rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-r from-[#2868E8] via-[#3374F5] to-[#3D80FF] text-white p-4 sm:p-6 lg:p-7 shadow-[0_14px_35px_rgba(40,104,232,0.28)]">
-        {/* Ambient subtle light inside card */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none -mr-12 -mt-12" />
-
+      <div className="relative w-full max-w-3xl xl:max-w-[840px] rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-r from-[#2868E8] via-[#3374F5] to-[#3D80FF] text-white p-4 sm:p-6 lg:p-7">
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Left Side: 3D Floating Nut with Sparkles */}
           <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto">
@@ -125,7 +122,7 @@ export function PrecisionNutNewsletter() {
           {/* Right Side: White Pill Input */}
           <div className="w-full md:w-auto md:min-w-[280px] lg:min-w-[340px] shrink-0 space-y-1.5">
             <form onSubmit={handleSubmit}>
-              <div className="flex items-center bg-white/20 hover:bg-white/25 border border-white/35 focus-within:border-white focus-within:bg-white/30 rounded-full p-1 sm:p-1.5 backdrop-blur-md transition-all duration-300 shadow-xs">
+              <div className="flex items-center bg-white/20 hover:bg-white/25 border border-white/35 focus-within:border-white focus-within:bg-white/30 rounded-full p-1 sm:p-1.5 backdrop-blur-md transition-all duration-300">
                 <div className="pl-3 pr-1.5 text-white/90">
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
@@ -138,7 +135,7 @@ export function PrecisionNutNewsletter() {
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-1 px-4 sm:px-5 py-1.5 rounded-full bg-white hover:bg-white/90 text-[#2563EB] font-heading font-bold text-xs shadow-xs transition-all duration-300 cursor-pointer shrink-0"
+                  className="inline-flex items-center justify-center gap-1 px-4 sm:px-5 py-1.5 rounded-full bg-white hover:bg-white/90 text-[#2563EB] font-heading font-bold text-xs transition-all duration-300 cursor-pointer shrink-0"
                 >
                   {isSubscribed ? (
                     <>

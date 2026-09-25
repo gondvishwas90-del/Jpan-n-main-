@@ -17,11 +17,7 @@ export function Footer() {
 
   return (
     <footer className="relative z-30 bg-[#E8F1FA] dark:bg-[#071420] font-sans border-t border-[#7BA4D0]/30 dark:border-[#1C3742] transition-colors duration-500 overflow-hidden">
-      {/* Ambient Lighting & Glow to enrich the Light Blue Canvas */}
-      <div className="absolute inset-0 pointer-events-none opacity-60 dark:opacity-30 z-0">
-        <div className="absolute -top-16 left-1/4 w-[450px] h-[220px] bg-[radial-gradient(ellipse_at_center,rgba(46,94,153,0.12),transparent_70%)] blur-2xl" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[200px] bg-[radial-gradient(ellipse_at_center,rgba(123,164,208,0.18),transparent_70%)] blur-2xl" />
-      </div>
+
 
       <div className="container-custom relative z-10 pt-12 sm:pt-14 pb-6 sm:pb-7">
         {/* Compact, Highly-Efficient 2-Column Upper Section with comfortable breathing room */}

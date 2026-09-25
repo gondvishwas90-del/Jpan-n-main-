@@ -32,7 +32,7 @@ export function AboutHero() {
             </div>
 
             {/* Editorial Statement */}
-            <p className="text-white text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-normal drop-shadow-sm">
+            <p className="text-white text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-normal">
               J-Pan believes precision engineering should feel effortless over time,
               delivering mission-critical tubular components shaped by metallurgical
               mastery, advanced automation, and an uncompromising standard of
@@ -44,7 +44,7 @@ export function AboutHero() {
           <div className="shrink-0">
             <Link
               href="#our-story"
-              className="group inline-flex items-center justify-between gap-6 px-7 py-3.5 sm:py-4 bg-white hover:bg-white/90 dark:bg-[#7BA4D0] dark:hover:bg-[#2E5E99] text-black dark:text-white transition-all duration-300 font-medium text-sm sm:text-base tracking-tight shadow-xl"
+              className="group inline-flex items-center justify-between gap-6 px-7 py-3.5 sm:py-4 bg-white hover:bg-white/90 dark:bg-[#7BA4D0] dark:hover:bg-[#2E5E99] text-black dark:text-white transition-all duration-300 font-medium text-sm sm:text-base tracking-tight"
             >
               <span className="font-medium text-[#0D2440] dark:text-[#0D2440] dark:group-hover:text-white">Explore Our Story</span>
               <svg

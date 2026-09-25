@@ -53,7 +53,7 @@ export function SEBIDisclosureHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="text-base sm:text-lg text-white/85 leading-relaxed drop-shadow-sm font-normal"
+              className="text-base sm:text-lg text-white/85 leading-relaxed font-normal"
             >
               Official statutory disclosures as per SEBI (LODR) Regulations 2015. J Pan Tubular Components Limited maintains absolute market transparency through systematic, audited, and timely corporate reporting.
             </motion.p>

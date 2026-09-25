@@ -29,7 +29,7 @@ export function PublicationDetailModal({ publication, isOpen, onClose }: Publica
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white dark:bg-charcoal rounded-sm shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-6xl h-full max-h-[90vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden flex flex-col animate-in zoom-in-95 duration-300">
         
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border bg-silver/5">
@@ -72,15 +72,15 @@ export function PublicationDetailModal({ publication, isOpen, onClose }: Publica
         <div className="flex-grow overflow-hidden flex flex-col lg:flex-row">
           {/* Media Viewer Placeholder */}
           <div className="flex-grow bg-silver/10 relative group overflow-hidden border-r border-border flex items-center justify-center p-8 md:p-12">
-            <div className="w-full h-full bg-white dark:bg-black/20 border border-border rounded-sm flex flex-col items-center justify-center p-12 text-center shadow-inner relative group/clipping">
+            <div className="w-full h-full bg-white dark:bg-black/20 border border-border rounded-sm flex flex-col items-center justify-center p-12 text-center relative group/clipping">
                <div className="absolute top-6 right-6 flex flex-col gap-3 opacity-0 group-hover/clipping:opacity-100 transition-opacity">
-                  <button className="p-2 bg-white dark:bg-charcoal border border-border rounded-sm shadow-lg hover:text-gold transition-colors">
+                  <button className="p-2 bg-white dark:bg-charcoal border border-border rounded-sm hover:text-gold transition-colors">
                      <ZoomIn className="w-4 h-4" />
                   </button>
-                  <button className="p-2 bg-white dark:bg-charcoal border border-border rounded-sm shadow-lg hover:text-gold transition-colors">
+                  <button className="p-2 bg-white dark:bg-charcoal border border-border rounded-sm hover:text-gold transition-colors">
                      <ZoomOut className="w-4 h-4" />
                   </button>
-                  <button className="p-2 bg-white dark:bg-charcoal border border-border rounded-sm shadow-lg hover:text-gold transition-colors">
+                  <button className="p-2 bg-white dark:bg-charcoal border border-border rounded-sm hover:text-gold transition-colors">
                      <Maximize2 className="w-4 h-4" />
                   </button>
                </div>
@@ -95,7 +95,7 @@ export function PublicationDetailModal({ publication, isOpen, onClose }: Publica
                  Authenticated media clipping of the public notice as it appeared 
                  in {publication.newspaper} on {publication.date}.
                </p>
-               <button className="px-8 py-3 bg-gold text-charcoal font-bold text-[9px] uppercase tracking-widest rounded-sm flex items-center gap-3 shadow-lg transition-all btn-slide-white group">
+               <button className="px-8 py-3 bg-gold text-charcoal font-bold text-[9px] uppercase tracking-widest rounded-sm flex items-center gap-3 transition-all btn-slide-white group">
                  <Maximize2 className="w-4 h-4" />
                  View Full Size
                </button>
@@ -145,7 +145,7 @@ export function PublicationDetailModal({ publication, isOpen, onClose }: Publica
             </div>
 
             <div className="pt-8 border-t border-border">
-              <button className="w-full flex items-center justify-center gap-3 py-5 bg-charcoal hover:bg-deepblue text-white rounded-sm transition-all shadow-xl">
+              <button className="w-full flex items-center justify-center gap-3 py-5 bg-charcoal hover:bg-deepblue text-white rounded-sm transition-all">
                 <Download className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase tracking-widest">Download Clipping</span>
               </button>

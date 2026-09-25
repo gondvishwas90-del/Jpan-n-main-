@@ -9,7 +9,7 @@ export function CTAStrip() {
     <section className="relative py-14 md:py-20 bg-[#F4F8FC] dark:bg-[#071321] transition-colors duration-300">
       <div className="container-custom relative z-10 w-full">
         {/* Pure White Architectural Box Container */}
-        <div className="relative rounded-3xl bg-white dark:bg-[#0D2440] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden shadow-[0_20px_50px_rgba(13,36,64,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#7BA4D0]/30 dark:border-white/15">
+        <div className="relative rounded-3xl bg-white dark:bg-[#0D2440] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15">
           {/* Grid Content inside the White Box */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* Left Column: Authoritative Editorial Heading & Subtext */}
@@ -32,7 +32,7 @@ export function CTAStrip() {
               {/* Primary Action Button */}
               <Link
                 href="/contact#enquiry-form"
-                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
+                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 active:scale-95"
               >
                 <div className="flex items-center gap-2.5">
                   <FileCheck className="w-4 h-4 text-[#7BA4D0]" />
@@ -46,7 +46,7 @@ export function CTAStrip() {
               {/* Secondary Direct Phone Call Button */}
               <Link
                 href="tel:+911202560586"
-                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#F4F8FC] dark:bg-white/5 hover:bg-[#E7F0FA] dark:hover:bg-white/10 border border-[#7BA4D0]/35 dark:border-white/20 text-[#0D2440] dark:text-white font-medium text-sm rounded-full transition-all duration-300 shadow-sm"
+                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#F4F8FC] dark:bg-white/5 hover:bg-[#E7F0FA] dark:hover:bg-white/10 border border-[#7BA4D0]/35 dark:border-white/20 text-[#0D2440] dark:text-white font-medium text-sm rounded-full transition-all duration-300"
               >
                 <div className="flex items-center gap-2.5">
                   <PhoneCall className="w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0]" />

@@ -39,7 +39,7 @@ export function NewsletterIntro() {
           </div>
 
           <div className="lg:w-1/3 w-full">
-            <div className="bg-silver/5 dark:bg-white/2 border border-border p-10 rounded-sm shadow-xl">
+            <div className="bg-silver/5 dark:bg-white/2 border border-border p-10 rounded-sm">
               <div className="w-12 h-12 bg-gold flex items-center justify-center rounded-full mb-6">
                 <Mail className="w-6 h-6 text-charcoal" />
               </div>

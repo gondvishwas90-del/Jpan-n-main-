@@ -74,7 +74,7 @@ export function TestingFacilities() {
               initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4"
             >
               <span>Technical Capability</span>
             </motion.div>
@@ -158,7 +158,7 @@ export function TestingFacilities() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2 relative group"
           >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 shadow-2xl bg-white dark:bg-[#0D2440]">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 bg-white dark:bg-[#0D2440]">
               <Image
                 src="/images/about-manufacturing.png" 
                 alt="Industrial Quality Testing Lab"
@@ -167,7 +167,7 @@ export function TestingFacilities() {
               />
               
               {/* Luxury Light Floating Pill */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 dark:bg-[#0D2440]/95 backdrop-blur-md border border-[#7BA4D0]/30 shadow-xl flex items-center justify-between">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 dark:bg-[#0D2440]/95 backdrop-blur-md border border-[#7BA4D0]/30 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-xl bg-[#EBF3FC] dark:bg-white/10 flex items-center justify-center text-[#2E5E99]">
                     <CheckCircle2 className="w-5 h-5" />

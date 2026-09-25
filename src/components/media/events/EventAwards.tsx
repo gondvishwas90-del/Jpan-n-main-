@@ -88,7 +88,7 @@ export function EventAwards() {
                 </div>
 
                 {/* Glowing Icon Box */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center text-[#2E5E99] shadow-sm mb-6 sm:mb-8 group-hover:scale-105 transition-all duration-300 shrink-0">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center text-[#2E5E99] mb-6 sm:mb-8 group-hover:scale-105 transition-all duration-300 shrink-0">
                   <award.icon className="w-8 h-8 sm:w-9 sm:h-9" />
                 </div>
                 

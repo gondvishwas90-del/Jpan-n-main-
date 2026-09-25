@@ -51,7 +51,7 @@ export function CustomerCaseStudies() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {caseStudies.map((cs, idx) => (
-            <div key={idx} className="group bg-white dark:bg-charcoal border border-border rounded-sm overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-500">
+            <div key={idx} className="group bg-white dark:bg-charcoal border border-border rounded-sm overflow-hidden flex flex-col transition-all duration-500">
               {/* Header */}
               <div className="p-8 border-b border-border bg-silver/5 dark:bg-white/2">
                 <div className="w-12 h-12 bg-deepblue/10 dark:bg-gold/10 flex items-center justify-center rounded-sm mb-6">

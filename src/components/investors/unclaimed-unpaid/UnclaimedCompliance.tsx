@@ -14,7 +14,7 @@ export function UnclaimedCompliance() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 sm:p-12 md:p-16 rounded-3xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 shadow-lg relative overflow-hidden"
+            className="p-8 sm:p-12 md:p-16 rounded-3xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 relative overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
@@ -34,7 +34,7 @@ export function UnclaimedCompliance() {
                  </p>
 
                  <div className="space-y-4">
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                        <div className="w-11 h-11 bg-[#EBF3FC] dark:bg-[#0D2440]/40 border border-[#7BA4D0]/30 flex items-center justify-center rounded-xl text-[#2E5E99] shrink-0">
                           <Scale className="w-5 h-5" />
                        </div>
@@ -48,7 +48,7 @@ export function UnclaimedCompliance() {
                        </div>
                     </div>
 
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20 shadow-xs">
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-charcoal border border-[#7BA4D0]/20">
                        <div className="w-11 h-11 bg-[#EBF3FC] dark:bg-[#0D2440]/40 border border-[#7BA4D0]/30 flex items-center justify-center rounded-xl text-[#2E5E99] shrink-0">
                           <ShieldAlert className="w-5 h-5" />
                        </div>
@@ -65,8 +65,8 @@ export function UnclaimedCompliance() {
               </div>
 
               <div className="lg:col-span-5">
-                 <div className="p-8 rounded-2xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/40 dark:to-charcoal/50 border border-[#7BA4D0]/35 shadow-sm">
-                    <div className="w-11 h-11 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center border border-[#7BA4D0]/30 text-[#2E5E99] mb-5 shadow-xs">
+                 <div className="p-8 rounded-2xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/40 dark:to-charcoal/50 border border-[#7BA4D0]/35">
+                    <div className="w-11 h-11 bg-white dark:bg-charcoal rounded-xl flex items-center justify-center border border-[#7BA4D0]/30 text-[#2E5E99] mb-5">
                       <HelpCircle className="w-6 h-6" />
                     </div>
                     
@@ -89,7 +89,7 @@ export function UnclaimedCompliance() {
                        </li>
                     </ul>
                     
-                    <button className="w-full py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-3 transition-all shadow-md">
+                    <button className="w-full py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-3 transition-all">
                        Claim Instructions
                        <ExternalLink className="w-4 h-4" />
                     </button>

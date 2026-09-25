@@ -65,10 +65,6 @@ export function CareersCulture() {
       ref={containerRef}
       className="py-20 md:py-32 bg-slate-50/60 dark:bg-black overflow-hidden relative border-b border-slate-200/70 dark:border-white/5"
     >
-      {/* Background Ambient Glow */}
-      <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-[#7BA4D0]/10 blur-[130px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[35rem] h-[35rem] bg-[#2E5E99]/10 blur-[120px] rounded-full translate-x-1/2 translate-y-1/2 pointer-events-none" />
-
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 md:mb-20 gap-8">
           
@@ -98,15 +94,15 @@ export function CareersCulture() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-3 sm:gap-4 flex-wrap"
           >
-             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10 shadow-xs">
+             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10">
                 <Users className="w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0]" strokeWidth={1.75} />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">Collaborative</span>
              </div>
-             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10 shadow-xs">
+             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10">
                 <Zap className="w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0]" strokeWidth={1.75} />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">Innovative</span>
              </div>
-             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10 shadow-xs">
+             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200/80 dark:border-white/10">
                 <Heart className="w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0]" strokeWidth={1.75} />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">Inclusive</span>
              </div>
@@ -126,7 +122,7 @@ export function CareersCulture() {
               <motion.div 
                 key={idx}
                 variants={itemVariants}
-                className={cn("relative group overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-900 border border-slate-200/80 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 w-full shrink-0 snap-center h-full md:shrink", img.span)}
+                className={cn("relative group overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-900 border border-slate-200/80 dark:border-white/10 transition-all duration-500 w-full shrink-0 snap-center h-full md:shrink", img.span)}
               >
                 {/* Image Component with Crisp Rendering */}
                 <img

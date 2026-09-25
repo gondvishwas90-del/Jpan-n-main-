@@ -61,7 +61,7 @@ export function GalleryVideo() {
           {videos.map((v) => (
             <div 
               key={v.id}
-              className="group relative aspect-video w-full md:w-auto shrink-0 md:shrink snap-center rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer bg-[#F8FAFC] dark:bg-charcoal/50 border border-[#7BA4D0]/25 shadow-[0_15px_40px_-15px_rgba(46,94,153,0.12)] hover:shadow-[0_25px_60px_-15px_rgba(46,94,153,0.22)] transition-all duration-500"
+              className="group relative aspect-video w-full md:w-auto shrink-0 md:shrink snap-center rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer bg-[#F8FAFC] dark:bg-charcoal/50 border border-[#7BA4D0]/25 transition-all duration-500"
               onClick={() => setActiveVideo(v.url)}
             >
               <Image
@@ -77,7 +77,7 @@ export function GalleryVideo() {
               
               {/* Play Button Capsule */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 text-[#0D2440] dark:bg-[#7BA4D0] dark:text-[#0D2440] shadow-2xl flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-[#0D2440] group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-[#0D2440] transition-all duration-300">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 text-[#0D2440] dark:bg-[#7BA4D0] dark:text-[#0D2440] flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-[#0D2440] group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-[#0D2440] transition-all duration-300">
                   <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
                 </div>
               </div>
@@ -140,7 +140,7 @@ export function GalleryVideo() {
           </button>
           
           <div 
-            className="relative w-full max-w-5xl aspect-video bg-black shadow-2xl rounded-2xl overflow-hidden border border-white/20"
+            className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden border border-white/20"
             onClick={(e) => e.stopPropagation()}
           >
             <iframe

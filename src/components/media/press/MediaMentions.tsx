@@ -42,7 +42,7 @@ export function MediaMentions() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
           {mentions.map((mention, idx) => (
-            <div key={idx} className="group relative bg-white dark:bg-charcoal p-6 md:p-10 border border-border rounded-sm hover:shadow-2xl transition-all duration-500">
+            <div key={idx} className="group relative bg-white dark:bg-charcoal p-6 md:p-10 border border-border rounded-sm transition-all duration-500">
               <div className="flex items-center justify-between mb-8">
                 <div className="relative w-32 h-12 grayscale group-hover:grayscale-0 transition-all duration-700 opacity-40 group-hover:opacity-100">
                   <Image

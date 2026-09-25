@@ -13,7 +13,7 @@ export function MaterialCompliance() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-3xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-8 sm:p-10 shadow-sm"
+          className="rounded-3xl bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-8 sm:p-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 items-center">
             
@@ -36,7 +36,7 @@ export function MaterialCompliance() {
 
             {/* Central Badge */}
             <div className="flex justify-center">
-              <div className="px-7 py-3.5 bg-white dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-2xl shadow-sm flex items-center gap-4">
+              <div className="px-7 py-3.5 bg-white dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-2xl flex items-center gap-4">
                 <div className="w-2.5 h-2.5 bg-[#2E5E99] rounded-full animate-pulse" />
                 <div className="flex flex-col">
                   <span className="text-[10px] font-bold text-[#0D2440]/60 dark:text-white/60 uppercase tracking-widest">

@@ -134,7 +134,7 @@ function CategoryCard({ category, index }: { category: (typeof mainCategories)[0
       viewport={{ once: true }}
       transition={{ duration: 0.65, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -6 }}
-      className="group relative h-[320px] sm:h-[340px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer w-full min-w-full lg:min-w-0 lg:w-full shrink-0 snap-center shadow-[0_10px_25px_rgba(13,36,64,0.08)] hover:shadow-[0_20px_45px_rgba(13,36,64,0.22)] transition-all duration-500 border border-slate-200/80 dark:border-white/10"
+      className="group relative h-[320px] sm:h-[340px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer w-full min-w-full lg:min-w-0 lg:w-full shrink-0 snap-center transition-all duration-500 border border-slate-200/80 dark:border-white/10"
     >
       <Link href={category.link} className="block w-full h-full">
         {/* Background Image with Smooth Zoom and Lighting Animation */}
@@ -152,20 +152,20 @@ function CategoryCard({ category, index }: { category: (typeof mainCategories)[0
         {/* Top Badges */}
         <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
           {/* Component Count Glass Pill */}
-          <div className="px-3 py-1 bg-white/90 dark:bg-black/60 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full flex items-center gap-1.5 text-[#0D2440] dark:text-white shadow-xs">
+          <div className="px-3 py-1 bg-white/90 dark:bg-black/60 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full flex items-center gap-1.5 text-[#0D2440] dark:text-white">
             <category.icon className="w-3.5 h-3.5 text-[#2E5E99] dark:text-[#7BA4D0]" />
             <span className="text-[10px] font-heading font-semibold uppercase tracking-wider">{category.count}</span>
           </div>
 
           {/* Domain Tag */}
-          <span className="text-[9px] font-heading font-semibold uppercase tracking-widest text-[#0D2440] dark:text-white bg-white/90 dark:bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/80 dark:border-white/20 shadow-xs">
+          <span className="text-[9px] font-heading font-semibold uppercase tracking-widest text-[#0D2440] dark:text-white bg-white/90 dark:bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/80 dark:border-white/20">
             {category.tag}
           </span>
         </div>
 
         {/* Bottom Card Content - Light Color Styling as requested */}
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 z-20">
-          <div className="relative flex flex-col justify-between bg-white/95 dark:bg-[#0B1728]/95 backdrop-blur-xl border border-white/80 dark:border-white/15 rounded-xl sm:rounded-2xl p-4 text-[#0D2440] dark:text-white shadow-lg transition-colors duration-300 group-hover:border-[#2E5E99]/50">
+          <div className="relative flex flex-col justify-between bg-white/95 dark:bg-[#0B1728]/95 backdrop-blur-xl border border-white/80 dark:border-white/15 rounded-xl sm:rounded-2xl p-4 text-[#0D2440] dark:text-white transition-colors duration-300 group-hover:border-[#2E5E99]/50">
             {/* Title & Description */}
             <div className="space-y-1 pr-6">
               <h3 className="text-lg sm:text-xl font-heading font-bold text-[#0D2440] dark:text-white leading-snug group-hover:text-[#2E5E99] dark:group-hover:text-[#7BA4D0] transition-colors duration-300">

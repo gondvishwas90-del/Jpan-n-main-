@@ -112,7 +112,7 @@ export function UnclaimedTable() {
              <a 
                 href="/documents/j-pan-unclaimed-database.pdf" 
                 download="J_Pan_Tubular_Unclaimed_Database.pdf"
-                className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-widest rounded-xl flex items-center gap-3 transition-all shadow-md group"
+                className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-bold uppercase tracking-widest rounded-xl flex items-center gap-3 transition-all group"
               >
                 <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
                 Download Full Database (PDF)
@@ -126,7 +126,7 @@ export function UnclaimedTable() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl overflow-hidden shadow-lg"
+          className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-3xl overflow-hidden"
         >
           <div className="overflow-x-auto pb-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-silver/10 [&::-webkit-scrollbar-thumb]:bg-[#7BA4D0]/50 hover:[&::-webkit-scrollbar-thumb]:bg-[#2E5E99]/80 [&::-webkit-scrollbar-thumb]:rounded-full">
             <table className="w-full text-left border-collapse">
@@ -156,7 +156,7 @@ export function UnclaimedTable() {
                   >
                     <td className="px-6 py-5">
                        <div className="flex items-center gap-3.5">
-                          <div className="w-9 h-9 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 flex items-center justify-center rounded-full text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] transition-colors duration-200 shrink-0 shadow-xs">
+                          <div className="w-9 h-9 bg-white dark:bg-charcoal border border-[#7BA4D0]/25 flex items-center justify-center rounded-full text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] transition-colors duration-200 shrink-0">
                              <User className="w-4 h-4" />
                           </div>
                           <span className="text-xs font-bold text-[#0D2440] dark:text-white tracking-wide whitespace-nowrap">{row.name}</span>
@@ -184,7 +184,7 @@ export function UnclaimedTable() {
                        </span>
                     </td>
                     <td className="px-6 py-5 text-center">
-                       <button className="p-2.5 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 hover:bg-[#0D2440] hover:text-white text-[#2E5E99] transition-all duration-200 rounded-xl inline-flex items-center justify-center shadow-xs">
+                       <button className="p-2.5 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 hover:bg-[#0D2440] hover:text-white text-[#2E5E99] transition-all duration-200 rounded-xl inline-flex items-center justify-center">
                           <ExternalLink className="w-3.5 h-3.5" />
                        </button>
                     </td>

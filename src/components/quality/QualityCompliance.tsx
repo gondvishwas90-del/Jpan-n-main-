@@ -80,7 +80,7 @@ export function QualityCompliance() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4">
               <span>Governance</span>
             </div>
             
@@ -110,10 +110,10 @@ export function QualityCompliance() {
                 <motion.div 
                   key={idx} 
                   variants={itemVariants}
-                  className="group relative p-7 sm:p-8 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 rounded-3xl shadow-xs hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1.5 transition-all duration-500 overflow-hidden w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center flex flex-col justify-between"
+                  className="group relative p-7 sm:p-8 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 rounded-3xl hover:-translate-y-1.5 transition-all duration-500 overflow-hidden w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center flex flex-col justify-between"
                 >
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center mb-6 text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500 shadow-xs shrink-0">
+                    <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center mb-6 text-[#2E5E99] group-hover:bg-[#0D2440] group-hover:text-white transition-all duration-500 shrink-0">
                       <s.icon className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                     </div>
                     

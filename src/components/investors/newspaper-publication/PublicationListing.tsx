@@ -137,7 +137,7 @@ export function PublicationListing() {
                       <Eye className="w-4 h-4 text-muted-foreground group-hover/btn:text-charcoal" />
                       <span className="text-[9px] font-bold uppercase tracking-[0.2em]">View</span>
                    </button>
-                   <button className="flex items-center justify-center gap-2 py-4 bg-charcoal dark:bg-white/2 hover:bg-deepblue text-white rounded-sm transition-all shadow-lg">
+                   <button className="flex items-center justify-center gap-2 py-4 bg-charcoal dark:bg-white/2 hover:bg-deepblue text-white rounded-sm transition-all">
                       <Download className="w-4 h-4" />
                       <span className="text-[9px] font-bold uppercase tracking-[0.2em]">PDF</span>
                    </button>

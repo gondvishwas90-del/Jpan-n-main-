@@ -97,7 +97,7 @@ export function SEBIDisclosureListing() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex items-center justify-center"
             >
-              <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider px-5 py-2 bg-[#F8FAFC] dark:bg-charcoal/60 rounded-2xl border border-[#7BA4D0]/25 shadow-xs">
+              <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider px-5 py-2 bg-[#F8FAFC] dark:bg-charcoal/60 rounded-2xl border border-[#7BA4D0]/25">
                 {disclosures.length} Active Filings
               </span>
             </motion.div>
@@ -146,12 +146,12 @@ export function SEBIDisclosureListing() {
                     <div className="flex items-center gap-3 w-full lg:w-auto shrink-0 mt-auto lg:mt-0">
                       <button 
                         onClick={() => handleView(disclosure)}
-                        className="flex-1 lg:flex-none py-3 px-5 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 hover:bg-[#0D2440] hover:text-white text-[#0D2440] dark:text-white rounded-xl transition-all group/btn flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider shadow-xs"
+                        className="flex-1 lg:flex-none py-3 px-5 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 hover:bg-[#0D2440] hover:text-white text-[#0D2440] dark:text-white rounded-xl transition-all group/btn flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider"
                       >
                         <Eye className="w-4 h-4 text-[#2E5E99] group-hover/btn:text-white" />
                         <span>View</span>
                       </button>
-                      <button className="flex-1 lg:flex-none py-3 px-5 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider">
+                      <button className="flex-1 lg:flex-none py-3 px-5 bg-[#0D2440] hover:bg-[#2E5E99] text-white rounded-xl transition-all flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider">
                         <Download className="w-4 h-4" />
                         <span>Download PDF</span>
                       </button>

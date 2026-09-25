@@ -29,11 +29,9 @@ export function SEBIDisclosureCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/30 dark:via-[#0D2440]/20 dark:to-[#0D2440]/40 border border-[#7BA4D0]/35 p-8 sm:p-12 md:p-16 lg:p-20 relative overflow-hidden shadow-[0_20px_60px_-15px_rgba(46,94,153,0.12)]"
+          className="rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0D2440]/30 dark:via-[#0D2440]/20 dark:to-[#0D2440]/40 border border-[#7BA4D0]/35 p-8 sm:p-12 md:p-16 lg:p-20 relative overflow-hidden"
         >
           {/* Subtle Ambient Light Gradients */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#7BA4D0]/15 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2E5E99]/10 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column */}
@@ -54,13 +52,13 @@ export function SEBIDisclosureCTA() {
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-[0.18em] rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-[#0D2440]/20 hover:shadow-[#2E5E99]/30 hover:-translate-y-0.5 group whitespace-nowrap"
+                  className="px-8 py-4 bg-[#0D2440] hover:bg-[#2E5E99] text-white font-bold text-xs uppercase tracking-[0.18em] rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 hover:-translate-y-0.5 group whitespace-nowrap"
                 >
                   Submit Regulatory Query
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
-                <div className="flex items-center justify-center gap-3 px-6 py-4 bg-white/80 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-2xl text-[#0D2440] dark:text-white shadow-sm">
+                <div className="flex items-center justify-center gap-3 px-6 py-4 bg-white/80 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-2xl text-[#0D2440] dark:text-white">
                   <ShieldCheck className="w-5 h-5 text-[#2E5E99] dark:text-[#7BA4D0] shrink-0" />
                   <span className="text-xs font-bold uppercase tracking-wider">Verified Channel</span>
                 </div>
@@ -74,8 +72,8 @@ export function SEBIDisclosureCTA() {
                 onScroll={handleMobileScroll}
                 className="flex flex-row sm:grid sm:grid-cols-2 overflow-x-auto snap-x snap-mandatory pt-2 pb-3 sm:py-0 px-1 sm:px-0 gap-4 sm:gap-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] w-full"
               >
-                <div className="p-6 sm:p-7 bg-white/90 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-lg transition-all duration-300 group/card w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center shadow-sm">
-                  <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center mb-5 text-[#2E5E99] dark:text-[#7BA4D0] group-hover/card:scale-110 transition-transform shadow-sm">
+                <div className="p-6 sm:p-7 bg-white/90 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-3xl hover:border-[#2E5E99]/50 transition-all duration-300 group/card w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center">
+                  <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center mb-5 text-[#2E5E99] dark:text-[#7BA4D0] group-hover/card:scale-110 transition-transform">
                     <Mail className="w-6 h-6" />
                   </div>
                   <h4 className="text-[#0D2440] dark:text-white font-bold text-xs uppercase tracking-wider mb-1.5">
@@ -86,8 +84,8 @@ export function SEBIDisclosureCTA() {
                   </p>
                 </div>
 
-                <div className="p-6 sm:p-7 bg-white/90 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-lg transition-all duration-300 group/card w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center shadow-sm">
-                  <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center mb-5 text-[#2E5E99] dark:text-[#7BA4D0] group-hover/card:scale-110 transition-transform shadow-sm">
+                <div className="p-6 sm:p-7 bg-white/90 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-3xl hover:border-[#2E5E99]/50 transition-all duration-300 group/card w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center">
+                  <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center mb-5 text-[#2E5E99] dark:text-[#7BA4D0] group-hover/card:scale-110 transition-transform">
                     <Phone className="w-6 h-6" />
                   </div>
                   <h4 className="text-[#0D2440] dark:text-white font-bold text-xs uppercase tracking-wider mb-1.5">
@@ -98,7 +96,7 @@ export function SEBIDisclosureCTA() {
                   </p>
                 </div>
 
-                <div className="sm:col-span-2 p-6 sm:p-7 bg-white/90 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-3xl flex items-center justify-between w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center shadow-sm hover:border-[#2E5E99]/50 transition-all duration-300">
+                <div className="sm:col-span-2 p-6 sm:p-7 bg-white/90 dark:bg-charcoal/60 border border-[#7BA4D0]/30 rounded-3xl flex items-center justify-between w-full min-w-full sm:min-w-0 sm:w-full shrink-0 snap-center hover:border-[#2E5E99]/50 transition-all duration-300">
                   <div className="flex items-center gap-4 sm:gap-5">
                     <div className="w-12 h-12 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center shrink-0 text-[#2E5E99] dark:text-[#7BA4D0]">
                       <Scale className="w-6 h-6" />

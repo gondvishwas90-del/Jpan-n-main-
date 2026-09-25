@@ -109,7 +109,7 @@ export function InvestorPresentationListing() {
                     <Eye className="w-4 h-4 text-gold group-hover/btn:scale-110 transition-transform" />
                     View Slides
                   </button>
-                  <button className="flex items-center justify-center gap-3 py-6 text-[10px] font-bold uppercase tracking-widest bg-deepblue hover:bg-gold text-white hover:text-charcoal transition-all shadow-xl">
+                  <button className="flex items-center justify-center gap-3 py-6 text-[10px] font-bold uppercase tracking-widest bg-deepblue hover:bg-gold text-white hover:text-charcoal transition-all">
                     <Download className="w-4 h-4" />
                     Download PDF
                   </button>

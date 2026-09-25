@@ -119,7 +119,7 @@ function AnnualReportsGridInner() {
                 className="group bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 hover:border-[#2E5E99]/60 hover:bg-[#F1F6FB] dark:hover:bg-charcoal/60 transition-all duration-300 w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 {/* Icon Box */}
-                <div className="w-14 h-14 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 shadow-sm text-[#2E5E99]">
+                <div className="w-14 h-14 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 text-[#2E5E99]">
                   <FileText className="w-6 h-6" />
                 </div>
 
@@ -158,14 +158,14 @@ function AnnualReportsGridInner() {
                       href={report.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="px-5 py-2.5 rounded-xl border border-[#7BA4D0]/35 bg-white hover:bg-white/80 dark:bg-charcoal text-xs font-semibold text-[#0D2440] dark:text-white transition-all shadow-xs flex items-center gap-1.5"
+                      className="px-5 py-2.5 rounded-xl border border-[#7BA4D0]/35 bg-white hover:bg-white/80 dark:bg-charcoal text-xs font-semibold text-[#0D2440] dark:text-white transition-all flex items-center gap-1.5"
                     >
                       <ExternalLink className="w-3.5 h-3.5 text-[#2E5E99]" /> View
                     </a>
                     <a 
                       href={report.link}
                       download
-                      className="px-5 py-2.5 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-semibold shadow-md shadow-[#0D2440]/15 flex items-center gap-2 transition-all group/btn"
+                      className="px-5 py-2.5 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white text-xs font-semibold flex items-center gap-2 transition-all group/btn"
                     >
                       <Download className="w-3.5 h-3.5 group-hover/btn:translate-y-0.5 transition-transform" />
                       PDF

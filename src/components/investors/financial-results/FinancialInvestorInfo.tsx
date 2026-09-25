@@ -73,10 +73,10 @@ export function FinancialInvestorInfo() {
             {infoCards.map((card) => (
               <div 
                 key={card.id}
-                className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl hover:border-[#2E5E99]/50 hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-between h-full w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-xs"
+                className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl hover:border-[#2E5E99]/50 hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-between h-full w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
               >
                 <div>
-                  <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-5 transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99] shadow-xs">
+                  <div className="w-14 h-14 bg-[#EBF3FC] dark:bg-white/10 border border-[#7BA4D0]/30 flex items-center justify-center rounded-2xl mb-5 transition-all duration-500 group-hover:bg-[#0D2440] group-hover:text-white text-[#2E5E99]">
                     <card.icon className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                   </div>
                   <h3 className="text-lg font-heading font-bold text-[#0D2440] dark:text-white mb-2 group-hover:text-[#2E5E99] transition-colors">
@@ -116,7 +116,7 @@ export function FinancialInvestorInfo() {
         </div>
 
         {/* Technical Note */}
-        <div className="mt-12 md:mt-16 p-6 sm:p-8 bg-[#EBF3FC]/70 dark:bg-charcoal/40 border-l-4 border-[#2E5E99] border-y border-r border-[#7BA4D0]/20 rounded-r-2xl shadow-xs">
+        <div className="mt-12 md:mt-16 p-6 sm:p-8 bg-[#EBF3FC]/70 dark:bg-charcoal/40 border-l-4 border-[#2E5E99] border-y border-r border-[#7BA4D0]/20 rounded-r-2xl">
           <p className="text-xs sm:text-sm text-[#0D2440]/75 dark:text-silver/80 leading-relaxed font-normal">
             <span className="font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mr-2">Technical Note:</span>
             All disclosures are filed in compliance with SEBI and other relevant industrial 

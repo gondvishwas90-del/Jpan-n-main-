@@ -50,7 +50,7 @@ export function UpcomingEvents() {
           </div>
           <a 
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-xs uppercase tracking-widest transition-all duration-300 shadow-md shadow-[#0D2440]/15 hover:shadow-lg hover:-translate-y-0.5 group self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0D2440] hover:bg-[#2E5E99] text-white font-semibold text-xs uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 group self-start md:self-auto"
           >
             <span>Schedule a Meeting</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

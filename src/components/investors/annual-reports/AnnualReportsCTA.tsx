@@ -10,8 +10,6 @@ export function AnnualReportsCTA() {
       <div className="container-custom">
         <div className="bg-silver/5 dark:bg-white/2 border border-border p-12 md:p-20 rounded-sm relative overflow-hidden group">
           {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 blur-[100px] group-hover:bg-gold/10 transition-colors" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-deepblue/5 blur-[100px] group-hover:bg-deepblue/10 transition-colors" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -28,7 +26,7 @@ export function AnnualReportsCTA() {
                 detailed technical consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-deepblue text-white font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 shadow-xl btn-slide-gold group">
+                <button className="px-8 py-4 bg-deepblue text-white font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-gold group">
                   Contact Investor Relations
                   <ArrowRight className="w-4 h-4" />
                 </button>

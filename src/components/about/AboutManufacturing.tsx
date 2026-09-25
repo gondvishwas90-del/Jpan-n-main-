@@ -151,7 +151,7 @@ export function AboutManufacturing() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 relative rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_20px_50px_rgba(13,36,64,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group h-[420px] sm:h-[500px] lg:h-full min-h-[420px]"
+            className="lg:col-span-7 relative rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 group h-[420px] sm:h-[500px] lg:h-full min-h-[420px]"
           >
             {/* Parallax Photo Layer */}
             <motion.div
@@ -171,9 +171,9 @@ export function AboutManufacturing() {
             <div className="absolute inset-0 bg-gradient-to-b from-[#060D18]/60 via-transparent to-transparent pointer-events-none z-10" />
 
             {/* Bottom Control Bar */}
-            <div className="absolute bottom-6 left-6 right-6 z-20 p-5 rounded-2xl bg-white/90 dark:bg-[#0D2440]/90 backdrop-blur-md border border-[#7BA4D0]/40 dark:border-white/20 shadow-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="absolute bottom-6 left-6 right-6 z-20 p-5 rounded-2xl bg-white/90 dark:bg-[#0D2440]/90 backdrop-blur-md border border-[#7BA4D0]/40 dark:border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-[#2E5E99] text-white flex items-center justify-center shrink-0 shadow-md">
+                <div className="w-11 h-11 rounded-xl bg-[#2E5E99] text-white flex items-center justify-center shrink-0">
                   <Factory className="w-5 h-5" />
                 </div>
                 <div>
@@ -207,12 +207,12 @@ export function AboutManufacturing() {
                   scale: 1.01,
                   transition: { duration: 0.2 },
                 }}
-                className="relative p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_10px_30px_rgba(13,36,64,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)] hover:shadow-[0_18px_40px_-10px_rgba(46,94,153,0.25)] dark:hover:shadow-[0_18px_40px_-10px_rgba(123,164,208,0.2)] hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-300 group flex flex-col justify-between overflow-hidden transform-gpu"
+                className="relative p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-300 group flex flex-col justify-between overflow-hidden transform-gpu"
               >
                 {/* Top Row: Icon */}
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] flex items-center justify-center group-hover:bg-[#2E5E99] group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] flex items-center justify-center group-hover:bg-[#2E5E99] group-hover:text-white transition-colors duration-300">
                       <stat.icon className="w-5 h-5" />
                     </div>
                   </div>

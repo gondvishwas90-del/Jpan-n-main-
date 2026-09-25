@@ -9,8 +9,6 @@ export function BoardMeetingCTA() {
       <div className="container-custom">
         <div className="bg-charcoal dark:bg-black/40 border border-white/5 p-12 md:p-20 rounded-sm relative group overflow-hidden">
           {/* Institutional Gradients */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[120px] group-hover:bg-gold/10 transition-colors" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-deepblue/5 blur-[120px] group-hover:bg-deepblue/10 transition-colors" />
           <div className="absolute inset-0 opacity-[0.02] bg-[url('/images/blueprint.png')] bg-repeat" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -29,7 +27,7 @@ export function BoardMeetingCTA() {
                 corporate governance team.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-10 py-5 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 shadow-2xl btn-slide-white group">
+                <button className="px-10 py-5 bg-gold text-charcoal font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-white group">
                   Contact Governance Team
                   <ArrowRight className="w-4 h-4" />
                 </button>

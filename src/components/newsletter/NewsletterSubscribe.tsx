@@ -14,7 +14,7 @@ export function NewsletterSubscribe() {
       <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-16 bg-white/5 border border-white/10 p-12 md:p-20 rounded-sm backdrop-blur-sm">
           <div className="lg:w-1/2">
-            <div className="w-16 h-16 bg-gold flex items-center justify-center rounded-full mb-8 shadow-2xl">
+            <div className="w-16 h-16 bg-gold flex items-center justify-center rounded-full mb-8">
               <Mail className="w-8 h-8 text-charcoal" />
             </div>
             <h2 className="text-4xl font-heading font-bold text-white mb-6 leading-tight">
@@ -60,7 +60,7 @@ export function NewsletterSubscribe() {
               </div>
               <button 
                 type="submit"
-                className="w-full bg-gold hover:bg-white/95 dark:hover:bg-[#0D2440] dark:hover:text-white text-charcoal font-bold py-5 rounded-sm flex items-center justify-center gap-3 transition-all shadow-2xl"
+                className="w-full bg-gold hover:bg-white/95 dark:hover:bg-[#0D2440] dark:hover:text-white text-charcoal font-bold py-5 rounded-sm flex items-center justify-center gap-3 transition-all"
               >
                 Join "The Precision Edge" Hub
                 <ArrowRight className="w-5 h-5" />

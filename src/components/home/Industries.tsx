@@ -80,27 +80,13 @@ const IndustryCard = ({
         className={cn(
           "group relative h-[380px] w-full overflow-hidden transition-all duration-500 ease-out cursor-pointer border flex flex-col justify-between block backdrop-blur-2xl",
           isCardActive
-            ? "rounded-2xl rounded-r-[140px] md:rounded-r-[170px] bg-white/85 dark:bg-white/[0.10] border-[#2E5E99]/50 dark:border-white/[0.28] text-[#0D2440] dark:text-[#F5F5F5] -translate-y-2 shadow-[0_20px_50px_rgba(13,36,64,0.12),inset_0_1px_2px_0_rgba(255,255,255,1)] dark:shadow-[0_25px_55px_rgba(0,0,0,0.55),inset_0_1px_2px_0_rgba(255,255,255,0.25)]"
-            : "rounded-2xl bg-white/60 dark:bg-white/[0.05] border-white/70 dark:border-white/[0.13] text-[#0D2440] dark:text-[#F5F5F5] hover:border-[#2E5E99]/40 dark:hover:border-white/[0.22] shadow-[0_12px_36px_rgba(13,36,64,0.06),inset_0_1px_1.5px_0_rgba(255,255,255,0.85)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.38),inset_0_1px_1.5px_0_rgba(255,255,255,0.14)] hover:-translate-y-1"
+            ? "rounded-2xl rounded-r-[140px] md:rounded-r-[170px] bg-white/90 dark:bg-[#0c1b2f]/85 border-[#2E5E99]/50 dark:border-white/[0.28] text-[#0D2440] dark:text-[#F5F5F5] -translate-y-2"
+            : "rounded-2xl bg-white/70 dark:bg-[#0c1b2f]/65 border-white/70 dark:border-white/[0.13] text-[#0D2440] dark:text-[#F5F5F5] hover:border-[#2E5E99]/40 dark:hover:border-white/[0.22] hover:-translate-y-1"
         )}
       >
         {/* Glass Specular Top Highlight Sheen */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/70 dark:via-white/30 to-transparent pointer-events-none z-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.12] dark:from-white/[0.04] to-transparent pointer-events-none z-0" />
-
-        {/* React Bits Pro Glowing Wave Effect - Speed 0.20 strictly configured */}
-        <div className="absolute inset-0 pointer-events-none rounded-[inherit] overflow-hidden z-0 transition-opacity duration-700">
-          <GlowingWave
-            speed={0.20}
-            color1="#7BA4D0"
-            color2="#2E5E99"
-            frequency={0.75}
-            intensity={2.0}
-            complexity={0.5}
-            opacity={isCardActive ? 0.65 : 0.35}
-            transparent={true}
-          />
-        </div>
 
         <div className="flex flex-col justify-between h-full p-7 md:p-8 relative z-10">
           <div className="space-y-4">
@@ -109,8 +95,8 @@ const IndustryCard = ({
               className={cn(
                 "w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 border backdrop-blur-xl",
                 isCardActive
-                  ? "bg-white/90 dark:bg-white/[0.16] border-white/80 dark:border-white/25 text-[#2E5E99] dark:text-[#7BA4D0] scale-105 shadow-md shadow-[#2E5E99]/10"
-                  : "bg-white/60 dark:bg-white/[0.07] border-white/60 dark:border-white/12 text-[#2E5E99] dark:text-[#7BA4D0] shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]"
+                  ? "bg-white/90 dark:bg-white/[0.16] border-white/80 dark:border-white/25 text-[#2E5E99] dark:text-[#7BA4D0] scale-105"
+                  : "bg-white/60 dark:bg-white/[0.07] border-white/60 dark:border-white/12 text-[#2E5E99] dark:text-[#7BA4D0]"
               )}
             >
               <industry.icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
@@ -147,8 +133,8 @@ const IndustryCard = ({
                 className={cn(
                   "inline-flex items-center gap-2.5 px-4 py-2 rounded-full border text-[10px] font-mono font-bold uppercase tracking-wider transition-all duration-300",
                   isCardActive
-                    ? "bg-[#2E5E99] text-white border-[#2E5E99] dark:bg-[#7BA4D0] dark:text-[#0B0D0F] dark:border-[#7BA4D0] shadow-md"
-                    : "bg-white/70 dark:bg-white/[0.08] backdrop-blur-md text-[#2E5E99] dark:text-[#F5F5F5] border-white/60 dark:border-white/15 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] hover:text-white dark:hover:text-[#0B0D0F]"
+                    ? "bg-[#2E5E99] text-white border-[#2E5E99] dark:bg-[#7BA4D0] dark:text-[#0B0D0F] dark:border-[#7BA4D0]"
+                    : "bg-white/70 dark:bg-white/[0.08] backdrop-blur-md text-[#2E5E99] dark:text-[#F5F5F5] border-white/60 dark:border-white/15 hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] hover:text-white dark:hover:text-[#0B0D0F]"
                 )}
               >
                 <span>Explore Solutions</span>
@@ -189,12 +175,20 @@ export function Industries() {
 
   return (
     <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-gradient-to-b from-[#E7F0FA] via-[#F4F8FC] to-[#DDEBF7] dark:from-[#071321] dark:via-[#09182b] dark:to-[#071321] text-[#0D2440] dark:text-white overflow-hidden border-y border-[#7BA4D0]/20 dark:border-white/10 transition-colors duration-500">
-      {/* Background & Blueprint Elements */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid-pattern opacity-25 dark:opacity-10" />
-        <div className="absolute top-[10%] left-[8%] w-[480px] h-[480px] rounded-full bg-[#7BA4D0]/20 dark:bg-[#2E5E99]/15 blur-3xl" />
-        <div className="absolute bottom-[5%] right-[10%] w-[520px] h-[520px] rounded-full bg-[#2E5E99]/12 dark:bg-[#2E5E99]/10 blur-3xl" />
-        <div className="absolute top-[40%] right-[30%] w-[380px] h-[380px] rounded-full bg-white/70 dark:bg-white/[0.03] blur-2xl" />
+      {/* Isolated Soft Fluid Water Shader Background - Strictly for this section */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden select-none">
+        <GlowingWave
+          speed={0.12}
+          color1="#7BA4D0"
+          color2="#2E5E99"
+          frequency={0.45}
+          intensity={0.55}
+          complexity={0.18}
+          opacity={0.25}
+          transparent={true}
+        />
+        {/* Subtle Blueprint Grid Pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-20 dark:opacity-10 mix-blend-overlay" />
       </div>
 
       <div className="container-custom relative z-10">

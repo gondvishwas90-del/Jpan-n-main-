@@ -62,8 +62,12 @@ export function CobeInteractiveGlobe({
 
     const cobeMarkers = markers.map((m, idx) => ({
       location: [m.lat, m.lng] as [number, number],
-      size: activeIndex === idx ? 0.035 : (m.size || 0.018),
-      color: activeIndex === idx ? ([1, 1, 1] as [number, number, number]) : accentColor
+      size: activeIndex === idx ? 0.04 : (m.size || 0.02),
+      color: (isDark
+        ? ([1, 1, 1] as [number, number, number])
+        : activeIndex === idx
+        ? ([1, 1, 1] as [number, number, number])
+        : accentColor)
     }));
 
     const globe = createGlobe(canvas, {
@@ -73,15 +77,15 @@ export function CobeInteractiveGlobe({
       phi: phiRef.current,
       theta: thetaRef.current,
       dark: isDark ? 1 : 0,
-      diffuse: 1.6,
-      mapSamples: 14000,
-      mapBrightness: isDark ? 2.4 : 1.4,
-      baseColor: isDark ? [0.12, 0.16, 0.24] : [0.94, 0.95, 0.97],
-      markerColor: accentColor,
-      glowColor: isDark ? [0.1, 0.25, 0.35] : [0.88, 0.93, 0.98],
+      diffuse: isDark ? 1.2 : 1.6,
+      mapSamples: 16000,
+      mapBrightness: isDark ? 6 : 1.4,
+      baseColor: isDark ? [1, 1, 1] : [0.94, 0.95, 0.97],
+      markerColor: isDark ? [1, 1, 1] : accentColor,
+      glowColor: isDark ? [0.15, 0.25, 0.35] : [0.88, 0.93, 0.98],
       markers: cobeMarkers,
       arcs: [],
-      arcColor: accentColor,
+      arcColor: isDark ? [1, 1, 1] : accentColor,
       arcWidth: 0
     });
 
@@ -179,14 +183,20 @@ export function CobeInteractiveGlobe({
       <div 
         className="absolute inset-0 rounded-full pointer-events-none scale-[0.84] transition-all duration-700"
         style={{
-          border: `2.5px solid rgba(${accentColor[0] * 255}, ${accentColor[1] * 255}, ${accentColor[2] * 255}, 0.22)`,
-          boxShadow: `0 0 140px rgba(${accentColor[0] * 255}, ${accentColor[1] * 255}, ${accentColor[2] * 255}, 0.16)`
+          border: isDark
+            ? "2.5px solid rgba(255, 255, 255, 0.18)"
+            : `2.5px solid rgba(${accentColor[0] * 255}, ${accentColor[1] * 255}, ${accentColor[2] * 255}, 0.22)`,
+          boxShadow: isDark
+            ? "0 0 140px rgba(255, 255, 255, 0.08)"
+            : `0 0 140px rgba(${accentColor[0] * 255}, ${accentColor[1] * 255}, ${accentColor[2] * 255}, 0.16)`
         }}
       />
       <div 
         className="absolute inset-0 rounded-full pointer-events-none scale-[0.96] opacity-30"
         style={{
-          border: `1px dashed rgba(${accentColor[0] * 255}, ${accentColor[1] * 255}, ${accentColor[2] * 255}, 0.2)`
+          border: isDark
+            ? "1px dashed rgba(255, 255, 255, 0.18)"
+            : `1px dashed rgba(${accentColor[0] * 255}, ${accentColor[1] * 255}, ${accentColor[2] * 255}, 0.2)`
         }}
       />
     </div>

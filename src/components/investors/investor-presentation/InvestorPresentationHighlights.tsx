@@ -54,7 +54,7 @@ export function InvestorPresentationHighlights() {
               resilience and market-leading expansion strategies.
             </p>
             <div className="p-5 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-4">
-              <div className="w-11 h-11 bg-white dark:bg-charcoal flex items-center justify-center rounded-xl border border-[#7BA4D0]/30 text-[#2E5E99] shadow-sm shrink-0">
+              <div className="w-11 h-11 bg-white dark:bg-charcoal flex items-center justify-center rounded-xl border border-[#7BA4D0]/30 text-[#2E5E99] shrink-0">
                 <Zap className="w-5 h-5" />
               </div>
               <div>
@@ -72,10 +72,10 @@ export function InvestorPresentationHighlights() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 p-8 rounded-3xl hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1.5 transition-all duration-300 group"
+                className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 p-8 rounded-3xl hover:-translate-y-1.5 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-13 h-13 p-3 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] transition-colors shadow-sm">
+                  <div className="w-13 h-13 p-3 bg-white dark:bg-charcoal border border-[#7BA4D0]/30 rounded-2xl flex items-center justify-center group-hover:bg-[#0D2440] group-hover:text-white group-hover:border-[#0D2440] transition-colors">
                     <metric.icon className="w-6 h-6 text-[#2E5E99] group-hover:text-white transition-colors" />
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-[#2E5E99] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />

@@ -132,7 +132,7 @@ function AwwwardsTiltCard({
       style={{
         transformStyle: "preserve-3d",
       }}
-      className={`relative rounded-3xl p-8 sm:p-12 bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 shadow-[0_20px_50px_rgba(13,36,64,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-300 flex flex-col justify-between group transform-gpu cursor-default overflow-hidden ${className}`}
+      className={`relative rounded-3xl p-8 sm:p-12 bg-white dark:bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 transition-colors duration-300 flex flex-col justify-between group transform-gpu cursor-default overflow-hidden ${className}`}
     >
       {/* Specular Radial Spotlight following cursor (Awwwards Signature) */}
       <div
@@ -207,7 +207,7 @@ export function VisionMission() {
                 className="flex items-center justify-between mb-8 transition-transform duration-200"
                 style={{ transform: "translateZ(38px)" }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#7BA4D0]/30 dark:border-white/15 flex items-center justify-center shadow-sm group-hover:bg-[#2E5E99] group-hover:text-white group-hover:scale-105 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#7BA4D0]/30 dark:border-white/15 flex items-center justify-center group-hover:bg-[#2E5E99] group-hover:text-white group-hover:scale-105 transition-all duration-300">
                   <Compass className="w-7 h-7" />
                 </div>
               </div>
@@ -254,7 +254,7 @@ export function VisionMission() {
                 className="flex items-center justify-between mb-8 transition-transform duration-200"
                 style={{ transform: "translateZ(38px)" }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#7BA4D0]/30 dark:border-white/15 flex items-center justify-center shadow-sm group-hover:bg-[#2E5E99] group-hover:text-white group-hover:scale-105 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border border-[#7BA4D0]/30 dark:border-white/15 flex items-center justify-center group-hover:bg-[#2E5E99] group-hover:text-white group-hover:scale-105 transition-all duration-300">
                   <Target className="w-7 h-7" />
                 </div>
               </div>

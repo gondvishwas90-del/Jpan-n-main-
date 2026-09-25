@@ -32,8 +32,6 @@ export function CareersIntro() {
     >
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(#2E5E99_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-[#7BA4D0]/10 blur-[130px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[35rem] h-[35rem] bg-[#2E5E99]/10 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -66,7 +64,7 @@ export function CareersIntro() {
             </motion.p>
             
             <motion.div variants={textVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-               <div className="p-5 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 backdrop-blur-md shadow-sm hover:shadow-md hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4 cursor-default">
+               <div className="p-5 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 backdrop-blur-md hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4 cursor-default">
                   <div className="w-12 h-12 rounded-xl bg-[#2E5E99]/10 dark:bg-[#7BA4D0]/10 flex items-center justify-center shrink-0 border border-[#2E5E99]/20 dark:border-[#7BA4D0]/20 text-[#2E5E99] dark:text-[#7BA4D0] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white">
                     <Award className="w-5 h-5 transition-transform duration-300" strokeWidth={1.75} />
                   </div>
@@ -76,7 +74,7 @@ export function CareersIntro() {
                   </div>
                </div>
 
-               <div className="p-5 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 backdrop-blur-md shadow-sm hover:shadow-md hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4 cursor-default">
+               <div className="p-5 rounded-2xl bg-white/80 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 backdrop-blur-md hover:border-[#2E5E99]/40 transition-all duration-300 group flex items-start gap-4 cursor-default">
                   <div className="w-12 h-12 rounded-xl bg-[#2E5E99]/10 dark:bg-[#7BA4D0]/10 flex items-center justify-center shrink-0 border border-[#2E5E99]/20 dark:border-[#7BA4D0]/20 text-[#2E5E99] dark:text-[#7BA4D0] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2E5E99] group-hover:text-white">
                     <Zap className="w-5 h-5 transition-transform duration-300" strokeWidth={1.75} />
                   </div>
@@ -95,13 +93,9 @@ export function CareersIntro() {
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 relative"
           >
-            <div className="p-8 sm:p-12 md:p-14 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0a182a] dark:via-[#0d223c] dark:to-[#091524] border border-[#7BA4D0]/35 dark:border-white/10 backdrop-blur-2xl relative overflow-hidden shadow-[0_20px_60px_-15px_rgba(46,94,153,0.12)] group">
-               {/* Internal Card Glow */}
-               <div className="absolute top-0 right-0 w-64 h-64 bg-[#7BA4D0]/20 blur-[90px] rounded-full pointer-events-none" />
-               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#2E5E99]/10 blur-[80px] rounded-full pointer-events-none" />
-               
+            <div className="p-8 sm:p-12 md:p-14 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0a182a] dark:via-[#0d223c] dark:to-[#091524] border border-[#7BA4D0]/35 dark:border-white/10 backdrop-blur-2xl relative overflow-hidden group">
                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center mb-8 text-[#2E5E99] dark:text-[#7BA4D0] shadow-sm">
+                  <div className="w-14 h-14 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center mb-8 text-[#2E5E99] dark:text-[#7BA4D0]">
                     <Briefcase className="w-7 h-7" strokeWidth={1.75} />
                   </div>
                   
@@ -110,14 +104,14 @@ export function CareersIntro() {
                   </h3>
                   
                   <div className="space-y-6">
-                    <div className="p-5 rounded-2xl bg-white/90 dark:bg-white/[0.05] border border-[#7BA4D0]/20 dark:border-white/10 flex gap-5 items-start shadow-xs hover:shadow-md transition-all duration-300">
+                    <div className="p-5 rounded-2xl bg-white/90 dark:bg-white/[0.05] border border-[#7BA4D0]/20 dark:border-white/10 flex gap-5 items-start transition-all duration-300">
                        <span className="text-[#2E5E99] dark:text-[#7BA4D0] font-bold text-lg font-heading mt-0.5 shrink-0">/01</span>
                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal leading-relaxed italic border-l-2 border-[#2E5E99]/30 pl-4">
                          "Joining J Pan Tubular Components Limited was the catalyst for my technical growth. 
                          The mentorship here is truly institutional."
                        </p>
                     </div>
-                    <div className="p-5 rounded-2xl bg-white/90 dark:bg-white/[0.05] border border-[#7BA4D0]/20 dark:border-white/10 flex gap-5 items-start shadow-xs hover:shadow-md transition-all duration-300">
+                    <div className="p-5 rounded-2xl bg-white/90 dark:bg-white/[0.05] border border-[#7BA4D0]/20 dark:border-white/10 flex gap-5 items-start transition-all duration-300">
                        <span className="text-[#2E5E99] dark:text-[#7BA4D0] font-bold text-lg font-heading mt-0.5 shrink-0">/02</span>
                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal leading-relaxed italic border-l-2 border-[#2E5E99]/30 pl-4">
                          "We don't just build pipes; we build careers that 

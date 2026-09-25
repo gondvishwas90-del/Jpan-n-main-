@@ -46,8 +46,6 @@ export function SEBIDisclosureComplianceStatement() {
   return (
     <section className="py-16 md:py-24 bg-white dark:bg-black border-t border-[#7BA4D0]/20 overflow-hidden relative">
       {/* Soft Background Accents */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#7BA4D0]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#2E5E99]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -75,7 +73,7 @@ export function SEBIDisclosureComplianceStatement() {
             </p>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4.5 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl shadow-sm hover:border-[#2E5E99]/40 hover:shadow-md transition-all duration-300">
+              <div className="flex items-center gap-4 p-4.5 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl hover:border-[#2E5E99]/40 transition-all duration-300">
                 <div className="w-9 h-9 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-5 h-5 text-[#2E5E99] dark:text-[#7BA4D0]" />
                 </div>
@@ -83,7 +81,7 @@ export function SEBIDisclosureComplianceStatement() {
                   Certified Materiality Policy
                 </span>
               </div>
-              <div className="flex items-center gap-4 p-4.5 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl shadow-sm hover:border-[#2E5E99]/40 hover:shadow-md transition-all duration-300">
+              <div className="flex items-center gap-4 p-4.5 bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 rounded-2xl hover:border-[#2E5E99]/40 transition-all duration-300">
                 <div className="w-9 h-9 rounded-xl bg-[#EBF3FC] dark:bg-[#0D2440]/40 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-5 h-5 text-[#2E5E99] dark:text-[#7BA4D0]" />
                 </div>
@@ -117,7 +115,7 @@ export function SEBIDisclosureComplianceStatement() {
                         idx % 2 === 1 ? "md:translate-y-6" : ""
                       )}
                     >
-                      <div className="w-14 h-14 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center mb-6 text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300 shadow-sm">
+                      <div className="w-14 h-14 rounded-2xl bg-[#EBF3FC] dark:bg-[#0D2440]/50 border border-[#7BA4D0]/20 flex items-center justify-center mb-6 text-[#2E5E99] dark:text-[#7BA4D0] group-hover:scale-110 group-hover:bg-[#2E5E99] group-hover:text-white transition-all duration-300">
                         <Icon className="w-7 h-7" />
                       </div>
                       <h4 className="text-sm font-bold text-[#0D2440] dark:text-white uppercase tracking-wider mb-3">

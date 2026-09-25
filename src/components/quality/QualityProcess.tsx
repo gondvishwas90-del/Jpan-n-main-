@@ -94,7 +94,7 @@ export function QualityProcess() {
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FC] dark:bg-charcoal/70 border border-[#7BA4D0]/30 text-[#2E5E99] text-xs font-bold tracking-widest uppercase mb-4"
           >
             <span>Operational Transparency</span>
           </motion.div>
@@ -127,7 +127,7 @@ export function QualityProcess() {
           {/* Desktop Timeline Journey Active Progress Line */}
           <motion.div 
             style={{ scaleX: timelineScale }}
-            className="absolute top-[3.25rem] left-[8%] w-[84%] h-1.5 bg-gradient-to-r from-[#2E5E99] via-[#7BA4D0] to-[#2E5E99] rounded-full hidden lg:block origin-left shadow-[0_0_12px_rgba(46,94,153,0.35)]"
+            className="absolute top-[3.25rem] left-[8%] w-[84%] h-1.5 bg-gradient-to-r from-[#2E5E99] via-[#7BA4D0] to-[#2E5E99] rounded-full hidden lg:block origin-left"
           />
 
           {/* Process Cards */}
@@ -144,16 +144,16 @@ export function QualityProcess() {
                 <motion.div 
                   key={idx} 
                   variants={itemVariants}
-                  className="group flex flex-col items-center text-center p-6 sm:p-7 bg-[#F8FAFC] dark:bg-charcoal/50 md:bg-white/90 md:dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 rounded-3xl w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center shadow-xs hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1.5 transition-all duration-500"
+                  className="group flex flex-col items-center text-center p-6 sm:p-7 bg-[#F8FAFC] dark:bg-charcoal/50 md:bg-white/90 md:dark:bg-charcoal/40 border border-[#7BA4D0]/25 hover:border-[#2E5E99]/50 rounded-3xl w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center hover:-translate-y-1.5 transition-all duration-500"
                 >
                   {/* Interactive Journey Node */}
                   <div className="relative mb-6">
-                    <div className="w-18 h-18 sm:w-20 sm:h-20 bg-white dark:bg-charcoal border-2 border-[#7BA4D0]/40 group-hover:border-[#2E5E99] rounded-2xl flex items-center justify-center transition-all duration-500 shadow-md group-hover:shadow-xl group-hover:bg-[#0D2440] overflow-hidden relative z-10 shrink-0 text-[#2E5E99] group-hover:text-white">
+                    <div className="w-18 h-18 sm:w-20 sm:h-20 bg-white dark:bg-charcoal border-2 border-[#7BA4D0]/40 group-hover:border-[#2E5E99] rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#0D2440] overflow-hidden relative z-10 shrink-0 text-[#2E5E99] group-hover:text-white">
                       <step.icon className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.75} />
                     </div>
                     
                     {/* Step Number Badge */}
-                    <div className="absolute -top-2.5 -right-2.5 w-8 h-8 bg-[#0D2440] dark:bg-white text-white dark:text-[#0D2440] font-bold text-xs flex items-center justify-center rounded-full border-2 border-white dark:border-black shadow-md group-hover:bg-[#2E5E99] group-hover:text-white transition-colors duration-500 z-20">
+                    <div className="absolute -top-2.5 -right-2.5 w-8 h-8 bg-[#0D2440] dark:bg-white text-white dark:text-[#0D2440] font-bold text-xs flex items-center justify-center rounded-full border-2 border-white dark:border-black group-hover:bg-[#2E5E99] group-hover:text-white transition-colors duration-500 z-20">
                       0{idx + 1}
                     </div>
                   </div>

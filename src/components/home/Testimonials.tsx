@@ -30,7 +30,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-[#7BA4D0]/30 dark:border-white/10 group bg-[#E7F0FA] dark:bg-[#102744]"
+              className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/10 group bg-[#E7F0FA] dark:bg-[#102744]"
             >
               {/* Portrait Image */}
               <motion.div

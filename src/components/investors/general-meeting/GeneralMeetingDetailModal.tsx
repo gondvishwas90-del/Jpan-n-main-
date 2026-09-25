@@ -29,7 +29,7 @@ export function GeneralMeetingDetailModal({ notice, isOpen, onClose }: GeneralMe
       />
       
       {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-6xl bg-white dark:bg-charcoal border border-border rounded-sm shadow-2xl flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300 h-[90vh] max-h-[800px]">
+      <div className="relative z-10 w-full max-w-6xl bg-white dark:bg-charcoal border border-border rounded-sm flex flex-col md:flex-row overflow-hidden animate-in zoom-in-95 duration-300 h-[90vh] max-h-[800px]">
         {/* Sidebar: Meeting Metadata */}
         <div className="w-full md:w-80 p-8 md:p-10 bg-silver/5 border-b md:border-b-0 md:border-r border-border flex flex-col">
           <button 
@@ -79,7 +79,7 @@ export function GeneralMeetingDetailModal({ notice, isOpen, onClose }: GeneralMe
           </div>
 
           <div className="pt-10 space-y-4">
-            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 shadow-xl btn-slide-gold group">
+            <button className="w-full bg-deepblue text-white px-6 py-4 font-bold text-[10px] uppercase tracking-[0.2em] rounded-sm transition-all flex items-center justify-center gap-3 btn-slide-gold group">
               <Download className="w-4 h-4" />
               Download Notice PDF
             </button>
@@ -111,7 +111,7 @@ export function GeneralMeetingDetailModal({ notice, isOpen, onClose }: GeneralMe
               statements, is displayed within our secure shareholder viewer. 
               Certified for regulatory compliance.
             </p>
-            <div className="inline-flex items-center gap-4 px-6 py-3 bg-white dark:bg-charcoal border border-border rounded-full shadow-sm">
+            <div className="inline-flex items-center gap-4 px-6 py-3 bg-white dark:bg-charcoal border border-border rounded-full">
               <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Authenticity Verified</span>
             </div>

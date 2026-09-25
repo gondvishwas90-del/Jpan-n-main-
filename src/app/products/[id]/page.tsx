@@ -51,9 +51,7 @@ export default async function ProductDetailPage({
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#05080f] text-charcoal dark:text-white pt-28 pb-24 overflow-hidden relative">
-      {/* Background Lighting & Grid Texture */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-deepblue/10 dark:bg-deepblue/20 rounded-full blur-[160px] pointer-events-none" />
+      {/* Grid Texture */}
       <div 
         className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none" 
         style={{ backgroundImage: `radial-gradient(var(--color-charcoal) 1px, transparent 1px)`, backgroundSize: '32px 32px' }} 
@@ -115,9 +113,7 @@ export default async function ProductDetailPage({
             </p>
 
             {/* We Offer Card Block */}
-            <div className="bg-silver/10 dark:bg-white/[0.03] border border-border/60 rounded-2xl p-6 sm:p-7 space-y-4 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-full blur-xl pointer-events-none" />
-
+            <div className="bg-silver/10 dark:bg-white/[0.03] border border-border/60 rounded-2xl p-6 sm:p-7 space-y-4 relative overflow-hidden">
               <h3 className="text-xs font-black uppercase tracking-[0.25em] text-gold flex items-center gap-2">
                 <Sparkles className="w-4 h-4" /> We offer:
               </h3>
@@ -163,7 +159,7 @@ export default async function ProductDetailPage({
             <div className="pt-4 flex flex-wrap gap-4 items-center">
               <Link
                 href="/contact#enquiry-form"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-charcoal dark:bg-white text-white dark:text-charcoal font-bold text-xs uppercase tracking-widest rounded-xl overflow-hidden transition-all shadow-xl active:scale-95 btn-slide-gold"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-charcoal dark:bg-white text-white dark:text-charcoal font-bold text-xs uppercase tracking-widest rounded-xl overflow-hidden transition-all active:scale-95 btn-slide-gold"
               >
                 <span className="relative z-10 group-hover:text-black transition-colors duration-500">Request Quote & Specs</span>
                 <ArrowRight className="w-4 h-4 relative z-10 text-gold group-hover:text-black group-hover:translate-x-1 transition-all" />
@@ -203,7 +199,7 @@ export default async function ProductDetailPage({
               <Link
                 key={catProduct.id}
                 href={`/products/${catProduct.id}`}
-                className="group bg-white dark:bg-[#0a0f18] border border-border/60 rounded-[1.75rem] p-6 transition-all duration-500 hover:border-gold/60 hover:shadow-2xl hover:-translate-y-1.5 flex flex-col items-center text-center relative overflow-hidden"
+                className="group bg-white dark:bg-[#0a0f18] border border-border/60 rounded-[1.75rem] p-6 transition-all duration-500 hover:border-gold/60 hover:-translate-y-1.5 flex flex-col items-center text-center relative overflow-hidden"
               >
                 {/* Side Hover Accent */}
                 <div className="absolute left-0 top-0 w-1 h-0 bg-gold transition-all duration-500 group-hover:h-full" />

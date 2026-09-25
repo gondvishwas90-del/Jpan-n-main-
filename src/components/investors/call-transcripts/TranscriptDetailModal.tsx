@@ -29,7 +29,7 @@ export function TranscriptDetailModal({ transcript, isOpen, onClose }: Transcrip
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-6xl h-full max-h-[95vh] bg-white dark:bg-charcoal rounded-sm shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-6xl h-full max-h-[95vh] bg-white dark:bg-charcoal rounded-sm overflow-hidden flex flex-col animate-in zoom-in-95 duration-300">
         
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border bg-silver/5">
@@ -180,7 +180,7 @@ export function TranscriptDetailModal({ transcript, isOpen, onClose }: Transcrip
             </div>
 
             <div className="pt-8 border-t border-border">
-              <button className="w-full flex items-center justify-center gap-3 py-5 bg-charcoal hover:bg-deepblue text-white rounded-sm transition-all shadow-xl">
+              <button className="w-full flex items-center justify-center gap-3 py-5 bg-charcoal hover:bg-deepblue text-white rounded-sm transition-all">
                 <Download className="w-4 h-4" />
                 <span className="text-[10px] font-bold uppercase tracking-widest">Download Full PDF</span>
               </button>

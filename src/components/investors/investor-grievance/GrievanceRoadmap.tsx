@@ -87,7 +87,7 @@ export function GrievanceRoadmap() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center"
           >
-             <div className="px-6 py-3 bg-[#F8FAFC] dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-3 shadow-xs">
+             <div className="px-6 py-3 bg-[#F8FAFC] dark:bg-charcoal/60 border border-[#7BA4D0]/25 rounded-2xl flex items-center gap-3">
                 <Clock className="w-4 h-4 text-[#2E5E99] shrink-0" />
                 <span className="text-xs font-bold text-[#0D2440] dark:text-white uppercase tracking-wider">7-15 Working Days</span>
              </div>
@@ -121,11 +121,11 @@ export function GrievanceRoadmap() {
                   key={step.id}
                   className="relative group w-full min-w-full md:min-w-0 md:w-full shrink-0 snap-center"
                 >
-                  <div className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl relative z-10 hover:border-[#2E5E99]/50 transition-all duration-300 shadow-sm hover:shadow-[0_20px_50px_-10px_rgba(46,94,153,0.14)] hover:-translate-y-1 h-full flex flex-col justify-between overflow-hidden">
+                  <div className="bg-[#F8FAFC] dark:bg-charcoal/40 border border-[#7BA4D0]/25 p-7 rounded-3xl relative z-10 hover:border-[#2E5E99]/50 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col justify-between overflow-hidden">
                      
                      <div className="flex items-center justify-between mb-6 relative z-10">
                         <span className="text-3xl font-heading font-bold text-[#0D2440] dark:text-white group-hover:text-[#2E5E99] transition-colors tracking-tight">{step.id}</span>
-                        <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl border border-[#7BA4D0]/30 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] transition-colors shadow-xs shrink-0 text-[#2E5E99] group-hover:text-white">
+                        <div className="w-12 h-12 bg-white dark:bg-charcoal flex items-center justify-center rounded-2xl border border-[#7BA4D0]/30 group-hover:bg-[#0D2440] group-hover:border-[#0D2440] transition-colors shrink-0 text-[#2E5E99] group-hover:text-white">
                            <step.icon className="w-5 h-5" />
                         </div>
                      </div>

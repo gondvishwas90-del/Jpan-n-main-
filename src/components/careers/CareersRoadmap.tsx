@@ -57,7 +57,6 @@ export function CareersRoadmap() {
     >
       {/* Background Decor */}
       <div className="absolute inset-0 bg-[radial-gradient(#2E5E99_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-[#7BA4D0]/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Header */}
@@ -86,14 +85,14 @@ export function CareersRoadmap() {
           {/* Connecting Line (Desktop Horizontal) */}
           <div className="absolute top-12 left-12 right-12 h-[3px] bg-slate-200/80 dark:bg-white/10 hidden lg:block rounded-full" />
           <motion.div 
-            className="absolute top-12 left-12 h-[3px] bg-gradient-to-r from-[#2E5E99] via-[#4F86C6] to-[#7BA4D0] hidden lg:block rounded-full origin-left shadow-[0_0_12px_rgba(46,94,153,0.5)]" 
+            className="absolute top-12 left-12 h-[3px] bg-gradient-to-r from-[#2E5E99] via-[#4F86C6] to-[#7BA4D0] hidden lg:block rounded-full origin-left" 
             style={{ width: lineWidth, maxWidth: "calc(100% - 96px)" }}
           />
           
           {/* Connecting Line (Mobile Vertical) */}
           <div className="absolute top-8 bottom-8 left-12 w-[3px] bg-slate-200/80 dark:bg-white/10 lg:hidden rounded-full -translate-x-1/2" />
           <motion.div 
-            className="absolute top-8 left-12 w-[3px] bg-gradient-to-b from-[#2E5E99] via-[#4F86C6] to-[#7BA4D0] lg:hidden rounded-full origin-top -translate-x-1/2 shadow-[0_0_12px_rgba(46,94,153,0.5)]" 
+            className="absolute top-8 left-12 w-[3px] bg-gradient-to-b from-[#2E5E99] via-[#4F86C6] to-[#7BA4D0] lg:hidden rounded-full origin-top -translate-x-1/2" 
             style={{ height: lineHeight }}
           />
           
@@ -108,9 +107,9 @@ export function CareersRoadmap() {
                 className="relative flex flex-row lg:flex-col items-center lg:items-center gap-6 lg:gap-0 lg:text-center group"
               >
                 {/* Step Circle Node */}
-                <div className="w-24 h-24 shrink-0 bg-white dark:bg-[#0c1527] border-2 border-slate-200/90 dark:border-white/15 rounded-full flex items-center justify-center relative mb-0 lg:mb-8 transition-all duration-300 z-10 shadow-lg group-hover:-translate-y-1.5 group-hover:border-[#2E5E99] group-hover:shadow-[0_12px_30px_rgba(46,94,153,0.2)] cursor-default">
+                <div className="w-24 h-24 shrink-0 bg-white dark:bg-[#0c1527] border-2 border-slate-200/90 dark:border-white/15 rounded-full flex items-center justify-center relative mb-0 lg:mb-8 transition-all duration-300 z-10 group-hover:-translate-y-1.5 group-hover:border-[#2E5E99] cursor-default">
                    {/* Badge Index */}
-                   <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#0D2440] dark:bg-white text-white dark:text-[#0D2440] flex items-center justify-center rounded-full font-heading font-bold text-xs shadow-md group-hover:bg-[#2E5E99] group-hover:text-white transition-colors duration-300">
+                   <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#0D2440] dark:bg-white text-white dark:text-[#0D2440] flex items-center justify-center rounded-full font-heading font-bold text-xs group-hover:bg-[#2E5E99] group-hover:text-white transition-colors duration-300">
                       0{idx + 1}
                    </div>
                    <step.icon className="w-8 h-8 text-[#2E5E99] dark:text-[#7BA4D0] transition-all duration-300 group-hover:scale-110" strokeWidth={1.75} />
@@ -134,13 +133,10 @@ export function CareersRoadmap() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative p-8 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0a182a] dark:via-[#0d223c] dark:to-[#091524] border border-[#7BA4D0]/35 dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 overflow-hidden shadow-[0_20px_50px_rgba(46,94,153,0.1)] group"
+          className="relative p-8 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-[#EBF3FC] via-[#F2F7FD] to-[#E2EFFC] dark:from-[#0a182a] dark:via-[#0d223c] dark:to-[#091524] border border-[#7BA4D0]/35 dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 overflow-hidden group"
         >
-           {/* Internal Banner Glow */}
-           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#7BA4D0]/20 blur-[90px] rounded-full pointer-events-none" />
-           
            <div className="relative z-10 flex items-center gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center shrink-0 text-[#2E5E99] dark:text-[#7BA4D0] shadow-xs">
+              <div className="w-14 h-14 rounded-2xl bg-[#2E5E99]/10 dark:bg-white/10 border border-[#2E5E99]/20 dark:border-white/15 flex items-center justify-center shrink-0 text-[#2E5E99] dark:text-[#7BA4D0]">
                  <UserPlus className="w-7 h-7" strokeWidth={1.75} />
               </div>
               <div>
@@ -158,7 +154,7 @@ export function CareersRoadmap() {
                  window.location.href = "/careers#openings";
                }
              }}
-             className="relative z-10 px-7 py-3.5 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] text-xs font-bold uppercase tracking-[0.2em] rounded-xl transition-all duration-300 shadow-md shadow-[#0D2440]/15 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center gap-3 shrink-0 cursor-pointer group/btn"
+             className="relative z-10 px-7 py-3.5 bg-[#0D2440] hover:bg-[#1A365D] dark:bg-white dark:hover:bg-slate-100 text-white dark:text-[#0D2440] text-xs font-bold uppercase tracking-[0.2em] rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-3 shrink-0 cursor-pointer group/btn"
            >
              <span>Career FAQs</span>
              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" strokeWidth={2} />

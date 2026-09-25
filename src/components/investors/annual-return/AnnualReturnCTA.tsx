@@ -28,7 +28,7 @@ export function AnnualReturnCTA() {
                 compliance department is available for consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-gold text-charcoal font-bold rounded-sm flex items-center justify-center gap-3 transition-all whitespace-nowrap shadow-xl btn-slide-white group">
+                <button className="px-8 py-4 bg-gold text-charcoal font-bold rounded-sm flex items-center justify-center gap-3 transition-all whitespace-nowrap btn-slide-white group">
                   Contact Compliance Desk
                   <ArrowRight className="w-5 h-5" />
                 </button>
