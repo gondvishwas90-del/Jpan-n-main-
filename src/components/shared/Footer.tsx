@@ -1,11 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export function Footer() {
+  const containerRef = useRef<HTMLElement>(null);
+
+  // Directly track scroll position as the footer scrolls into the viewport
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"],
+  });
+
+  // Slow, weighted cinematic spring with high inertia for a slow camera glide feel
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 45,
+    damping: 22,
+    mass: 1.2,
+    restDelta: 0.001,
+  });
+
+  // Cinematic Zoom In: expands slowly from 0.86 scale and rises gently into place
+  const scale = useTransform(smoothProgress, [0, 1], [0.86, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.4, 1], [0.3, 0.85, 1]);
+  const y = useTransform(smoothProgress, [0, 1], [70, 0]);
+
   const navLinks = [
     { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
@@ -16,10 +38,19 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative z-30 bg-white dark:bg-[#070b14] font-sans border-t border-[#0D2440]/[0.08] dark:border-white/10 transition-colors duration-500 overflow-hidden">
-
-
-      <div className="container-custom relative z-10 pt-12 sm:pt-14 pb-6 sm:pb-7">
+    <footer
+      ref={containerRef}
+      className="relative z-30 bg-white dark:bg-[#070b14] font-sans border-t border-[#0D2440]/[0.08] dark:border-white/10 transition-colors duration-500 overflow-hidden"
+    >
+      <motion.div
+        style={{
+          scale,
+          opacity,
+          y,
+          transformOrigin: "center bottom",
+        }}
+        className="container-custom relative z-10 pt-12 sm:pt-14 pb-6 sm:pb-7 will-change-transform"
+      >
         {/* Compact, Highly-Efficient 2-Column Upper Section with comfortable breathing room */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end pb-7 sm:pb-8 border-b border-[#0D2440]/10 dark:border-white/10">
           {/* Left Column: Sleek Editorial Headline */}
@@ -120,7 +151,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
