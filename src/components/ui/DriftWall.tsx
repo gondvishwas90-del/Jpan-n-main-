@@ -30,6 +30,7 @@ export interface DriftWallProps<T = any> {
   lift?: number;
   fade?: number;
   dim?: number;
+  scale?: number;
   grayscale?: boolean;
   overlayColor?: string;
   className?: string;
@@ -74,6 +75,7 @@ export function DriftWall<T = DriftWallItem>({
   lift = 64,
   fade = 0.6,
   dim = 0.55,
+  scale = 1,
   grayscale = false,
   overlayColor = '#060010',
   className = '',
@@ -147,11 +149,11 @@ export function DriftWall<T = DriftWallItem>({
       const plane = planeRef.current;
       if (!plane) return;
       plane.style.transform =
-        `translate(-50%, -50%) scale(1.18) ` +
+        `translate(-50%, -50%) scale(${scale}) ` +
         `rotateX(${tilt + py}deg) rotateY(${turn + px}deg) rotateZ(${roll}deg) ` +
         `translateZ(${-depth}px)`;
     },
-    [tilt, turn, roll, depth]
+    [tilt, turn, roll, depth, scale]
   );
 
   useEffect(() => {

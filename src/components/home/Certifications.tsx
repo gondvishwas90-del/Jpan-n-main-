@@ -144,52 +144,49 @@ export function Certifications() {
       {/* Subtle Ambient Background Accents */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(46,94,153,0.06),transparent_50%),radial-gradient(circle_at_bottom_right,rgba(13,36,64,0.05),transparent_50%)]" />
 
-      <div className="container-custom relative z-10 w-full flex flex-col justify-between">
-        {/* HEADER */}
-        <div className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <div className="text-xs font-heading font-bold text-[#2E5E99] dark:text-[#7BA4D0] tracking-widest uppercase mb-2">
-              ACCREDITATION & INDUSTRIAL RECOGNITION
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#0D2440] dark:text-white tracking-tight leading-tight">
-              What partners <span className="text-[#2E5E99] dark:text-[#7BA4D0]">are saying</span>
-            </h2>
-          </div>
-          <p className="text-xs sm:text-sm text-[#0D2440]/70 dark:text-white/70 max-w-md font-light">
-            Interactive 3D showcase of audited partner evaluations, Tier-1 OEM recognitions, and certified production facilities.
-          </p>
+      {/* CENTERED HEADER */}
+      <div className="container-custom relative z-10 w-full mb-10 md:mb-14 text-center flex flex-col items-center">
+        <div className="text-xs font-heading font-bold text-[#2E5E99] dark:text-[#7BA4D0] tracking-widest uppercase mb-2.5">
+          ACCREDITATION & INDUSTRIAL RECOGNITION
         </div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#0D2440] dark:text-white tracking-tight leading-tight mb-3">
+          What partners <span className="text-[#2E5E99] dark:text-[#7BA4D0]">are saying</span>
+        </h2>
+        <p className="text-xs sm:text-sm text-[#0D2440]/70 dark:text-white/70 max-w-xl font-light leading-relaxed">
+          Interactive 3D showcase of audited partner evaluations, Tier-1 OEM recognitions, and certified production facilities.
+        </p>
+      </div>
 
-        {/* DRIFTWALL WITH CRYSTAL CLEAR CARDS */}
-        <div className="relative w-full h-[620px] md:h-[680px] lg:h-[720px] rounded-3xl overflow-hidden">
-          <DriftWall
-            items={allStreamItems}
-            renderItem={(item: StreamItem) => <CardRenderer item={item} />}
-            columns={3}
-            tileWidth={380}
-            tileHeight={255}
-            gap={24}
-            tilt={10}
-            turn={-8}
-            perspective={1400}
-            depth={60}
-            speed={28}
-            direction="up"
-            variance={0.35}
-            parallax={0.5}
-            pauseOnHover={true}
-            lift={44}
-            fade={0.2}
-            dim={0.95}
-            overlayColor="transparent"
-          />
-        </div>
+      {/* FULL-WIDTH DRIFTWALL STAGE CENTERED */}
+      <div className="relative w-full h-[640px] md:h-[700px] lg:h-[740px] overflow-hidden flex items-center justify-center">
+        <DriftWall
+          items={allStreamItems}
+          renderItem={(item: StreamItem) => <CardRenderer item={item} />}
+          columns={3}
+          tileWidth={320}
+          tileHeight={230}
+          gap={22}
+          tilt={14}
+          turn={-10}
+          perspective={1200}
+          depth={80}
+          speed={32}
+          direction="up"
+          variance={0.35}
+          parallax={0.45}
+          pauseOnHover={true}
+          lift={44}
+          fade={0}
+          dim={1}
+          scale={1}
+          overlayColor="transparent"
+        />
       </div>
     </section>
   );
 }
 
-// Card Renderer for Review Card or Photo Card - Preserving Exact Crystal-Clear Design
+// Card Renderer for Review Card or Photo Card - Perfectly Proportioned to Never Cut Off
 function CardRenderer({ item }: { item: StreamItem }) {
   if (item.type === "photo") {
     return (
@@ -202,12 +199,12 @@ function CardRenderer({ item }: { item: StreamItem }) {
           alt={item.title}
           fill
           className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-          sizes="400px"
+          sizes="360px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440]/90 via-[#0D2440]/30 to-transparent" />
 
-        <div className="absolute bottom-4 left-4 right-4 z-10 p-3 rounded-xl bg-[#0D2440]/80 backdrop-blur-md border border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)]">
-          <p className="text-xs sm:text-sm font-heading font-bold text-white leading-snug">
+        <div className="absolute bottom-3 left-3 right-3 z-10 p-2.5 rounded-xl bg-[#0D2440]/80 backdrop-blur-md border border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)]">
+          <p className="text-xs font-heading font-bold text-white leading-snug line-clamp-2">
             {item.title}
           </p>
         </div>
@@ -216,39 +213,39 @@ function CardRenderer({ item }: { item: StreamItem }) {
   }
 
   return (
-    <div className="relative w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/95 via-white/85 to-white/95 dark:from-[#0D2440]/95 dark:via-[#0D2440]/85 dark:to-[#0D2440]/95 p-6 sm:p-7 border border-white/80 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.9),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_14px_36px_rgba(13,36,64,0.09)] backdrop-blur-md overflow-hidden">
+    <div className="relative w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/95 via-white/85 to-white/95 dark:from-[#0D2440]/95 dark:via-[#0D2440]/85 dark:to-[#0D2440]/95 p-5 border border-white/80 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.9),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_14px_36px_rgba(13,36,64,0.09)] backdrop-blur-md overflow-hidden">
       {/* Top Specular Rim */}
       <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
 
       <div>
-        <div className="flex items-center gap-1 mb-3">
+        <div className="flex items-center gap-1 mb-2">
           {[...Array(item.rating)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />
+            <Star key={i} className="w-3.5 h-3.5 fill-[#F5A623] text-[#F5A623]" />
           ))}
         </div>
 
-        <p className="text-xs sm:text-[13px] text-[#0D2440]/90 dark:text-white/90 leading-relaxed font-normal">
+        <p className="text-xs text-[#0D2440]/90 dark:text-white/90 leading-relaxed font-normal line-clamp-3">
           &ldquo;{item.quote}&rdquo;
         </p>
       </div>
 
-      <div className="pt-4 border-t border-[#7BA4D0]/20 dark:border-white/10 flex items-center justify-between gap-3 mt-3">
-        <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)]">
+      <div className="pt-3 border-t border-[#7BA4D0]/20 dark:border-white/10 flex items-center justify-between gap-2 mt-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-6 h-6 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-[11px] shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)]">
             {item.company.charAt(0)}
           </div>
-          <div>
-            <div className="text-xs sm:text-sm font-heading font-bold text-[#0D2440] dark:text-white leading-none mb-1">
+          <div className="min-w-0">
+            <div className="text-xs font-heading font-bold text-[#0D2440] dark:text-white leading-none mb-0.5 truncate">
               {item.company}
             </div>
-            <div className="text-[10px] font-sans text-[#0D2440]/60 dark:text-white/60 uppercase tracking-wider font-semibold">
+            <div className="text-[9px] font-sans text-[#0D2440]/60 dark:text-white/60 uppercase tracking-wider font-semibold truncate">
               {item.role}
             </div>
           </div>
         </div>
 
         {item.award && (
-          <div className="px-2.5 py-1 rounded-full border border-white/40 dark:border-white/15 bg-white/40 dark:bg-white/10 text-[10px] font-mono font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-tight text-right shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)]">
+          <div className="px-2 py-0.5 rounded-full border border-white/40 dark:border-white/15 bg-white/40 dark:bg-white/10 text-[9px] font-mono font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-tight text-right shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)] whitespace-nowrap">
             {item.award}
           </div>
         )}
