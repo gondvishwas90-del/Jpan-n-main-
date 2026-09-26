@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[90vh] pt-36 pb-16 lg:pt-48 lg:pb-24 flex flex-col justify-center bg-[#071321] overflow-hidden">
+    <section className="relative min-h-[85vh] lg:min-h-[90vh] pt-36 pb-16 lg:pt-48 lg:pb-24 flex flex-col justify-center bg-[#071321] overflow-hidden z-20">
       {/* Visual Background: Previous Hero Image - Crystal Clear */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <Image

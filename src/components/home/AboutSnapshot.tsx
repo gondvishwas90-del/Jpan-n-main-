@@ -213,7 +213,7 @@ export function AboutSnapshot() {
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative py-24 md:py-36 bg-white dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden border-b border-[#7BA4D0]/20 dark:border-white/10"
+      className="relative py-24 md:py-36 bg-transparent text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden border-b border-white/20"
     >
       {/* Target Cursor scoped strictly to AboutSnapshot section */}
       <TargetCursor

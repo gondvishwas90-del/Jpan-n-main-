@@ -153,7 +153,7 @@ export function Certifications() {
     <section
       ref={containerRef}
       id="awards-recognition"
-      className="relative h-[165vh] bg-[#EAF2F8] dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-300"
+      className="relative h-[165vh] bg-transparent text-[#0D2440] dark:text-white transition-colors duration-300"
     >
       {/* PINNED STICKY VIEWPORT */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between py-8 md:py-12">

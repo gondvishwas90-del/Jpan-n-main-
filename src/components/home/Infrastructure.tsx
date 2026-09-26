@@ -109,7 +109,7 @@ export function Infrastructure() {
   return (
     <section
       id="infrastructure"
-      className="relative py-20 md:py-28 bg-white dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-500"
+      className="relative py-20 md:py-28 bg-transparent text-[#0D2440] dark:text-white transition-colors duration-500"
     >
       <div className="container-custom relative z-10 w-full">
         {/* ========================================================

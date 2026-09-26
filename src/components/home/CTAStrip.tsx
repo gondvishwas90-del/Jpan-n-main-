@@ -6,7 +6,7 @@ import { ArrowUpRight, FileCheck, PhoneCall } from "lucide-react";
 
 export function CTAStrip() {
   return (
-    <section className="relative py-14 md:py-20 bg-[#F4F8FC] dark:bg-[#071321] transition-colors duration-300">
+    <section className="relative py-14 md:py-20 bg-transparent transition-colors duration-300">
       <div className="container-custom relative z-10 w-full">
         {/* Pure Architectural Solid Card Container */}
         <div className="relative rounded-3xl bg-white dark:bg-[#0c1a2e] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden border border-slate-200/90 dark:border-white/10 shadow-xl">

@@ -17,7 +17,7 @@ export function Testimonials() {
   return (
     <section
       ref={containerRef}
-      className="relative py-24 md:py-36 bg-white dark:bg-[#071321] text-[#0D2440] dark:text-[#E7F0FA] transition-colors duration-300 overflow-hidden"
+      className="relative py-24 md:py-36 bg-transparent text-[#0D2440] dark:text-[#E7F0FA] transition-colors duration-300 overflow-hidden"
     >
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">

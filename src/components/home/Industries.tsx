@@ -5,7 +5,6 @@ import { Fan, Car, Home, Factory, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Grainient } from "@/components/ui/Grainient";
 
 const industries = [
   {
@@ -193,37 +192,7 @@ export function Industries() {
   };
 
   return (
-    <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-gradient-to-b from-[#E7F0FA] via-[#F4F8FC] to-[#DDEBF7] dark:from-[#071321] dark:via-[#09182b] dark:to-[#071321] text-[#0D2440] dark:text-white overflow-hidden border-y border-[#7BA4D0]/20 dark:border-white/10 transition-colors duration-500">
-      {/* Dynamic Animated Grainient Background */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden select-none opacity-45 dark:opacity-30">
-        <Grainient
-          color1="#78a3f6"
-          color2="#3679e5"
-          color3="#9cd1dc"
-          timeSpeed={0.45}
-          colorBalance={0.02}
-          warpStrength={1}
-          warpFrequency={6.4}
-          warpSpeed={0}
-          warpAmplitude={5}
-          blendAngle={9}
-          blendSoftness={0.25}
-          rotationAmount={830}
-          noiseScale={2}
-          grainAmount={0.04}
-          grainScale={2}
-          grainAnimated={false}
-          contrast={1.5}
-          gamma={1}
-          saturation={1}
-          centerX={0}
-          centerY={0}
-          zoom={0.9}
-        />
-        {/* Subtle Blueprint Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 mix-blend-overlay" />
-      </div>
-
+    <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-transparent text-white overflow-hidden border-y border-white/20 transition-colors duration-500">
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center justify-center mb-12 lg:mb-16 max-w-3xl mx-auto">

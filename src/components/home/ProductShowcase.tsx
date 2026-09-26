@@ -98,7 +98,7 @@ export function ProductShowcase() {
   };
 
   return (
-    <section id="capabilities" className="relative bg-white dark:bg-[#071321] text-[#0D2440] dark:text-white py-20 md:py-28 transition-colors duration-300">
+    <section id="capabilities" className="relative bg-transparent text-[#0D2440] dark:text-white py-20 md:py-28 transition-colors duration-300">
       <div className="container-custom relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 

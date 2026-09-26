@@ -123,7 +123,7 @@ export function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="relative py-24 md:py-36 bg-[#E7F0FA] dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden"
+      className="relative py-24 md:py-36 bg-transparent text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden"
     >
       <div className="container-custom relative z-10 w-full">
         {/* ========================================================

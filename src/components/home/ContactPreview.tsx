@@ -49,7 +49,7 @@ export function ContactPreview() {
   return (
     <section
       id="contact-preview"
-      className="relative py-20 md:py-28 bg-[#E7F0FA] dark:bg-[#0B1E36] text-[#0D2440] dark:text-white transition-colors duration-300 overflow-hidden"
+      className="relative py-20 md:py-28 bg-transparent text-[#0D2440] dark:text-white transition-colors duration-300 overflow-hidden"
     >
       <div className="container-custom relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
