@@ -368,14 +368,11 @@ export function AboutSnapshot() {
                 stiffness: 150,
                 damping: 20,
               }}
-              className="cursor-target relative aspect-[16/11] rounded-[2.5rem] overflow-hidden border border-white/60 dark:border-white/20 group bg-gradient-to-b from-white/[0.15] via-white/[0.04] to-white/[0.08] dark:from-white/[0.08] dark:via-white/[0.02] dark:to-white/[0.05] shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.85),inset_0_-1.5px_1px_0_rgba(255,255,255,0.25),0_24px_48px_rgba(13,36,64,0.12)] backdrop-blur-[2px] transform-gpu"
+              className="cursor-target relative aspect-[16/11] rounded-[2.5rem] overflow-hidden border border-[#0D2440]/15 dark:border-white/10 group bg-[#0D2440] shadow-2xl transform-gpu"
               style={{
                 transformStyle: "preserve-3d",
               }}
             >
-              {/* Top Specular Sheen on 3D Container */}
-              <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
-
               {/* Cinematic Animated Crossfade on Active Module Change */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -397,8 +394,8 @@ export function AboutSnapshot() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dynamic Bottom Information Bar (Liquid Glass Capsule) */}
-              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-white/[0.30] via-[#0D2440]/80 to-[#0D2440]/95 dark:from-white/[0.15] dark:via-[#071321]/85 dark:to-[#071321]/95 border border-white/50 dark:border-white/25 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.7),inset_0_-1px_1px_0_rgba(255,255,255,0.2),0_12px_32px_rgba(0,0,0,0.25)] backdrop-blur-md text-white flex items-center justify-between z-10">
+              {/* Dynamic Bottom Information Bar (Solid Sleek Capsule) */}
+              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0D2440] dark:bg-[#071321] border border-[#2E5E99]/30 dark:border-white/15 shadow-xl text-white flex items-center justify-between z-10">
                 <div>
                   <div className="text-[11px] font-heading font-semibold tracking-wider text-[#7BA4D0] uppercase mb-1">
                     {activeModule.sublabel}

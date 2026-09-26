@@ -193,7 +193,6 @@ export function Infrastructure() {
                     >
                       {/* Top Specular Rim */}
                       <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
-
                       {/* Left Active Accent Pill */}
                       {isActive && (
                         <motion.span
@@ -236,10 +235,7 @@ export function Infrastructure() {
 
               {/* Right Column: Cinematic Viewport with Smooth Image Transitions */}
               <div className="lg:col-span-7 relative">
-                <div className="relative aspect-[16/10.5] rounded-3xl overflow-hidden bg-[#0D2440] border border-white/60 dark:border-white/20 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_20px_48px_rgba(13,36,64,0.16)] group">
-                  {/* Top Specular Rim */}
-                  <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
-
+                <div className="relative aspect-[16/10.5] rounded-3xl overflow-hidden bg-[#0D2440] border border-[#0D2440]/15 dark:border-white/10 shadow-2xl group">
                   {pillars.map((pillar, idx) => {
                     const isSelected = activeIdx === idx;
                     return (
@@ -270,8 +266,8 @@ export function Infrastructure() {
                     );
                   })}
 
-                  {/* Bottom Operational Readout Pill (Liquid Glass Capsule) */}
-                  <div className="absolute bottom-5 left-5 right-5 z-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-white/[0.25] via-[#0D2440]/85 to-[#0D2440]/95 dark:from-white/[0.15] dark:via-[#071321]/85 dark:to-[#071321]/95 border border-white/50 dark:border-white/20 backdrop-blur-md shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.6),0_8px_24px_rgba(0,0,0,0.2)] text-white flex items-center justify-between">
+                  {/* Bottom Operational Readout Pill (Solid Sleek Capsule) */}
+                  <div className="absolute bottom-5 left-5 right-5 z-10 p-4 sm:p-5 rounded-2xl bg-[#0D2440] dark:bg-[#071321] border border-[#2E5E99]/30 dark:border-white/15 shadow-xl text-white flex items-center justify-between">
                     <div>
                       <div className="text-xs font-heading font-bold text-[#7BA4D0] uppercase tracking-wider mb-0.5">
                         KEY CAPABILITY
