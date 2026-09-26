@@ -78,25 +78,49 @@ const IndustryCard = ({
       <Link
         href="/products"
         className={cn(
-          "group relative h-[380px] w-full overflow-hidden transition-all duration-500 ease-out cursor-pointer border flex flex-col justify-between block backdrop-blur-xl shadow-lg",
+          "group relative h-[390px] w-full overflow-hidden transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between block",
+          // Ultra-minimal blur (1.5px) so the background wave and fluid curves pass through razor-sharp
+          "backdrop-blur-[2px]",
           isCardActive
-            ? "rounded-2xl rounded-r-[140px] md:rounded-r-[170px] bg-white/25 dark:bg-white/[0.22] border-white/60 dark:border-white/30 text-[#0D2440] dark:text-white -translate-y-2 shadow-2xl"
-            : "rounded-2xl bg-white/20 dark:bg-white/20 border-white/40 dark:border-white/20 text-[#0D2440] dark:text-white hover:bg-white/25 dark:hover:bg-white/[0.22] hover:border-white/60 dark:hover:border-white/30 hover:-translate-y-1"
+            ? cn(
+              // Dynamic one-side rounding morph on hover/active
+              "rounded-2xl rounded-r-[140px] md:rounded-r-[170px]",
+              // Crystal clear glass active state: luminous double-rim reflection, subtle gold & sapphire depth
+              "bg-gradient-to-b from-white/[0.22] via-white/[0.08] to-white/[0.16] dark:from-white/[0.12] dark:via-white/[0.03] dark:to-white/[0.08]",
+              "border border-white/80 dark:border-white/50 -translate-y-2",
+              "shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.9),inset_0_-1.5px_1px_0_rgba(255,255,255,0.4),0_20px_48px_rgba(13,36,64,0.12),0_0_28px_rgba(46,94,153,0.2)] dark:shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.4),inset_0_-1.5px_1px_0_rgba(255,255,255,0.15),0_24px_56px_rgba(0,0,0,0.5),0_0_24px_rgba(123,164,208,0.15)]"
+            )
+            : cn(
+              "rounded-2xl",
+              // Crystal clear glass default state: 95% see-through with crisp specular edges
+              "bg-gradient-to-b from-white/[0.12] via-white/[0.03] to-white/[0.08] dark:from-white/[0.07] dark:via-white/[0.015] dark:to-white/[0.04]",
+              "border border-white/50 dark:border-white/25 hover:border-white/80 dark:hover:border-white/45 hover:-translate-y-1.5",
+              "shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.75),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_10px_30px_rgba(13,36,64,0.06)] dark:shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.25),inset_0_-1px_1px_0_rgba(255,255,255,0.1),0_10px_30px_rgba(0,0,0,0.35)]"
+            )
         )}
       >
-        {/* Glass Specular Top Highlight Sheen */}
-        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/35 to-transparent pointer-events-none z-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none z-0" />
+        {/* Razor-sharp Specular Glass Top Sheen (Liquid Glass Rim Reflection) */}
+        <div className="absolute top-0 left-4 right-4 h-[1.5px] bg-gradient-to-r from-transparent via-white/90 dark:via-white/60 to-transparent pointer-events-none z-20" />
+
+        {/* Diagonal Soft Optical Refraction Glow */}
+        <div
+          className={cn(
+            "absolute -top-24 -left-24 w-52 h-52 rounded-full pointer-events-none transition-opacity duration-700 blur-2xl",
+            isCardActive
+              ? "bg-gradient-to-br from-white/40 via-[#7BA4D0]/15 to-transparent opacity-80"
+              : "bg-white/20 opacity-40 group-hover:opacity-70"
+          )}
+        />
 
         <div className="flex flex-col justify-between h-full p-7 md:p-8 relative z-10">
           <div className="space-y-4">
-            {/* Frosted Glass Icon Box */}
+            {/* Crystal Glass Lens Icon Container */}
             <div
               className={cn(
                 "w-12 h-12 flex items-center justify-center rounded-2xl transition-all duration-300 border backdrop-blur-md",
                 isCardActive
-                  ? "bg-white/30 dark:bg-white/25 border-white/50 dark:border-white/30 text-[#2E5E99] dark:text-[#7BA4D0] scale-105"
-                  : "bg-white/20 dark:bg-white/20 border-white/40 dark:border-white/20 text-[#2E5E99] dark:text-[#7BA4D0]"
+                  ? "bg-[#2E5E99]/15 dark:bg-[#7BA4D0]/20 border-white/80 dark:border-white/40 text-[#2E5E99] dark:text-[#7BA4D0] scale-105 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.85),0_6px_16px_rgba(46,94,153,0.12)]"
+                  : "bg-white/25 dark:bg-white/[0.08] border-white/50 dark:border-white/20 text-[#2E5E99] dark:text-[#7BA4D0] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.6)] group-hover:border-white/70 group-hover:bg-[#2E5E99]/10"
               )}
             >
               <industry.icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
@@ -106,35 +130,30 @@ const IndustryCard = ({
               {industry.title}
             </h3>
 
-            {/* Accent Line */}
+            {/* Accent Line matching Web Color System */}
             <div
               className={cn(
                 "h-[2.5px] rounded-full transition-all duration-300",
                 isCardActive
-                  ? "bg-[#2E5E99] dark:bg-[#7BA4D0] w-14"
-                  : "bg-[#7BA4D0]/50 dark:bg-white/25 w-8 group-hover:w-12 group-hover:bg-[#2E5E99] dark:group-hover:bg-[#7BA4D0]"
+                  ? "w-14 bg-[#2E5E99] dark:bg-[#7BA4D0] shadow-[0_0_8px_rgba(46,94,153,0.35)]"
+                  : "w-8 bg-[#2E5E99]/40 dark:bg-white/20 group-hover:w-12 group-hover:bg-[#2E5E99] dark:group-hover:bg-[#7BA4D0]"
               )}
             />
           </div>
 
           <div className="space-y-5">
-            <p
-              className={cn(
-                "text-xs leading-relaxed font-medium transition-colors duration-300 pr-3",
-                isCardActive ? "text-[#0D2440] dark:text-white" : "text-[#0D2440]/85 dark:text-white/80"
-              )}
-            >
+            <p className="text-xs leading-relaxed font-normal text-[#0D2440]/80 dark:text-white/85 pr-2">
               {industry.description}
             </p>
 
-            {/* Frosted Action Pill */}
+            {/* Optical Glass Capsule Button matching Web Color System */}
             <div>
               <div
                 className={cn(
-                  "inline-flex items-center gap-2.5 px-4 py-2 rounded-full border text-[10px] font-mono font-bold uppercase tracking-wider transition-all duration-300",
+                  "inline-flex items-center gap-2.5 px-4 py-2 rounded-full border text-[10px] font-mono font-bold uppercase tracking-wider transition-all duration-300 backdrop-blur-md",
                   isCardActive
-                    ? "bg-[#2E5E99] text-white border-[#2E5E99] dark:bg-[#7BA4D0] dark:text-[#0B0D0F] dark:border-[#7BA4D0]"
-                    : "bg-white/20 dark:bg-white/20 backdrop-blur-md text-[#2E5E99] dark:text-white border-white/40 dark:border-white/20 hover:bg-[#2E5E99] dark:hover:bg-[#7BA4D0] hover:text-white dark:hover:text-[#0B0D0F]"
+                    ? "bg-[#2E5E99] text-white border-[#2E5E99] shadow-[0_8px_20px_rgba(46,94,153,0.3),inset_0_1px_1px_0_rgba(255,255,255,0.35)] dark:bg-[#7BA4D0] dark:text-[#0D2440] dark:border-[#7BA4D0]"
+                    : "bg-white/35 dark:bg-white/[0.08] text-[#0D2440] dark:text-white border-white/50 dark:border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5),0_4px_12px_rgba(0,0,0,0.06)] group-hover:bg-[#2E5E99] group-hover:text-white group-hover:border-[#2E5E99] dark:group-hover:bg-[#7BA4D0] dark:group-hover:text-[#0D2440]"
                 )}
               >
                 <span>Explore Solutions</span>
@@ -142,8 +161,8 @@ const IndustryCard = ({
                   className={cn(
                     "w-5 h-5 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1",
                     isCardActive
-                      ? "bg-white dark:bg-[#0B0D0F] text-[#2E5E99] dark:text-[#7BA4D0]"
-                      : "bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-white"
+                      ? "bg-white text-[#2E5E99] dark:bg-[#0D2440] dark:text-[#7BA4D0]"
+                      : "bg-[#2E5E99]/15 text-[#2E5E99] dark:bg-white/20 dark:text-white group-hover:bg-white group-hover:text-[#2E5E99] dark:group-hover:bg-[#0D2440] dark:group-hover:text-[#7BA4D0]"
                   )}
                 >
                   <ArrowRight className="w-3 h-3" />
@@ -175,28 +194,30 @@ export function Industries() {
 
   return (
     <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-gradient-to-b from-[#E7F0FA] via-[#F4F8FC] to-[#DDEBF7] dark:from-[#071321] dark:via-[#09182b] dark:to-[#071321] text-[#0D2440] dark:text-white overflow-hidden border-y border-[#7BA4D0]/20 dark:border-white/10 transition-colors duration-500">
-      {/* Isolated Soft Fluid Water Shader Background - Strictly for this section */}
+      {/* Dynamic Fluid Water Shader Background - High contrast azure & sapphire wave visible through crystal glass */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden select-none">
         <GlowingWave
-          speed={0.80}
-          color1="#7BA4D0"
-          color2="#2E5E99"
-          frequency={0.7}
-          intensity={1.0}
-          complexity={0.5}
-          opacity={0.45}
+          speed={0.45}
+          color1="#4C8BD9"
+          color2="#1D487D"
+          frequency={0.72}
+          intensity={1.5}
+          complexity={0.45}
+          opacity={0.65}
           transparent={true}
         />
         {/* Subtle Blueprint Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-20 dark:opacity-10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 mix-blend-overlay" />
       </div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center justify-center mb-12 lg:mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-[#0D2440] dark:text-[#F5F5F5] mb-3 leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-[#0D2440] dark:text-white mb-3 leading-[1.15]">
             Pioneering Solutions for <br />
-            <span className="text-[#2E5E99] dark:text-[#7BA4D0]">Demanding Industries</span>
+            <span className="text-[#2E5E99] dark:text-[#7BA4D0]">
+              Demanding Industries
+            </span>
           </h2>
           <p className="text-[#0D2440]/75 dark:text-[#C4C8CC] text-sm md:text-base leading-relaxed max-w-2xl font-normal">
             From HVAC and refrigeration systems to automotive, home appliances, and mission-critical
