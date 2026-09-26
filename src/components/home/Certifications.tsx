@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Star } from "lucide-react";
-import { cn } from "@/lib/utils";
+import DriftWall from "@/components/ui/DriftWall";
 
-interface TestimonialCard {
+export interface TestimonialCard {
   type: "review";
   id: string;
   rating: number;
@@ -17,17 +16,16 @@ interface TestimonialCard {
   award?: string;
 }
 
-interface PhotoCard {
+export interface PhotoCard {
   type: "photo";
   id: string;
   image: string;
   title: string;
 }
 
-type StreamItem = TestimonialCard | PhotoCard;
+export type StreamItem = TestimonialCard | PhotoCard;
 
-// Column 1: Review, Review, Photo
-const column1Items: StreamItem[] = [
+export const allStreamItems: StreamItem[] = [
   {
     type: "review",
     id: "haier-2025",
@@ -56,10 +54,6 @@ const column1Items: StreamItem[] = [
     image: "/manufacturing_floor.png",
     title: "High-throughput Automated CNC Bending & Tooling",
   },
-];
-
-// Column 2: Review, Photo, Review
-const column2Items: StreamItem[] = [
   {
     type: "review",
     id: "danfoss-2024",
@@ -88,10 +82,6 @@ const column2Items: StreamItem[] = [
     company: "Samsung",
     award: "EHS Activities Appreciation",
   },
-];
-
-// Column 3: Photo, Review, Review
-const column3Items: StreamItem[] = [
   {
     type: "photo",
     id: "photo-infra",
@@ -120,131 +110,90 @@ const column3Items: StreamItem[] = [
     company: "Wabtec Corporation",
     award: "Supplier Excellence Award",
   },
+  {
+    type: "photo",
+    id: "photo-neemrana",
+    image: "/engineering_precision_facility_1778657209621.png",
+    title: "Neemrana Precision Manufacturing Hub · DMIC Corridor",
+  },
+  {
+    type: "review",
+    id: "daikin-oem",
+    rating: 5,
+    quote:
+      "Industry-leading helium mass spectrometry leak testing ensuring 100% reliability in our variable refrigerant volume applications. Unmatched engineering collaboration.",
+    author: "Technical Operations Board",
+    role: "HVAC Engineering Lead",
+    company: "Daikin India",
+    award: "Zero Defect Vendor 2024",
+  },
+  {
+    type: "photo",
+    id: "photo-sanand",
+    image: "/premium_infrastructure_facility_1778674475991.png",
+    title: "Sanand Unit · Tier-1 High-Volume Production Cell",
+  },
 ];
 
 export function Certifications() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Track scroll progress along the pinned runway
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Snappy, quick-responsive spring physics
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 24,
-    mass: 0.4,
-    restDelta: 0.0001,
-  });
-
-  // Quick, responsive fan-out (completes within early 22% of scroll)
-  const x1 = useTransform(smoothProgress, [0, 0.22], [90, 0]);
-  const x3 = useTransform(smoothProgress, [0, 0.22], [-90, 0]);
-
-  const rotate1 = useTransform(smoothProgress, [0, 0.2], [-3, 0]);
-  const rotate3 = useTransform(smoothProgress, [0, 0.2], [3, 0]);
-
-  const scale = useTransform(smoothProgress, [0, 0.2], [0.95, 1]);
-  const opacity = useTransform(smoothProgress, [0, 0.1], [0.75, 1]);
-
   return (
     <section
-      ref={containerRef}
       id="awards-recognition"
-      className="relative h-[165vh] bg-transparent text-[#0D2440] dark:text-white transition-colors duration-300"
+      className="relative py-20 md:py-28 bg-transparent text-[#0D2440] dark:text-white transition-colors duration-300 overflow-hidden"
     >
-      {/* PINNED STICKY VIEWPORT */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between py-8 md:py-12">
-        {/* Subtle Ambient Background Accents */}
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(46,94,153,0.06),transparent_50%),radial-gradient(circle_at_bottom_right,rgba(13,36,64,0.05),transparent_50%)]" />
+      {/* Subtle Ambient Background Accents */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(46,94,153,0.06),transparent_50%),radial-gradient(circle_at_bottom_right,rgba(13,36,64,0.05),transparent_50%)]" />
 
-        <div className="container-custom relative z-10 w-full flex flex-col h-full justify-between">
-          {/* HEADER */}
-          <div className="shrink-0 mb-4 md:mb-6">
+      <div className="container-custom relative z-10 w-full flex flex-col justify-between">
+        {/* HEADER */}
+        <div className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="text-xs font-heading font-bold text-[#2E5E99] dark:text-[#7BA4D0] tracking-widest uppercase mb-2">
+              ACCREDITATION & INDUSTRIAL RECOGNITION
+            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#0D2440] dark:text-white tracking-tight leading-tight">
               What partners <span className="text-[#2E5E99] dark:text-[#7BA4D0]">are saying</span>
             </h2>
           </div>
+          <p className="text-xs sm:text-sm text-[#0D2440]/70 dark:text-white/70 max-w-md font-light">
+            Interactive 3D showcase of audited partner evaluations, Tier-1 OEM recognitions, and certified production facilities.
+          </p>
+        </div>
 
-          {/* 3-COLUMN MARQUEE STAGE WITH RESPONSIVE FAN-OUT */}
-          <motion.div
-            style={{ scale, opacity }}
-            className="relative flex-1 overflow-hidden py-2 px-2 sm:px-4"
-          >
-            {/* Desktop 3-Column Marquee Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 h-full items-start">
-              {/* COLUMN 1: Fans out to left, marquees upward */}
-              <motion.div
-                style={{ x: x1, rotate: rotate1 }}
-                className="h-full overflow-hidden transform-gpu will-change-transform origin-bottom-right"
-              >
-                <MarqueeColumn items={column1Items} direction="up" />
-              </motion.div>
-
-              {/* COLUMN 2: Center lane, marquees downward */}
-              <div className="h-full overflow-hidden transform-gpu will-change-transform">
-                <MarqueeColumn items={column2Items} direction="down" />
-              </div>
-
-              {/* COLUMN 3: Fans out to right, marquees upward */}
-              <motion.div
-                style={{ x: x3, rotate: rotate3 }}
-                className="h-full overflow-hidden transform-gpu will-change-transform origin-bottom-left hidden md:block"
-              >
-                <MarqueeColumn items={column3Items} direction="up" />
-              </motion.div>
-            </div>
-          </motion.div>
+        {/* DRIFTWALL WITH CRYSTAL CLEAR CARDS */}
+        <div className="relative w-full h-[620px] md:h-[680px] lg:h-[720px] rounded-3xl overflow-hidden">
+          <DriftWall
+            items={allStreamItems}
+            renderItem={(item: StreamItem) => <CardRenderer item={item} />}
+            columns={3}
+            tileWidth={380}
+            tileHeight={255}
+            gap={24}
+            tilt={10}
+            turn={-8}
+            perspective={1400}
+            depth={60}
+            speed={28}
+            direction="up"
+            variance={0.35}
+            parallax={0.5}
+            pauseOnHover={true}
+            lift={44}
+            fade={0.2}
+            dim={0.95}
+            overlayColor="transparent"
+          />
         </div>
       </div>
     </section>
   );
 }
 
-// Vertical Marquee Column with seamless duplicated loop and pause-on-hover
-function MarqueeColumn({
-  items,
-  direction = "up",
-}: {
-  items: StreamItem[];
-  direction?: "up" | "down";
-}) {
-  return (
-    <div
-      className={cn(
-        "flex flex-col select-none transform-gpu will-change-transform",
-        direction === "up"
-          ? "animate-marquee-vertical-up hover:[animation-play-state:paused]"
-          : "animate-marquee-vertical-down hover:[animation-play-state:paused]"
-      )}
-    >
-      {/* Primary Set */}
-      <div className="flex flex-col gap-5 lg:gap-6 shrink-0 pb-5 lg:pb-6">
-        {items.map((item) => (
-          <CardRenderer key={`primary-${item.id}`} item={item} />
-        ))}
-      </div>
-
-      {/* Duplicate Set for Seamless Loop */}
-      <div
-        className="flex flex-col gap-5 lg:gap-6 shrink-0 pb-5 lg:pb-6"
-        aria-hidden="true"
-      >
-        {items.map((item) => (
-          <CardRenderer key={`dup-${item.id}`} item={item} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// Card Renderer for Review Card or Photo Card
+// Card Renderer for Review Card or Photo Card - Preserving Exact Crystal-Clear Design
 function CardRenderer({ item }: { item: StreamItem }) {
   if (item.type === "photo") {
     return (
-      <div className="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/10] border border-white/60 dark:border-white/20 group shrink-0 bg-[#0D2440]/90 transition-all duration-300 hover:scale-[1.02] shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_12px_32px_rgba(13,36,64,0.12)] backdrop-blur-[2px]">
+      <div className="relative w-full h-full rounded-2xl md:rounded-3xl overflow-hidden border border-white/60 dark:border-white/20 group shrink-0 bg-[#0D2440]/90 transition-all duration-300 hover:scale-[1.02] shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_14px_36px_rgba(13,36,64,0.14)] backdrop-blur-[2px]">
         {/* Top Specular Rim */}
         <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
 
@@ -253,6 +202,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
           alt={item.title}
           fill
           className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          sizes="400px"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440]/90 via-[#0D2440]/30 to-transparent" />
 
@@ -266,21 +216,23 @@ function CardRenderer({ item }: { item: StreamItem }) {
   }
 
   return (
-    <div className="relative rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/[0.22] via-white/[0.05] to-white/[0.10] dark:from-white/[0.09] dark:via-white/[0.02] dark:to-white/[0.05] p-6 sm:p-7 border border-white/60 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white/90 dark:hover:border-white/40 hover:scale-[1.01] shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.85),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_12px_32px_rgba(13,36,64,0.06)] backdrop-blur-[2px] overflow-hidden">
+    <div className="relative w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/95 via-white/85 to-white/95 dark:from-[#0D2440]/95 dark:via-[#0D2440]/85 dark:to-[#0D2440]/95 p-6 sm:p-7 border border-white/80 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.9),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_14px_36px_rgba(13,36,64,0.09)] backdrop-blur-md overflow-hidden">
       {/* Top Specular Rim */}
       <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
 
-      <div className="flex items-center gap-1 mb-4">
-        {[...Array(item.rating)].map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />
-        ))}
+      <div>
+        <div className="flex items-center gap-1 mb-3">
+          {[...Array(item.rating)].map((_, i) => (
+            <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />
+          ))}
+        </div>
+
+        <p className="text-xs sm:text-[13px] text-[#0D2440]/90 dark:text-white/90 leading-relaxed font-normal">
+          &ldquo;{item.quote}&rdquo;
+        </p>
       </div>
 
-      <p className="text-xs sm:text-sm text-[#0D2440]/85 dark:text-white/85 leading-relaxed mb-6 font-normal">
-        “{item.quote}”
-      </p>
-
-      <div className="pt-4 border-t border-[#7BA4D0]/20 dark:border-white/10 flex items-center justify-between gap-3">
+      <div className="pt-4 border-t border-[#7BA4D0]/20 dark:border-white/10 flex items-center justify-between gap-3 mt-3">
         <div className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)]">
             {item.company.charAt(0)}
@@ -296,7 +248,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
         </div>
 
         {item.award && (
-          <div className="px-2.5 py-1 rounded-full border border-white/40 dark:border-white/15 bg-white/30 dark:bg-white/10 text-[10px] font-mono font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-tight text-right shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)]">
+          <div className="px-2.5 py-1 rounded-full border border-white/40 dark:border-white/15 bg-white/40 dark:bg-white/10 text-[10px] font-mono font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-tight text-right shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)]">
             {item.award}
           </div>
         )}
@@ -304,3 +256,5 @@ function CardRenderer({ item }: { item: StreamItem }) {
     </div>
   );
 }
+
+export default Certifications;
