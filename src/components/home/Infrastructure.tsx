@@ -184,13 +184,16 @@ export function Infrastructure() {
                       key={pillar.id}
                       onClick={() => handlePillarClick(idx)}
                       className={cn(
-                        "relative text-left p-4 sm:p-5 rounded-2xl transition-all duration-300 cursor-pointer group select-none overflow-hidden",
+                        "relative text-left p-4 sm:p-5 rounded-2xl transition-all duration-300 cursor-pointer group select-none overflow-hidden backdrop-blur-[2px]",
                         isActive
-                          ? "bg-[#E7F0FA] dark:bg-white/10 text-[#0D2440] dark:text-white border border-[#2E5E99]/30 dark:border-white/20"
-                          : "opacity-55 hover:opacity-90 text-[#0D2440]/70 dark:text-white/70 hover:bg-[#E7F0FA]/30 dark:hover:bg-white/5 border border-transparent"
+                          ? "bg-gradient-to-b from-white/[0.22] via-white/[0.08] to-white/[0.16] dark:from-white/[0.12] dark:via-white/[0.03] dark:to-white/[0.08] text-[#0D2440] dark:text-white border border-white/80 dark:border-white/50 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.9),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_8px_24px_rgba(46,94,153,0.12)]"
+                          : "opacity-75 hover:opacity-100 text-[#0D2440]/70 dark:text-white/70 bg-gradient-to-b from-white/[0.10] via-white/[0.02] to-white/[0.06] dark:from-white/[0.06] dark:via-white/[0.01] dark:to-white/[0.03] border border-white/40 dark:border-white/15 hover:border-white/70 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5),0_4px_12px_rgba(13,36,64,0.04)]"
                       )}
                       aria-label={`View ${pillar.title}`}
                     >
+                      {/* Top Specular Rim */}
+                      <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
                       {/* Left Active Accent Pill */}
                       {isActive && (
                         <motion.span
@@ -233,7 +236,10 @@ export function Infrastructure() {
 
               {/* Right Column: Cinematic Viewport with Smooth Image Transitions */}
               <div className="lg:col-span-7 relative">
-                <div className="relative aspect-[16/10.5] rounded-3xl overflow-hidden bg-[#0D2440] border border-[#7BA4D0]/30 dark:border-white/15 group">
+                <div className="relative aspect-[16/10.5] rounded-3xl overflow-hidden bg-[#0D2440] border border-white/60 dark:border-white/20 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_20px_48px_rgba(13,36,64,0.16)] group">
+                  {/* Top Specular Rim */}
+                  <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
                   {pillars.map((pillar, idx) => {
                     const isSelected = activeIdx === idx;
                     return (
@@ -264,8 +270,8 @@ export function Infrastructure() {
                     );
                   })}
 
-                  {/* Bottom Operational Readout Pill */}
-                  <div className="absolute bottom-5 left-5 right-5 z-10 p-4 sm:p-5 rounded-2xl bg-[#0D2440]/90 backdrop-blur-md border border-white/15 text-white flex items-center justify-between">
+                  {/* Bottom Operational Readout Pill (Liquid Glass Capsule) */}
+                  <div className="absolute bottom-5 left-5 right-5 z-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-white/[0.25] via-[#0D2440]/85 to-[#0D2440]/95 dark:from-white/[0.15] dark:via-[#071321]/85 dark:to-[#071321]/95 border border-white/50 dark:border-white/20 backdrop-blur-md shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.6),0_8px_24px_rgba(0,0,0,0.2)] text-white flex items-center justify-between">
                     <div>
                       <div className="text-xs font-heading font-bold text-[#7BA4D0] uppercase tracking-wider mb-0.5">
                         KEY CAPABILITY

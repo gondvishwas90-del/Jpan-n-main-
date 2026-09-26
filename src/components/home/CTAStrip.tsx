@@ -8,8 +8,11 @@ export function CTAStrip() {
   return (
     <section className="relative py-14 md:py-20 bg-[#F4F8FC] dark:bg-[#071321] transition-colors duration-300">
       <div className="container-custom relative z-10 w-full">
-        {/* Pure White Architectural Box Container */}
-        <div className="relative rounded-3xl bg-white dark:bg-[#0D2440] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15">
+        {/* Pure Architectural Glass Box Container */}
+        <div className="relative rounded-3xl bg-gradient-to-b from-white/[0.25] via-white/[0.08] to-white/[0.14] dark:from-white/[0.09] dark:via-white/[0.02] dark:to-white/[0.05] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden border border-white/60 dark:border-white/20 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.85),inset_0_-1.5px_1px_0_rgba(255,255,255,0.25),0_20px_48px_rgba(13,36,64,0.08)] backdrop-blur-[2px]">
+          {/* Razor-sharp Specular Glass Top Sheen */}
+          <div className="absolute top-0 left-8 right-8 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
           {/* Grid Content inside the White Box */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* Left Column: Authoritative Editorial Heading & Subtext */}
@@ -32,7 +35,7 @@ export function CTAStrip() {
               {/* Primary Action Button */}
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 active:scale-95"
+                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#2E5E99] hover:bg-[#0D2440] text-white font-medium text-sm rounded-full transition-all duration-300 active:scale-95 shadow-[0_8px_20px_rgba(46,94,153,0.25)]"
               >
                 <div className="flex items-center gap-2.5">
                   <FileCheck className="w-4 h-4 text-[#7BA4D0]" />
@@ -46,7 +49,7 @@ export function CTAStrip() {
               {/* Secondary Direct Phone Call Button */}
               <Link
                 href="tel:+911202560586"
-                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-[#F4F8FC] dark:bg-white/5 hover:bg-[#E7F0FA] dark:hover:bg-white/10 border border-[#7BA4D0]/35 dark:border-white/20 text-[#0D2440] dark:text-white font-medium text-sm rounded-full transition-all duration-300"
+                className="group inline-flex items-center justify-between gap-4 px-8 py-4 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 border border-white/50 dark:border-white/20 text-[#0D2440] dark:text-white font-medium text-sm rounded-full transition-all duration-300 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)] backdrop-blur-md"
               >
                 <div className="flex items-center gap-2.5">
                   <PhoneCall className="w-4 h-4 text-[#2E5E99] dark:text-[#7BA4D0]" />

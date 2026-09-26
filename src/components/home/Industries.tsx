@@ -194,16 +194,16 @@ export function Industries() {
 
   return (
     <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-gradient-to-b from-[#E7F0FA] via-[#F4F8FC] to-[#DDEBF7] dark:from-[#071321] dark:via-[#09182b] dark:to-[#071321] text-[#0D2440] dark:text-white overflow-hidden border-y border-[#7BA4D0]/20 dark:border-white/10 transition-colors duration-500">
-      {/* Dynamic Fluid Water Shader Background - High contrast azure & sapphire wave visible through crystal glass */}
+      {/* Dynamic Fluid Water Shader Background - Calibrated soft intensity */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden select-none">
         <GlowingWave
-          speed={0.45}
+          speed={0.4}
           color1="#4C8BD9"
           color2="#1D487D"
           frequency={0.72}
-          intensity={1.5}
+          intensity={0.8}
           complexity={0.45}
-          opacity={0.65}
+          opacity={0.38}
           transparent={true}
         />
         {/* Subtle Blueprint Grid Pattern */}

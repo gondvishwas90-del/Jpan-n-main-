@@ -17,40 +17,18 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="overflow-x-clip">
-      <div className="animate-in fade-in duration-1000">
-        <AboutHero />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both">
-        <OurStory />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
-        <CompanyOverview />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
-        <VisionMission />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both">
-        <JourneyTimeline />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-        <Leadership />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-600 fill-mode-both">
-        <AboutManufacturing />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-both">
-        <AboutQuality />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-800 fill-mode-both">
-        <AboutPresence />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-900 fill-mode-both">
-        <AboutWhyChooseUs />
-      </div>
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-1000 fill-mode-both">
-        <AboutCTA />
-      </div>
-    </div>
+    <>
+      <AboutHero />
+      <OurStory />
+      <CompanyOverview />
+      <VisionMission />
+      <JourneyTimeline />
+      <Leadership />
+      <AboutManufacturing />
+      <AboutQuality />
+      <AboutPresence />
+      <AboutWhyChooseUs />
+      <AboutCTA />
+    </>
   );
 }

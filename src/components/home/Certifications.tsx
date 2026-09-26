@@ -244,7 +244,10 @@ function MarqueeColumn({
 function CardRenderer({ item }: { item: StreamItem }) {
   if (item.type === "photo") {
     return (
-      <div className="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/10] border border-[#7BA4D0]/30 group shrink-0 bg-[#0D2440] transition-transform duration-300 hover:scale-[1.02]">
+      <div className="relative rounded-2xl md:rounded-3xl overflow-hidden aspect-[16/10] border border-white/60 dark:border-white/20 group shrink-0 bg-[#0D2440]/90 transition-all duration-300 hover:scale-[1.02] shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_12px_32px_rgba(13,36,64,0.12)] backdrop-blur-[2px]">
+        {/* Top Specular Rim */}
+        <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
         <Image
           src={item.image}
           alt={item.title}
@@ -253,7 +256,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440]/90 via-[#0D2440]/30 to-transparent" />
 
-        <div className="absolute bottom-4 left-4 right-4 z-10">
+        <div className="absolute bottom-4 left-4 right-4 z-10 p-3 rounded-xl bg-[#0D2440]/80 backdrop-blur-md border border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)]">
           <p className="text-xs sm:text-sm font-heading font-bold text-white leading-snug">
             {item.title}
           </p>
@@ -263,7 +266,10 @@ function CardRenderer({ item }: { item: StreamItem }) {
   }
 
   return (
-    <div className="rounded-2xl md:rounded-3xl bg-white dark:bg-[#102744] p-6 sm:p-7 border border-[#7BA4D0]/30 dark:border-white/10 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] hover:scale-[1.01]">
+    <div className="relative rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/[0.22] via-white/[0.05] to-white/[0.10] dark:from-white/[0.09] dark:via-white/[0.02] dark:to-white/[0.05] p-6 sm:p-7 border border-white/60 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white/90 dark:hover:border-white/40 hover:scale-[1.01] shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.85),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_12px_32px_rgba(13,36,64,0.06)] backdrop-blur-[2px] overflow-hidden">
+      {/* Top Specular Rim */}
+      <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
       <div className="flex items-center gap-1 mb-4">
         {[...Array(item.rating)].map((_, i) => (
           <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />
@@ -276,7 +282,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
 
       <div className="pt-4 border-t border-[#7BA4D0]/20 dark:border-white/10 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0">
+          <div className="w-7 h-7 rounded-full bg-[#2E5E99] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)]">
             {item.company.charAt(0)}
           </div>
           <div>
@@ -290,7 +296,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
         </div>
 
         {item.award && (
-          <div className="text-[10px] font-mono font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-tight text-right shrink-0">
+          <div className="px-2.5 py-1 rounded-full border border-white/40 dark:border-white/15 bg-white/30 dark:bg-white/10 text-[10px] font-mono font-bold text-[#2E5E99] dark:text-[#7BA4D0] uppercase tracking-tight text-right shrink-0 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)]">
             {item.award}
           </div>
         )}

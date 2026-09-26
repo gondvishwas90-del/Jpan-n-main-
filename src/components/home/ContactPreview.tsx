@@ -96,8 +96,11 @@ export function ContactPreview() {
                 href={card.href}
                 target={card.isExternal ? "_blank" : undefined}
                 rel={card.isExternal ? "noopener noreferrer" : undefined}
-                className="relative rounded-2xl bg-white dark:bg-[#102744] border border-[#7BA4D0]/35 dark:border-white/10 p-5 sm:p-6 hover:border-[#2E5E99] dark:hover:border-[#7BA4D0] transition-all duration-300 group flex flex-col justify-between min-h-[160px] sm:min-h-[180px] overflow-hidden"
+                className="relative rounded-2xl bg-gradient-to-b from-white/[0.22] via-white/[0.05] to-white/[0.10] dark:from-white/[0.09] dark:via-white/[0.02] dark:to-white/[0.05] border border-white/60 dark:border-white/20 p-5 sm:p-6 hover:border-white/90 dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.8),inset_0_-1px_1px_0_rgba(255,255,255,0.2),0_8px_24px_rgba(13,36,64,0.06)] backdrop-blur-[2px] transition-all duration-300 group flex flex-col justify-between min-h-[160px] sm:min-h-[180px] overflow-hidden hover:-translate-y-1"
               >
+                {/* Razor-sharp Specular Glass Top Sheen */}
+                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
                 {/* Card Top Row: Eyebrow + Action Arrow */}
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">

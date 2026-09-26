@@ -149,23 +149,22 @@ function StackingFacilityCard({
 
   return (
     <div
-      className={`sticky-card sticky top-[9vh] sm:top-[11vh] h-[74vh] min-h-[500px] max-h-[720px] [perspective:1200px] ${
-        isLast ? "mb-0" : "mb-[14vh] sm:mb-[18vh]"
-      }`}
+      className="sticky-card sticky top-[10vh] sm:top-[12vh] h-[72vh] min-h-[500px] max-h-[700px] [perspective:1200px] mb-[28vh] sm:mb-[36vh]"
       style={{ zIndex: index + 1 }}
     >
-      <div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={handleMouseEnter}
-        className="card-inner relative w-full h-full rounded-[36px] sm:rounded-[48px] overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 border border-[#0F172A]/10 dark:border-white/10 transition-all duration-700 ease-out [background:var(--card-grad-light)] dark:[background:var(--card-grad-dark)]"
-        style={{
-          transformStyle: "preserve-3d",
-          ["--card-grad-light" as string]: facility.lightGradient,
-          ["--card-grad-dark" as string]: facility.darkGradient,
-        }}
-      >
+      <div className="card-scroll-wrap w-full h-full origin-top transition-transform duration-150 ease-out will-change-transform">
+        <div
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleMouseEnter}
+          className="card-inner relative w-full h-full rounded-[36px] sm:rounded-[48px] overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 border border-[#0F172A]/10 dark:border-white/10 transition-all duration-700 ease-out [background:var(--card-grad-light)] dark:[background:var(--card-grad-dark)]"
+          style={{
+            transformStyle: "preserve-3d",
+            ["--card-grad-light" as string]: facility.lightGradient,
+            ["--card-grad-dark" as string]: facility.darkGradient,
+          }}
+        >
         {/* Top Edge Specular Highlight Line */}
         <div className="absolute inset-x-0 top-0 h-px bg-white/60 dark:bg-white/20" />
 
@@ -249,6 +248,7 @@ function StackingFacilityCard({
               <span>Explore Hub</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -260,28 +260,32 @@ export function AboutPresence() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Exact reference site scroll stacking effect:
-  // As a card reaches the top sticky threshold and is covered by the incoming card,
-  // it smoothly scales down (1 -> 0.95) and darkens slightly (brightness 1 -> 0.75).
+  // As incoming card approaches, previous card scales down (1 -> 0.95) and darkens slightly (brightness 1 -> 0.78).
+  // Works reliably in both downward and upward scroll directions.
   useEffect(() => {
     const handleScroll = () => {
       const cards = containerRef.current?.querySelectorAll<HTMLElement>(".sticky-card");
       if (!cards) return;
 
-      cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const inner = card.querySelector<HTMLElement>(".card-inner");
-        if (!inner) return;
+      const stickyTop = window.innerHeight * 0.12;
 
-        const stickyTop = window.innerHeight * 0.11; // ~11vh
-        if (rect.top <= stickyTop + 20 && rect.bottom > stickyTop) {
-          const overlap = Math.max(0, Math.min(1, (stickyTop - rect.top) / 450));
-          const scale = 1 - overlap * 0.05;
-          const brightness = 1 - overlap * 0.25;
-          inner.style.transform = `scale(${scale})`;
-          inner.style.filter = `brightness(${brightness})`;
-        } else if (rect.top > stickyTop) {
-          inner.style.transform = "scale(1)";
-          inner.style.filter = "brightness(1)";
+      cards.forEach((card, index) => {
+        const wrap = card.querySelector<HTMLElement>(".card-scroll-wrap");
+        if (!wrap) return;
+
+        const nextCard = cards[index + 1];
+        if (nextCard) {
+          const nextRect = nextCard.getBoundingClientRect();
+          const distance = window.innerHeight - stickyTop;
+          const current = window.innerHeight - nextRect.top;
+          const progress = Math.max(0, Math.min(1, current / distance));
+          const scale = 1 - progress * 0.05;
+          const brightness = 1 - progress * 0.22;
+          wrap.style.transform = `scale(${scale})`;
+          wrap.style.filter = `brightness(${brightness})`;
+        } else {
+          wrap.style.transform = "scale(1)";
+          wrap.style.filter = "brightness(1)";
         }
       });
     };
@@ -312,7 +316,7 @@ export function AboutPresence() {
         </div>
 
         {/* Stacking Cards Container (Matching Reference Architecture) */}
-        <div ref={containerRef} className="pb-[8vh]">
+        <div ref={containerRef} className="pb-[12vh] sm:pb-[16vh]">
           {facilities.map((facility, index) => (
             <StackingFacilityCard
               key={facility.id}

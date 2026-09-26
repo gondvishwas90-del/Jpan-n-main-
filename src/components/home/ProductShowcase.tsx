@@ -167,30 +167,33 @@ export function ProductShowcase() {
                 ref={(el) => {
                   cardRefs.current[idx] = el;
                 }}
-                className="relative min-h-[460px] sm:min-h-[500px] md:min-h-[540px] rounded-3xl overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 bg-[#0D2440] flex flex-col justify-between p-7 sm:p-9 md:p-10"
+                className="relative min-h-[460px] sm:min-h-[500px] md:min-h-[540px] rounded-3xl overflow-hidden border border-white/60 dark:border-white/20 bg-[#0D2440]/90 flex flex-col justify-between p-7 sm:p-9 md:p-10 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_20px_48px_rgba(13,36,64,0.2)] backdrop-blur-[2px] transition-all duration-300 hover:border-white/80 group"
               >
+                {/* Razor-sharp Specular Glass Top Sheen */}
+                <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
                 {/* Background Image with Cinematic Dark Gradient Scrim */}
                 <div className="absolute inset-0 z-0">
                   <Image
                     src={item.image}
                     alt={item.name}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     priority={idx === 0}
                   />
                   {/* Subtle darkening overlays for crisp contrast matching Axiom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D2440] via-[#0D2440]/65 to-[#0D2440]/35" />
                 </div>
 
-                {/* CARD TOP ROW: Icon Box + Category Label */}
+                {/* CARD TOP ROW: Glass Lens Icon Box + Glass Category Pill */}
                 <div className="relative z-10 flex items-center justify-between w-full">
                   {/* Icon Box */}
-                  <div className="w-11 h-11 rounded-xl border border-white/20 bg-black/40 backdrop-blur-md flex items-center justify-center text-white">
+                  <div className="w-11 h-11 rounded-xl border border-white/50 bg-white/10 dark:bg-white/10 backdrop-blur-md flex items-center justify-center text-white shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.6)]">
                     <item.icon className="w-5 h-5 text-white" />
                   </div>
 
                   {/* Category Pill / Label */}
-                  <span className="font-mono text-[11px] sm:text-xs tracking-[0.2em] text-white/70 uppercase font-medium">
+                  <span className="px-3.5 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-md font-mono text-[11px] sm:text-xs tracking-[0.2em] text-white/90 uppercase font-medium shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)]">
                     {item.eyebrowCategory}
                   </span>
                 </div>

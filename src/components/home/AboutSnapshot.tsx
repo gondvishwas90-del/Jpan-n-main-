@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView, Variants } from "framer-motion";
 import { ArrowUpRight, Award, Factory, Globe2, Users2, CheckCircle2, Cpu, ShieldCheck, Flame, ShieldAlert } from "lucide-react";
+import TargetCursor from "@/components/ui/TargetCursor";
 
 interface CapabilityModule {
   id: string;
@@ -214,6 +215,14 @@ export function AboutSnapshot() {
       onMouseLeave={handleMouseLeave}
       className="relative py-24 md:py-36 bg-white dark:bg-[#071321] text-[#0D2440] dark:text-white transition-colors duration-500 overflow-hidden border-b border-[#7BA4D0]/20 dark:border-white/10"
     >
+      {/* Target Cursor scoped strictly to AboutSnapshot section */}
+      <TargetCursor
+        containerRef={sectionRef}
+        targetSelector=".cursor-target"
+        spinDuration={2}
+        parallaxOn={true}
+      />
+
       <div className="container-custom relative z-10">
         {/* ========================================================
             TOP SECTION: Editorial Narrative & Interactive 3D Showcase
@@ -257,11 +266,15 @@ export function AboutSnapshot() {
                   <button
                     key={mod.id}
                     onClick={() => setActiveModuleIndex(idx)}
-                    className={`group text-left p-3 rounded-2xl border transition-all duration-300 relative overflow-hidden flex items-center gap-3 ${isActive
-                        ? "bg-[#E7F0FA] dark:bg-[#0D2440] border-[#2E5E99]/60 dark:border-[#7BA4D0]/60 scale-[1.02]"
-                        : "bg-white/60 dark:bg-white/[0.03] border-[#7BA4D0]/20 dark:border-white/10 hover:border-[#2E5E99]/30 hover:bg-[#E7F0FA]/40 dark:hover:bg-white/[0.06]"
-                      }`}
+                    className={`cursor-target group text-left p-3.5 rounded-2xl border transition-all duration-300 relative overflow-hidden flex items-center gap-3 backdrop-blur-[2px] ${
+                      isActive
+                        ? "bg-gradient-to-b from-white/[0.22] via-white/[0.08] to-white/[0.16] dark:from-white/[0.12] dark:via-white/[0.03] dark:to-white/[0.08] border-white/80 dark:border-white/50 scale-[1.02] shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.9),inset_0_-1px_1px_0_rgba(255,255,255,0.3),0_8px_24px_rgba(46,94,153,0.12)]"
+                        : "bg-gradient-to-b from-white/[0.12] via-white/[0.03] to-white/[0.08] dark:from-white/[0.07] dark:via-white/[0.015] dark:to-white/[0.04] border-white/50 dark:border-white/20 hover:border-white/80 dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.65),inset_0_-1px_1px_0_rgba(255,255,255,0.2),0_4px_12px_rgba(13,36,64,0.04)]"
+                    }`}
                   >
+                    {/* Top Specular Rim */}
+                    <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
                     {/* Active Left Indicator Bar */}
                     {isActive && (
                       <motion.div
@@ -283,10 +296,11 @@ export function AboutSnapshot() {
 
                     {/* Icon Bubble */}
                     <div
-                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isActive
-                          ? "bg-[#2E5E99] text-white dark:bg-[#7BA4D0] dark:text-[#0D2440]"
-                          : "bg-[#E7F0FA] dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0]"
-                        }`}
+                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors border backdrop-blur-md ${
+                        isActive
+                          ? "bg-[#2E5E99] text-white border-white/40 dark:bg-[#7BA4D0] dark:text-[#0D2440] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.6)]"
+                          : "bg-white/40 dark:bg-white/10 text-[#2E5E99] dark:text-[#7BA4D0] border-white/40 dark:border-white/15 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.4)]"
+                      }`}
                     >
                       <ModIcon className="w-4 h-4" />
                     </div>
@@ -302,10 +316,11 @@ export function AboutSnapshot() {
                         )}
                       </div>
                       <div
-                        className={`text-xs sm:text-[13px] font-heading font-bold truncate transition-colors ${isActive
+                        className={`text-xs sm:text-[13px] font-heading font-bold truncate transition-colors ${
+                          isActive
                             ? "text-[#0D2440] dark:text-white"
                             : "text-[#0D2440]/80 dark:text-white/75 group-hover:text-[#0D2440] dark:group-hover:text-white"
-                          }`}
+                        }`}
                       >
                         {mod.name}
                       </div>
@@ -328,7 +343,7 @@ export function AboutSnapshot() {
               >
                 <Link
                   href="/about#our-story"
-                  className="group relative inline-flex items-center gap-3.5 px-8 sm:px-9 py-4 sm:py-4.5 bg-[#0D2440] hover:bg-[#2E5E99] dark:bg-[#7BA4D0] dark:hover:bg-[#2E5E99] text-white dark:text-[#0D2440] dark:hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 active:scale-95"
+                  className="cursor-target group relative inline-flex items-center gap-3.5 px-8 sm:px-9 py-4 sm:py-4.5 bg-[#0D2440] hover:bg-[#2E5E99] dark:bg-[#7BA4D0] dark:hover:bg-[#2E5E99] text-white dark:text-[#0D2440] dark:hover:text-white font-bold text-xs sm:text-sm uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 active:scale-95"
                 >
                   <div className="absolute inset-0 bg-[#2E5E99] dark:bg-[#2E5E99] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
 
@@ -353,11 +368,14 @@ export function AboutSnapshot() {
                 stiffness: 150,
                 damping: 20,
               }}
-              className="relative aspect-[16/11] rounded-[2.5rem] overflow-hidden border border-[#7BA4D0]/30 dark:border-white/15 group bg-[#E7F0FA] dark:bg-[#0D2440] transform-gpu"
+              className="cursor-target relative aspect-[16/11] rounded-[2.5rem] overflow-hidden border border-white/60 dark:border-white/20 group bg-gradient-to-b from-white/[0.15] via-white/[0.04] to-white/[0.08] dark:from-white/[0.08] dark:via-white/[0.02] dark:to-white/[0.05] shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.85),inset_0_-1.5px_1px_0_rgba(255,255,255,0.25),0_24px_48px_rgba(13,36,64,0.12)] backdrop-blur-[2px] transform-gpu"
               style={{
                 transformStyle: "preserve-3d",
               }}
             >
+              {/* Top Specular Sheen on 3D Container */}
+              <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
               {/* Cinematic Animated Crossfade on Active Module Change */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -379,8 +397,8 @@ export function AboutSnapshot() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dynamic Bottom Information Bar */}
-              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0D2440]/90 dark:bg-[#071321]/95 border border-[#7BA4D0]/30 dark:border-white/15 backdrop-blur-md text-white flex items-center justify-between z-10">
+              {/* Dynamic Bottom Information Bar (Liquid Glass Capsule) */}
+              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-white/[0.30] via-[#0D2440]/80 to-[#0D2440]/95 dark:from-white/[0.15] dark:via-[#071321]/85 dark:to-[#071321]/95 border border-white/50 dark:border-white/25 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.7),inset_0_-1px_1px_0_rgba(255,255,255,0.2),0_12px_32px_rgba(0,0,0,0.25)] backdrop-blur-md text-white flex items-center justify-between z-10">
                 <div>
                   <div className="text-[11px] font-heading font-semibold tracking-wider text-[#7BA4D0] uppercase mb-1">
                     {activeModule.sublabel}
@@ -413,7 +431,7 @@ export function AboutSnapshot() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * idx, duration: 0.6 }}
-              className="space-y-3"
+              className="cursor-target space-y-3 p-3.5 -m-3.5 rounded-2xl transition-all duration-300"
             >
               {/* Eyebrow */}
               <div className="flex items-center gap-2">

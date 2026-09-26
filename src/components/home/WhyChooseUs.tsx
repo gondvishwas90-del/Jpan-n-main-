@@ -200,12 +200,15 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanTopLeft}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-7 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu overflow-hidden origin-bottom-right"
+            className="lg:col-span-7 relative rounded-3xl bg-gradient-to-b from-white/[0.18] via-white/[0.04] to-white/[0.08] dark:from-white/[0.08] dark:via-white/[0.02] dark:to-white/[0.04] border border-white/60 dark:border-white/20 p-8 sm:p-10 flex flex-col justify-between group hover:border-white/90 dark:hover:border-white/40 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.8),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_16px_40px_rgba(13,36,64,0.08)] backdrop-blur-[2px] transition-all duration-300 transform-gpu overflow-hidden origin-bottom-right"
           >
+            {/* Top Specular Rim */}
+            <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
             {/* Top Row: Eyebrow Tag */}
             <div className="flex items-center justify-between gap-4 mb-8 z-10">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#E7F0FA] dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0]">
+                <div className="w-8 h-8 rounded-lg bg-white/40 dark:bg-white/10 border border-white/50 dark:border-white/20 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)] backdrop-blur-md">
                   <Activity className="w-4 h-4" />
                 </div>
                 <div>
@@ -264,8 +267,11 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanTopRight}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-5 relative rounded-3xl overflow-hidden bg-[#0D2440] p-8 sm:p-10 flex flex-col justify-between min-h-[380px] sm:min-h-[460px] group border border-white/15 transform-gpu origin-bottom-left"
+            className="lg:col-span-5 relative rounded-3xl overflow-hidden bg-[#0D2440]/90 p-8 sm:p-10 flex flex-col justify-between min-h-[380px] sm:min-h-[460px] group border border-white/60 dark:border-white/20 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.7),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_16px_40px_rgba(13,36,64,0.12)] backdrop-blur-[2px] transform-gpu origin-bottom-left hover:border-white/90"
           >
+            {/* Top Specular Rim */}
+            <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
             {/* Photographic Background with Subtle Zoom */}
             <Image
               src="/manufacturing_floor.png"
@@ -312,12 +318,15 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanBottomLeft}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu origin-top-right"
+            className="lg:col-span-6 relative rounded-3xl bg-gradient-to-b from-white/[0.18] via-white/[0.04] to-white/[0.08] dark:from-white/[0.08] dark:via-white/[0.02] dark:to-white/[0.04] border border-white/60 dark:border-white/20 p-8 sm:p-10 flex flex-col justify-between group hover:border-white/90 dark:hover:border-white/40 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.8),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_16px_40px_rgba(13,36,64,0.08)] backdrop-blur-[2px] transition-all duration-300 transform-gpu origin-top-right overflow-hidden"
           >
+            {/* Top Specular Rim */}
+            <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
             {/* Top Row: Eyebrow + Spec Tag with Simple Countup */}
             <div className="flex items-start justify-between gap-4 mb-6">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#E7F0FA] dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0]">
+                <div className="w-8 h-8 rounded-lg bg-white/40 dark:bg-white/10 border border-white/50 dark:border-white/20 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)] backdrop-blur-md">
                   <Gauge className="w-4 h-4" />
                 </div>
                 <div>
@@ -343,7 +352,7 @@ export function WhyChooseUs() {
             {/* Bottom Row */}
             <div className="pt-6 border-t border-[#7BA4D0]/20 dark:border-white/10">
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 rounded bg-[#E7F0FA] dark:bg-white/10 text-[10px] font-heading text-[#2E5E99] dark:text-[#7BA4D0] font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded bg-white/40 dark:bg-white/10 border border-white/30 dark:border-white/15 text-[10px] font-heading text-[#2E5E99] dark:text-[#7BA4D0] font-bold uppercase tracking-wider">
                   ±0.01 MM TOLERANCE
                 </span>
                 <span className="text-[11px] font-sans text-[#0D2440]/50 dark:text-white/50 uppercase font-medium">
@@ -366,12 +375,15 @@ export function WhyChooseUs() {
           <motion.div
             variants={fanBottomRight}
             whileHover={{ y: -4, transition: { duration: 0.16 } }}
-            className="lg:col-span-6 relative rounded-3xl bg-white dark:bg-[#0D2440]/90 border border-[#7BA4D0]/25 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-between group hover:border-[#2E5E99]/50 dark:hover:border-[#7BA4D0]/50 transition-all duration-300 transform-gpu origin-top-left"
+            className="lg:col-span-6 relative rounded-3xl bg-gradient-to-b from-white/[0.18] via-white/[0.04] to-white/[0.08] dark:from-white/[0.08] dark:via-white/[0.02] dark:to-white/[0.04] border border-white/60 dark:border-white/20 p-8 sm:p-10 flex flex-col justify-between group hover:border-white/90 dark:hover:border-white/40 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.8),inset_0_-1.5px_1px_0_rgba(255,255,255,0.2),0_16px_40px_rgba(13,36,64,0.08)] backdrop-blur-[2px] transition-all duration-300 transform-gpu origin-top-left overflow-hidden"
           >
+            {/* Top Specular Rim */}
+            <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
+
             {/* Top Row: Eyebrow + Leak Value */}
             <div className="flex items-start justify-between gap-4 mb-6">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#E7F0FA] dark:bg-white/10 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0]">
+                <div className="w-8 h-8 rounded-lg bg-white/40 dark:bg-white/10 border border-white/50 dark:border-white/20 flex items-center justify-center text-[#2E5E99] dark:text-[#7BA4D0] shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.5)] backdrop-blur-md">
                   <Zap className="w-4 h-4" />
                 </div>
                 <div>
@@ -397,7 +409,7 @@ export function WhyChooseUs() {
             {/* Bottom Row */}
             <div className="pt-6 border-t border-[#7BA4D0]/20 dark:border-white/10">
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 rounded bg-[#E7F0FA] dark:bg-white/10 text-[10px] font-heading text-[#2E5E99] dark:text-[#7BA4D0] font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded bg-white/40 dark:bg-white/10 border border-white/30 dark:border-white/15 text-[10px] font-heading text-[#2E5E99] dark:text-[#7BA4D0] font-bold uppercase tracking-wider">
                   100% PRODUCTION VERIFIED
                 </span>
                 <span className="text-[11px] font-sans text-[#0D2440]/50 dark:text-white/50 uppercase font-medium">

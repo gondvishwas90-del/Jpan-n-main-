@@ -16,12 +16,12 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative z-30 bg-[#E8F1FA] dark:bg-[#071420] font-sans border-t border-[#7BA4D0]/30 dark:border-[#1C3742] transition-colors duration-500 overflow-hidden">
+    <footer className="relative z-30 bg-white dark:bg-[#070b14] font-sans border-t border-[#0D2440]/[0.08] dark:border-white/10 transition-colors duration-500 overflow-hidden">
 
 
       <div className="container-custom relative z-10 pt-12 sm:pt-14 pb-6 sm:pb-7">
         {/* Compact, Highly-Efficient 2-Column Upper Section with comfortable breathing room */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end pb-7 sm:pb-8 border-b border-[#7BA4D0]/25 dark:border-white/10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end pb-7 sm:pb-8 border-b border-[#0D2440]/10 dark:border-white/10">
           {/* Left Column: Sleek Editorial Headline */}
           <div className="lg:col-span-7 space-y-3.5">
             <h2 className="text-xl sm:text-2xl lg:text-[30px] font-heading font-black text-[#0D2440] dark:text-white leading-snug tracking-tight max-w-2xl">
@@ -77,14 +77,14 @@ export function Footer() {
               priority
             />
           </div>
-          <div className="hidden md:block h-10 sm:h-12 md:h-14 w-px bg-[#7BA4D0]/40 dark:bg-white/20 shrink-0" />
+          <div className="hidden md:block h-10 sm:h-12 md:h-14 w-px bg-[#0D2440]/15 dark:bg-white/20 shrink-0" />
           <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.35rem] font-heading font-black tracking-[0.16em] sm:tracking-[0.22em] md:tracking-[0.26em] uppercase text-[#0D2440] dark:text-white whitespace-nowrap leading-none shrink-0">
             Precision Engineered
           </span>
         </div>
 
         {/* Compact Bottom Sub-Bar */}
-        <div className="pt-4 sm:pt-5 border-t border-[#7BA4D0]/25 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-sans text-[#0D2440]/65 dark:text-slate-400 font-medium">
+        <div className="pt-4 sm:pt-5 border-t border-[#0D2440]/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-sans text-[#0D2440]/65 dark:text-slate-400 font-medium">
           <div>
             © {new Date().getFullYear()} J Pan Tubular Components Ltd. All rights reserved.
           </div>
