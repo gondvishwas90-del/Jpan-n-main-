@@ -213,7 +213,7 @@ function CardRenderer({ item }: { item: StreamItem }) {
   }
 
   return (
-    <div className="relative w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/95 via-white/85 to-white/95 dark:from-[#0D2440]/95 dark:via-[#0D2440]/85 dark:to-[#0D2440]/95 p-5 border border-white/80 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.9),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_14px_36px_rgba(13,36,64,0.09)] backdrop-blur-md overflow-hidden">
+    <div className="relative w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/[0.22] via-white/[0.05] to-white/[0.10] dark:from-white/[0.09] dark:via-white/[0.02] dark:to-white/[0.05] p-5 border border-white/60 dark:border-white/20 flex flex-col justify-between shrink-0 text-[#0D2440] dark:text-white transition-all duration-300 hover:border-white/90 dark:hover:border-white/40 shadow-[inset_0_1.5px_1px_0_rgba(255,255,255,0.85),inset_0_-1px_1px_0_rgba(255,255,255,0.25),0_12px_32px_rgba(13,36,64,0.06)] backdrop-blur-[2px] overflow-hidden">
       {/* Top Specular Rim */}
       <div className="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
 

@@ -53,28 +53,26 @@ export function RelayWaveBackground({
       uniform float uVelocity;   // Real-time scroll speed
       uniform vec2 uMouse;
 
-      // Color Palette: Faded, Sophisticated Corporate Blues & Cyans
-      const vec3 cBackground = vec3(0.024, 0.059, 0.106); // #060f1b (Matches Hero)
-      const vec3 cDeepNavy   = vec3(0.047, 0.176, 0.369); // #0c2d5e
-      const vec3 cRoyalBlue  = vec3(0.145, 0.388, 0.922); // #2563eb
-      const vec3 cElectric   = vec3(0.220, 0.741, 0.973); // #38bdf8 (Cyan)
-      const vec3 cIceCyan    = vec3(0.878, 0.949, 0.996); // #e0f2fe
-      const vec3 cCoreWhite  = vec3(0.92, 0.96, 1.0);     // Soft ice white
+      // High-Contrast Precision Industrial Palette
+      const vec3 cBackground   = vec3(0.906, 0.941, 0.980); // #E7F0FA (Brand Light Surface)
+      const vec3 cMineralBlue  = vec3(0.094, 0.443, 0.580); // #187194 (Rich Mineral Blue - Signature Wave Color)
+      const vec3 cDeepNavy     = vec3(0.051, 0.141, 0.251); // #0D2440 (Deep Industrial Navy)
+      const vec3 cDeepBlue     = vec3(0.180, 0.369, 0.600); // #2E5E99 (Industrial Royal Blue)
+      const vec3 cSkyBlue      = vec3(0.420, 0.640, 0.840); // #6BA3D6 (Vibrant Medium Sky Blue)
+      const vec3 cSoftCyan     = vec3(0.680, 0.860, 0.970); // Soft Cyan Silk Highlight
+      const vec3 cWhiteCrest   = vec3(1.000, 1.000, 1.000); // Pure White Specular Crest
 
-      // Serpentine path matching the user's orange drawing:
-      // Enters top-right (x > 0), sweeps diagonally down to mid-left (x < 0),
-      // loops past center, and sweeps down to bottom-right!
-      // MOVEMENT IS TIED 1:1 TO SCROLLING:
+      // Sweeping serpentine path matching the user's reference drawing:
+      // Enters upper right (+x), sweeps in a wide rightward arc,
+      // and loops gracefully through the screen.
       float getRiverPath(float y, float scroll, float time, float vel) {
-        // Direct scroll progression (scrolling physically moves the river through the screen)
-        float travel = scroll * 2.4 + vel * 0.6;
-        float phase = (1.0 - y) * 2.8 + travel;
+        float travel = scroll * 2.0 + vel * 0.5;
+        float phase = (1.0 - y) * 2.6 + travel;
 
-        float s1 = sin(phase) * 0.36;
-        float s2 = cos(phase * 0.58) * 0.16;
+        float s1 = sin(phase) * 0.38 + 0.16; // Rightward swing matching the orange drawing
+        float s2 = cos(phase * 0.58) * 0.18;
         
-        // Very subtle ambient breathing (does NOT look like a running video)
-        float microBreathe = sin(phase * 1.6 + time * 0.25) * 0.018;
+        float microBreathe = sin(phase * 1.6 + time * 0.25) * 0.02;
 
         return s1 + s2 + microBreathe;
       }
@@ -98,52 +96,57 @@ export function RelayWaveBackground({
         float fluidRipple = sin(yNorm * 8.0 - uScroll * 3.0 + uTime * 0.3) * 0.02;
         float dist = abs(p.x - riverX + fluidRipple);
 
-        // --- LAYER 1: Broad Volumetric Ambient Canopy (Softest feathering) ---
-        float mistWidth = 1.05;
-        float mistGlow = exp(-pow(dist / mistWidth, 2.0) * 1.25);
+        // --- LAYER 1: Broad Volumetric Ambient Canopy ---
+        float mistWidth = 1.75;
+        float mistGlow = exp(-pow(dist / mistWidth, 2.0) * 1.10);
 
-        // --- LAYER 2: Wide Velvety Blue Body (Broad river presence) ---
-        float bodyWidth = 0.62;
-        float bodyGlow = exp(-pow(dist / bodyWidth, 2.0) * 1.75);
+        // --- LAYER 2: Wide Velvety Mineral Blue Body ---
+        float bodyWidth = 1.05;
+        float bodyGlow = exp(-pow(dist / bodyWidth, 2.0) * 1.55);
 
-        // --- LAYER 3: Soft Ice Cyan / White Core ---
-        float coreWidth = 0.28;
-        float coreGlow = exp(-pow(dist / coreWidth, 2.0) * 2.6);
+        // --- LAYER 3: Deep Core & Specular Crest ---
+        float coreWidth = 0.42;
+        float coreGlow = exp(-pow(dist / coreWidth, 2.0) * 2.20);
 
-        // --- LAYER 4: Broad Flowing Silk Folds (Travel with scroll) ---
-        float fold1 = exp(-pow(abs(p.x - riverX + sin(yNorm * 4.5 + uScroll * 1.5) * 0.16) / 0.28, 2.0) * 1.8);
-        float fold2 = exp(-pow(abs(p.x - riverX - cos(yNorm * 3.8 - uScroll * 1.2) * 0.18) / 0.32, 2.0) * 1.8);
-        float silkFlow = (fold1 * 0.6 + fold2 * 0.5) * (0.85 + 0.2 * sin(yNorm * 5.0 - uScroll * 2.0));
+        // --- LAYER 4: Broad Flowing Silk Folds ---
+        float fold1 = exp(-pow(abs(p.x - riverX + sin(yNorm * 4.5 + uScroll * 1.5) * 0.26) / 0.44, 2.0) * 1.8);
+        float fold2 = exp(-pow(abs(p.x - riverX - cos(yNorm * 3.8 - uScroll * 1.2) * 0.28) / 0.48, 2.0) * 1.8);
+        float silkFlow = (fold1 * 0.55 + fold2 * 0.45) * (0.85 + 0.2 * sin(yNorm * 5.0 - uScroll * 2.0));
 
         // --- LAYER 5: Secondary Ethereal Companion Veil ---
-        float compX = getRiverPath(yNorm, uScroll + 0.12, uTime * 0.7, uVelocity) * aspect * 0.85;
+        float compX = getRiverPath(yNorm, uScroll + 0.14, uTime * 0.7, uVelocity) * aspect * 0.88;
         float compDist = abs(p.x - compX);
-        float compGlow = exp(-pow(compDist / 0.88, 2.0) * 1.6);
+        float compGlow = exp(-pow(compDist / 1.30, 2.0) * 1.45);
 
-        // Faded, Elegant Color Composition
-        vec3 waveColor = vec3(0.0);
+        // Bold Optical Density: Strikingly visible and unmistakable
+        float totalAlpha = clamp(mistGlow * 0.40 + bodyGlow * 0.75 + coreGlow * 0.65 + silkFlow * 0.35 + compGlow * 0.30, 0.0, 0.90);
 
-        // Broad Ambient Mist
-        waveColor += cDeepNavy * (mistGlow * 0.38) + cRoyalBlue * (mistGlow * 0.16);
+        // Rich Multi-Dimensional Color Composition:
+        // 1. Base ribbon envelope: Sky Blue
+        vec3 ribbon = cSkyBlue;
 
-        // Companion Veil
-        waveColor += cDeepNavy * (compGlow * 0.15) + cRoyalBlue * (compGlow * 0.07);
+        // 2. Main Ribbon Body: Saturated #187194 Mineral Blue!
+        ribbon = mix(ribbon, cMineralBlue, bodyGlow * 0.92);
 
-        // Fluid Body
-        waveColor += cRoyalBlue * (bodyGlow * 0.24) + cElectric * (bodyGlow * 0.16);
+        // 3. Deep Core Contrast: Deep Blue (#2E5E99) & Deep Navy (#0D2440)
+        ribbon = mix(ribbon, cDeepBlue, coreGlow * 0.70);
+        ribbon = mix(ribbon, cDeepNavy, pow(coreGlow, 2.0) * 0.50);
 
-        // Silk Undulations
-        waveColor += cIceCyan * (silkFlow * 0.12);
+        // 4. Secondary Companion Stream: Rich #187194 Mineral Blue
+        ribbon = mix(ribbon, cMineralBlue, compGlow * 0.50);
 
-        // Faded Core
-        waveColor += cIceCyan * (coreGlow * 0.22) + cCoreWhite * (coreGlow * 0.15);
+        // 5. Specular White Light Rim running along the ridge
+        ribbon = mix(ribbon, cWhiteCrest, pow(coreGlow, 2.2) * 0.80);
 
-        // Combine softly with midnight background
-        vec3 col = cBackground + waveColor;
+        // 6. Silk Highlights: Luminous soft cyan
+        ribbon = mix(ribbon, cSoftCyan, silkFlow * 0.30);
 
-        // Viewport edge vignette
-        float vignette = smoothstep(0.0, 0.08, uv.x) * smoothstep(1.0, 0.92, uv.x);
-        col = mix(cBackground, col, vignette);
+        // Combine boldly over the light #E7F0FA canvas
+        vec3 col = mix(cBackground, ribbon, totalAlpha);
+
+        // Viewport edge softening
+        float edgeVignette = smoothstep(0.0, 0.05, uv.x) * smoothstep(1.0, 0.95, uv.x);
+        col = mix(cBackground, col, edgeVignette);
 
         gl_FragColor = vec4(col, 1.0);
       }
@@ -168,8 +171,8 @@ export function RelayWaveBackground({
     const quad = new THREE.Mesh(geometry, material);
     scene.add(quad);
 
-    // 3. Floating Ambient Glowing Dust Motes
-    const MOTE_COUNT = 65;
+    // 3. Floating Ambient Glowing Dust Motes (Subtle Crystalline Particles)
+    const MOTE_COUNT = 45;
     const moteGeo = new THREE.BufferGeometry();
     const motePos = new Float32Array(MOTE_COUNT * 3);
     const moteSeeds = new Float32Array(MOTE_COUNT * 3);
@@ -186,11 +189,10 @@ export function RelayWaveBackground({
     moteGeo.setAttribute("position", new THREE.BufferAttribute(motePos, 3));
 
     const moteMat = new THREE.PointsMaterial({
-      color: 0x7dd3fc,
-      size: 2.0,
+      color: 0x187194, // #187194 Mineral Blue
+      size: 2.2,
       transparent: true,
-      opacity: 0.3,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.18,
       depthWrite: false,
     });
     const motes = new THREE.Points(moteGeo, moteMat);
@@ -324,7 +326,7 @@ export function RelayWaveBackground({
   return (
     <div
       ref={containerRef}
-      className={`absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden bg-[#060f1b] ${className}`}
+      className={`absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden bg-[#E7F0FA] ${className}`}
       style={{ zIndex: 0 }}
       aria-hidden="true"
     >
@@ -332,9 +334,9 @@ export function RelayWaveBackground({
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          opacity: 0.08,
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.35) 1px, transparent 0)`,
-          backgroundSize: "46px 46px",
+          opacity: 0.14,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(46, 94, 153, 0.20) 1px, transparent 0)`,
+          backgroundSize: "44px 44px",
         }}
       />
     </div>

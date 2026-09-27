@@ -192,7 +192,7 @@ export function Industries() {
   };
 
   return (
-    <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-transparent text-white overflow-hidden border-y border-white/20 transition-colors duration-500">
+    <section className="relative pt-16 md:pt-24 pb-20 md:pb-32 bg-transparent text-[#0D2440] dark:text-white overflow-hidden border-y border-[#7BA4D0]/20 transition-colors duration-500">
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center justify-center mb-12 lg:mb-16 max-w-3xl mx-auto">

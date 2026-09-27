@@ -8,8 +8,10 @@ export function CTAStrip() {
   return (
     <section className="relative py-14 md:py-20 bg-transparent transition-colors duration-300">
       <div className="container-custom relative z-10 w-full">
-        {/* Pure Architectural Solid Card Container */}
-        <div className="relative rounded-3xl bg-white dark:bg-[#0c1a2e] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden border border-slate-200/90 dark:border-white/10 shadow-xl">
+        {/* Pure Architectural Glass Box Container */}
+        <div className="relative rounded-3xl bg-gradient-to-b from-white/[0.25] via-white/[0.08] to-white/[0.14] dark:from-white/[0.09] dark:via-white/[0.02] dark:to-white/[0.05] text-[#0D2440] dark:text-white p-8 sm:p-12 md:p-14 lg:p-16 overflow-hidden border border-white/60 dark:border-white/20 shadow-[inset_0_2px_1.5px_0_rgba(255,255,255,0.85),inset_0_-1.5px_1px_0_rgba(255,255,255,0.25),0_20px_48px_rgba(13,36,64,0.08)] backdrop-blur-[2px]">
+          {/* Razor-sharp Specular Glass Top Sheen */}
+          <div className="absolute top-0 left-8 right-8 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 dark:via-white/50 to-transparent pointer-events-none z-20" />
           {/* Grid Content inside the Card */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* Left Column: Authoritative Editorial Heading & Subtext */}
