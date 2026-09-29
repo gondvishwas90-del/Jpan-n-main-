@@ -34,8 +34,12 @@ export default function Home() {
           <Testimonials />
           <CTAStrip />
           <ContactPreview />
-          <ContactMap />
         </div>
+      </div>
+
+      {/* 3. Globe Section (<ContactMap />) - 100% Protected from any canvas or wave effect */}
+      <div className="relative w-full z-10">
+        <ContactMap />
       </div>
     </div>
   );

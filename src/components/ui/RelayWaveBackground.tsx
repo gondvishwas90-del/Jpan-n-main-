@@ -8,34 +8,63 @@ export interface RelayWaveBackgroundProps {
   speed?: number;
 }
 
+/**
+ * Awwwards-Caliber Precision Industrial Fluid & Thermal Caustics Background
+ * 
+ * Inspired by high-end engineering showcases (Apple Pro, Polestar, Leica).
+ * Blends liquid copper thermal flowlines with JPAN deep cobalt currents,
+ * subtle laser metrology CAD grid lines, and interactive mouse/scroll fluid dynamics.
+ * 
+ * Fully responsive to Light and Dark mode, perfectly preserving card legibility.
+ */
 export function RelayWaveBackground({
   className = "",
   speed = 1.0,
 }: RelayWaveBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef({ current: 0, target: 0, velocity: 0 });
-  const mouseRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0 });
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
+    // Detect device capabilities & reduced motion
+    const isMobile = window.innerWidth <= 768;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.0 : 1.5);
+
+    // Check initial dark mode state
+    let isDark = document.documentElement.classList.contains("dark");
+    const observer = new MutationObserver(() => {
+      isDark = document.documentElement.classList.contains("dark");
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
     // 1. Scene, Camera, and WebGL Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: "high-performance",
-    });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    container.appendChild(renderer.domElement);
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: false,
+        powerPreference: "high-performance",
+      });
+    } catch {
+      return;
+    }
 
-    // 2. Interactive Scroll-Driven Color Flow Shader
-    // The wave's travel and macro movement are 100% DRIVEN BY SCROLLING,
-    // avoiding the "video looping in background" feel while ensuring the first end starts in section 1.
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(dpr);
+    renderer.setClearColor(0x000000, 0.0);
+
+    const canvas = renderer.domElement;
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.display = "block";
+    container.appendChild(canvas);
+
+    // 2. High-Precision Awwwards Liquid Metal Shader
     const vertexShader = `
       varying vec2 vUv;
       void main() {
@@ -47,278 +76,232 @@ export function RelayWaveBackground({
     const fragmentShader = `
       precision highp float;
       varying vec2 vUv;
+
       uniform vec2 uResolution;
       uniform float uTime;
-      uniform float uScroll;     // Number of viewport heights scrolled (0.0 at top of Hero)
-      uniform float uVelocity;   // Real-time scroll speed
+      uniform float uScroll;
       uniform vec2 uMouse;
+      uniform float uIsDark;
+      uniform float uSpeed;
 
-      // High-Contrast Precision Industrial Palette
-      const vec3 cBackground   = vec3(0.906, 0.941, 0.980); // #E7F0FA (Brand Light Surface)
-      const vec3 cMineralBlue  = vec3(0.094, 0.443, 0.580); // #187194 (Rich Mineral Blue - Signature Wave Color)
-      const vec3 cDeepNavy     = vec3(0.051, 0.141, 0.251); // #0D2440 (Deep Industrial Navy)
-      const vec3 cDeepBlue     = vec3(0.180, 0.369, 0.600); // #2E5E99 (Industrial Royal Blue)
-      const vec3 cSkyBlue      = vec3(0.420, 0.640, 0.840); // #6BA3D6 (Vibrant Medium Sky Blue)
-      const vec3 cSoftCyan     = vec3(0.680, 0.860, 0.970); // Soft Cyan Silk Highlight
-      const vec3 cWhiteCrest   = vec3(1.000, 1.000, 1.000); // Pure White Specular Crest
+      // Simplex 2D noise implementation for silky domain warping
+      vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
 
-      // Sweeping serpentine path matching the user's reference drawing:
-      // Enters upper right (+x), sweeps in a wide rightward arc,
-      // and loops gracefully through the screen.
-      float getRiverPath(float y, float scroll, float time, float vel) {
-        float travel = scroll * 2.0 + vel * 0.5;
-        float phase = (1.0 - y) * 2.6 + travel;
+      float snoise(vec2 v){
+        const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                           -0.577350269189626, 0.024390243902439);
+        vec2 i  = floor(v + dot(v, C.yy) );
+        vec2 x0 = v -   i + dot(i, C.xx);
+        vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+        vec4 x12 = x0.xyxy + C.xxzz;
+        x12.xy -= i1;
+        i = mod(i, 289.0);
+        vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+              + i.x + vec3(0.0, i1.x, 1.0 ));
+        vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+        m = m*m ;
+        m = m*m ;
+        vec3 x = 2.0 * fract(p * C.www) - 1.0;
+        vec3 h = abs(x) - 0.5;
+        vec3 ox = floor(x + 0.5);
+        vec3 a0 = x - ox;
+        m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+        vec3 g;
+        g.x  = a0.x  * x0.x  + h.x  * x0.y;
+        g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+        return 130.0 * dot(m, g);
+      }
 
-        float s1 = sin(phase) * 0.38 + 0.16; // Rightward swing matching the orange drawing
-        float s2 = cos(phase * 0.58) * 0.18;
-        
-        float microBreathe = sin(phase * 1.6 + time * 0.25) * 0.02;
-
-        return s1 + s2 + microBreathe;
+      // Fractional Brownian Motion (fBm)
+      float fbm(vec2 p) {
+        float total = 0.0;
+        float amp = 0.55;
+        for (int i = 0; i < 4; i++) {
+          total += amp * snoise(p);
+          p = p * 2.03 + vec2(1.2, 0.7);
+          amp *= 0.48;
+        }
+        return total;
       }
 
       void main() {
         vec2 uv = vUv;
-        float aspect = uResolution.x / uResolution.y;
-        vec2 p = (uv - 0.5);
-        p.x *= aspect;
+        vec2 p = (gl_FragCoord.xy * 2.0 - uResolution.xy) / min(uResolution.x, uResolution.y);
 
-        // Mouse Parallax
-        p.x += uMouse.x * 0.03;
-        p.y += uMouse.y * 0.02;
+        // Aspect corrected coordinates
+        float t = uTime * 0.18 * uSpeed;
 
-        float yNorm = uv.y; // 0.0 (bottom of screen) to 1.0 (top of screen)
+        // Interactive mouse displacement (soft magnetic wake)
+        vec2 mouseOffset = (uMouse - 0.5) * 1.6;
+        float mouseDist = length(p - mouseOffset);
+        float mouseImpulse = exp(-mouseDist * 2.8) * 0.45;
 
-        // 1. Primary River Spine Coordinate
-        float riverX = getRiverPath(yNorm, uScroll, uTime, uVelocity) * aspect;
+        // Scroll flow velocity
+        float scrollOffset = uScroll * 1.8;
 
-        // Subtle fluid ripple along the stream
-        float fluidRipple = sin(yNorm * 8.0 - uScroll * 3.0 + uTime * 0.3) * 0.02;
-        float dist = abs(p.x - riverX + fluidRipple);
+        // Multi-octave domain warping (simulating laminar thermal flow of copper & refrigerant)
+        vec2 q = vec2(
+          fbm(p * 0.85 + vec2(0.0, t * 0.8) + vec2(mouseImpulse * 0.3, scrollOffset * 0.2)),
+          fbm(p * 0.85 + vec2(4.3, t * 0.6) - vec2(mouseImpulse * 0.2, 0.0))
+        );
 
-        // --- LAYER 1: Broad Volumetric Ambient Canopy ---
-        float mistWidth = 1.75;
-        float mistGlow = exp(-pow(dist / mistWidth, 2.0) * 1.10);
+        vec2 r = vec2(
+          fbm(p * 1.2 + q * 1.5 + vec2(1.7, 9.2) + vec2(t * 0.4, 0.0)),
+          fbm(p * 1.2 + q * 1.5 + vec2(8.3, 2.8) + vec2(0.0, t * 0.5))
+        );
 
-        // --- LAYER 2: Wide Velvety Mineral Blue Body ---
-        float bodyWidth = 1.05;
-        float bodyGlow = exp(-pow(dist / bodyWidth, 2.0) * 1.55);
+        float flow = fbm(p * 0.95 + r * 1.8 + mouseImpulse * 0.5);
 
-        // --- LAYER 3: Deep Core & Specular Crest ---
-        float coreWidth = 0.42;
-        float coreGlow = exp(-pow(dist / coreWidth, 2.0) * 2.20);
+        // --- JPAN BRAND COLOR PALETTE DEFINITION ---
+        // 1. JPAN Deep Cobalt / Sapphire: #2E5E99 -> vec3(0.18, 0.368, 0.6)
+        vec3 cCobaltPrimary = vec3(0.180, 0.368, 0.600);
+        // 2. Luminous Ice Cyan / Highlight: #7BA4D0 -> vec3(0.482, 0.643, 0.815)
+        vec3 cCobaltHighlight = vec3(0.482, 0.643, 0.815);
+        // 3. Precision Metallic Copper / Gold: #D97706 / #E06D3B -> vec3(0.85, 0.466, 0.231)
+        vec3 cCopper = vec3(0.850, 0.466, 0.231);
+        vec3 cCopperGleam = vec3(0.960, 0.680, 0.420);
 
-        // --- LAYER 4: Broad Flowing Silk Folds ---
-        float fold1 = exp(-pow(abs(p.x - riverX + sin(yNorm * 4.5 + uScroll * 1.5) * 0.26) / 0.44, 2.0) * 1.8);
-        float fold2 = exp(-pow(abs(p.x - riverX - cos(yNorm * 3.8 - uScroll * 1.2) * 0.28) / 0.48, 2.0) * 1.8);
-        float silkFlow = (fold1 * 0.55 + fold2 * 0.45) * (0.85 + 0.2 * sin(yNorm * 5.0 - uScroll * 2.0));
+        // Dark vs Light Base Field
+        vec3 cDarkBase = vec3(0.039, 0.078, 0.133); // #0A1422 deep midnight navy
+        vec3 cLightBase = vec3(0.905, 0.941, 0.980); // #E7F0FA clean ice pearl
 
-        // --- LAYER 5: Secondary Ethereal Companion Veil ---
-        float compX = getRiverPath(yNorm, uScroll + 0.14, uTime * 0.7, uVelocity) * aspect * 0.88;
-        float compDist = abs(p.x - compX);
-        float compGlow = exp(-pow(compDist / 1.30, 2.0) * 1.45);
+        vec3 baseField = mix(cLightBase, cDarkBase, uIsDark);
 
-        // Bold Optical Density: Strikingly visible and unmistakable
-        float totalAlpha = clamp(mistGlow * 0.40 + bodyGlow * 0.75 + coreGlow * 0.65 + silkFlow * 0.35 + compGlow * 0.30, 0.0, 0.90);
+        // 1. Primary Cobalt Fluid Ribbons
+        float ribbon1 = smoothstep(-0.4, 0.7, flow);
+        vec3 colorFlow = mix(baseField, cCobaltPrimary, ribbon1 * (uIsDark > 0.5 ? 0.75 : 0.28));
 
-        // Rich Multi-Dimensional Color Composition:
-        // 1. Base ribbon envelope: Sky Blue
-        vec3 ribbon = cSkyBlue;
+        // 2. Cyan Caustic Rim
+        float rim = pow(clamp(flow + 0.3, 0.0, 1.0), 3.2);
+        colorFlow = mix(colorFlow, cCobaltHighlight, rim * (uIsDark > 0.5 ? 0.65 : 0.35));
 
-        // 2. Main Ribbon Body: Saturated #187194 Mineral Blue!
-        ribbon = mix(ribbon, cMineralBlue, bodyGlow * 0.92);
+        // 3. Molten Copper Streamlines (Symbolizing copper thermal piping craft)
+        // High-contrast, narrow filaments of glowing metallic copper
+        float copperMask = smoothstep(0.45, 0.68, r.x) * smoothstep(0.42, 0.65, q.y);
+        float copperShine = pow(clamp(r.y * 1.2, 0.0, 1.0), 4.5);
+        vec3 copperFinal = mix(cCopper, cCopperGleam, copperShine);
 
-        // 3. Deep Core Contrast: Deep Blue (#2E5E99) & Deep Navy (#0D2440)
-        ribbon = mix(ribbon, cDeepBlue, coreGlow * 0.70);
-        ribbon = mix(ribbon, cDeepNavy, pow(coreGlow, 2.0) * 0.50);
+        colorFlow = mix(colorFlow, copperFinal, copperMask * (uIsDark > 0.5 ? 0.70 : 0.45));
 
-        // 4. Secondary Companion Stream: Rich #187194 Mineral Blue
-        ribbon = mix(ribbon, cMineralBlue, compGlow * 0.50);
+        // 4. Subtle Engineering CAD Metrology Grid (Awwwards blueprint detail)
+        vec2 gridUv = fract(uv * vec2(28.0, 16.0));
+        float gridLineX = smoothstep(0.965, 0.99, gridUv.x);
+        float gridLineY = smoothstep(0.965, 0.99, gridUv.y);
+        float cadGrid = max(gridLineX, gridLineY) * 0.045; // ultra-faint, elegant
 
-        // 5. Specular White Light Rim running along the ridge
-        ribbon = mix(ribbon, cWhiteCrest, pow(coreGlow, 2.2) * 0.80);
+        // Micro-plus crosses at major coordinates
+        vec2 crossUv = fract(uv * vec2(7.0, 4.0)) - 0.5;
+        float crossArm = min(
+          max(abs(crossUv.x) - 0.015, abs(crossUv.y) - 0.002),
+          max(abs(crossUv.y) - 0.015, abs(crossUv.x) - 0.002)
+        );
+        float crossMark = (1.0 - smoothstep(0.0, 0.006, crossArm)) * 0.06;
 
-        // 6. Silk Highlights: Luminous soft cyan
-        ribbon = mix(ribbon, cSoftCyan, silkFlow * 0.30);
+        vec3 gridColor = uIsDark > 0.5 ? vec3(0.482, 0.643, 0.815) : vec3(0.180, 0.368, 0.600);
+        colorFlow += gridColor * (cadGrid + crossMark);
 
-        // Combine boldly over the light #E7F0FA canvas
-        vec3 col = mix(cBackground, ribbon, totalAlpha);
+        // 5. Cinematic Vignette (keeps center luminous, corners deep)
+        float vignette = 1.0 - length((uv - 0.5) * 1.35);
+        vignette = smoothstep(0.1, 0.95, vignette);
 
-        // Viewport edge softening
-        float edgeVignette = smoothstep(0.0, 0.05, uv.x) * smoothstep(1.0, 0.95, uv.x);
-        col = mix(cBackground, col, edgeVignette);
+        // In light mode: ensure high contrast readability for cards
+        float finalAlpha = uIsDark > 0.5 ? (0.65 + flow * 0.25) * vignette : (0.28 + flow * 0.15) * vignette;
 
-        gl_FragColor = vec4(col, 1.0);
+        gl_FragColor = vec4(colorFlow, finalAlpha);
       }
     `;
 
+    // 3. Uniforms Setup
     const uniforms = {
-      uResolution: { value: new THREE.Vector2(container.clientWidth, container.clientHeight) },
-      uTime: { value: 0 },
-      uScroll: { value: 0 },
-      uVelocity: { value: 0 },
-      uMouse: { value: new THREE.Vector2(0, 0) },
+      uResolution: { value: new THREE.Vector2(container.clientWidth * dpr, container.clientHeight * dpr) },
+      uTime: { value: 0.0 },
+      uScroll: { value: 0.0 },
+      uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+      uIsDark: { value: isDark ? 1.0 : 0.0 },
+      uSpeed: { value: reducedMotion ? 0.3 : speed },
     };
 
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
       uniforms,
-      depthWrite: false,
-    });
-
-    const geometry = new THREE.PlaneGeometry(2, 2);
-    const quad = new THREE.Mesh(geometry, material);
-    scene.add(quad);
-
-    // 3. Floating Ambient Glowing Dust Motes (Subtle Crystalline Particles)
-    const MOTE_COUNT = 45;
-    const moteGeo = new THREE.BufferGeometry();
-    const motePos = new Float32Array(MOTE_COUNT * 3);
-    const moteSeeds = new Float32Array(MOTE_COUNT * 3);
-
-    for (let i = 0; i < MOTE_COUNT; i++) {
-      motePos[i * 3] = (Math.random() - 0.5) * 2;
-      motePos[i * 3 + 1] = (Math.random() - 0.5) * 2;
-      motePos[i * 3 + 2] = 0;
-
-      moteSeeds[i * 3] = 0.04 + Math.random() * 0.1;
-      moteSeeds[i * 3 + 1] = Math.random() * 100;
-      moteSeeds[i * 3 + 2] = 0.5 + Math.random() * 1.5;
-    }
-    moteGeo.setAttribute("position", new THREE.BufferAttribute(motePos, 3));
-
-    const moteMat = new THREE.PointsMaterial({
-      color: 0x187194, // #187194 Mineral Blue
-      size: 2.2,
       transparent: true,
-      opacity: 0.18,
       depthWrite: false,
+      blending: THREE.NormalBlending,
     });
-    const motes = new THREE.Points(moteGeo, moteMat);
-    scene.add(motes);
 
-    // 4. Scroll Tracking (Directly integrated with Lenis & window scroll)
-    const getScrollY = () => {
-      if (typeof window === "undefined") return 0;
-      const lenis = (window as unknown as { __lenis?: { scroll?: number } }).__lenis;
-      if (lenis && typeof lenis.scroll === "number") {
-        return lenis.scroll;
-      }
-      return window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+    scene.add(mesh);
+
+    // 4. Mouse & Scroll Physics Tracking
+    const mouse = { x: 0.5, y: 0.5, targetX: 0.5, targetY: 0.5 };
+    const scroll = { current: 0, target: 0 };
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouse.targetX = e.clientX / window.innerWidth;
+      mouse.targetY = 1.0 - e.clientY / window.innerHeight;
     };
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
 
-    const updateScrollTarget = () => {
-      const vh = window.innerHeight || 1;
-      let relativeScroll = 0;
-      if (container) {
-        const parent = container.parentElement;
-        if (parent) {
-          const rect = parent.getBoundingClientRect();
-          relativeScroll = Math.max(0, -rect.top);
-        }
+    const onScroll = () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll > 0) {
+        scroll.target = window.scrollY / maxScroll;
       }
-      if (relativeScroll === 0) {
-        const scrollY = getScrollY();
-        relativeScroll = Math.max(0, scrollY - vh * 0.9);
-      }
-      scrollRef.current.target = relativeScroll / vh;
     };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) * 2 - 1;
-      const y = -(e.clientY / window.innerHeight) * 2 + 1;
-      mouseRef.current.targetX = x;
-      mouseRef.current.targetY = y;
-    };
-
-    window.addEventListener("scroll", updateScrollTarget, { passive: true });
-    window.addEventListener("wheel", updateScrollTarget, { passive: true });
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    updateScrollTarget();
-
-    // 5. Animation Loop
-    let animationFrameId: number;
-    const clock = new THREE.Clock();
-    let previousScroll = 0;
-
-    const animate = () => {
-      animationFrameId = requestAnimationFrame(animate);
-
-      // Continually refresh scroll target from Lenis or native window scroll
-      updateScrollTarget();
-
-      const elapsed = clock.getElapsedTime() * speed;
-
-      // Smooth scroll lerp with tactile responsiveness
-      const currentScroll = scrollRef.current.current;
-      const targetScroll = scrollRef.current.target;
-      scrollRef.current.current += (targetScroll - currentScroll) * 0.08;
-      
-      const scrollVelocity = (scrollRef.current.current - previousScroll) * 20;
-      previousScroll = scrollRef.current.current;
-
-      // Mouse lerp
-      mouseRef.current.x += (mouseRef.current.targetX - mouseRef.current.x) * 0.05;
-      mouseRef.current.y += (mouseRef.current.targetY - mouseRef.current.y) * 0.05;
-
-      // Update Uniforms
-      uniforms.uTime.value = elapsed;
-      uniforms.uScroll.value = scrollRef.current.current;
-      uniforms.uVelocity.value = scrollVelocity;
-      uniforms.uMouse.value.set(mouseRef.current.x, mouseRef.current.y);
-
-      // Animate Motes (drift down when scrolling)
-      const mPos = moteGeo.attributes.position.array as Float32Array;
-      for (let i = 0; i < MOTE_COUNT; i++) {
-        const spd = moteSeeds[i * 3];
-        const seed = moteSeeds[i * 3 + 1];
-
-        // Motes physically move with scroll
-        mPos[i * 3 + 1] -= spd * 0.015 + scrollVelocity * 0.02;
-        mPos[i * 3] += Math.sin(elapsed * 0.3 + seed) * 0.002;
-
-        if (mPos[i * 3 + 1] < -1.1) {
-          mPos[i * 3 + 1] = 1.1;
-          mPos[i * 3] = (Math.random() - 0.5) * 2;
-        } else if (mPos[i * 3 + 1] > 1.1) {
-          mPos[i * 3 + 1] = -1.1;
-        }
-      }
-      moteGeo.attributes.position.needsUpdate = true;
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // 6. Handle Resize
-    const handleResize = () => {
+    const onResize = () => {
       if (!container) return;
       const w = container.clientWidth;
       const h = container.clientHeight;
-      uniforms.uResolution.value.set(w, h);
       renderer.setSize(w, h);
-      updateScrollTarget();
+      uniforms.uResolution.value.set(w * dpr, h * dpr);
+    };
+    window.addEventListener("resize", onResize);
+
+    // 5. High-FPS Physics Render Loop
+    let animId: number;
+    let lastTime = performance.now();
+
+    const render = (time: number) => {
+      const dt = Math.min((time - lastTime) / 1000, 0.1);
+      lastTime = time;
+
+      // Mouse smoothing
+      mouse.x += (mouse.targetX - mouse.x) * (reducedMotion ? 0.02 : 0.06);
+      mouse.y += (mouse.targetY - mouse.y) * (reducedMotion ? 0.02 : 0.06);
+      uniforms.uMouse.value.set(mouse.x, mouse.y);
+
+      // Scroll smoothing
+      scroll.current += (scroll.target - scroll.current) * 0.08;
+      uniforms.uScroll.value = scroll.current;
+
+      // Time progression
+      uniforms.uTime.value += dt;
+
+      // Theme toggle update
+      uniforms.uIsDark.value = isDark ? 1.0 : 0.0;
+
+      renderer.render(scene, camera);
+      animId = requestAnimationFrame(render);
     };
 
-    window.addEventListener("resize", handleResize);
+    animId = requestAnimationFrame(render);
 
-    // 7. Cleanup
     return () => {
-      window.removeEventListener("scroll", updateScrollTarget);
-      window.removeEventListener("wheel", updateScrollTarget);
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animId);
+      observer.disconnect();
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
 
-      geometry.dispose();
       material.dispose();
-      moteGeo.dispose();
-      moteMat.dispose();
+      mesh.geometry.dispose();
       renderer.dispose();
-      if (container.contains(renderer.domElement)) {
-        container.removeChild(renderer.domElement);
+      if (canvas.parentElement) {
+        canvas.parentElement.removeChild(canvas);
       }
     };
   }, [speed]);
@@ -326,19 +309,9 @@ export function RelayWaveBackground({
   return (
     <div
       ref={containerRef}
-      className={`absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden bg-[#E7F0FA] ${className}`}
-      style={{ zIndex: 0 }}
-      aria-hidden="true"
-    >
-      {/* Subtle Technical Dot Matrix Coordinate Grid Overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          opacity: 0.14,
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(46, 94, 153, 0.20) 1px, transparent 0)`,
-          backgroundSize: "44px 44px",
-        }}
-      />
-    </div>
+      className={`absolute inset-0 w-full h-full pointer-events-none select-none z-0 ${className}`}
+    />
   );
 }
+
+export default RelayWaveBackground;
