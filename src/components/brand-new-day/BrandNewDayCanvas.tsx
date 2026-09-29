@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { ScrollState, clamp01, smoothstep } from './engine/types';
 import { BeadCloud } from './engine/BeadCloud';
+import { CopperPipeFitting3D } from './models/CopperPipeFitting3D';
 import { MetrologyLattice } from './engine/MetrologyLattice';
 import { ConduitSystem } from './engine/ConduitSystem';
 import { CameraSpine } from './engine/CameraSpine';
@@ -77,9 +78,26 @@ export function BrandNewDayCanvas({ scrollRef, domHandleRef }: BrandNewDayCanvas
     const sceneFog = new THREE.FogExp2(0x150406, 0.003);
     scene.fog = sceneFog;
 
+    // 2b. Studio Lights for PBR Metallic Specular Sheen
+    const ambientLight = new THREE.AmbientLight(0x0d2440, 1.2);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0xfff7ed, 3.2);
+    keyLight.position.set(5, 14, 10);
+    scene.add(keyLight);
+
+    const rimLight = new THREE.DirectionalLight(0x2b4fd0, 2.5);
+    rimLight.position.set(-5, 4, -4);
+    scene.add(rimLight);
+
     // 3. Subsystems
     const cameraRig = new CameraSpine();
     cameraRig.setAspect(container.clientWidth, container.clientHeight);
+
+    // Solid PBR 3D Pipe Fitting
+    const solidFitting = new CopperPipeFitting3D();
+    solidFitting.group.position.set(0, 9, 0);
+    scene.add(solidFitting.group);
 
     const beadCloud = new BeadCloud();
     scene.add(beadCloud.group);
@@ -169,6 +187,18 @@ export function BrandNewDayCanvas({ scrollRef, domHandleRef }: BrandNewDayCanvas
       }
 
       // Update 3D Subsystems
+      if (sp <= 0.28) {
+        solidFitting.group.visible = true;
+        solidFitting.group.position.set(0, 9.0 + Math.sin(sp * Math.PI * 8.0) * 0.25, 0);
+        solidFitting.group.rotation.x = mouseY * 0.18;
+        solidFitting.group.rotation.y = sp * Math.PI * 2.0 + mouseX * 0.28;
+      } else {
+        const exitT = clamp01((sp - 0.28) / 0.12);
+        solidFitting.group.position.z = -exitT * 30.0;
+        solidFitting.group.scale.setScalar(Math.max(0.01, 1.25 * (1.0 - exitT)));
+        solidFitting.group.visible = exitT < 0.99;
+      }
+
       beadCloud.update(localState);
       lattice.update(localState);
       conduits.update(localState, (val) => cameraRig.getSpinePosition(val));
@@ -192,6 +222,7 @@ export function BrandNewDayCanvas({ scrollRef, domHandleRef }: BrandNewDayCanvas
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('resize', onResize);
 
+      solidFitting.dispose();
       beadCloud.dispose();
       lattice.dispose();
       conduits.dispose();
