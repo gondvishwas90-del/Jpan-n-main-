@@ -88,7 +88,7 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
     rimLight.position.set(0, -6, -5);
     scene.add(rimLight);
 
-    // 3. Instantiate the 6 Crystal-Clear 3D Models
+    // 3. Instantiate the 6 Crystal-Clear 3D Models for high-density point sampling
     const models = [
       new CopperPipeFitting3D(),  // 0: AboutSnapshot
       new BrassDistributor3D(),    // 1: Industries
@@ -98,105 +98,118 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
       new RefnetJoint3D(),         // 5: Certifications
     ];
 
-    // Model group wrappers to position independently in designated corners
-    const modelWrappers: THREE.Group[] = [];
+    // Scale models so they sit neatly and comfortably in the corners without crowding cards
     models.forEach((model) => {
-      const wrapper = new THREE.Group();
-      wrapper.add(model.group);
-      scene.add(wrapper);
-      modelWrappers.push(wrapper);
-      model.setOpacity(0);
+      model.group.scale.multiplyScalar(0.95);
     });
 
-    // 4. Pre-sample point clouds for each model (16,000 points each)
-    const POINT_COUNT = 16000;
+    // 4. Sample Ultra-Dense 60,000 Point Cloud for each model
+    const POINT_COUNT = 60000;
     const sampledPointClouds = models.map((model) => model.samplePoints(POINT_COUNT));
 
-    // 5. GPU Particle Morph System
+    // 5. GPU Particle Morph System (Permanently Active Point Cloud)
     const particleMorph = new GpuParticleMorph(POINT_COUNT);
     scene.add(particleMorph.points);
+    particleMorph.setVisible(true);
 
-    // 6. Section Configurations & Designated Empty Corner Coordinates
-    // Scaled appropriately so elements occupy whitespace without overlapping content
-    const cornerScale = isMobile ? 0.55 : isTablet ? 0.75 : 1.0;
-    const xOffset = isMobile ? 1.6 : isTablet ? 2.8 : 3.8;
-    const yOffset = isMobile ? 1.8 : 1.4;
+    // 6. Section Configurations & Dynamic Viewport Corner Positions
+    const getCornerPositions = (cam: THREE.PerspectiveCamera) => {
+      const isMob = window.innerWidth <= 768;
+      const isTab = window.innerWidth > 768 && window.innerWidth <= 1024;
+
+      const vFovRad = THREE.MathUtils.degToRad(cam.fov);
+      const halfHeight = cam.position.z * Math.tan(vFovRad / 2); // ~5.37
+      const halfWidth = halfHeight * cam.aspect;
+
+      // Insets from the screen borders so elements sit nestled purely in the corners,
+      // completely leaving the center container cards unblocked and in 100% prime focus.
+      let cornerX: number;
+      let topY: number;
+      let bottomY: number;
+
+      if (isMob) {
+        cornerX = Math.min(halfWidth - 0.85, 1.4);
+        topY = halfHeight - 1.8;
+        bottomY = -(halfHeight - 1.8);
+      } else if (isTab) {
+        cornerX = Math.max(halfWidth - 2.2, 3.2);
+        topY = halfHeight - 2.2;
+        bottomY = -(halfHeight - 2.2);
+      } else {
+        // Desktop / Ultrawide:
+        // Position comfortably in the corner margins outside the center content cards (x > 5.5)
+        cornerX = Math.max(halfWidth - 2.8, 5.6);
+        topY = Math.min(halfHeight - 2.2, 3.1);
+        bottomY = -Math.min(halfHeight - 2.2, 3.1);
+      }
+
+      return {
+        topRight: new THREE.Vector3(cornerX, topY, 0),
+        bottomLeft: new THREE.Vector3(-cornerX, bottomY, 0),
+        midRight: new THREE.Vector3(cornerX, 0.4, 0),
+        topLeft: new THREE.Vector3(-cornerX, topY, 0),
+        bottomRight: new THREE.Vector3(cornerX, bottomY, 0),
+        floatingCorner: new THREE.Vector3(-cornerX * 0.95, bottomY * 0.85, 0),
+      };
+    };
+
+    const initialCorners = getCornerPositions(camera);
 
     const configs: ProductElementConfig[] = [
       {
         name: "Precision Copper Return Bend & Sensor Tube",
         category: "HVAC & Cold Bending",
         corner: "top-right",
-        position: new THREE.Vector3(xOffset, yOffset, 0),
-        color: new THREE.Color("#d9774a"),
+        position: initialCorners.topRight.clone(),
+        color: new THREE.Color("#fb923c"), // Luminous Polished Copper
       },
       {
         name: "Brass Multi-Port Distributor Manifold",
         category: "Precision CNC Machining",
         corner: "bottom-left",
-        position: new THREE.Vector3(-xOffset, -yOffset, 0),
-        color: new THREE.Color("#d4af37"),
+        position: initialCorners.bottomLeft.clone(),
+        color: new THREE.Color("#facc15"), // Radiant Machined Brass
       },
       {
         name: "VRV High-Pressure Header Assembly",
         category: "Commercial VRF Systems",
         corner: "mid-right",
-        position: new THREE.Vector3(xOffset, 0.4, 0),
-        color: new THREE.Color("#d47a4c"),
+        position: initialCorners.midRight.clone(),
+        color: new THREE.Color("#fbbf24"), // Amber Copper Header
       },
       {
         name: "Heavy-Duty Chiller Suction Assembly",
         category: "Industrial Chiller Lines",
         corner: "mid-left",
-        position: new THREE.Vector3(-xOffset, 0.2, 0),
-        color: new THREE.Color("#cb6c3c"),
+        position: initialCorners.topLeft.clone(),
+        color: new THREE.Color("#ea580c"), // Industrial Deep Bronze
       },
       {
         name: "Industrial SS Strainer & Filter Unit",
         category: "Fluid Filtration Systems",
         corner: "lower-right",
-        position: new THREE.Vector3(xOffset, -yOffset, 0),
-        color: new THREE.Color("#e2e8f0"),
+        position: initialCorners.bottomRight.clone(),
+        color: new THREE.Color("#93c5fd"), // Electropolished SS / Chrome
       },
       {
         name: "Engineered Refnet Y-Joint Connector",
         category: "Aerodynamic Branch Splitters",
         corner: "floating-right",
-        position: new THREE.Vector3(xOffset * 0.9, yOffset * 1.1, 0),
-        color: new THREE.Color("#d9774a"),
+        position: initialCorners.floatingCorner.clone(),
+        color: new THREE.Color("#f97316"), // Laser Braze Copper
       },
     ];
 
-    // Position each wrapper at its respective corner
-    configs.forEach((cfg, idx) => {
-      modelWrappers[idx].position.copy(cfg.position);
-      modelWrappers[idx].scale.setScalar(cornerScale);
-    });
-
-    // Initial state: Model 0 active and 100% crystal clear
-    models[0].setOpacity(1.0);
-
-    // 7. Metrology Blueprint Orbit Ring around active element
-    const orbitGroup = new THREE.Group();
-    const ringMat = new THREE.LineBasicMaterial({
-      color: 0x2563eb,
-      transparent: true,
-      opacity: 0.25,
-      blending: THREE.AdditiveBlending,
-    });
-    for (let r = 0; r < 3; r++) {
-      const ringGeom = new THREE.RingGeometry(2.4 + r * 1.0, 2.42 + r * 1.0, 48);
-      const ring = new THREE.Line(ringGeom, ringMat);
-      ring.rotation.x = Math.PI * 0.35 + r * 0.2;
-      orbitGroup.add(ring);
-    }
-    scene.add(orbitGroup);
-
-    // 8. Interactive Mouse Movement
+    // 8. Interactive Mouse Movement & World Raycast Unprojection
     let mouseX = 0;
     let mouseY = 0;
     let targetMouseX = 0;
     let targetMouseY = 0;
+
+    const mouseNDC = new THREE.Vector2(0, 0);
+    const mouseWorld = new THREE.Vector3(999, 999, 0);
+    const raycaster = new THREE.Raycaster();
+    const zPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
     const onMouseMove = (e: MouseEvent) => {
       targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -234,6 +247,25 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
+
+      const corners = getCornerPositions(camera);
+      configs[0].position.copy(corners.topRight);
+      configs[1].position.copy(corners.bottomLeft);
+      configs[2].position.copy(corners.midRight);
+      configs[3].position.copy(corners.topLeft);
+      configs[4].position.copy(corners.bottomRight);
+      configs[5].position.copy(corners.floatingCorner);
+
+      if (currentSourceIdx >= 0 && currentTargetIdx >= 0) {
+        particleMorph.setSourceAndTarget(
+          sampledPointClouds[currentSourceIdx],
+          sampledPointClouds[currentTargetIdx],
+          configs[currentSourceIdx].position,
+          configs[currentTargetIdx].position,
+          configs[currentSourceIdx].color,
+          configs[currentTargetIdx].color
+        );
+      }
     };
     window.addEventListener("resize", onResize);
 
@@ -242,14 +274,19 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
     let clock = new THREE.Clock();
     let currentSourceIdx = -1;
     let currentTargetIdx = -1;
+    const modelRotation = new THREE.Vector3();
 
     const renderLoop = () => {
-      const delta = clock.getDelta();
       const time = clock.getElapsedTime();
 
       // Smooth mouse lerp
       mouseX += (targetMouseX - mouseX) * 0.08;
       mouseY += (targetMouseY - mouseY) * 0.08;
+
+      // Project mouse into 3D world space at z=0 for interactive particle repulsion
+      mouseNDC.set(mouseX, mouseY);
+      raycaster.setFromCamera(mouseNDC, camera);
+      raycaster.ray.intersectPlane(zPlane, mouseWorld);
 
       // Smooth scroll lerp
       currentScrollSpan += (targetScrollSpan - currentScrollSpan) * 0.12;
@@ -259,7 +296,7 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
       const nextIdx = baseIdx + 1;
       const spanFraction = currentScrollSpan - baseIdx; // 0.0 -> 1.0
 
-      // Update active name in UI
+      // Update active name in UI HUD
       const activeIdx = spanFraction > 0.5 ? nextIdx : baseIdx;
       if (activeIdx !== lastActiveIndex) {
         lastActiveIndex = activeIdx;
@@ -267,7 +304,7 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
         setActiveCategory(configs[activeIdx].category);
       }
 
-      // Configure GPU particle morph pair if indices changed
+      // Configure GPU particle morph pair if section span changed
       if (currentSourceIdx !== baseIdx || currentTargetIdx !== nextIdx) {
         currentSourceIdx = baseIdx;
         currentTargetIdx = nextIdx;
@@ -282,69 +319,15 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
         );
       }
 
-      // Transition Curve:
-      // [0.00 -> 0.15]: Solid Base Model at 100% opacity, stationary in its corner
-      // [0.15 -> 0.85]: GPU Particle Morph active (particles explode, stream, and re-condense)
-      // [0.85 -> 1.00]: Solid Next Model at 100% opacity, stationary in its corner
-      const morphStart = 0.12;
-      const morphEnd = 0.88;
+      // Continuous 3D rotation: Idle spin + interactive mouse tilt parallax
+      modelRotation.set(
+        -mouseY * 0.4 + Math.sin(time * 0.8) * 0.08,
+        mouseX * 0.5 + time * 0.35,
+        Math.cos(time * 0.6) * 0.05
+      );
 
-      let baseOpacity = 0;
-      let nextOpacity = 0;
-      let morphProgress = 0;
-      let particlesVisible = false;
-
-      if (spanFraction < morphStart) {
-        baseOpacity = 1.0;
-        nextOpacity = 0.0;
-        particlesVisible = false;
-        morphProgress = 0.0;
-      } else if (spanFraction > morphEnd) {
-        baseOpacity = 0.0;
-        nextOpacity = 1.0;
-        particlesVisible = false;
-        morphProgress = 1.0;
-      } else {
-        particlesVisible = true;
-        morphProgress = (spanFraction - morphStart) / (morphEnd - morphStart);
-
-        // Cross-fade solid models during the start/end of particle flight
-        baseOpacity = Math.max(0, 1.0 - morphProgress * 2.5);
-        nextOpacity = Math.max(0, (morphProgress - 0.6) * 2.5);
-      }
-
-      // Apply opacities to models
-      models.forEach((model, i) => {
-        if (i === baseIdx) {
-          model.setOpacity(baseOpacity);
-        } else if (i === nextIdx) {
-          model.setOpacity(nextOpacity);
-        } else {
-          model.setOpacity(0);
-        }
-      });
-
-      // Update particle morphing shader
-      particleMorph.setVisible(particlesVisible);
-      if (particlesVisible) {
-        particleMorph.update(morphProgress, time, dpr);
-      }
-
-      // Add gentle idle floating and mouse parallax to the active model wrapper
-      const currentActiveWrapper = modelWrappers[activeIdx];
-      if (currentActiveWrapper) {
-        const floatY = Math.sin(time * 1.5) * 0.12;
-        const floatRot = Math.cos(time * 1.2) * 0.06;
-
-        currentActiveWrapper.position.y = configs[activeIdx].position.y + floatY;
-        currentActiveWrapper.rotation.y = floatRot + mouseX * 0.35;
-        currentActiveWrapper.rotation.x = -mouseY * 0.25;
-
-        // Position metrology orbit ring around active model
-        orbitGroup.position.copy(currentActiveWrapper.position);
-        orbitGroup.rotation.z = time * 0.2;
-        orbitGroup.visible = (baseOpacity > 0.4 || nextOpacity > 0.4);
-      }
+      // Update particle morphing shader permanently (always visible)
+      particleMorph.update(spanFraction, time, dpr, modelRotation, mouseWorld);
 
       renderer.render(scene, camera);
       animId = requestAnimationFrame(renderLoop);
@@ -360,7 +343,6 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
 
       models.forEach((m) => m.dispose());
       particleMorph.dispose();
-      ringMat.dispose();
       renderer.dispose();
       if (canvas.parentElement) {
         canvas.parentElement.removeChild(canvas);
