@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { CTAStrip } from "@/components/home/CTAStrip";
 import { ContactPreview } from "@/components/home/ContactPreview";
 import { ContactMap } from "@/components/shared/ContactMap";
-import { RelayWaveBackground } from "@/components/ui/RelayWaveBackground";
+import { MultiElementStage } from "@/components/3d-elements/MultiElementStage";
 
 export default function Home() {
   return (
@@ -17,11 +17,11 @@ export default function Home() {
       {/* 1. Top Section: Hero (Pure original background, zero wave, protects Navbar) */}
       <Hero />
 
-      {/* 2. Middle Stage: Exact Relay 3D Light Stream & Wave Background (Active for all sections after Hero) */}
+      {/* 2. Middle Stage: Multi-Element 3D Crystal-Clear + GPU Particle Morphing Stage */}
       <div className="relative w-full">
-        {/* Sticky Viewport-Sized Relay Wave Background that un-sticks before Footer */}
+        {/* Sticky Viewport-Sized 3D Stage that un-sticks before Footer */}
         <div className="sticky top-0 h-screen w-full -mb-[100vh] pointer-events-none z-0 overflow-hidden">
-          <RelayWaveBackground speed={1.0} />
+          <MultiElementStage speed={1.0} />
         </div>
 
         <div className="relative z-10">
