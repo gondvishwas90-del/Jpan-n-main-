@@ -19,8 +19,8 @@ export default function Home() {
 
       {/* 2. Middle Stage: Multi-Element 3D Crystal-Clear + GPU Particle Morphing Stage */}
       <div className="relative w-full">
-        {/* Sticky Viewport-Sized 3D Stage in front of cards with pointer-events-none */}
-        <div className="sticky top-0 h-screen w-full -mb-[100vh] pointer-events-none z-20 overflow-hidden">
+        {/* Sticky Viewport-Sized 3D Stage in background (z-0) behind cards */}
+        <div className="sticky top-0 h-screen w-full -mb-[100vh] pointer-events-none z-0 overflow-hidden">
           <MultiElementStage speed={1.0} />
         </div>
 

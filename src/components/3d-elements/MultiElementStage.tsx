@@ -103,8 +103,8 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
       model.group.scale.multiplyScalar(0.95);
     });
 
-    // 4. Sample Ultra-Dense 60,000 Point Cloud for each model
-    const POINT_COUNT = 60000;
+    // 4. Sample Ultra-Dense 120,000 Point Cloud for each model (Maximum Surface Fidelity)
+    const POINT_COUNT = 120000;
     const sampledPointClouds = models.map((model) => model.samplePoints(POINT_COUNT));
 
     // 5. GPU Particle Morph System (Permanently Active Point Cloud)
@@ -155,61 +155,60 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
 
     const initialCorners = getCornerPositions(camera);
 
+    // Uniform, consistent, non-shining matte copper tone across all models (zero color change)
+    const UNIFORM_COLOR = new THREE.Color("#d26d3d");
+    particleMorph.setColor(UNIFORM_COLOR);
+
     const configs: ProductElementConfig[] = [
       {
         name: "Precision Copper Return Bend & Sensor Tube",
         category: "HVAC & Cold Bending",
         corner: "top-right",
         position: initialCorners.topRight.clone(),
-        color: new THREE.Color("#fb923c"), // Luminous Polished Copper
+        color: UNIFORM_COLOR,
       },
       {
         name: "Brass Multi-Port Distributor Manifold",
         category: "Precision CNC Machining",
         corner: "bottom-left",
         position: initialCorners.bottomLeft.clone(),
-        color: new THREE.Color("#facc15"), // Radiant Machined Brass
+        color: UNIFORM_COLOR,
       },
       {
         name: "VRV High-Pressure Header Assembly",
         category: "Commercial VRF Systems",
         corner: "mid-right",
         position: initialCorners.midRight.clone(),
-        color: new THREE.Color("#fbbf24"), // Amber Copper Header
+        color: UNIFORM_COLOR,
       },
       {
         name: "Heavy-Duty Chiller Suction Assembly",
         category: "Industrial Chiller Lines",
         corner: "mid-left",
         position: initialCorners.topLeft.clone(),
-        color: new THREE.Color("#ea580c"), // Industrial Deep Bronze
+        color: UNIFORM_COLOR,
       },
       {
         name: "Industrial SS Strainer & Filter Unit",
         category: "Fluid Filtration Systems",
         corner: "lower-right",
         position: initialCorners.bottomRight.clone(),
-        color: new THREE.Color("#93c5fd"), // Electropolished SS / Chrome
+        color: UNIFORM_COLOR,
       },
       {
         name: "Engineered Refnet Y-Joint Connector",
         category: "Aerodynamic Branch Splitters",
         corner: "floating-right",
         position: initialCorners.floatingCorner.clone(),
-        color: new THREE.Color("#f97316"), // Laser Braze Copper
+        color: UNIFORM_COLOR,
       },
     ];
 
-    // 8. Interactive Mouse Movement & World Raycast Unprojection
+    // 8. Interactive Mouse Parallax (Tilts whole solid model smoothly)
     let mouseX = 0;
     let mouseY = 0;
     let targetMouseX = 0;
     let targetMouseY = 0;
-
-    const mouseNDC = new THREE.Vector2(0, 0);
-    const mouseWorld = new THREE.Vector3(999, 999, 0);
-    const raycaster = new THREE.Raycaster();
-    const zPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
     const onMouseMove = (e: MouseEvent) => {
       targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -283,11 +282,6 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
       mouseX += (targetMouseX - mouseX) * 0.08;
       mouseY += (targetMouseY - mouseY) * 0.08;
 
-      // Project mouse into 3D world space at z=0 for interactive particle repulsion
-      mouseNDC.set(mouseX, mouseY);
-      raycaster.setFromCamera(mouseNDC, camera);
-      raycaster.ray.intersectPlane(zPlane, mouseWorld);
-
       // Smooth scroll lerp
       currentScrollSpan += (targetScrollSpan - currentScrollSpan) * 0.12;
 
@@ -319,15 +313,28 @@ export function MultiElementStage({ className = "" }: MultiElementStageProps) {
         );
       }
 
-      // Continuous 3D rotation: Idle spin + interactive mouse tilt parallax
+      // Section Plateau Locking:
+      // When resting on a section ([0.00, 0.20] or [0.80, 1.00]), lock strictly to 0.0 or 1.0
+      // so the 3D model is 100% static, solid, and perfectly organized with zero dispersion.
+      let morphProgress = 0.0;
+      if (spanFraction <= 0.20) {
+        morphProgress = 0.0;
+      } else if (spanFraction >= 0.80) {
+        morphProgress = 1.0;
+      } else {
+        const t = (spanFraction - 0.20) / 0.60;
+        morphProgress = t * t * (3.0 - 2.0 * t);
+      }
+
+      // Continuous 3D rotation: Gentle idle spin + interactive mouse tilt parallax as a solid body
       modelRotation.set(
-        -mouseY * 0.4 + Math.sin(time * 0.8) * 0.08,
-        mouseX * 0.5 + time * 0.35,
-        Math.cos(time * 0.6) * 0.05
+        -mouseY * 0.25 + Math.sin(time * 0.5) * 0.04,
+        mouseX * 0.35 + time * 0.22,
+        Math.cos(time * 0.4) * 0.03
       );
 
       // Update particle morphing shader permanently (always visible)
-      particleMorph.update(spanFraction, time, dpr, modelRotation, mouseWorld);
+      particleMorph.update(morphProgress, time, dpr, modelRotation);
 
       renderer.render(scene, camera);
       animId = requestAnimationFrame(renderLoop);
